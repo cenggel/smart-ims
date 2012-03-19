@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>今目标企业工作平台</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="css/login.css" rel="stylesheet" type="text/css" />
+<link href="css/tips.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="Shortcut Icon" type="image/x-icon" href="/images/favicon.ico"/>
+<style>
+		label.overTxtLabel {			
+			color: rgb(170, 170, 170);width:150px;			
+		}
+</style>
+<script type="text/javascript" src="scripts/mergedjs.js"></script>
+<script type="text/javascript" src="scripts/login.js"></script>
+<script type="text/javascript">
+			/*
+				此类是对PlaceHolder的重构
+			*/
+			var MgtPlaceHolder=new Class({
+				color:"#888888",
+				fontWeight:"normal",
+				fontSize:"12px",
+				propName:'placeholder',
+				initialize:function(ids,propName){
+					try{
+						if (this.propName in document.createElement('input')){
+							return;
+						}
+						if(propName){
+							this.propName=propName;
+						}
+						if(!ids){
+							$$('input').each(function(el){
+								if(el.get(this.propName)){
+									this.decorateInput(el);
+								}
+							}.bind(this));
+						}else if($type(ids)=="string"){
+							this.decorateInput($(ids));
+						}else{
+							$A(ids).each(function(inputId){
+								this.decorateInput($(inputId));
+							}.bind(this));
+						}
+						
+					}catch(ex){
+					}
+				},
+				//给input添加提示功能
+				decorateInput:function(el){
+					try{
+						var text = el.getProperty(this.propName);
+						//当改变提示文字时,需要保存默认的颜色
+						var defaultColor;
+						var defaultWeight;
+						var defaultSize;
+						if(el.retrieve("defaultColor")){
+							defaultColor=el.retrieve("defaultColor");
+							defaultWeight=el.retrieve("defaultWeight");
+							defaultSize=el.retrieve("defaultSize");
+						}else{
+							defaultColor=el.getStyle('color');
+							defaultWeight=el.getStyle('font-weight');
+							defaultSize=el.getStyle('font-size');
+							el.store("defaultColor",defaultColor);
+							el.store("defaultWeight",defaultWeight);
+							el.store("defaultSize",defaultSize);
+						}
+						if(el.get('value')==''||el.get('value')==text){	
+							el.set('value',text)  
+							  .setStyles({'color':this.color,'font-weight':this.fontWeight,'font-size':this.fontSize})
+						}
+						el.addEvent('focus', function()
+							{
+								if (el.value == '' || el.value == text)
+								{
+									el.setStyles({'color':defaultColor,'font-weight':defaultWeight,'font-size':defaultSize})
+										.set('value', '');
+								}
+							}).addEvent('blur', function()
+							{
+								if (el.value == '' || el.value == text)
+								{
+									el.setStyles({'color':this.color,'font-weight':this.fontWeight,'font-size':this.fontSize})
+										.set('value', text);
+								}
+							}.bind(this));
+					}catch(ex){
+					}
+				},
+				//根据input的id，获得其value
+				getValue:function(id){
+					try{
+						var inputElement=$(id);
+						var value=null;
+						if(inputElement){
+							value=inputElement.get('value');
+							var tip=inputElement.get(this.propName);
+							if(tip&&value==tip){
+								value="";
+							}
+						}
+						return value;
+					}catch(ex){
+					}
+				}
+			});
+		</script>
+</head>
+<body>
+<noscript>
+<div id="js_warn"
+				style="background:#fff;width: 778px; margin: 0 auto">
+  <div class="sa_fr"> <A href="#">网站首页</A> </div>
+  <div class="cb"></div>
+  <div class="safety_text"> <span>
+    <H1>您浏览器的javascript功能被禁用，请启用此功能。</H1>
+  </div>
+  <div class="cb"></div>
+  <div class="sa_help" id="iehelp1" style="margin:20px 20px 20px 20px;"> <span class="import"><b>IE联机帮助</b></span>
+    <div class="tele"> <span>如果您使用的是IE7、IE6、IE5版本，请按以下几个步骤启用javascript：</span>
+      <ul>
+        <LI>点击菜单条上的"工具"（Tool）</li>
+        <LI>在展开的菜单里，选择最下面一条"Internet选项"(Internet Options) </li>
+        <LI>在打开的Internet 选项设置窗口里，顶上有一条标签栏，点击第二个"安全"(Security)</li>
+        <LI>在"请为不同区域的web内容指定安全设置"的设置里，选择第一个地球图案的"Internet"区域 </li>
+        <LI>点击下面的"默认级别"按钮" ，把"安全级"设置为"中" </li>
+        <LI>点击按钮"确定"(OK)，关闭Internet 选项设置窗口 </li>
+        <li>重新刷新页面</li>
+      </ul>
+    </div>
+  </div>
+  <div class="sa_help" id="firefoxhelp1" style="margin:20px 20px 20px 20px;"> <span class="import"><b>Firefox联机帮助</b></span>
+    <div class="tele"> <span>如果您使用的是Firefox版本，请按以下几个步骤启用javascript：</span>
+      <ul>
+        <LI>点击菜单条上的"工具"（Tool）</li>
+        <LI>在展开的菜单里，选择最下面一条"选项"(Options) </li>
+        <LI>在打开的"选项"设置窗口里，顶上有一条标签栏，点击第三个"内容"</li>
+        <LI>在中间的地方，有个"启用javascript"，选中这个复选框 </li>
+        <LI>点击按钮"确定"(OK)，关闭设置窗口 </li>
+        <li>重新刷新本页面 </li>
+      </ul>
+    </div>
+  </div>
+  <br>
+</div>
+</noscript>
+<div id="cookies_warn"
+			style="display:none;background:#fff;width: 778px; margin: 0 auto">
+  <div class="sa_fr"> <A href="#">网站首页</A> </div>
+  <div class="cb"></div>
+  <div class="safety_text"> <span>
+    <h1>您浏览器的Cookie功能被禁用，请启用此功能。</h1>
+  </div>
+  <div class="cb"></div>
+  <div class="sa_help1" style="margin:20px 20px 20px 20px;">
+    <div class="tele">
+      <h3>如果您使用的是IE7、IE6版本，请按以下几个步骤启用cookie：</h3>
+      <ul>
+        <LI>点击菜单条上的"工具"（Tool） </li>
+        <LI>在展开的菜单里，选择最下面一条"Internet选项"(Internet Options) </li>
+        <LI>在打开的Internet 选项设置窗口里，顶上有一条标签栏，点击第三个"隐私"(Privacy)</li>
+        <LI>在"隐私"的设置里，中间偏下有四个按钮，点击第四个按钮"默认"(Default) </li>
+        <LI>点击按钮"确定"(OK)，关闭cookie设置窗口 </li>
+        <LI>点击按钮"确定"(OK)，关闭Internet 选项设置窗口 </li>
+        <li>重新刷新本页面 </li>
+      </ul>
+    </div>
+    <div class="tele">
+      <h3>如果您使用的是IE5版本，请按以下几个步骤启用cookie：</h3>
+      <ul>
+        <LI>点击菜单条上的"工具"（Tool）</li>
+        <LI>在展开的菜单里，选择最下面一条"Internet选项"(Internet Options) </li>
+        <LI>在打开的Internet 选项设置窗口里，顶上有一条标签栏，点击第二个"安全"(Security)</li>
+        <LI>在"安全"的设置里，中间偏下有两个按钮，点击按钮"自定义级别"(Customized) </li>
+        <LI>在弹出的安全设置窗口里，拉动上下滚动条，找到cookie设置，勾选如下设置：
+          <ul>
+            <LI>允许使用存储在您计算机上的cookie：启用 </li>
+            <LI>允许使用每个对话cookie(未存储)：启用 </li>
+            <LI>点击按钮"确定"(OK)，关闭安全设置窗口 </li>
+            <LI>点击按钮"确定"(OK)，关闭Internet 选项设置窗口</li>
+          </ul>
+        </li>
+        <li>重新刷新本页面 </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sa_help1"  style="margin:20px 20px 20px 20px;">
+    <div class="tele">
+      <h3>如果您使用的是Firefox版本，请按以下几个步骤启用cookie：</h3>
+      <ul>
+        <LI>点击菜单条上的"工具"（Tool）</li>
+        <LI>在展开的菜单里，选择最下面一条"选项"(Options) </li>
+        <LI>在打开的"选项"设置窗口里，顶上有一条标签栏，点击第二个"隐私"(Privacy)</li>
+        <LI>选中下面有一个"cookies"的标签里，中间偏左有个复选框，点击选上"允许站点设置cookie" </li>
+        <LI>点击按钮"确定"(OK)，关闭设置窗口 </li>
+        <li>重新刷新本页面 </li>
+      </ul>
+    </div>
+  </div>
+  <br>
+</div>
+<div id="ie_warn"
+			style="display:none;background:#fff;width: 778px; margin: 0 auto"> 您的IE版本过低，请使用IE6.0以上版本 </div>
+<div id="bodyContainer">
+  <div id="headerContainer">
+    <div id="header_top">
+      <div class="himg"> <a href="#portal"><img src="images/toplogo110720.jpg" title="今目标企业工作平台" border="0" /></a> </div>
+      <div class="slogan"> </div>
+      <div class="htext">
+        <div> <a href="javascript:void(0);" onclick="AddFavorite(window.location,document.title)">设为收藏</a> | <a href="#portal">首页</a> | <a href="javascript:toShowOnline();">在线咨询</a> </div>
+        <div class="hoper"> 服务热线：0471-8010532 </div>
+      </div>
+    </div>
+    <div class="header_simpline"></div>
+    <div class="cb"></div>
+    <script type="text/javascript">
+<!--
+function AddFavorite(sURL, sTitle)
+{
+    try
+    {
+        window.external.addFavorite(sURL, sTitle);
+    }
+    catch (e)
+    {
+        try
+        {
+            window.sidebar.addPanel(sTitle, sURL, "");
+        }
+        catch (e)
+        {
+            alert("加入收藏失败，请使用Ctrl+D进行添加");
+        }
+    }
+}
+//-->
+</script>
+  </div>
+  <div id="container">
+    <form name="jingoalLoginForm" id="jingoalLoginForm" method="post" action="/mgt/loginForward.jsp?">
+      <input  name="password" id="passwordNormal" type="hidden" />
+      <input  name="token2" id="token2" type="hidden" value="1331863780346"/>
+      <input name="locale" type="hidden" value="null"/>
+      <center>
+        <div  class="login_bg">
+          <div class="login_cont">
+            <div class="login_bo_t"></div>
+            <div class="login_bo">
+              <div class="login_win" id="login_win">
+                <div class="ti"> <b class="login_ico login_ti_ico"></b>网页今目标 </div>
+                <div class="label"> <span class="lb">登录帐号:</span>
+                  <input tabindex="1" class="in"  placeholder="系统帐号/手机号/Email帐号" id="loginNameNomal" name="loginName"  value="" maxlength="100" type="text"/>
+                  <a id="accountTip2" title="登录帐号" rel="系统帐号：用户名+@+企业帐号，如zhangsan@0101001登录。&#13&#10手机号：利用系统中录入的手机号登录。&#13&#10Email帐号：利用系统中绑定的Email帐号登录" href="javascript:void(0);">登录帐号？</a> </div>
+                <div class="label"> <span class="lb">&nbsp;&nbsp;密&nbsp;&nbsp;码:</span>
+                  <input tabindex="2" class="in" id="pwd" 	maxlength="20" type="password" />
+                  <a href="#">忘记密码</a> </div>
+                <div class="label"> <span class="save">
+                  <input tabindex="3" name="saveinfo" id="saveinfo" type="checkbox"  />
+                  <label for="saveinfo">保存用户信息</label>
+                  </span> </div>
+                <div class="cb"></div>
+                <div class="btn"  id="insertDiv">
+                  <input tabindex="4" value="登  录" class="login_ico login_nor_btn" onmouseover="$(this).removeClass('btn_img login_nor_btn');$(this).addClass('btn_img login_clk_btn');" 
+                                        	onmouseout="$(this).removeClass('btn_img login_clk_btn');$(this).addClass('btn_img login_nor_btn');" type="submit"/>
+                  <div class="cb"></div>
+                </div>
+                <div class="no_acco">还没有今目标帐号？ <a href="#" target="_blank">立即注册</a> </div>
+              </div>
+              <div class="login_faq">
+                <ul>
+                  <li> ·<a target="_blank" href="#">什么是数字证书？</a> </li>
+                  <li style="width: 200px;"> ·保护您的密码请阅读 <a target="_blank" href="#">密码安全</a> </li>
+                </ul>
+                <div class="cb"></div>
+              </div>
+            </div>
+            <div class="login_bo_b"></div>
+          </div>
+          <div class="login_rightbar">
+            <div class="login_client">
+              <input type="button" onclick="document.location.href='#'" class=" login_ico login_download_btn" value="立即下载" />
+            </div>
+            <div class="login_mobile">
+              <input type="button" onclick="window.open('#');" class=" login_ico login_downloadm_btn" value="立即下载" />
+            </div>
+          </div>
+          <div class="cb"></div>
+        </div>
+      </center>
+    </form>
+  </div>
+  <div id="copyright_simp">
+    <table cellpadding="1" cellspacing="0" border="0" width="100%" height="50">
+      <tbody>
+        <tr>
+          <td class="aboutus_bg"><div class="aboutus"> <a href="#">法律声明</a>&nbsp;|&nbsp; <a href="#">服务条款</a>&nbsp;|&nbsp; <a href="#">隐私声明</a>&nbsp;|&nbsp; <a href="#">联系我们</a> </div>
+            <div class="fr">服务热线：010-51283768 &nbsp;</div>
+            <div class="cb"></div></td>
+        </tr>
+        <tr>
+          <td align="center"><span class="copy_t">XXXXXXXXXXXX有限公司版权所有</span>&nbsp;[<a href="#" target="_blank">京ICP备06024223号</a>]</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script type="text/javascript">
+		<!--
+		var safe = false;
+		var loginPlaceHolder
+		window.addEvent('load', function(){
+				  $('loginNameNomal').value="";
+				  $('pwd').value="";
+				 loginPlaceHolder= new MgtPlaceHolder('loginNameNomal');
+				 
+				 Cookie.write("test","test");
+				 var test = Cookie.read("test");
+				if (!test){
+					$('bodyContainer').setStyle('display', 'none');
+					$('cookies_warn').setStyle('display', '');
+				}else{
+					Cookie.dispose("test");					
+					if( navigator.appVersion.indexOf("MSIE 5") != -1 || navigator.appVersion.indexOf("MSIE 4") != -1){
+						$("bodyContainer").setStyle('display', 'none');
+						$("ie_warn").setStyle('display', '');
+					}else{
+						$("bodyContainer").setStyle('display', '');
+					}
+				}
+				setTimeout(function(){
+					new Tips($('accountTip2'),{
+						className: 'loginTips'
+					});
+				},1000);
+									
+							
+				$('jingoalLoginForm').onsubmit = toSubmit; 
+		});
+		
+		 function toSubmit(safe) {
+		 			 	
+				try {
+					var e1,e2;
+					
+					var loginName =  loginPlaceHolder.getValue('loginNameNomal');
+					if (!loginName) {
+						//请输入登录帐号(登录名@系统帐号；手机号；绑定的邮箱地址)
+						e1 = '必须录入登录帐号。';
+					}
+					
+					var loginPwd = $('pwd').get('value');
+					if (!loginPwd) {
+						e2 = '必须录入密码。';
+					}
+					
+					if(e1 || e2){
+						showError(e1,e2);
+						return false;
+					}
+					
+					$('passwordNormal').set('value',jingoalSHA1.hex_sha1(jingoalSHA1.hex_sha1(loginPwd) + "1331863780346"));
+					return true;
+				}
+				catch (ex) {
+					alert("ex. name  "  + ex.name +" ,  " + ex.message );
+				}
+				return false;
+			};
+		function getDWRError(){
+			window.location = "/mgt/login/main.jsp?main=1331863780346";
+		}
+		
+		try{
+			if(top!=parent){ //本页面一定在一级或二级上，所以下面不能使用window.location = ...
+				top.location = '/mgt/index.jsp?r2='+Math.random();
+			}
+		}catch(e){}
+		
+		function toShowOnline(){
+			try{
+				var url = "/mgt" +"/login/online/main.jsp?cid=2";
+				var sub = "fullscreen=2,width=500,height=400,top="+screen.height/3+",left="+screen.width/3+",toolbar=0,location="+(Browser.Engine.trident?0:1)+",status=1,menubar=0,resizable=0,scrollbars=0";
+				window.open(url,'在线客服',sub);
+			}catch(ex){}
+		}
+		
+		var errorMsg = "";
+		if (errorMsg) {
+			setTimeout(function(){showError(errorMsg);}, 100);
+		}
+		
+		/**
+		 *显示错误信息
+		 */
+		function showError(e1,e2){
+			var div = document.getElementById('error_msg');
+			if(!div){
+				div = document.createElement("div");
+				div.className = "error_msg";
+				div.id = "error_msg";
+			}
+			
+			if(e1 && e2){
+				div.innerHTML = e1 + "<br/>" + e2;
+			} else if(e1){
+				div.innerHTML = e1;
+			} else if(e2){
+				div.innerHTML = e2;
+			}
+			var befdiv = document.getElementById('insertDiv');
+			document.getElementById('login_win').insertBefore(div,befdiv);
+		}			
+		
+		//-->
+		</script>
+</body>
+</html>

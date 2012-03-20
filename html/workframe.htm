@@ -44,8 +44,8 @@ window.addEvent("load",  function(){
 
 
 	if(!Browser.Engine.trident4){
-		window.addEvent("resize",tm.wresize);		
-		window.jincrossframe.addListener(tm.getCrossDoaminContent);
+		//window.addEvent("resize",tm.wresize);		
+		//window.jincrossframe.addListener(tm.getCrossDoaminContent);
 	}
 	tm.wresize();
 
@@ -253,10 +253,10 @@ window.addEvent("load",  function(){
   <div class="t_nav" id="header">
     <div id="menu"> </div>
   </div>
-  <div class="jgcont" id="tmmain"  style="height: 531px; width: 1000px;position:relative;">
+  <div class="jgcont" id="tmmain"  style="height: 531px; width: 1000px;position:relative;overflow:hidden;">
     <iframe id="attendanceAwokeIframe" name="attendanceAwokeIframe" frameborder="0" scrolling=no 
 				src="/Apps/Attendance.jsp?place=AttendanceFrame" 
-				style="width: 330px;border: 0pt none; display: block; position: absolute;right:-10px;bottom: 0;overflow:hidden;"></iframe>
+				style="width: 330px;border: 0pt none; display: none; position: absolute;right:-10px;bottom: 0;overflow:hidden;"></iframe> <!--modify by lfa display: block;-->
   </div>
   <div style="display:none" class="pop_win" id="mgtAlertDivId">
     <table cellspacing="0" cellpadding="0" border="0" class="bdy" style="width:355px;">

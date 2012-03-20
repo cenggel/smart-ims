@@ -3366,7 +3366,6 @@ var Request = new Class({
             url = url + (url.contains('?') ? '&': '?') + data;
             data = null;
         }
-		prompt("",url);
         this.xhr.open(method.toUpperCase(), url, this.options.async);
         this.xhr.onreadystatechange = this.onStateChange.bind(this);
         this.headers.each(function(value, key) {

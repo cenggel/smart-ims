@@ -3,1248 +3,232 @@
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
 <SCRIPT type='text/javascript' language="javascript">
- 			//globalCp = '/mgt';
-			globalCp = 'C:\\Users\\lifuan\\Desktop\\烟草局';
-			language ='zh_cn';
-			igoalURL = '/Apps/Igoal.jsp';
-			sysAwokeURL = '/Apps/MessageCenter.jsp';
-		</SCRIPT>
-
+	//globalCp = '/mgt';
+	globalCp = 'C:\\Users\\lifuan\\Desktop\\烟草局';
+	language ='zh_cn';
+	igoalURL = '/Apps/Igoal.jsp';
+	sysAwokeURL = '/Apps/MessageCenter.jsp';
+</SCRIPT>
 <script type='text/javascript' src="scripts/resource.js"></script>
-
 <script type='text/javascript' src='scripts/mergedjs.js'></script>
-
 <script type='text/javascript' src='scripts/mergedjsB.js'></script>
-
-
-<script type="text/javascript">try{top.loadBar();}catch(e){}</script>
-
 <script type="text/javascript" src="scripts/dwrService.js"></script>
-<script type="text/javascript">try{top.loadBar();}catch(e){}</script>
-<script type='text/javascript'>
-
-	//访问加载tinymce3392版本，ios5访问加载tinymce346版本，tinymce346版本在火狐下有个bug
-
-	var ua = navigator.userAgent;
-	var jsSrc = "scripts/tiny_mce.js";
-	if(/(iPad|iPhone)/.test(ua) && ua.match(/AppleWebKit\/(\d*)/)[1]>=534){
-		jsSrc = "scripts/tiny_mce.js";
-	}
-	var ga = document.createElement('script');
-	ga.type = 'text/javascript'; ga.async = true;
-    ga.src = jsSrc;
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-
-</script>
-<script type="text/javascript">try{top.loadBar();}catch(e){}</script>
 <script type='text/javascript' src='scripts/mergedimjs.js'></script>
 <script type='text/javascript' src='scripts/WdatePicker.js'></script>
-<script type="text/javascript">try{top.loadBar();}catch(e){}</script>
-<script type="text/javascript">try{top.loadBar();}catch(e){}</script>
 <script type='text/javascript' src='scripts/Jin.AwakeTipGuy.js'></script>
 <link href="css/mergedstyle.css" media="all" rel="Stylesheet" type="text/css" />
 <link href="css/module.css" media="all" rel="Stylesheet" type="text/css" />
 <link href="css/relogin.css" media="all" rel="Stylesheet" type="text/css" />
-<script type="text/javascript">
-var global_language = 'zh_CN';
-try{
-	top.loadBar();
-}catch(e){}
-</script>
-<SCRIPT type='text/javascript' language="javascript">		
-			function initMainIndex(){
-				//如果无父窗口或父窗口仍是自己的话,则页面重跳至index.jsp
-				
-				if(!Browser.Engine.trident4 ){
-
-					
-				}
-			}
-					
-			var fulltestsearch={
-				curpage : 1,
-				pageMax : 10,
-				curstart : new Array("0"),
-				startTime : '',	
-			    endTime : '',
-			   	typeids : 'R',	//类型id,默认全部
-			   	userIDs : '',	//要看的用户的id
-			   	dutyIDs : '',//要看的部门的id
-			   	userNames : '',
-			   	dutyNames : '',
-			   	selectidtype : 1, //选择人员范围的类型（全部/组织结构/职务）
-			   	key : '',		//关键字
-			   	duration : '',	//近几天的时间
-			   	docFlag : 0     // 0:搜索所有,  1:只搜索内容,  2:只搜索文件
-			};
-			
-			var curPageUser = {
-				id : 1076575
-			}
-			function closePop3(){//为系统搜索服务
-				mgtPopupClose({num:3});
-			}
-			//为igoal进入到具体模块服务
-			function resizeHeight4igoal(){		
-				//var box=$("box");
-				var widthOffset=23;				
-				
-				var left=$("a_left");
-				if($("i_left")){ //为沟通记录页面服务
-					left=$("i_left");
-				}
-				var right=$("a_right");
-				if($("i_right")){//为沟通记录页面服务
-					right=$("i_right");
-					widthOffset=13;
-				}
-				var iRightWidth=$("i_right_width");//为沟通记录页面服务
-				
-				var imRecordChat=$("imRecordChat");//为沟通记录页面服务
-				
-				var main=$("a_con");
-				if($("i_middle")){//为沟通记录页面服务
-					main=$("i_middle");
-				}
-				var ww=$('ww');//为沟通记录页面服务
-				
-				var wh=Window.getSize().y;
-				var nh=wh-6;
-				var aTopHeight = 8;
-				if(left){
-					nh = wh - left.getCoordinates().top -aTopHeight;
-				}else if(right){
-					nh = wh - right.getCoordinates().top -aTopHeight;
-				}else if(imRecordChat){
-					nh = wh - imRecordChat.getCoordinates().top -aTopHeight;
-				}else if(main){
-					nh = wh - main.getCoordinates().top -aTopHeight;
-				}				
-				
-				if(nh<50) return;
-				//if(box)box.setStyle("height",wh);
-				if(left)left.setStyle("height",nh);
-				var noScrollSet=true;
-				if(right){
-					right.setStyle("height",nh);
-					if(Browser.Engine.trident4){
-						noScrollSet=false;
-						var len = (right.getStyle("margin-left")+"").toInt()+widthOffset;
-						right.setStyle("width",window.getSize().x-len);
-					}	
-				}else if(imRecordChat){//为沟通记录页面服务
-					imRecordChat.setStyle("height",nh);
-					if(Browser.Engine.trident4){
-						noScrollSet=false;
-						var len = (imRecordChat.getStyle("margin-left")+"").toInt();
-						imRecordChat.setStyle("width",window.getSize().x-len);
-					}	
-					$('imRecordChatContent').setStyle("width",window.getSize().x-widthOffset);
-				}
-				if(iRightWidth){//为沟通记录服务
-					try{
-						var iWidth = window.getSize().x;
-						if(left){
-							iWidth=iWidth-(left.getStyle("width")+"").toInt();
-						}
-						if(main){
-							iWidth=iWidth-(main.getStyle("width")+"").toInt();
-						}
-						iWidth=iWidth-32;	
-						iRightWidth.setStyle("width",iWidth);
-					}catch(e){
-						debug(e.name+";"+e.message+";"+e.error);
-					}	
-				}
-				if(main){
-					if($("i_middle")){//为沟通记录页面服务
-						main.setStyle("height",nh + 3);
-					}else{
-						main.setStyle("height",nh + 6);	
-					}
-					if(Browser.Engine.trident4&&noScrollSet){						
-						main.setStyle("width",window.getSize().x-widthOffset);
-					}
-				};	
-				if(ww){//为沟通记录页面服务
-					ww.setStyle("height",nh-100);
-				}
-				
-			}
-			
-			//因为加入知识框口太大，所以需要动态设置
-			function toggleOverflow(hidden){
-				debug("come into toggleOverflow and hidden=="+hidden);
-				if(hidden){
-					$(document.body).setStyles({"overflow-x":"hidden","overflow-y":"hidden"});	
-				}else{
-					$(document.body).setStyles({"overflow-x":"auto","overflow-y":"auto"});
-				}
-			}
-			//以为现在是在div内部的滚动条,所以这里重写了scroll方法
-			function scroll(x,y){
-				if($("a_con")){
-					$("a_con").scrollLeft=x;
-					$("a_con").scrollTop=y;
-				}
-				if($("a_right")){
-					$("a_right").scrollLeft=x;
-					$("a_right").scrollTop=y;
-				}
-			}
-		</SCRIPT>
 </head>
-<body onload="initMainIndex();" onresize='setTimeout("resizeHeight4igoal()",300);'>
-<script>
-	var _i = 1;
-	var sysSearchTree=[
-		{
-			"id":_i++,
-			"name":"结果类型",
-			"type":"sort",
-			"children":[
-				{
-					"id":_i++,
-					"name": "仅搜内容",
-					"type":"sort",
-					"value":"1"
-				},
-				{
-					"id":_i++,
-					"name": "仅搜文件",
-					"type":"sort",
-					"value":"2"
-				}
-			]
-		},
-		{
-			"id":_i++,
-			"name": "功能模块选择",
-			"type":"module",
-			"children": [
-				{
-					"id":_i++,
-					"name": '电子邮件',
-					"value":"RA8B4",
-					"type":"module"
-				},
-				{
-					"id":_i++,
-					"name": "即时通讯",
-					"value":"RA8",
-					"type":"module",
-					"children":[
-						{
-							"id":_i++,
-							"name": "沟通记录",
-							"value":"RA8B3",
-							"type":"module",
-							"level":2,
-							"children":[
-								{
-									"id":_i++,
-									"name": "一对一沟通",
-									"value":"RA8B3C3",
-									"type":"module",
-									"level":3
-								},
-								{
-									"id":_i++,
-									"name": "广播消息",
-									"value":"RA8B3C2",
-									"type":"module",
-									"level":3
-								},
-								{
-									"id":_i++,
-									"name": "多人沟通",
-									"value":"RA8B3C1",
-									"type":"module",
-									"level":3
-								}
-							]
-						},
-						{
-							"id":_i++,
-							"name": "文件传输",
-							"value":"RA8B2",
-							"type":"module",
-							"level":2
-						},
-						{
-							"id":_i++,
-							"name": "短信记录",
-							"value":"RA8B1",
-							"type":"module",
-							"level":2
-						},
-						{
-							"id":_i++,
-							"name": "转发文件",
-							"value":"RA8B6",
-							"type":"module",
-							"level":2
-						},
-						{
-							"id":_i++,
-							"name": "短信总机",
-							"value":"RA8B5",
-							"type":"module",
-							"level":2
-						}
-					]
-				},
-				{
-					"id":_i++,
-					"name": "项目",
-					"open":false,
-					"value":"RA2",
-					"type":"module",
-					"children":[
-						{
-							"id":_i++,
-							"name": "项目基本信息历史",
-							"value":"RA2B4",
-							"type":"module",
-							"level":2
-						},
-						{
-							"id":_i++,
-							"name": "项目基本信息",
-							"value":"RA2B3",
-							"type":"module",
-							"level":2
-						},
-						{
-							"id":_i++,
-							"name": "项目文档",
-							"value":"RA2B2",
-							"type":"module",
-							"level":2
-						},
-						{
-							"id":_i++,
-							"name": "项目协商",
-							"value":"RA2B1",
-							"type":"module",
-							"level":2
-						}
-					]
-				},
-				{
-					"id":_i++,
-					"name": "日志",
-					"value":"RA1",
-					"type":"module"
-				},
-				{
-					"id":_i++,
-					"name": "计划",
-					"value":"RA7",
-					"type":"module"
-				},
-				{
-					"id":_i++,
-					"name": "文件柜",
-					"value":"RA14",
-					"type":"module"
-				},
-				{
-					"id":_i++,
-					"name": "其它模块",
-					"value":"RA9,RA5,RA12,RA3,RA6,RA15,RA10",
-					"type":"module",
-					"children":[
-						{
-								"id":_i++,
-								"name": "任务",
-								"open":false,
-								"value":"RA10",
-								"type":"module",
-								"children":[
-									{
-										"id":_i++,
-										"name": "任务文档",
-										"value":"RA10B4",
-										"type":"module",
-										"level":2
-									},
-									{
-										"id":_i++,
-										"name": "任务信息",
-										"value":"RA10B1",
-										"type":"module",
-										"level":2
-									},
-									{
-										"id":_i++,
-										"name": "任务事件",
-										"value":"RA10B2",
-										"type":"module",
-										"level":2
-									},
-									{
-										"id":_i++,
-										"name": "任务讨论",
-										"value":"RA10B3",
-										"type":"module",
-										"level":2
-									}
-								]
-						},
-						{
-							"id":_i++,
-							"name": "公告栏",
-							"value":"RA9",
-							"type":"module",
-							"level":2
-						},
-						{
-							"id":_i++,
-							"name": "论坛",
-							"value":"RA5",
-							"type":"module",
-							"level":2
-						},
-						{
-							"id":_i++,
-							"name": "讨论区",
-							"value":"RA12",
-							"type":"module",
-							"level":2
-						},
-						{
-							"id":_i++,
-							"name": "知识库",
-							"value":"RA6",
-							"type":"module",
-							"level":2
-						},
-						{
-							"id":_i++,
-							"name": "在线客服",
-							"value":"RA3",
-							"type":"module",
-							"level":2
-						},
-						{
-							"id":_i++,
-							"name": "备忘",
-							"value":"RA15",
-							"type":"module",
-							"level":2
-						}
-					]
-				}
-			]
-		},
-		{
-			"id":_i++,
-			"name": "人员选择",
-			"type":"from",
-			"open":true,
-			"children":[
-				{
-					"id":_i++,
-					"name": "按组织结构",
-					"type":"from",
-					"sign": "he",
-					"value":"he"
-				}
-			]
-		},
-		{
-			"id":_i++,
-			"name": "更新时间选择",
-			"type":"time",
-			"isDept":true,
-			"open":true,
-			"children": [
-				{
-					"id":_i++,
-					"name": "近两周",
-					"type":"duration",
-					"value":"twoWeek"
-				},
-				{
-					"id":_i++,
-					"name": "三个月内",
-					"type":"duration",
-					"value":"threeMonth"
-				},
-				{
-					"id":_i++,
-					"name": "今年",
-					"type":"duration",
-					"value":"year"
-				},
-				{
-					"id":_i++,
-					"name": "去年以前",
-					"type":"duration",
-					"value":"oneYearBefore"
-				},
-				{
-					"id":_i++,
-					"name": "自定义时间",
-					"type":"time",
-					"sign": "userDefined",
-					"value":"userDefined"
-				}
-			]
-		}
-	];
-	/*将父亲节点的id设置给孩子*/
-	function setParentId(data){
-		if(data.children){
-			$A(data.children).each(function(item){
-				item.parentId=data.id;
-				setParentId(item);
-			});
-		}
-	}
-	/*初始化所有孩子节点的parentId属性*/
-	function initParentId(){
-		$A(sysSearchTree).each(function(item){
-			setParentId(item);	
-		});
-	}
-	initParentId();
-</script>
-<script type="text/javascript">
-	
-	//说明：当前只假设有两级接点，如果要增加多级，需要对load方法进行重构
-	var ConditionTree=new Class({
-		Implements: [Events, Options],
-		options:{
-			idPrix:'conditionTree_',
-			resultPrix:'result_',
-			onConditionSelect:$empty
-		},
-		initialize:function(container,options){
-			debug("initialize");
-			this.containerId=container;
-			this.setOptions(options);
-		},
-		/*画树*/
-		draw:function(){
-			debug("come into draw");
-			this.container=$(this.containerId);
-			this.nodeMap=new Hash();
-			this.branchMap=new Hash(); 
-			if(this.options.conditionData){
-				this.initNodeMap(this.options.conditionData);
-				this.initBranchMap(this.options.conditionData);
-				this.container.empty();
-				this.createResultContainer();
-				this.load(this.options.conditionData);
-			}
-			this.toggleCancelAll();
-		},
-		/*初始化属性nodeMap*/
-		initNodeMap:function(nodeArray){
-			$A(nodeArray).each(function(item){
-				this.nodeMap.include(item.id,item);
-				if(item.children){
-					this.initNodeMap(item.children);
-				}
-			}.bind(this));
-		},
-		/*初始化树枝map*/
-		initBranchMap:function(nodeArray){
-			$A(nodeArray).each(function(item){
-				this.branchMap.include(item.type,item);
-			}.bind(this));
-		},
-		/*根据数据生成相应的树*/
-		load:function(nodeArray){
-			debug("come into load");
-			try{
-				$A(nodeArray).each(function(item){
-					this.initBranchAndResult(item);
-				}.bind(this));
-			}catch(ex){
-				debug("error in load : "+ex.name+";"+ex.message+";"+ex.error);
-			}
-		},
-		
-		/*
-			此方法将会进行递归
-			1. 如果传入的接点条件已被选中，则生成结果
-			2. 如果传入的接点条件未被选中，则生成条件
-		*/
-		initBranchAndResult:function(node){
-			var selectedNode=null;
-			if(node.children){
-				for(var i=0;i<node.children.length;i++){ //查找一级孩子当中是否有被选中的
-					if(node.children[i].isSelected){
-						selectedNode=node.children[i];
-						break;
-					}
-				}
-				if(selectedNode){
-					this.createResultNode(selectedNode,selectedNode.txt,selectedNode.userId);
-					this.initBranchAndResult(selectedNode);
-				}else{
-					this.createBranch(node);
-				}
-			}
-		},
-		/*生成树枝*/
-		createBranch:function(node){
-			var branchType=(node.type=='duration')?'time':node.type;
-			var branchNode=this.branchMap.get(branchType);
-			var ul,branch;
-			if($(this.options.idPrix+branchNode.id)){
-				branch=$(this.options.idPrix+branchNode.id);
-				ul=branch.getElement("ul");
-				ul.empty();
-			}else{
-				branch=new Element("div",{
-					'id':this.options.idPrix+branchNode.id,
-					'class':'branch'
-				});
-				var branchTitle=new Element("div",{
-					'class':'sort_ti',
-					'html':branchNode.name
-				});
-				branchTitle.inject(branch);
-				ul=new Element('ul',{});
-				ul.inject(branch);
-				var previousBranch=this.getPreviousBranch(node);
-				if(previousBranch){
-					branch.inject(previousBranch,'after');
-				}else{
-					branch.inject(this.resultContainer,'after');
-				}
-			}
-			node.children.each(function(item){
-				this.createLeaf(item).inject(ul);
-			}.bind(this));
-		},
-		/*从条件树上删掉节点node所在的树枝，然后显示其孩子接点*/
-		deleteBranch:function(node){
-			debug("come into deleteBranch");
-			try{
-				var branchType=(node.type=='duration')?'time':node.type;
-				var branch=this.branchMap.get(branchType);
-				debug("branch.type=="+branch.type+";branch.id=="+branch.id);
-				if(node.children){
-					debug("-------------node has children--------------");
-					this.createBranch(node);
-				}else{
-					debug("-------------node has no children--------------");
-					$(this.options.idPrix+branch.id).dispose();
-				}
-			}catch(ex){
-				debug("error in deleteBranch :"+ex.name+";"+ex.message+";"+ex.error);
-			}
-		},
-		/*生成叶子（1.叶子具有事件）*/
-		createLeaf:function(node){
-			//debug("come into createLeaf ");
-			var me=this;
-			var li=new Element("li",{
-				id:this.options.idPrix+node.id
-			});
-			var a=new Element("a",{
-				'class':'unline',
-				'href':'#',
-				'events':{
-					'click':function(){me.selectCondition(node);}
-				},
-				'html':node.name
-			}).inject(li);
-			return li;
-		},
-		/*生成结果显示部分*/
-		createResultContainer:function(){
-			debug("come into createResultContainer ");
-			try{
-				if($(this.options.idPrix+"resultContainer"))return;
-				new Element('div',{
-					'class':'ti resultContainer',
-					'html':'<span class="fti">搜索范围分类</span>'
-				}).inject(this.container);
-				
-				this.resultContainer=new Element('div',{
-					'class':'sort_filt',
-					'styles':{
-						'display':'none'
-					},
-					'id':this.options.idPrix+"resultContainer"
-				}).inject(this.container);
-				new Element('ul').inject(this.resultContainer);
-			}catch(ex){
-				debug("error in createResultContainer: "+ex.name+";"+ex.message);
-			}
-		},
-		/*选择叶子接点时，在“搜索范围分类”处生成相应的选择结果，并且将此叶子节点的子节点显示出来*/
-		selectCondition:function(node){
-			debug("come into selectCondition and type="+node.type+" and value="+node.value);
-			if(node.type=="from"&&node.value=="he"){
-				this.loadUserTree(node);
-			}else if(node.type=="time"&&node.value=="userDefined"){
-				this.userDefinedTime(node);
-			}else{
-				node.isSelected=true; //修改node节点的选中状态
-				this.createResultNode(node);
-				this.deleteBranch(node);
-				this.fireEvent('conditionSelect');
-			}
-			this.toggleCancelAll();
-		},
-		/*取消选择的条件*/
-		/*
-			TODO 需要重构
-		*/
-		cancelCondition:function(node,branchId){
-			debug("come into cancelCondition and node=="+node);
-			try{
-				this.cancelNodeSelectedStatus(node);
-				this.draw();
-				this.fireEvent('conditionSelect');
-			}catch(ex){
-				debug(ex.name+";"+ex.error+";"+ex.message);
-			}
-		},
-		/*
-			取消某个接点及其子接点的孩子的选中状态
-		*/
-		cancelNodeSelectedStatus:function(node){
-			node.isSelected=false;
-			if(node.children){
-				$A(node.children).each(function(one){
-					this.cancelNodeSelectedStatus(one);
-				}.bind(this));
-			}
-		},
-		/*
-			创建结果接点
-			人员选择用到了：txt、userId
-			时间选择用到了：txt
-		*/
-		/*
-			TODO 需要重构，因为父亲和孩子对应的结构有所不同
-		*/
-		createResultNode:function(node,txt,userId){
-			debug("come into createResultNode ");
-			debug("node.parentId=="+node.parentId);
-			var me=this;
-			var li=new Element('li',{
-				id:this.options.resultPrix+node.id
-			});
-			//根据level给li设置不同的样式
-			if(node.level){
-				if(node.level==2){
-					li.addClass("subsort");
-				}else{
-					li.addClass("thirdsort");
-				}
-			}
-			if(userId){
-				li.store('userId',userId);
-			}
-			var a=new Element('a',{
-				'class':'unline',
-				'href':'#',
-				'html':"取消",
-				'events':{
-					'click':function(){me.cancelCondition(node,node.parentId);}
-				}
-			});
-			var div=new Element('div',{
-				'class':'fr'
-			});
-			//如果是二级或三级节点，生成结果时，要包装
-			a.inject(div);
-			div.inject(li);
-			li.appendText(txt?txt:node.name);
-			var cancelAll=this.resultContainer.getElement('li.mgtCancelAll');
-			if(cancelAll){
-				li.inject(cancelAll,'before');
-			}else{
-				li.inject(this.resultContainer.getElement("ul"));
-			}
-			this.resultContainer.setStyle('display','');
-		},
-		/*删掉结果节点及其子节点*/
-		deleteResultNode:function(node){
-			debug("come into deleteResultNode");
-			if($(this.options.resultPrix+node.id)){
-				$(this.options.resultPrix+node.id).dispose();
-			}
-			if(node.children){
-				for(var i=0;i<node.children.length;i++){
-					this.deleteResultNode(node.children[i]);
-				}
-			}
-		},
-		/*显示或取消条件结果中'取消全部'*/
-		toggleCancelAll:function(){
-			debug("come into toggleCancelAll");
-			var me=this;
-			var allLi=this.resultContainer.getElements('li');
-			var cancelAll=this.resultContainer.getElement('li.mgtCancelAll');
-			if(cancelAll){
-				debug("cancelAll is not null and allLi.length=="+allLi.length);
-				if(allLi.length<3){
-					cancelAll.dispose();
-				}
-			}else{
-				debug("cancelAll is null and allLi.length=="+allLi.length);
-				if(allLi.length>=2){
-					var cancelAllLi=new Element("li");
-					cancelAllLi.addClass("mgtCancelAll");
-					var cancelAllLink=new Element("a",{
-						'events':{
-							'click':function(){
-								me.resultContainer.getElements('li').each(function(item){
-									if(!item.hasClass("mgtCancelAll")){
-										var oneNode=me.nodeMap.get(item.get('id').replace(me.options.resultPrix,''));
-										oneNode.isSelected=false;
-									}
-								});
-								me.draw();
-								me.fireEvent('conditionSelect');
-							}
-						},
-						'text':"取消全部",
-						'href':'javascript:void(0)'
-					});
-					cancelAllLink.inject(cancelAllLi);
-					cancelAllLi.inject(this.resultContainer.getElement("ul"));
-				}
-			}
-		},
-		/*  根据给定的节点，在条件树上寻找branch
-		  1.如果其显示在条件树中，则返回其所在的branch
-		  2.如果其没有显示在条件树中（已经被选为搜索条件），则返回条件树中其上一个branch
-		  3.如果其没有显示在条件树中（已经被选为搜索条件），并且条件树中其上一个branch不存在，则返回null
-		*/
-		getPreviousBranch:function(node){
-			debug("come into getPreviousBranch ");
-			var branches=this.container.getElements("div.branch");
-			var previous=null;
-			if(branches.length>0){
-				var branchId=branches[0].get("id").replace(this.options.idPrix,"").toInt();
-				if(branchId>node.id){
-					return null;
-				}
-				for(var i=0;i<branches.length;i++){
-					branchId=branches[i].get("id").replace(this.options.idPrix,"").toInt();
-					if(branchId<node.id){
-						continue;
-					}else{
-						previous=branches[i-1];
-						break;
-					}
-				}
-				if(!previous){
-					previous=branches[branches.length-1];
-				}
-			}
-			return previous;
-		},
-		/*加载组织结构树*/
-		loadUserTree:function(node,type){
-			debug("come into loadUserTree and node.id="+node.id);
-			var userLinkPosition=$(this.options.idPrix+node.id).getPosition();
-			var dwr=new DwrBackCall();
-			dwr.backCallFunc = function(){
-				mgtPopup();
-				getPopInst().Box.setPosition({'x':userLinkPosition.x-10,'y':userLinkPosition.y-110});
-			}
-			dwr.addOneUrl("/systemSearch/heUpload.jsp?nodeId="+node.id+(type?"&type="+type:""), mgtPopupId());
-			dwr.dwrProxy();
-		},
-		/*取消人员选择框*/
-		cancelUserTree:function(node){
-			debug("come into cancelUserTree ");
-			var userDiv=$(this.options.idPrix+node.id).getNext('.docs_upload_sele');
-			if(userDiv){
-				userDiv.setStyle("display","none");
-				userDiv.dispose();
-			}
-		},
-		/*加载时间选择框*/
-		userDefinedTime:function(node){
-			debug("come into userDefinedTime  and node.id="+node.id);
-			var timeLinkPosition=$(this.options.idPrix+node.id).getPosition();
-			var dwr=new DwrBackCall();
-			dwr.backCallFunc = function(){
-				mgtPopup();
-				getPopInst().Box.setPosition({'x':timeLinkPosition.x-10,'y':timeLinkPosition.y-80});
-			}
-			dwr.addOneUrl("/systemSearch/timeSelect.jsp?nodeId="+node.id, mgtPopupId());
-			dwr.dwrProxy();
-		},
-		/*获得结果*/
-		getResultCondition:function(){
-			debug("come into getResultCondition");
-			var me=this;
-			var result=[];
-			$(this.options.idPrix+"resultContainer").getElements('li').each(function(item){
-				if(!item.hasClass("mgtCancelAll")){
-					result.include(me.nodeMap.get(item.get('id').replace(me.options.resultPrix,'')));
-				}
-			});
-			debug("result.length=="+result.length);
-			return result;
-		},
-		/*获取userId*/
-		getSelectedUserId:function(node){
-			return $(this.options.resultPrix+node.id).retrieve("userId");
-		},
-		/*获取用户选择的时间*/
-		getSelectedTime:function(node,type){
-			var text=$(this.options.resultPrix+node.id).get('text');
-			var times=retriveTime(text);
-			if(type=='beginTime'){
-				return times[0];
-			}else if(type=='endTime'){
-				return times[1];
-			}
-		},
-		/*
-			取得user node 
-			此方法为从页面点击人员名称连接服务
-		*/
-		getUserNode:function(){
-			var datas=this.options.conditionData;
-			var resultNode;
-			for(var i=0;i<datas.length;i++){
-				if(datas[i].type=='from'){
-					resultNode=datas[i].children[0];
-					break;
-				}
-			}
-			return resultNode;
-		},
-		/*
-			判断是否已有人员被选中
-			此方法为从页面点击人员名称连接服务
-		*/
-		isUserSelected:function(){
-			return $(this.options.idPrix+"resultContainer").getElements('li').some(function(item){
-				return item.retrieve('userId')!=null;
-			});
-		}
-	});
+<BODY style="overflow:hidden">
 
-</script>
-<script type="text/javascript">
-	try{
-		var globalConstants={
-			/*
-				用于记录当前的搜索条件对应的是哪个模块，因为在不同的模块中启动搜索窗口时，需要对搜索条件进行初始化
-				header ：在header中启动搜索窗口
-				epknowledge ：在知识库中启动搜索窗口
-			*/
-			curModul:"header"
-		};
-		var curSearchPage="standard";//用于记录当前显示“标准搜索页面”还是“详细搜索页面”		
-		var systemSearchInst=new DefaultSearch({
-			'url':'/systemSearch/standardSearchList.jsp',
-			'divId':'standardSearchResult',
-			'keyTip':'请输入关键字'
-		});
-		
-		var conditionTree=new ConditionTree("conditionContainerId",{
-			'conditionData':sysSearchTree,
-			'onConditionSelect':function(){
-				setConditons(conditionTree,systemSearchInst);
-				systemSearchInst.doSearch({curpage:1});
-			}
-		});
-		
-		/*
-			1.设置查询条件
-			2.这里假设二级接点没有孩子。如果以后要有，这里设置conditions时，需要用","进行串联
-		*/
-		function setConditons(conditionTree,systemSearchInst){
-			debug("come into setConditons and systemSearchInst.conditions.key===="+systemSearchInst.conditions.key);
-			var nodes=conditionTree.getResultCondition();
-			var keyValue=systemSearchInst.conditions.key;
-			systemSearchInst.reSet();//将搜索条件还原为默认值
-			systemSearchInst.conditions.key=keyValue;
-			$('detail_search_key').value=systemSearchInst.conditions.key;
-			nodes.each(function(node){
-				switch (node.type) {
-					case 'sort': //0:搜索所有,  1:只搜索内容,  2:只搜索文件
-						systemSearchInst.conditions.set('docFlag',node.value);
-						break;
-					case 'module': 
-						systemSearchInst.conditions.set('typeIds',(node.value=='RA8')?'RA8B1,RA8B2,RA8B3,RA8B5,RA8B6':node.value);
-						break;
-					case 'from':
-						debug("node.type is from");
-						if(node.userType=='mgtLinkMan'){
-							systemSearchInst.conditions.set('emailFrom',conditionTree.getSelectedUserId(node));
-						}else{
-							systemSearchInst.conditions.set('userIDs',conditionTree.getSelectedUserId(node));
-						}
-						break;
-					case 'time': 
-						systemSearchInst.conditions.set('begintime','20'+conditionTree.getSelectedTime(node,'beginTime'));
-						systemSearchInst.conditions.set('endtime','20'+conditionTree.getSelectedTime(node,'endTime'));
-						break;
-					case 'duration':
-						systemSearchInst.conditions.set('begintime',getTimeFromDuration(node.value).beginTime);
-						systemSearchInst.conditions.set('endtime',getTimeFromDuration(node.value).endTime);
-				}
-			});
-			debug("queryString=="+systemSearchInst.conditions.toQueryString());
-		}
-	}catch(ex){
-		debug("error in init.jsp :"+ex.name+";"+ex.error+";"+ex.message);
-	}
-	/**
-		因为别的模块也调用了搜索窗口，所以需要进行搜索条件初始化，从而隔离他们之间的搜索条件
-	*/
-	function reSetConditions(jsonData,searchObject){
-		//将json数据节点的选中状态改为未被选中
-		$A(jsonData).each(function(node){
-			reSetNodeSelectdStatus(node);
-		});
-		//将搜索对象的条件设置为出始值
-		searchObject.reSet();
-	}
-	/**
-		以递归的方式对接点及其子接点设置选中状态
-	*/
-	function reSetNodeSelectdStatus(node){
-		node.isSelected=false;
-		if(node.children){
-			$A(node.children).each(function(one){
-				reSetNodeSelectdStatus(one);
-			});
-		}
-	}
-</script>
-<div style="display:none;position:absolute;z-index:3;" id="id_of_blind">
-  <div class="sucs">
-    <div class="ico_le cprom_sico"></div>
-    <span id="id_of_blind_content"></span> </div>
-</div>
-<div style="display:none" class="pop_win" id="mgtAlertDivId">
-  <table cellspacing="0" cellpadding="0" border="0" class="bdy" style="width:355px;">
-    <tbody>
-      <tr>
-        <td class="fl_le"></td>
-        <td class="ptop"><b class="icoSw" id="icoSw"></b> <span id="alertTitle">系统提示</span> <a href="javascript:mgtMsgBox.close('alert');" title="关闭" class="btn_cls" id="btnSysInfoClose"></a> </td>
-        <td class="fl_ri"></td>
-      </tr>
-      <tr>
-        <td class="le_bo"></td>
-        <td class="bdy_ctn"><div class="ote">
-            <table>
-              <tbody>
-                <tr>
-                  <td width="20px">&nbsp;</td>
-                  <td><br>
-                    <b class="ico_ifo" id="icoIfo"></b> <br>
-                  </td>
-                  <td><span class="alertContentClass"></span> </td>
-                </tr>
-              </tbody>
-            </table>
-          </div></td>
-        <td class="ri_bo"></td>
-      </tr>
-      <tr>
-        <td class="bfl_le"></td>
-        <td class="bot"><div class="fr">
-            <input value="确定" onclick="mgtMsgBox.close('alert');" id="buttonOk"
-						class="btn_sty" type="button">
-          </div></td>
-        <td class="bfl_ri"></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<div style="display:none" class="pop_win" id="mgtConfirmDivId">
-  <table cellspacing="0" cellpadding="0" border="0" class="bdy" style="width:355px;">
-    <tbody>
-      <tr>
-        <td class="fl_le"></td>
-        <td class="ptop"><b class="icoSw" id="icoSw"></b> <span id="confirmTitle">系统提示</span> <a href="javascript:void(0)" onclick="mgtMsgBox.close('confirm',false);" title="关闭" class="btn_cls" id="btnSysInfoClose"></a> </td>
-        <td class="fl_ri"></td>
-      </tr>
-      <tr>
-        <td class="le_bo"></td>
-        <td class="bdy_ctn"><div class="ote">
-            <table>
-              <tbody>
-                <tr>
-                  <td width="20px">&nbsp;</td>
-                  <td><br>
-                    <b class="ico_ifo" id="icoIfo"></b> <br>
-                  </td>
-                  <td><span class="alertContentClass"></span> </td>
-                </tr>
-              </tbody>
-            </table>
-          </div></td>
-        <td class="ri_bo"></td>
-      </tr>
-      <tr>
-        <td class="bfl_le"></td>
-        <td class="bot"><div class="fr">
-            <input value="确定" onclick="mgtMsgBox.close('confirm',true);" id="confirmOk"
-						class="btn_sty" type="button">
-            <input value="取消" onclick="mgtMsgBox.close('confirm',false);"
-						class="btn_sty" type="button">
-          </div></td>
-        <td class="bfl_ri"></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<iframe id="hiddenIfram" width="1" frameborder="0" marginheight="0" src="javascript:false"
-	marginwidth="0" hspace="0" vspace="0" scrolling="no"
-	style="position:absolute;z-index:1;display:none;"> </iframe>
-<iframe id="growIdIfram" name="growIdIfram" width="1" frameborder="0" marginheight="0" src="javascript:false"
-	marginwidth="0" hspace="0" vspace="0" scrolling="no"
-	style="position:absolute;z-index:1;display:none;filter: Alpha(opacity=0.1);opacity: 0.1;"> </iframe>
+<DIV style="Z-INDEX: 19700; POSITION: absolute; TOP: -1970px; LEFT: -1970px">
+  <IFRAME style="WIDTH: 180px; HEIGHT: 197px" border=0 src="/mgt/scripts/My97DatePicker/My97DatePicker.htm" frameBorder=0 scrolling=no></IFRAME>
+</DIV>
+
+<DIV style="Z-INDEX: 3; POSITION: absolute; DISPLAY: none" id=id_of_blind>
+  <DIV class=sucs>
+    <DIV class="ico_le cprom_sico"></DIV>
+    <SPAN id=id_of_blind_content></SPAN></DIV>
+</DIV>
+
+<DIV style="DISPLAY: none" id=mgtAlertDivId class=pop_win>
+  <TABLE style="WIDTH: 355px" class=bdy border=0 cellSpacing=0 cellPadding=0>
+    <TBODY>
+      <TR>
+        <TD class=fl_le></TD>
+        <TD class=ptop><B id=icoSw class=icoSw></B><SPAN id=alertTitle>系统提示</SPAN> <A id=btnSysInfoClose class=btn_cls title=关闭 href="javascript:mgtMsgBox.close('alert');"></A></TD>
+        <TD class=fl_ri></TD>
+      </TR>
+      <TR>
+        <TD class=le_bo></TD>
+        <TD class=bdy_ctn><DIV class=ote>
+            <TABLE>
+              <TBODY>
+                <TR>
+                  <TD width=20>&nbsp;</TD>
+                  <TD><BR>
+                    <B id=icoIfo class=ico_ifo></B><BR></TD>
+                  <TD><SPAN class=alertContentClass></SPAN></TD>
+                </TR>
+              </TBODY>
+            </TABLE>
+          </DIV></TD>
+        <TD class=ri_bo></TD>
+      </TR>
+      <TR>
+        <TD class=bfl_le></TD>
+        <TD class=bot><DIV class=fr>
+            <INPUT id=buttonOk class=btn_sty onclick="mgtMsgBox.close('alert');" value=确定 type=button>
+          </DIV></TD>
+        <TD class=bfl_ri></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+<DIV style="DISPLAY: none" id=mgtConfirmDivId class=pop_win>
+  <TABLE style="WIDTH: 355px" class=bdy border=0 cellSpacing=0 cellPadding=0>
+    <TBODY>
+      <TR>
+        <TD class=fl_le></TD>
+        <TD class=ptop><B id=icoSw class=icoSw></B><SPAN id=confirmTitle>系统提示</SPAN> <A id=btnSysInfoClose class=btn_cls title=关闭 onclick="mgtMsgBox.close('confirm',false);" href="javascript:void(0)"></A></TD>
+        <TD class=fl_ri></TD>
+      </TR>
+      <TR>
+        <TD class=le_bo></TD>
+        <TD class=bdy_ctn><DIV class=ote>
+            <TABLE>
+              <TBODY>
+                <TR>
+                  <TD width=20>&nbsp;</TD>
+                  <TD><BR>
+                    <B id=icoIfo class=ico_ifo></B><BR></TD>
+                  <TD><SPAN class=alertContentClass></SPAN></TD>
+                </TR>
+              </TBODY>
+            </TABLE>
+          </DIV></TD>
+        <TD class=ri_bo></TD>
+      </TR>
+      <TR>
+        <TD class=bfl_le></TD>
+        <TD class=bot><DIV class=fr>
+            <INPUT id=confirmOk class=btn_sty onclick="mgtMsgBox.close('confirm',true);" value=确定 type=button>
+            <INPUT class=btn_sty onclick="mgtMsgBox.close('confirm',false);" value=取消 type=button>
+          </DIV></TD>
+        <TD class=bfl_ri></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+
+<IFRAME style="Z-INDEX: 1; POSITION: absolute; DISPLAY: none" id=hiddenIfram marginHeight=0 src="javascript:false" frameBorder=0 width=1 marginWidth=0 scrolling=no> </IFRAME>
+<IFRAME style="Z-INDEX: 1; POSITION: absolute; FILTER: Alpha(opacity=0.1); DISPLAY: none; opacity: 0.1" id=growIdIfram marginHeight=0 src="javascript:false" frameBorder=0 width=1 name=growIdIfram marginWidth=0 scrolling=no> </IFRAME>
 <!-- 效果掸出层  iframe操作-->
-<script type='text/javascript' language="javascript">//为即时通讯服务
 
-	eimserver_u = 'admin@7065110';
-	eimserver_p = 'd7f0c8b59b78b2dc7e1cc772a52e53273bf8af5e';	
-	eimserver_meId = 1076575;
-	eimserver_name = '管理员';
-	version = '20111219';
-	var mGlobal={};
-	
-//下拉菜单操作 结束
-	window.addEvent("load",  function(){		
-		validatorItemHash.init();
-		mgtShow = new mgtShowClass();
-		mgtMenu = new mgtMenuClass();
-	});
-	function showOnline(){
-		dwrService.getCompanyName(268328, toShowOnline );
-	};
-	function toShowOnline(cName){
-		try{
-			var url = globalCp +"/login/online/main.jsp?mgtUser="+encodeURI('268328@@管理员')+"&cid=2&cName="+encodeURI(cName);
-			var sub = "fullscreen=2,width=500,height=400,top="+screen.height/3+",left="+screen.width/3+",toolbar=0,location="+(common_is_ie?0:1)+",status=1,menubar=0,resizable=0,scrollbars=0";
-			window.open(url,"在线客服",sub);
-		}catch(ex){}
-	};
-	
-	window.defaultStatus ="实践目标管理";
-	
-	var userInfo={
-		userName:'admin',
-		email:'lifuan.china@gmail.com'
-	};
-	var _mgtToolBarClass=  new Class({
-		DELAY_MINUTE :1000*600,
-		mgtAutoNum:0,
-		mgtToolBarDelay:null,
-		oData:{"onlineUserIds":[]},
-		send: function(){
-			new Request.JSON({
-				url: '/mgt/login/tools/top_oper.data.jsp?online_ids_stamp=' + online_ids_stamp + '&cid='+268328+'&t=' + new Date().getTime(),
-				method: 'get',
-				onSuccess: this.callback.bind(this),
-				onFailure: function(json, text) {
-					if(this.mgtAutoNum < 4)	{									
-						this.mgtAutoNum++;
-					}else{
-						if(this.mgtToolBarDelay){
-							 $clear(this.mgtToolBarDelay);
-						}
-						debug("top_oper.jsp too many error,so give up , error num: " + this.mgtAutoNum );
-					}
-				}.bind(this)
-			}).send();
-		},
-		callback: function(data){
-			if(data) {				
-				if (data.onlineUser.stamp>0) {
-					online_ids_stamp = data.onlineUser.stamp;		
-					this.oData.onlineUserIds = data.onlineUser.userIds;
-					this.updateUbcomm(this.oData.onlineUserIds);
-					//debug('stamp update');
-				}
-			}
-		},
-		next : function(data){
-			if(data){
-				this.callback(data);
-			}
-			if(this.mgtToolBarDelay){
-				 $clear(this.mgtToolBarDelay);
-			}	
-			
-			this.mgtToolBarDelay = this.send.periodical( this.DELAY_MINUTE,this);
-		},
-		/*更新无不不在的沟通的图标状态*/
-		updateUbcomm : function(userIds){
-			$(document.body).getElements('a.ub_comm').each(
-				function(a){
-					var isOnline = false;
-					if(userIds.contains(a.getProperty('rel'))){
-						isOnline = true;
-					};		
-					if(isOnline){
-						a.getPrevious('b').setProperty('class', 'ico_le sys_awake_cl');
-					}else{
-						a.getPrevious('b').setProperty('class', 'ico_le ub_offline_ico');
-					}					
-				}	
-			);
-		}
-	});
-	mgtToolBar = new _mgtToolBarClass();
-	//mgtToolBar.send(); //delete by lfa 20120316
-	//为mgt-system服务
-	Cookie.write('lang', 'zh_CN',{'path':'/'});
-	
-	// 把时区信息设置到cookie里
-	Cookie.write("timeZone", (-new Date().getTimezoneOffset()*60000));
-	//主要为web im 服务、在线客服，控制当前只有一个打开的窗口
-	function mgtWindowOpen(url){
-		try{
-			//向cookie里面放imWindow
-			Cookie.write("mgtImWindow","mgtImWindow");
-			//2秒后，如果还能取到imWindow ，那么说明当前没有打开的im窗口
-			setTimeout(function(){
-				var mgtImWindow = Cookie.read("mgtImWindow");
-				if(mgtImWindow){
-					Cookie.dispose("mgtImWindow");
-					window.open(url);
-				}
-			},2000);
-		}catch(e){
-			debug(e.name+";"+e.message+";"+e.error);
-		}
-	}
-</script>
-<div id="box" style="background:#F2F9FF">
-  <div id="mainBody"> </div>
-</div>
-</body>
+<DIV style="BACKGROUND: #f2f9ff ;" id=box>
+  <DIV id=mainBody>
+    <DIV style="WIDTH: 200px; BACKGROUND: #ffffff; HEIGHT: 614px; OVERFLOW: hidden" id=a_left>
+      <DIV style="BORDER-BOTTOM: 0px; BACKGROUND: none transparent scroll repeat 0% 0%">
+        <DIV style="BACKGROUND-COLOR: #fff" class=tree_div_border>
+          <DIV class=ln_per_mess>
+            <DIV class="img_bg_le ln_per_bg"><IMG src="https://web.jingoal.com/mgt/images/v3/logo/user.jpg" width=48 height=48> </DIV>
+            <DIV class=per_mess><SPAN>您好！<SPAN>管理员</SPAN></SPAN><BR>
+              <A href="javascript:showModule('/ma/index.jsp');">个人设置</A> </DIV>
+            <DIV class=cb></DIV>
+            <DIV class=sys_time>今天是2012年3月20日 星期二</DIV>
+          </DIV>
+          <DIV style="BORDER-BOTTOM: #a6bbce 0px solid; BORDER-LEFT: #a6bbce 0px solid; OVERFLOW-Y: hidden; WIDTH: 200px; BACKGROUND: #ffffff 0px 0px; BORDER-TOP: #a6bbce 1px solid; BORDER-RIGHT: #a6bbce 0px solid" id=left_fixed>
+            <DIV style="PADDING-BOTTOM: 3px; LINE-HEIGHT: 1.5; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BACKGROUND: #eff5ff 0px 0px; HEIGHT: 20px; PADDING-TOP: 5px">
+              <DIV class=fl><B class="ico_le tclk_label_ico"></B><SPAN>我的关注</SPAN></DIV>
+              <DIV class=fr title=点击查看更多 onclick="message2tm.go('MGT_ATT','')"><B class="ico_le hmore_ico"></B></DIV>
+              <DIV class=cb></DIV>
+            </DIV>
+            <DIV style="MARGIN: 10px 0px 10px 8px; COLOR: #808080">该栏目下没有内容</DIV>
+            <UL style="LIST-STYLE: none none outside; PADDING-BOTTOM: 0px; LINE-HEIGHT: 2; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px">
+            </UL>
+          </DIV>
+        </DIV>
+      </DIV>
+    </DIV>
+    <DIV style="HEIGHT: 614px; MARGIN-LEFT: 208px" id=a_right>
+      <TABLE class=outer cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+          <TR>
+            <TD class=main_cont><DIV id=indivMain>
+              <DIV class=myDesk_cont>
+                <DIV class=hright_top_bg><SPAN class=ti>企业看板</SPAN> <A class=edti onclick=sortBoard(); href="javascript:void(0)">[编辑]</A> </DIV>
+                <DIV class=modu>
+                  <DIV class=modu>
+                    <DIV class=ti>
+                      <DIV class=fl>系统提醒</DIV>
+                      <DIV class=fr title=点击查看更多 onclick="message2tm.goMC('SysNoti');"><B class="ico_le hmore_ico"></B></DIV>
+                      <DIV class=cb></DIV>
+                    </DIV>
+                    <DIV id=fillAwokeDivId><DIV class=nocont>该栏目下没有内容<br /><br /><br /><br /><br /></DIV></DIV>
+                  </DIV>
+                  <DIV class=modu>
+                    <DIV class=ti>
+                      <DIV class=fl>延期的任务</DIV>
+                      <DIV class=fr title=点击查看更多 onclick="javascript:message2tm.go('MGT_TSK_T1M0:fresh');"><B class="ico_le hmore_ico"></B></DIV>
+                      <DIV class=cb></DIV>
+                    </DIV>
+                    <DIV id=fillTaskDeferDivId>
+                      <DIV class=nocont>该栏目下没有内容<br /><br /><br /><br /></DIV>
+                    </DIV>
+                  </DIV>
+                  <DIV class=modu>
+                    <DIV class=ti>
+                      <DIV class=fl>重要且紧急</DIV>
+                      <DIV class=fr title=点击查看更多 onclick="javascript:message2tm.go('MGT_IMP:fresh');"><B class="ico_le hmore_ico"></B></DIV>
+                      <DIV class=cb></DIV>
+                    </DIV>
+                    <DIV id=fillUrgencyImportDivId>
+                      <DIV class=nocont>该栏目下没有内容<br /><br /><br /><br /></DIV>
+                    </DIV>
+                  </DIV>
+                  <DIV class="img_bg hright_btm_bg"></DIV>
+                </DIV>
+                <DIV class=cb></DIV>
+              </DIV></TD>
+            <TD class=homeleft_side_bar><DIV id=rightPaneMain1>
+                <DIV style="HEIGHT: 100%" id=right_fixed class=tree_div_border>
+                  <DIV class=cont>
+                    <DIV class=ti>
+                      <DIV class=fl><B class="ico_le hinfor_center_ico"></B><SPAN>公告栏</SPAN></DIV>
+                      <DIV class=fr title=点击查看更多 onclick="message2tm.go('RA9B1');"><B class="ico_le hmore_ico"></B></DIV>
+                      <DIV class=cb></DIV>
+                    </DIV>
+                    <UL>
+                      <LI><A onclick="message2tm.go('RA9B1_98695');" href="javascript:void(0)">今目标更新日记－2012年3月9...</A></LI>
+                      <LI><A onclick="message2tm.go('RA9B1_88189');" href="javascript:void(0)">今目标 for Windows 4.1.0产...</A></LI>
+                      <LI><A onclick="message2tm.go('RA9B1_79963');" href="javascript:void(0)">今目标更新日记－2012年1月4...</A></LI>
+                      <LI><A onclick="message2tm.go('RA9B1_74154');" href="javascript:void(0)">今目标 for iPhone 2.0.0产品...</A></LI>
+                      <LI><A onclick="message2tm.go('RA9B1_72603');" href="javascript:void(0)">今目标 for Android 2.0.0产...</A></LI>
+                    </UL>
+                  </DIV>
+				  
+                  <!--<DIV class=cont>
+                    <DIV class=ti>
+                      <DIV class=fl><B class=hbbs_ico></B><SPAN>最近帖子</SPAN></DIV>
+                      <DIV class=fr title=点击查看更多 onclick="message2tm.go('MGT_BBS');"><B class="ico_le hmore_ico"></B></DIV>
+                      <DIV class=cb></DIV>
+                    </DIV>
+                    <DIV class=nocont>该栏目下没有内容</DIV>
+                  </DIV>-->
+                  <DIV class=cont>
+                    <DIV class=ti>
+                      <DIV class=fl><B class=hdocu_ico></B><SPAN>系统文档</SPAN></DIV>
+                      <DIV class=fr title=点击查看更多 onclick="message2tm.go('MGT_DOC');"><B class="ico_le hmore_ico"></B></DIV>
+                      <DIV class=cb ></DIV>
+                    </DIV>
+                    <DIV id=docContentDivId >
+                      <DIV class=nocont>该栏目下没有内容</DIV>
+                    </DIV>
+                  </DIV>
+                  <!--<DIV class=cont_mail>
+                    <DIV class=ti>
+                      <DIV class=fl><B class=my_mail_ico></B><SPAN>最近邮件</SPAN></DIV>
+                      <DIV class=fr title=点击查看更多 onclick="message2tm.go('RA8B4');"><B class="ico_le hmore_ico"></B></DIV>
+                      <DIV class=cb></DIV>
+                    </DIV>
+                    <DIV id=mailContentDivId>
+                      <DIV class=nocont>该栏目下没有内容</DIV>
+                      <DIV></DIV>
+                    </DIV>
+                  </DIV>-->
+                </DIV>
+              </DIV></TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+    </DIV>
+  </DIV>
+</DIV>
+
+<DIV style="DISPLAY: none; VISIBILITY: hidden" id=MgtLoading-hidden class=gLoading_hidden></DIV>
+<DIV style="POSITION: absolute; DISPLAY: none; VISIBILITY: visible; TOP: 261px; LEFT: 553px" id=MgtLoading-Popup class=gLoading><IMG align=absMiddle src="/mgt/images/loading.gif" width=39 height=39><SPAN>数据加载中，请稍候...</SPAN></DIV>
+<DIV id=mgtDraggbleDivId class=pop_win></DIV>
+<DIV style="Z-INDEX: 20000; POSITION: absolute; DISPLAY: none" id=mgtMenuDivId></DIV>
+</BODY>
 </html>
-<script>
-	window.addEvent("load",function(){
-		onload4DWR('数据加载中，请稍候...');
-		var url = './workframe.htm';
-		//处理客户端的查看主线提醒详细内容请求
-		if(url.indexOf('RA18') >= 0){
-			return;
-		}
-		<!-- c:set var="url" value="/index/first/index.jsp"-->
-		
-		window.fromClient = false
-		/*g.go(url,"mainBody",function(){
-			resizeHeight4igoal();*/
-		});
-	});
-		
-	
-	
-</script>

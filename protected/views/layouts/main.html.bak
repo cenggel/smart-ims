@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+
+<!-- blueprint CSS framework -->
+<link rel="stylesheet" type="text/css"
+	href="{$Yii->request->baseUrl}/css/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css"
+	href="{$Yii->request->baseUrl}/css/print.css" media="print" />
+<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="{$Yii->request->baseUrl}/css/ie.css" media="screen, projection" />
+	<![endif]-->
+
+<link rel="stylesheet" type="text/css"
+	href="{$Yii->request->baseUrl}/css/main.css" />
+<link rel="stylesheet" type="text/css"
+	href="{$Yii->request->baseUrl}/css/form.css" />
+<link rel="stylesheet" type="text/css"
+	href="{$Yii->request->baseUrl}/css/grid24.css" />
+<link rel="stylesheet" type="text/css"
+	href="{$Yii->request->baseUrl}/css/redmond/jquery-ui-1.8.16.custom.css" />
+<link rel="stylesheet" type="text/css"
+	href="{$Yii->request->baseUrl}/css/new/new.css" />
+
+
+<title>{$this->pageTitle}</title>
+</head>
+
+<body>
+<div class="header-container" >
+    <div class="container_24">
+    		<div id="header">
+			<div class="top">
+			{if isset($this->menu)}
+		<div id="topmenu" class="grid_24">
+			{$this->widget('zii.widgets.CMenu', $this->menu,true)}</div>
+			{/if}
+		<!-- mainmenu -->
+			</div>
+			<div class="t_nav_li">
+				<ul id="bigTitleId">
+					
+					<li class=""><div class="imgwap">
+							<b class="j_ico_twitter"></b>
+						</div>
+						<a href="javascript:void(0);">微博</a></li>
+					<li class=""><div class="imgwap">
+							<b class="j_ico_notice"></b>
+						</div>
+						<a href="javascript:void(0);">公告</a></li>
+					<li class=""><div class="imgwap">
+							<b class="j_ico_memo"></b>
+						</div>
+						<a href="javascript:void(0);">备忘</a></li>
+					<li class=""><div class="imgwap">
+							<b class="j_ico_docu"></b>
+						</div>
+						<a href="javascript:void(0);">文档</a></li>
+					<li class=""><div class="imgwap">
+							<b class="j_ico_comm"></b>
+						</div>
+						<a href="javascript:void(0);">沟通</a></li>
+					<li class=""><div class="imgwap">
+							<b class="j_ico_log"></b>
+						</div>
+						<a href="javascript:void(0);">日志</a></li>
+				</ul>
+			</div>
+			<div id="logo">{$Yii->name}</div>
+		</div>
+		<!-- header -->
+    </div>
+</div>
+	<div class="container_24" id="page">
+
+
+
+		{$content}
+
+		<div class="clear"></div>
+
+		<div id="footer">
+			<!--   Copyright &copy; {date('Y')} by My Company.<br /> All Rights
+			Reserved.<br /> {Yii::powered()}  -->
+		</div>
+		<!-- footer -->
+
+	</div>
+	<!-- page -->
+
+</body>
+</html>

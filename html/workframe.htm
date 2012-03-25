@@ -22,6 +22,14 @@
 }
 
 </style>
+<script language="JavaScript" type="text/javascript" src="scripts/jquery-1.7.2.js"></script>
+<script language="JavaScript" type="text/javascript" src="scripts/YCJ_DATA.js"></script>
+<script language="JavaScript" type="text/javascript" src="scripts/YCJ_FUN.js"></script>
+<script language="JavaScript" >
+$(document).ready(function(){
+  $("#t_nav_li").tabs();
+});
+</script>
 </head>
 <body>
 <div class="wlbg">
@@ -63,22 +71,22 @@
   </div>
   <div class="t_nav_li">
     <ul id="bigTitleId">
-      <LI>
+      <LI id="attendance">
         <DIV class=imgwap><B class=j_ico_attend></B></DIV>
         <A href="javascript:void(0);" >考勤</A></LI>
-      <LI>
+      <LI id="twitter">
         <DIV class=imgwap><B class=j_ico_twitter></B></DIV>
         <A href="javascript:void(0);">微博</A></LI>
-      <LI>
+      <LI id="notice">
         <DIV class=imgwap><B class=j_ico_notice></B></DIV>
         <A href="javascript:void(0);">公告</A></LI>
-      <LI>
+      <LI id="memorandum">
         <DIV class=imgwap><B class=j_ico_memo></B></DIV>
         <A href="javascript:void(0);">备忘</A></LI>
-      <LI>
+      <LI id="documents">
         <DIV class=imgwap><B class=j_ico_docu></B></DIV>
         <A href="javascript:void(0);">文档</A></LI>
-      <LI>
+      <LI id="log">
         <DIV class=imgwap><B class=j_ico_log></B></DIV>
         <A href="javascript:void(0);">日志</A></LI>
 <!--      <LI>

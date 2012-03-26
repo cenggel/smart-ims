@@ -19,6 +19,9 @@
  */
 class Article extends CActiveRecord
 {
+	const  STATUS_DRAFT   = 1;
+	const  STATUS_PUBLISH = 2;
+	const  STATUS_PRIVATE = 3;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -113,5 +116,35 @@ class Article extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function scopes()
+	{
+		return array(
+				'published'=>array(
+						'condition'=>'status= ' . self::STATUS_PUBLISH,
+				),
+				'private'=>array('condition'=>'status= ' . self::STATUS_PRIVATE,),
+				'draft'=>array('condition'=>'status= ' . self::STATUS_DRAFT,),
+				'recently'=>array(
+						'order'=>'create_date DESC',
+						'limit'=>5,
+				),
+				'own'=>array('condition'=>' create_user =' . Yii::app()->user->id),
+				'byClass'=>array(),
+		);
+	}
+	
+	public function recently($limit=5)
+	{
+		$this->getDbCriteria()->mergeWith(array(
+				'order'=>'create_date DESC',
+				'limit'=>$limit,
+		));
+		return $this;
+	}
+	public  function byClass($class_code){
+		$this->getDbCriteria()->mergeWith(array('condition'=>'class_code =:class_code' ,'params'=>array(':class_code'=>$class_code)));
+		return $this;
 	}
 }

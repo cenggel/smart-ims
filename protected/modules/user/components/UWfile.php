@@ -52,11 +52,14 @@ class UWfile {
 			if (file_exists($file_name)) {
 				$file_name = str_replace('.'.$value->extensionName,'-'.time().'.'.$value->extensionName,$file_name);
 			}
-			if ($model->validate()) {
+			//var_dump($model->validate());
+			//if ($model->validate()) {
 				if ($old_file&&file_exists($old_file))
 					unlink($old_file);
+				//print_r($value); exit;
 				$value->saveAs($file_name);
-			}
+			//}
+			//echo "$file_name"; exit;
 			$value = $file_name;
 		} else {
 			if (isset($_POST[get_class($model)]['uwfdel'][$field_varname])&&$_POST[get_class($model)]['uwfdel'][$field_varname]) {
@@ -79,6 +82,9 @@ class UWfile {
 		$file = $model->getAttribute($field->varname);
 		if ($file) {
 			$file = Yii::app()->baseUrl.'/'.$file;
+			if(in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), array('png','jpeg','bpm','jpg'))){
+				return CHtml::image($file,'',array('width'=>100));
+			}
 			return CHtml::link($file,$file);
 		} else
 			return '';

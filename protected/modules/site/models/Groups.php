@@ -39,8 +39,8 @@ class Groups extends BaseActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array(' group_name', 'required'),
-			array('id, create_user, create_date, views', 'numerical', 'integerOnly'=>true),
+			array('group_name', 'required'),
+			array('create_user, create_date, views', 'numerical', 'integerOnly'=>true),
 			array('group_name', 'length', 'max'=>45),
 			array('description', 'length', 'max'=>255),
 			// The following rule is used by search().
@@ -49,16 +49,6 @@ class Groups extends BaseActiveRecord
 		);
 	}
 
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-		);
-	}
 
 	/**
 	 * @return array customized attribute labels (name=>label)
@@ -98,12 +88,59 @@ class Groups extends BaseActiveRecord
 		));
 	}
 	
+	
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+				'members'=>array(self::MANY_MANY,'User','group_members(groups_id,users_id)')
+		);
+	}
+	
 	public function getFromFieldList(){
 		return array(
 				'defualt'=>array(
 						'group_name',
 						'description',
-						),
-				);
+				),
+		);
 	}
+	
+	public function scopes(){
+		return array(
+				'owned'=>array('condition'=>'create_user = ' . (Yii::app()->user->id?Yii::app()->user->id:'0')),
+		);
+	}
+	
+	public function getOwenMenuList(){
+		$models = self::model()->owned()->findAll();
+	
+		$menu = array(array('label'=>Yii::t('core','Create Group'),'url'=>array('/groups/create')));
+		foreach ($models as $key=>$g){
+			$menu[]= array('label'=>$g->group_name,'url'=> array( '/groups/view','id'=>$g->id));
+		}
+		//print_r($menu);
+		return $menu;
+	}
+	
+	public  function getUrl(){
+		return Yii::app()->urlManger->createUrl('/groups/view',array('id'=>$this->id));
+	}
+	
+	protected function beforeSave() {
+		if (! parent::beforeSave ())
+			return false;
+		if ($this->isNewRecord) {
+			$this->create_date =  time ();
+			$this->create_user = Yii::app ()->user->id;
+		}
+	
+		return true;
+	}
+	
+	
 }

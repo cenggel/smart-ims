@@ -22,21 +22,16 @@ deny from all
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# No subdomain, redirect to subdomain
-RewriteCond %{HTTP_HOST} ^yiiframework.co.il$ [NC]
-RewriteRule ^(.*)$ http://he.yiiframework.co.il/$1 [R=301,L]
 
-# WWW to subdomain
-RewriteCond %{HTTP_HOST} ^www.yiiframework.co.il$ [NC]
-RewriteRule ^(.*)$ http://he.yiiframework.co.il/$1 [R=301,L]
 
-RewriteCond %{REQUEST_FILENAME} \.(js|ico|gif|jpg|png|css|pdf|doc)$ [OR]
-RewriteCond %{REQUEST_FILENAME} favicon.ico$ [OR]
-RewriteCond %{REQUEST_FILENAME} -s [OR]
-RewriteCond %{REQUEST_FILENAME} -l [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-
-# Redirect all incoming urls to the application
-RewriteRule ^.*$ - [NC,L]
-RewriteRule ^.*$ index.php [NC,L]
 </IfModule>
+
+RewriteEngine On
+
+
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# otherwise forward it to index.php
+RewriteRule . index.php

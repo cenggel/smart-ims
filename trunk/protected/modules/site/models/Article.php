@@ -132,6 +132,7 @@ class Article extends CActiveRecord
 				),
 				'own'=>array('condition'=>' create_user =' . Yii::app()->user->id),
 				'byClass'=>array(),
+				'byGroup'=>array(),
 		);
 	}
 	
@@ -145,6 +146,11 @@ class Article extends CActiveRecord
 	}
 	public  function byClass($class_code){
 		$this->getDbCriteria()->mergeWith(array('condition'=>'class_code =:class_code' ,'params'=>array(':class_code'=>$class_code)));
+		return $this;
+	}
+	
+	public function byGroup($group_id){
+		$this->getDbCriteria()->mergeWith(array('condition'=>'group_id =:group_id' ,'params'=>array(':group_id'=>group_id)));
 		return $this;
 	}
 }

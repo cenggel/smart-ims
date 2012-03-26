@@ -128,9 +128,12 @@ class Groups extends BaseActiveRecord
 	}
 	
 	public  function getUrl(){
-		return Yii::app()->urlManger->createUrl('/groups/view',array('id'=>$this->id));
+		return Yii::app()->urlManager->createUrl('/groups/home',array('id'=>$this->id));
 	}
 	
+	public static function getCreateUrl(){
+		return Yii::app()->urlManager->createUrl('/groups/create');
+	}
 	protected function beforeSave() {
 		if (! parent::beforeSave ())
 			return false;

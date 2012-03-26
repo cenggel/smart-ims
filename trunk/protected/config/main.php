@@ -55,8 +55,16 @@ return array(
 								),
 						),
 								
-				
+				'cal' => array(
+						'debug' => true // For first run only!
+				),
 
+		),
+		
+		'aliases' => array(
+				'helpers' => 'application.widgets',
+				'widgets' => 'application.widgets',
+				'site.widgets'=>'application.modules.site.widgets',
 		),
 
 		// application components
@@ -99,6 +107,7 @@ return array(
 
 				'urlManager'=>array(
 						'urlFormat'=>'path',
+						'showScriptName'=>false,
 						'rules'=>array(
 								//gii rewrite
 								'gii'=>'gii',
@@ -106,15 +115,32 @@ return array(
 								'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
 								
 								'user/<controller:\w+>'=>'user/<controller>',
-								'tutorials/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'tutorials')),
+								'user/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'user/<controller>/<_a>/',
+								'rights/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'rights/<controller>/<_a>/',
+								'cal/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'cal/<controller>/<_a>/',
+								
+								
+								'group_<group_id:\d+>/<class_code:\w+>'=>'site/article/index',
+								'group_<group_id:\d+>/<class_code:\w+>/<action:(create|update|delete|index|admin)>'=>'site/article/<action>',
+								
+								
+								'tutorials/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'tutorials',)),
 								'blog/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'blog')),
 								'document/<action:\w+>'=>array('site/article/<action>','defaultParams'=>array('class_code'=>'document')),
+								'group_<group_id:\d+>/tutorials/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'tutorials',)),
+								'group_<group_id:\d+>/blog/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'blog',)),
+								'group_<group_id:\d+>/document/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'document',)),
+								
+								
 								
 								'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 								'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 								'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 								
+								'<controller:\w+>/<id:\d+>'=>'site/<controller>/view',
+								'<controller:\w+>/<action:\w+>/<id:\d+>'=>'site/<controller>/<action>',
 								'<controller:\w+>/<action:\w+>'=>'site/<controller>/<action>',
+								"<_c:([a-zA-z0-9-]+)>/<_a:([a-zA-z0-9-]+)>//*" => 'site/<_c>/<_a>/',
 						),
 				),
 
@@ -145,11 +171,11 @@ return array(
 										'levels'=>'error, warning',
 								),
 								// uncomment the following to show log messages on web pages
-								/*
+								
 array(
 		'class'=>'CWebLogRoute',
 ),
-*/
+
 						),
 				),
 		),

@@ -17,9 +17,11 @@
  * @property integer $create_date
  * @property integer $update_date
  * @property integer $update_user
+ * @property integer $category_type
  */
 class Category extends CActiveRecord
 {
+	const SYS_CATEGORY = 1;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -49,13 +51,13 @@ class Category extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('parent_id, display_order, create_user, views, group_id, create_date, update_date, update_user', 'numerical', 'integerOnly'=>true),
+			array('parent_id, display_order, create_user, views, group_id, create_date, update_date, update_user, category_type', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>200),
 			array('Alias, class_code', 'length', 'max'=>45),
 			array('description', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, Alias, class_code, description, parent_id, display_order, create_user, views, group_id, create_date, update_date, update_user', 'safe', 'on'=>'search'),
+			array('id, name, Alias, class_code, description, parent_id, display_order, create_user, views, group_id, create_date, update_date, update_user, category_type', 'safe', 'on'=>'search'),
 		);
 	}
 

@@ -7,6 +7,8 @@ class ArticleController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
+	public $working_group =null;
+	public $working_class = null;
 
 	/**
 	 * @return array action filters
@@ -14,7 +16,7 @@ class ArticleController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+				'accessControl', // perform access control for CRUD operations
 		);
 	}
 
@@ -26,21 +28,21 @@ class ArticleController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
+				array('allow',  // allow all users to perform 'index' and 'view' actions
+						'actions'=>array('index','view'),
+						'users'=>array('*'),
+				),
+				array('allow', // allow authenticated user to perform 'create' and 'update' actions
+						'actions'=>array('create','update'),
+						'users'=>array('@'),
+				),
+				array('allow', // allow admin user to perform 'admin' and 'delete' actions
+						'actions'=>array('admin','delete'),
+						'users'=>array('admin'),
+				),
+				array('deny',  // deny all users
+						'users'=>array('*'),
+				),
 		);
 	}
 
@@ -51,7 +53,7 @@ class ArticleController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+				'model'=>$this->loadModel($id),
 		));
 	}
 
@@ -63,7 +65,7 @@ class ArticleController extends Controller
 	{
 		$model=new Article;
 		$model->class_code = $class_code;
-		
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -75,7 +77,7 @@ class ArticleController extends Controller
 		}
 
 		$this->render('create',array(
-			'model'=>$model,
+				'model'=>$model,
 		));
 	}
 
@@ -99,7 +101,7 @@ class ArticleController extends Controller
 		}
 
 		$this->render('update',array(
-			'model'=>$model,
+				'model'=>$model,
 		));
 	}
 
@@ -126,12 +128,37 @@ class ArticleController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex($class_code)
+	public function actionIndex($class_code=null,$group_id=0)
 	{   //$class_code = $_GET['class_code'];
-		//echo $class_code;exit;
-		$dataProvider=new CActiveDataProvider(Article::model()->byClass($class_code));
+		//echo $class_code;
+		//echo "<br> $group_id";
+		
+		if($group_id >0){
+			//echo "<br> here ...";
+			$working_group = Groups::model()->findByPk($group_id);
+			//var_dump($working_group);
+			if( !Yii::app()->user->checkAccess('op_view_all_groups') ||!Yii::app()->user->checkAccess('groups.view',array('group'=>$working_group)))
+			{
+				throw new CHttpException(403, Yii::t('error', 'Sorry, You don\'t have the required permissions to enter this section'));
+			}
+			
+			$this->working_group = $working_group;
+			
+			
+		}
+		
+		$article = Article::model();
+		if($class_code!=null){
+			$this->working_class = $class_code;
+			$article = $article->byClass($class_code);
+		}
+		if($group_id>0){
+			$article = $article->byGroup($group_id);
+		}
+		
+		$dataProvider=new CActiveDataProvider($article);
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+				'dataProvider'=>$dataProvider,
 		));
 	}
 
@@ -146,7 +173,7 @@ class ArticleController extends Controller
 			$model->attributes=$_GET['Article'];
 
 		$this->render('admin',array(
-			'model'=>$model,
+				'model'=>$model,
 		));
 	}
 
@@ -175,4 +202,10 @@ class ArticleController extends Controller
 			Yii::app()->end();
 		}
 	}
+	
+	protected function beforeAction($action){
+		
+		
+		//print_r(Yii::app()); exit;
+ 	}
 }

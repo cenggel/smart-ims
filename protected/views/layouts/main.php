@@ -32,8 +32,11 @@
 		<?php //var_dump(Yii::app()->user);
 		$this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'首页', 'url'=>array('/site/index'),),
-				array('label'=>'关于', 'url'=>array('/site/page', 'view'=>'about')),
+				array('label'=>'首页', 'url'=>array('/home/index','id'=>1), ),
+				array('label'=>'关于', 'url'=>array('/home/page', 'view'=>'about')),
+				array('label'=>'群组', 'url'=>array('groups/index'), 'visible'=>!Yii::app()->user->isGuest,
+						'items'=>Groups::model()->getOwenMenuList()),
+				array('label'=>'日历', 'url'=>array('/cal',),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'文档', 'url'=>array('/document/index',),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'日志', 'url'=>array('/blog/index',), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'教程', 'url'=>array('/tutorials/index',), 'visible'=>!Yii::app()->user->isGuest),
@@ -48,10 +51,13 @@
 	
 	<div id="contenttop"></div>
 	<div class="content">
+	<?php $this->widget('site.widgets.GroupNav'); ?>
 	<?php if(isset($this->breadcrumbs)):?>
 	   <div id="newsinfo" class="grid_24">
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
+		<?php 
+		 
+		 $this->widget('zii.widgets.CBreadcrumbs', array(
+			'links'=>array_merge(array('Member'=>array('/member/index')),$this->breadcrumbs),
 		)); ?>
 		</div><!-- breadcrumbs -->
 	<?php endif?>

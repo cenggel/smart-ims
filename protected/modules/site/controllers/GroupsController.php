@@ -8,6 +8,9 @@ class GroupsController extends Controller
 	 */
 	public $layout='//layouts/column2';
 
+	public $working_group = null;
+	
+	public $working_class = null;
 	/**
 	 * @return array action filters
 	 */
@@ -18,31 +21,7 @@ class GroupsController extends Controller
 		);
 	}
 
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
+	
 
 	/**
 	 * Displays a particular model.
@@ -174,5 +153,23 @@ class GroupsController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionHome($id)
+	{
+		$working_group = $this->loadModel($id);
+		if( !Yii::app()->user->checkAccess('op_view_all_groups') ||!Yii::app()->user->checkAccess('groups.view',array('group'=>$working_group)))
+		{
+			throw new CHttpException(403, Yii::t('error', 'Sorry, You don\'t have the required permissions to enter this section'));
+		}
+		
+		$this->working_group = $working_group;
+		$this->render('view',array(
+				'model'=>$working_group,
+		));
 	}
 }

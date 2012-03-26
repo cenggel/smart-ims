@@ -5034,3 +5034,2013 @@ Stack trace:
 REQUEST_URI=/smart-ims/index.php/category/admin
 HTTP_REFERER=http://localhost/smart-ims/index.php/category/index
 ---
+2012/03/23 01:36:48 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php:337
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('index')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/article/in...')
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/smart-ims/index.php/article/index
+---
+2012/03/23 01:37:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "article/index/class_code/test"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('article/index/c...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/index.php/article/index/class_code/test
+---
+2012/03/23 01:37:28 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php:337
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('index')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/article/in...')
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/smart-ims/index.php/article/index
+---
+2012/03/23 01:38:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "article/index/class_code/test"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('article/index/c...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/index.php/article/index/class_code/test
+---
+2012/03/23 01:42:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "article/index"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('article/index')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/index.php/article/index
+---
+2012/03/23 01:42:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "category/index"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('category/index')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/index.php/category/index
+---
+2012/03/23 02:55:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/site/index"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/site/index')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/index.php/site/index
+HTTP_REFERER=http://localhost/smart-ims/index.php/document/index
+---
+2012/03/23 03:15:59 [error] [exception.CException] exception 'CException' with message 'Groups and its behaviors do not have a method or closure named "owend".' in D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(226): CComponent->__call('owend', Array)
+#1 [internal function]: CActiveRecord->__call('owend', Array)
+#2 D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php(116): Groups->owend()
+#3 D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php(38): Groups->getOwenMenuList()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, true)
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('D:\web\wwwdocs\...', Array, true)
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(207): COutputProcessor->run()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#11 D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php(5): CBaseController->endContent()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, true)
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): CBaseController->renderFile('D:\web\wwwdocs\...', Array, true)
+#15 D:\web\wwwdocs\smart-ims\protected\modules\user\controllers\ProfileController.php(21): CController->render('profile', Array)
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): ProfileController->actionProfile()
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('')
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('user/profile')
+#22 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/smart-ims/index.php/user/profile
+HTTP_REFERER=http://localhost/smart-ims/index.php/site/index
+---
+2012/03/23 03:17:43 [error] [exception.CException] exception 'CException' with message 'Groups and its behaviors do not have a method or closure named "owend".' in D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(226): CComponent->__call('owend', Array)
+#1 [internal function]: CActiveRecord->__call('owend', Array)
+#2 D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php(117): Groups->owend()
+#3 D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php(38): Groups->getOwenMenuList()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, true)
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('D:\web\wwwdocs\...', Array, true)
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(207): COutputProcessor->run()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#11 D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php(5): CBaseController->endContent()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, true)
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): CBaseController->renderFile('D:\web\wwwdocs\...', Array, true)
+#15 D:\web\wwwdocs\smart-ims\protected\modules\user\controllers\ProfileController.php(21): CController->render('profile', Array)
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): ProfileController->actionProfile()
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('')
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('user/profile')
+#22 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/smart-ims/index.php/user/profile
+HTTP_REFERER=http://localhost/smart-ims/index.php/site/index
+---
+2012/03/23 03:18:04 [error] [php] include(stieModule.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (D:\web\wwwdocs\yii\yii-1.1.10\framework\YiiBase.php:418)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CPhpMessageSource.php(97): ReflectionClass->__construct()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CPhpMessageSource.php(114): CPhpMessageSource->getMessageFile()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CMessageSource.php(104): CPhpMessageSource->loadMessages()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CMessageSource.php(86): CPhpMessageSource->translateMessage()
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\YiiBase.php(574): CPhpMessageSource->translate()
+#6 D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php(119): t()
+#7 D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php(38): Groups->getOwenMenuList()
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ProfileController->renderInternal()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): ProfileController->renderFile()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput()
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(207): CContentDecorator->run()
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(301): ProfileController->endWidget()
+#15 D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php(5): ProfileController->endContent()
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ProfileController->renderInternal()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): ProfileController->renderFile()
+#19 D:\web\wwwdocs\smart-ims\protected\modules\user\controllers\ProfileController.php(21): ProfileController->render()
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): ProfileController->actionProfile()
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#22 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): ProfileController->runAction()
+#23 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): ProfileController->runActionWithFilters()
+#24 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): ProfileController->run()
+#25 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#26 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 D:\web\wwwdocs\smart-ims\index.php(14): CWebApplication->run()
+REQUEST_URI=/smart-ims/index.php/user/profile
+in D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php (119)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php (38)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php (5)
+2012/03/23 03:18:22 [error] [php] include(siteModule.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (D:\web\wwwdocs\yii\yii-1.1.10\framework\YiiBase.php:418)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CPhpMessageSource.php(97): ReflectionClass->__construct()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CPhpMessageSource.php(114): CPhpMessageSource->getMessageFile()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CMessageSource.php(104): CPhpMessageSource->loadMessages()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CMessageSource.php(86): CPhpMessageSource->translateMessage()
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\YiiBase.php(574): CPhpMessageSource->translate()
+#6 D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php(119): t()
+#7 D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php(38): Groups->getOwenMenuList()
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ProfileController->renderInternal()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): ProfileController->renderFile()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput()
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(207): CContentDecorator->run()
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(301): ProfileController->endWidget()
+#15 D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php(5): ProfileController->endContent()
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ProfileController->renderInternal()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): ProfileController->renderFile()
+#19 D:\web\wwwdocs\smart-ims\protected\modules\user\controllers\ProfileController.php(21): ProfileController->render()
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): ProfileController->actionProfile()
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#22 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): ProfileController->runAction()
+#23 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): ProfileController->runActionWithFilters()
+#24 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): ProfileController->run()
+#25 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#26 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 D:\web\wwwdocs\smart-ims\index.php(14): CWebApplication->run()
+REQUEST_URI=/smart-ims/index.php/user/profile
+in D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php (119)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php (38)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php (5)
+2012/03/23 03:18:24 [error] [php] include(siteModule.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (D:\web\wwwdocs\yii\yii-1.1.10\framework\YiiBase.php:418)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CPhpMessageSource.php(97): ReflectionClass->__construct()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CPhpMessageSource.php(114): CPhpMessageSource->getMessageFile()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CMessageSource.php(104): CPhpMessageSource->loadMessages()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CMessageSource.php(86): CPhpMessageSource->translateMessage()
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\YiiBase.php(574): CPhpMessageSource->translate()
+#6 D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php(119): t()
+#7 D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php(38): Groups->getOwenMenuList()
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ProfileController->renderInternal()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): ProfileController->renderFile()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput()
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(207): CContentDecorator->run()
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(301): ProfileController->endWidget()
+#15 D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php(5): ProfileController->endContent()
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ProfileController->renderInternal()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): ProfileController->renderFile()
+#19 D:\web\wwwdocs\smart-ims\protected\modules\user\controllers\ProfileController.php(21): ProfileController->render()
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): ProfileController->actionProfile()
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#22 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): ProfileController->runAction()
+#23 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): ProfileController->runActionWithFilters()
+#24 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): ProfileController->run()
+#25 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#26 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 D:\web\wwwdocs\smart-ims\index.php(14): CWebApplication->run()
+REQUEST_URI=/smart-ims/index.php/user/profile
+in D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php (119)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php (38)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php (5)
+2012/03/23 03:18:29 [error] [php] include(siteModules.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (D:\web\wwwdocs\yii\yii-1.1.10\framework\YiiBase.php:418)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CPhpMessageSource.php(97): ReflectionClass->__construct()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CPhpMessageSource.php(114): CPhpMessageSource->getMessageFile()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CMessageSource.php(104): CPhpMessageSource->loadMessages()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\i18n\CMessageSource.php(86): CPhpMessageSource->translateMessage()
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\YiiBase.php(574): CPhpMessageSource->translate()
+#6 D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php(119): t()
+#7 D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php(38): Groups->getOwenMenuList()
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ProfileController->renderInternal()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): ProfileController->renderFile()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput()
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(207): CContentDecorator->run()
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(301): ProfileController->endWidget()
+#15 D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php(5): ProfileController->endContent()
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ProfileController->renderInternal()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): ProfileController->renderFile()
+#19 D:\web\wwwdocs\smart-ims\protected\modules\user\controllers\ProfileController.php(21): ProfileController->render()
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): ProfileController->actionProfile()
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#22 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): ProfileController->runAction()
+#23 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): ProfileController->runActionWithFilters()
+#24 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): ProfileController->run()
+#25 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#26 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 D:\web\wwwdocs\smart-ims\index.php(14): CWebApplication->run()
+REQUEST_URI=/smart-ims/index.php/user/profile
+in D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php (119)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php (38)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php (5)
+2012/03/23 03:19:26 [error] [php] include(SiteModule.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (D:\web\wwwdocs\yii\yii-1.1.10\framework\YiiBase.php:418)
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php(119): spl_autoload_call()
+#1 D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php(38): Groups->getOwenMenuList()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ProfileController->renderInternal()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): ProfileController->renderFile()
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate()
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(207): CContentDecorator->run()
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(301): ProfileController->endWidget()
+#9 D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php(5): ProfileController->endContent()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ProfileController->renderInternal()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): ProfileController->renderFile()
+#13 D:\web\wwwdocs\smart-ims\protected\modules\user\controllers\ProfileController.php(21): ProfileController->render()
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): ProfileController->actionProfile()
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): ProfileController->runAction()
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): ProfileController->runActionWithFilters()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): ProfileController->run()
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\web\wwwdocs\smart-ims\index.php(14): CWebApplication->run()
+REQUEST_URI=/smart-ims/index.php/user/profile
+in D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php (119)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php (38)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php (5)
+2012/03/23 03:19:28 [error] [php] include(SiteModule.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (D:\web\wwwdocs\yii\yii-1.1.10\framework\YiiBase.php:418)
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php(119): spl_autoload_call()
+#1 D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php(38): Groups->getOwenMenuList()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ProfileController->renderInternal()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): ProfileController->renderFile()
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate()
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(207): CContentDecorator->run()
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(301): ProfileController->endWidget()
+#9 D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php(5): ProfileController->endContent()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ProfileController->renderInternal()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): ProfileController->renderFile()
+#13 D:\web\wwwdocs\smart-ims\protected\modules\user\controllers\ProfileController.php(21): ProfileController->render()
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): ProfileController->actionProfile()
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): ProfileController->runAction()
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): ProfileController->runActionWithFilters()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): ProfileController->run()
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\web\wwwdocs\smart-ims\index.php(14): CWebApplication->run()
+REQUEST_URI=/smart-ims/index.php/user/profile
+in D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php (119)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php (38)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php (5)
+2012/03/23 03:22:43 [error] [php] include(SiteModule.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (D:\web\wwwdocs\yii\yii-1.1.10\framework\YiiBase.php:418)
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php(119): spl_autoload_call()
+#1 D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php(38): Groups->getOwenMenuList()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ProfileController->renderInternal()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): ProfileController->renderFile()
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate()
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(207): CContentDecorator->run()
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(301): ProfileController->endWidget()
+#9 D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php(5): ProfileController->endContent()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ProfileController->renderInternal()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): ProfileController->renderFile()
+#13 D:\web\wwwdocs\smart-ims\protected\modules\user\controllers\ProfileController.php(21): ProfileController->render()
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): ProfileController->actionProfile()
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): ProfileController->runAction()
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): ProfileController->runActionWithFilters()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): ProfileController->run()
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\web\wwwdocs\smart-ims\index.php(14): CWebApplication->run()
+REQUEST_URI=/smart-ims/index.php/user/profile
+in D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php (119)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php (38)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php (5)
+2012/03/23 03:24:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "blog"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('blog')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/index.php/blog
+---
+2012/03/23 03:24:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "blog"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('blog')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/index.php/blog
+HTTP_REFERER=http://localhost/smart-ims/index.php/blog
+---
+2012/03/23 03:24:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "blog"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('blog')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/index.php/blog
+HTTP_REFERER=http://localhost/smart-ims/index.php/blog
+---
+2012/03/23 03:25:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "blog"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('blog')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/index.php/blog
+HTTP_REFERER=http://localhost/smart-ims/index.php/blog
+---
+2012/03/23 03:25:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "blog"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('blog')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/index.php/blog
+HTTP_REFERER=http://localhost/smart-ims/index.php/blog
+---
+2012/03/23 03:31:14 [error] [php] Invalid argument supplied for foreach() (D:\web\wwwdocs\yii\yii-1.1.10\framework\zii\widgets\CMenu.php:255)
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\zii\widgets\CMenu.php(151): CMenu->normalizeItems()
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(148): CMenu->init()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(173): ArticleController->createWidget()
+#3 D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php(47): ArticleController->widget()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ArticleController->renderInternal()
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): ArticleController->renderFile()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate()
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput()
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(207): CContentDecorator->run()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(301): ArticleController->endWidget()
+#11 D:\web\wwwdocs\smart-ims\protected\views\layouts\column2.php(22): ArticleController->endContent()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ArticleController->renderInternal()
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): ArticleController->renderFile()
+#15 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\ArticleController.php(135): ArticleController->render()
+#16 unknown(0): ArticleController->actionIndex()
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): ArticleController->runAction()
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#22 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#23 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): ArticleController->filterAccessControl()
+#24 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#25 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#26 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): ArticleController->runActionWithFilters()
+#27 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): ArticleController->run()
+#28 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#29 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#30 D:\web\wwwdocs\smart-ims\index.php(14): CWebApplication->run()
+REQUEST_URI=/smart-ims/document/index
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php (47)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\column2.php (22)
+in D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\ArticleController.php (135)
+2012/03/23 03:35:51 [error] [exception.CException] exception 'CException' with message '属性 "CWebApplication.urlManger" 未被定义.' in D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CModule.php(106): CComponent->__get('urlManger')
+#1 D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php(128): CModule->__get('urlManger')
+#2 D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php(121): Groups->getUrl()
+#3 D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php(38): Groups->getOwenMenuList()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, true)
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('D:\web\wwwdocs\...', Array, true)
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div class="gri...')
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div class="gri...')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(207): COutputProcessor->run()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#11 D:\web\wwwdocs\smart-ims\protected\views\layouts\column2.php(22): CBaseController->endContent()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, true)
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): CBaseController->renderFile('D:\web\wwwdocs\...', Array, true)
+#15 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php(55): CController->render('view', Array)
+#16 [internal function]: GroupsController->actionView('')
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(GroupsController), Array)
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(GroupsController), Object(ReflectionMethod), Array)
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#22 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#23 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#24 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#26 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('view')
+#28 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/vie...')
+#29 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#30 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#31 {main}
+REQUEST_URI=/smart-ims/groups/view?id=
+HTTP_REFERER=http://localhost/smart-ims/groups/create
+---
+2012/03/23 03:37:58 [error] [exception.CException] exception 'CException' with message '属性 "CWebApplication.urlManger" 未被定义.' in D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CModule.php(106): CComponent->__get('urlManger')
+#1 D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php(128): CModule->__get('urlManger')
+#2 D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php(121): Groups->getUrl()
+#3 D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php(38): Groups->getOwenMenuList()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, true)
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('D:\web\wwwdocs\...', Array, true)
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div class="gri...')
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div class="gri...')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(207): COutputProcessor->run()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#11 D:\web\wwwdocs\smart-ims\protected\views\layouts\column2.php(22): CBaseController->endContent()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, true)
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): CBaseController->renderFile('D:\web\wwwdocs\...', Array, true)
+#15 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php(55): CController->render('view', Array)
+#16 [internal function]: GroupsController->actionView('')
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(GroupsController), Array)
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(GroupsController), Object(ReflectionMethod), Array)
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#22 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#23 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#24 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#26 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('view')
+#28 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/vie...')
+#29 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#30 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#31 {main}
+REQUEST_URI=/smart-ims/groups/view?id=
+HTTP_REFERER=http://localhost/smart-ims/groups/create
+---
+2012/03/23 03:38:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "groups"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('groups')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/groups/
+---
+2012/03/23 03:40:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "groups"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('groups')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/groups/
+---
+2012/03/23 03:40:06 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php:337
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('view')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/vie...')
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/smart-ims/groups/view/0%5Bid%5D
+HTTP_REFERER=http://localhost/smart-ims/groups/
+---
+2012/03/23 03:40:53 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php:337
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('view')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/vie...')
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/smart-ims/groups/view/0%5Bid%5D
+HTTP_REFERER=http://localhost/smart-ims/groups/
+---
+2012/03/23 03:40:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "groups"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('groups')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/groups/
+HTTP_REFERER=http://localhost/smart-ims/groups/view/0%5Bid%5D
+---
+2012/03/23 03:41:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "groups"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('groups')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/groups/
+HTTP_REFERER=http://localhost/smart-ims/groups/
+---
+2012/03/23 03:41:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "groups"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('groups')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/groups/
+HTTP_REFERER=http://localhost/smart-ims/groups/index
+---
+2012/03/23 03:43:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "groups"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('groups')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/groups/
+HTTP_REFERER=http://localhost/smart-ims/groups/index
+---
+2012/03/23 03:43:45 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php:337
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('view')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/vie...')
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/smart-ims/groups/view/0%5Bid%5D/0
+HTTP_REFERER=http://localhost/smart-ims/groups/
+---
+2012/03/23 03:44:11 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php:337
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('view')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/vie...')
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/smart-ims/groups/view/0%5Bid%5D/0
+HTTP_REFERER=http://localhost/smart-ims/groups/
+---
+2012/03/23 03:45:05 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php:337
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('view')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/vie...')
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/smart-ims/groups/view/0%5Bid%5D/0
+HTTP_REFERER=http://localhost/smart-ims/groups/
+---
+2012/03/23 03:45:24 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php:337
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('view')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/vie...')
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/smart-ims/groups/view/0%5Bid%5D/0
+HTTP_REFERER=http://localhost/smart-ims/groups/
+---
+2012/03/23 03:45:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "home/index"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('home/index')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/home/index/1
+HTTP_REFERER=http://localhost/smart-ims/groups/view/0%5Bid%5D/0
+---
+2012/03/23 03:45:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "home/index"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('home/index')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/home/index/1
+HTTP_REFERER=http://localhost/smart-ims/groups/view/0%5Bid%5D/0
+---
+2012/03/23 03:45:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "groups/view"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('groups/view')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/groups/0
+HTTP_REFERER=http://localhost/smart-ims/home/index/1
+---
+2012/03/23 03:46:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "groups/view"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('groups/view')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/groups/0
+HTTP_REFERER=http://localhost/smart-ims/home/index/1
+---
+2012/03/23 03:46:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "groups/view"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('groups/view')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/groups/0
+HTTP_REFERER=http://localhost/smart-ims/groups/0
+---
+2012/03/23 07:33:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/user/profileField"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/user/profi...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/user/profileField/admin
+HTTP_REFERER=http://localhost/smart-ims/user/admin
+---
+2012/03/23 07:33:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/user/profileField"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/user/profi...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/user/profileField/admin
+---
+2012/03/23 07:34:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/user/profile"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/user/profi...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/user/profile/changepassword
+HTTP_REFERER=http://localhost/smart-ims/user/profile
+---
+2012/03/23 07:41:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/uploads/usericon"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/uploads/us...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/uploads/usericon/Penguins.jpg
+HTTP_REFERER=http://localhost/smart-ims/user/profile
+---
+2012/03/23 07:43:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/uploads/usericon"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/uploads/us...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/uploads/usericon/Penguins.jpg
+HTTP_REFERER=http://localhost/smart-ims/user/profile
+---
+2012/03/23 07:44:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/uploads/usericon"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/uploads/us...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/uploads/usericon/Penguins.jpg
+---
+2012/03/23 07:44:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/uploads/usericon"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/uploads/us...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/uploads/usericon/Penguins.jpg
+---
+2012/03/23 07:44:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/uploads/usericon"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/uploads/us...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/uploads/usericon/Penguins.jpg
+---
+2012/03/23 07:47:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/uploads/usericon"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/uploads/us...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/uploads/usericon/Penguins.jpg
+---
+2012/03/23 07:47:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/uploads/usericon"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/uploads/us...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/uploads/usericon/Penguins.jpg
+---
+2012/03/23 07:47:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/uploads/usericon"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/uploads/us...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/uploads/usericon/Penguins.jpg
+---
+2012/03/23 07:47:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/uploads/usericon"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/uploads/us...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/uploads/usericon/Penguins.jpg
+---
+2012/03/23 07:48:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/uploads/usericon"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/uploads/us...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/uploads/usericon/Penguins.jpg
+---
+2012/03/23 07:49:21 [warning] [application] Failed to set unsafe attribute "uwfdel" of "Profile".
+in D:\web\wwwdocs\smart-ims\protected\modules\user\components\UActiveRecord.php (29)
+in D:\web\wwwdocs\smart-ims\protected\modules\user\controllers\ProfileController.php (44)
+in D:\web\wwwdocs\smart-ims\index.php (14)
+2012/03/23 07:49:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/uploads/usericon"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/uploads/us...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/uploads/usericon/Penguins.jpg
+HTTP_REFERER=http://localhost/smart-ims/user/profile
+---
+2012/03/23 07:54:31 [warning] [application] Failed to set unsafe attribute "uwfdel" of "Profile".
+in D:\web\wwwdocs\smart-ims\protected\modules\user\components\UActiveRecord.php (29)
+in D:\web\wwwdocs\smart-ims\protected\modules\user\controllers\ProfileController.php (44)
+in D:\web\wwwdocs\smart-ims\index.php (14)
+2012/03/23 07:58:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/assets/27f1428f"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/assets/27f...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/assets/27f1428f/js/form.js
+HTTP_REFERER=http://localhost/smart-ims/user/profileField/update/id/6
+---
+2012/03/23 08:01:22 [warning] [application] Failed to set unsafe attribute "uwfdel" of "Profile".
+in D:\web\wwwdocs\smart-ims\protected\modules\user\components\UActiveRecord.php (29)
+in D:\web\wwwdocs\smart-ims\protected\modules\user\controllers\ProfileController.php (44)
+in D:\web\wwwdocs\smart-ims\index.php (14)
+2012/03/23 08:01:42 [warning] [application] Failed to set unsafe attribute "uwfdel" of "Profile".
+in D:\web\wwwdocs\smart-ims\protected\modules\user\components\UActiveRecord.php (29)
+in D:\web\wwwdocs\smart-ims\protected\modules\user\controllers\ProfileController.php (44)
+in D:\web\wwwdocs\smart-ims\index.php (14)
+2012/03/23 08:07:18 [warning] [application] Failed to set unsafe attribute "uwfdel" of "Profile".
+in D:\web\wwwdocs\smart-ims\protected\modules\user\components\UActiveRecord.php (29)
+in D:\web\wwwdocs\smart-ims\protected\modules\user\controllers\ProfileController.php (44)
+in D:\web\wwwdocs\smart-ims\index.php (14)
+2012/03/23 08:19:07 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT * FROM `groups` `t` WHERE create_user = .
+in D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php (117)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php (38)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php (5)
+2012/03/23 08:19:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT * FROM `groups` `t` WHERE create_user = ' in D:\web\wwwdocs\yii\yii-1.1.10\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php(117): CActiveRecord->findAll()
+#4 D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php(38): Groups->getOwenMenuList()
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, true)
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('D:\web\wwwdocs\...', Array, true)
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(207): COutputProcessor->run()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#12 D:\web\wwwdocs\smart-ims\protected\views\layouts\column1.php(5): CBaseController->endContent()
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, true)
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): CBaseController->renderFile('D:\web\wwwdocs\...', Array, true)
+#16 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\DefaultController.php(7): CController->render('index')
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): DefaultController->actionIndex()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('')
+#22 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('')
+#23 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#25 {main}
+REQUEST_URI=/smart-ims/index.php/
+---
+2012/03/23 08:48:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "home/index"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('home/index')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/home/index/1
+HTTP_REFERER=http://localhost/smart-ims/user/profile
+---
+2012/03/24 11:10:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "groups"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('groups')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/groups/
+---
+2012/03/24 12:09:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "member"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('member')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/member
+---
+2012/03/24 12:09:14 [error] [exception.CException] exception 'CException' with message 'MemberInfo 无法找到这个视图 "userprofilebar".' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CWidget.php:246
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\widgets\MemberInfo.php(8): CWidget->render('userprofilebar', Array)
+#1 D:\web\wwwdocs\smart-ims\protected\components\Portlet.php(17): MemberInfo->renderContent()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(174): Portlet->run()
+#3 D:\web\wwwdocs\smart-ims\protected\modules\site\views\member\index.php(6): CBaseController->widget('widgets.MemberI...')
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', NULL, true)
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('D:\web\wwwdocs\...', NULL, true)
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#8 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\MemberController.php(7): CController->render('index')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): MemberController->actionIndex()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('index')
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/member/ind...')
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/smart-ims/member/index
+---
+2012/03/24 12:09:39 [error] [php] Object of class Profile could not be converted to string (D:\web\wwwdocs\smart-ims\protected\widgets\views\memberinfo.php:7)
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CWidget.php(244): MemberInfo->renderFile()
+#1 D:\web\wwwdocs\smart-ims\protected\widgets\MemberInfo.php(8): MemberInfo->render()
+#2 D:\web\wwwdocs\smart-ims\protected\components\Portlet.php(17): MemberInfo->renderContent()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(174): MemberInfo->run()
+#4 D:\web\wwwdocs\smart-ims\protected\modules\site\views\member\index.php(6): MemberController->widget()
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): MemberController->renderInternal()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(870): MemberController->renderFile()
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(783): MemberController->renderPartial()
+#9 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\MemberController.php(7): MemberController->render()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): MemberController->actionIndex()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): MemberController->runAction()
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): MemberController->runActionWithFilters()
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): MemberController->run()
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 D:\web\wwwdocs\smart-ims\index.php(14): CWebApplication->run()
+REQUEST_URI=/smart-ims/member/index
+in D:\web\wwwdocs\smart-ims\protected\widgets\views\memberinfo.php (7)
+in D:\web\wwwdocs\smart-ims\protected\widgets\MemberInfo.php (8)
+in D:\web\wwwdocs\smart-ims\protected\components\Portlet.php (17)
+2012/03/24 12:11:07 [error] [exception.CException] exception 'CException' with message '属性 "Profile.fristname" 未被定义.' in D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(144): CComponent->__get('fristname')
+#1 D:\web\wwwdocs\smart-ims\protected\widgets\views\memberinfo.php(4): CActiveRecord->__get('fristname')
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(131): require('D:\web\wwwdocs\...')
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, false)
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('D:\web\wwwdocs\...', Array, false)
+#5 D:\web\wwwdocs\smart-ims\protected\widgets\MemberInfo.php(8): CWidget->render('memberinfo', Array)
+#6 D:\web\wwwdocs\smart-ims\protected\components\Portlet.php(17): MemberInfo->renderContent()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(174): Portlet->run()
+#8 D:\web\wwwdocs\smart-ims\protected\modules\site\views\member\index.php(6): CBaseController->widget('widgets.MemberI...')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', NULL, true)
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('D:\web\wwwdocs\...', NULL, true)
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#13 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\MemberController.php(7): CController->render('index')
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): MemberController->actionIndex()
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('index')
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/member/ind...')
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/smart-ims/member/index
+---
+2012/03/24 12:12:18 [error] [php] Object of class MemberInfo could not be converted to string (D:\web\wwwdocs\smart-ims\protected\modules\site\views\member\index.php:6)
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(870): MemberController->renderFile()
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(783): MemberController->renderPartial()
+#2 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\MemberController.php(7): MemberController->render()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): MemberController->actionIndex()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): MemberController->runAction()
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): MemberController->runActionWithFilters()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): MemberController->run()
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\web\wwwdocs\smart-ims\index.php(14): CWebApplication->run()
+REQUEST_URI=/smart-ims/member/index
+in D:\web\wwwdocs\smart-ims\protected\modules\site\views\member\index.php (6)
+in D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\MemberController.php (7)
+in D:\web\wwwdocs\smart-ims\index.php (14)
+2012/03/24 12:12:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "uploads" 动作.' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php:484
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(271): CController->missingAction('uploads')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('uploads')
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/member/upl...')
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/smart-ims/member/uploads/usericon/Penguins.jpg
+HTTP_REFERER=http://localhost/smart-ims/member/index
+---
+2012/03/24 12:35:42 [error] [exception.CException] exception 'CException' with message '属性 "MemberInfo.visable" 未被定义.' in D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php:174
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWidgetFactory.php(162): CComponent->__set('visable', true)
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(ArticleController), 'widgets.MemberI...', Array)
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(173): CBaseController->createWidget('widgets.MemberI...', Array)
+#3 D:\web\wwwdocs\smart-ims\protected\views\layouts\column2.php(6): CBaseController->widget('widgets.MemberI...', Array)
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, true)
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): CBaseController->renderFile('D:\web\wwwdocs\...', Array, true)
+#7 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\ArticleController.php(135): CController->render('index', Array)
+#8 [internal function]: ArticleController->actionIndex('document')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ArticleController), Array)
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ArticleController), Object(ReflectionMethod), Array)
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('index')
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/article/in...')
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/smart-ims/document/index
+HTTP_REFERER=http://localhost/smart-ims/user/profileField/admin
+---
+2012/03/24 12:43:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "home/index"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('home/index')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/home/index/1
+HTTP_REFERER=http://localhost/smart-ims/home/page/view/about
+---
+2012/03/24 12:45:43 [error] [php] require(memberinfo) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory (D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php:131)
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\widgets\MemberInfo.php(8): MemberInfo->renderFile()
+#1 D:\web\wwwdocs\smart-ims\protected\components\Portlet.php(17): MemberInfo->renderContent()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(174): MemberInfo->run()
+#3 D:\web\wwwdocs\smart-ims\protected\views\layouts\column2.php(16): ArticleController->widget()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ArticleController->renderInternal()
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): ArticleController->renderFile()
+#7 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\ArticleController.php(135): ArticleController->render()
+#8 unknown(0): ArticleController->actionIndex()
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): ArticleController->runAction()
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): ArticleController->filterAccessControl()
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): ArticleController->runActionWithFilters()
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): ArticleController->run()
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\web\wwwdocs\smart-ims\index.php(14): CWebApplication->run()
+REQUEST_URI=/smart-ims/document/index
+in D:\web\wwwdocs\smart-ims\protected\widgets\MemberInfo.php (8)
+in D:\web\wwwdocs\smart-ims\protected\components\Portlet.php (17)
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\column2.php (16)
+2012/03/24 13:50:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "groups/view"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('groups/view')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/groups/view/0
+HTTP_REFERER=http://localhost/smart-ims/groups/create
+---
+2012/03/24 13:52:15 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php:337
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('view')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/vie...')
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/smart-ims/groups/view
+---
+2012/03/25 10:39:12 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `groups` (`views`, `id`, `group_name`, `description`, `create_date`, `create_user`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php (73)
+in D:\web\wwwdocs\smart-ims\index.php (14)
+2012/03/25 10:39:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `groups` (`views`, `id`, `group_name`, `description`, `create_date`, `create_user`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)' in D:\web\wwwdocs\yii\yii-1.1.10\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php(73): CActiveRecord->save()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): GroupsController->actionCreate()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('create')
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/cre...')
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/smart-ims/groups/create
+HTTP_REFERER=http://localhost/smart-ims/groups/create
+---
+2012/03/25 10:44:16 [error] [exception.CException] exception 'CException' with message '属性 "CMysqlTableSchema.PrimaryKey" 未被定义.' in D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(142): CComponent->__get('PrimaryKey')
+#1 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(104): CAdvancedArbehavior->getRelations()
+#2 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(93): CAdvancedArbehavior->writeManyManyTables()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php(559): CAdvancedArbehavior->afterSave(Object(CEvent))
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(830): CComponent->raiseEvent('onAfterSave', Object(CEvent))
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(905): CActiveRecord->onAfterSave(Object(CEvent))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(1034): CActiveRecord->afterSave()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#8 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php(73): CActiveRecord->save()
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): GroupsController->actionCreate()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('create')
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/cre...')
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/smart-ims/groups/create
+HTTP_REFERER=http://localhost/smart-ims/groups/create
+---
+2012/03/25 10:46:32 [error] [exception.CException] exception 'CException' with message '属性 "CMysqlTableSchema.PrimaryKey" 未被定义.' in D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(142): CComponent->__get('PrimaryKey')
+#1 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(104): CAdvancedArbehavior->getRelations()
+#2 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(93): CAdvancedArbehavior->writeManyManyTables()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php(559): CAdvancedArbehavior->afterSave(Object(CEvent))
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(830): CComponent->raiseEvent('onAfterSave', Object(CEvent))
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(905): CActiveRecord->onAfterSave(Object(CEvent))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(1034): CActiveRecord->afterSave()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#8 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php(73): CActiveRecord->save()
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): GroupsController->actionCreate()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('create')
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/cre...')
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/smart-ims/groups/create
+HTTP_REFERER=http://localhost/smart-ims/groups/create
+---
+2012/03/25 10:47:23 [error] [exception.CException] exception 'CException' with message '属性 "User.user_id" 未被定义.' in D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(144): CComponent->__get('user_id')
+#1 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(165): CActiveRecord->__get('user_id')
+#2 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(107): CAdvancedArbehavior->writeRelation(Array)
+#3 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(93): CAdvancedArbehavior->writeManyManyTables()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php(559): CAdvancedArbehavior->afterSave(Object(CEvent))
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(830): CComponent->raiseEvent('onAfterSave', Object(CEvent))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(905): CActiveRecord->onAfterSave(Object(CEvent))
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(1034): CActiveRecord->afterSave()
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#9 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php(73): CActiveRecord->save()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): GroupsController->actionCreate()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('create')
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/cre...')
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/smart-ims/groups/create
+HTTP_REFERER=http://localhost/smart-ims/groups/create
+---
+2012/03/25 10:48:54 [error] [exception.CException] exception 'CException' with message '属性 "User.users_id" 未被定义.' in D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(144): CComponent->__get('users_id')
+#1 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(165): CActiveRecord->__get('users_id')
+#2 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(107): CAdvancedArbehavior->writeRelation(Array)
+#3 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(93): CAdvancedArbehavior->writeManyManyTables()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php(559): CAdvancedArbehavior->afterSave(Object(CEvent))
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(830): CComponent->raiseEvent('onAfterSave', Object(CEvent))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(905): CActiveRecord->onAfterSave(Object(CEvent))
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(1034): CActiveRecord->afterSave()
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#9 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php(73): CActiveRecord->save()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): GroupsController->actionCreate()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('create')
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/cre...')
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/smart-ims/groups/create
+HTTP_REFERER=http://localhost/smart-ims/groups/create
+---
+2012/03/25 10:52:33 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'. The SQL statement executed was: delete ignore from group_members where id = ''.
+in D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php (180)
+in D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php (175)
+in D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php (106)
+2012/03/25 10:52:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'. The SQL statement executed was: delete ignore from group_members where id = ''' in D:\web\wwwdocs\yii\yii-1.1.10\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(180): CDbCommand->execute()
+#1 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(175): CAdvancedArbehavior->execute('delete ignore f...')
+#2 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(106): CAdvancedArbehavior->cleanRelation(Array)
+#3 D:\web\wwwdocs\smart-ims\protected\extensions\CAdvancedArBehavior.php(93): CAdvancedArbehavior->writeManyManyTables()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php(559): CAdvancedArbehavior->afterSave(Object(CEvent))
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(830): CComponent->raiseEvent('onAfterSave', Object(CEvent))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(905): CActiveRecord->onAfterSave(Object(CEvent))
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(1034): CActiveRecord->afterSave()
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#9 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php(73): CActiveRecord->save()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): GroupsController->actionCreate()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('create')
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/cre...')
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/smart-ims/groups/create
+HTTP_REFERER=http://localhost/smart-ims/groups/create
+---
+2012/03/25 10:56:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "groups"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('groups')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/groups/
+HTTP_REFERER=http://localhost/smart-ims/groups/create
+---
+2012/03/25 11:00:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "groups"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('groups')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/groups/
+HTTP_REFERER=http://localhost/smart-ims/groups/create
+---
+2012/03/25 11:21:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "groups"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('groups')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/groups/
+HTTP_REFERER=http://localhost/smart-ims/groups/create
+---
+2012/03/25 14:30:31 [warning] [application] Failed to set unsafe attribute "id" of "Groups".
+in D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php (71)
+in D:\web\wwwdocs\smart-ims\index.php (14)
+2012/03/25 14:31:25 [warning] [application] Failed to set unsafe attribute "id" of "Groups".
+in D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php (71)
+in D:\web\wwwdocs\smart-ims\index.php (14)
+2012/03/25 14:56:13 [warning] [application] Failed to set unsafe attribute "id" of "Groups".
+in D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php (71)
+in D:\web\wwwdocs\smart-ims\index.php (14)
+2012/03/26 02:48:54 [error] [exception.CException] exception 'CException' with message '别名 "widgets.MemberGroup" 无效。请确认它指向一个存在的PHP文件。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\YiiBase.php:318
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWidgetFactory.php(147): YiiBase::import('widgets.MemberG...', true)
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(MemberController), 'widgets.MemberG...', Array)
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(173): CBaseController->createWidget('widgets.MemberG...', Array)
+#3 D:\web\wwwdocs\smart-ims\protected\modules\site\views\member\index.php(8): CBaseController->widget('widgets.MemberG...', Array)
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', NULL, true)
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('D:\web\wwwdocs\...', NULL, true)
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#8 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\MemberController.php(7): CController->render('index')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): MemberController->actionIndex()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('index')
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/member/ind...')
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/smart-ims/member/index
+---
+2012/03/26 03:09:25 [error] [php] include(CPortlet.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (D:\web\wwwdocs\yii\yii-1.1.10\framework\YiiBase.php:418)
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\components\Portlet.php(4): spl_autoload_call()
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\YiiBase.php(418): include()
+#2 unknown(0): autoload()
+#3 D:\web\wwwdocs\smart-ims\protected\widgets\MemberInfo.php(2): spl_autoload_call()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\YiiBase.php(316): require()
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWidgetFactory.php(147): import()
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(147): CWidgetFactory->createWidget()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(173): MemberController->createWidget()
+#8 D:\web\wwwdocs\smart-ims\protected\modules\site\views\member\index.php(7): MemberController->widget()
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): MemberController->renderInternal()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(870): MemberController->renderFile()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(783): MemberController->renderPartial()
+#13 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\MemberController.php(7): MemberController->render()
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): MemberController->actionIndex()
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): MemberController->runAction()
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): MemberController->runActionWithFilters()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): MemberController->run()
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\web\wwwdocs\smart-ims\index.php(14): CWebApplication->run()
+REQUEST_URI=/smart-ims/member/index
+in D:\web\wwwdocs\smart-ims\protected\components\Portlet.php (4)
+in D:\web\wwwdocs\smart-ims\protected\widgets\MemberInfo.php (2)
+in D:\web\wwwdocs\smart-ims\protected\modules\site\views\member\index.php (7)
+2012/03/26 03:12:50 [error] [exception.CException] exception 'CException' with message 'MemberGroup 无法找到这个视图 "membergroup".' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CWidget.php:246
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\modules\site\widgets\MemberGroup.php(7): CWidget->render('membergroup', Array)
+#1 D:\web\wwwdocs\smart-ims\protected\components\Portlet.php(17): MemberGroup->renderContent()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(174): Portlet->run()
+#3 D:\web\wwwdocs\smart-ims\protected\modules\site\views\member\index.php(8): CBaseController->widget('site.widgets.Me...', Array)
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', NULL, true)
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('D:\web\wwwdocs\...', NULL, true)
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#8 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\MemberController.php(7): CController->render('index')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): MemberController->actionIndex()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('index')
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/member/ind...')
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/smart-ims/member/index
+---
+2012/03/26 03:13:08 [error] [exception.CException] exception 'CException' with message 'MemberGroup 无法找到这个视图 "membergroup".' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CWidget.php:246
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\modules\site\widgets\MemberGroup.php(7): CWidget->render('membergroup', Array)
+#1 D:\web\wwwdocs\smart-ims\protected\components\Portlet.php(17): MemberGroup->renderContent()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(174): Portlet->run()
+#3 D:\web\wwwdocs\smart-ims\protected\modules\site\views\member\index.php(8): CBaseController->widget('site.widgets.Me...', Array)
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', NULL, true)
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('D:\web\wwwdocs\...', NULL, true)
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#8 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\MemberController.php(7): CController->render('index')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): MemberController->actionIndex()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('index')
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/member/ind...')
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/smart-ims/member/index
+---
+2012/03/26 03:13:10 [error] [exception.CException] exception 'CException' with message 'MemberGroup 无法找到这个视图 "membergroup".' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CWidget.php:246
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\modules\site\widgets\MemberGroup.php(7): CWidget->render('membergroup', Array)
+#1 D:\web\wwwdocs\smart-ims\protected\components\Portlet.php(17): MemberGroup->renderContent()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(174): Portlet->run()
+#3 D:\web\wwwdocs\smart-ims\protected\modules\site\views\member\index.php(8): CBaseController->widget('site.widgets.Me...', Array)
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', NULL, true)
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('D:\web\wwwdocs\...', NULL, true)
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#8 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\MemberController.php(7): CController->render('index')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): MemberController->actionIndex()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('index')
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/member/ind...')
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/smart-ims/member/index
+---
+2012/03/26 03:35:37 [error] [exception.CException] exception 'CException' with message '属性 "CWebApplication.urlManger" 未被定义.' in D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CModule.php(106): CComponent->__get('urlManger')
+#1 D:\web\wwwdocs\smart-ims\protected\modules\site\models\Groups.php(131): CModule->__get('urlManger')
+#2 D:\web\wwwdocs\smart-ims\protected\runtime\smarty\compiled\c2c7bd8a4a70b3dbccbad8610870e38125569a9d.file.membergroup.html.php(27): Groups->getUrl()
+#3 D:\web\library\Smarty\sysplugins\smarty_internal_template.php(423): include('D:\web\wwwdocs\...')
+#4 D:\web\library\Smarty\sysplugins\smarty_internal_template.php(555): Smarty_Internal_Template->renderTemplate()
+#5 D:\web\library\Smarty\Smarty.class.php(335): Smarty_Internal_Template->getRenderedTemplate()
+#6 D:\web\library\Smarty\Smarty.class.php(379): Smarty->fetch('D:\web\wwwdocs\...', NULL, NULL, Object(Smarty_Internal_Template), true)
+#7 D:\web\library\Smarty\sysplugins\smarty_internal_template.php(892): Smarty->display('D:\web\wwwdocs\...', NULL, NULL, Object(Smarty_Internal_Template))
+#8 D:\web\wwwdocs\smart-ims\protected\extensions\renderers\smarty\ESmartyViewRenderer.php(150): Smarty_Internal_Template->display('D:\web\wwwdocs\...')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(94): ESmartyViewRenderer->renderFile(Object(MemberGroup), 'D:\web\wwwdocs\...', Array, false)
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('D:\web\wwwdocs\...', Array, false)
+#11 D:\web\wwwdocs\smart-ims\protected\modules\site\widgets\MemberGroup.php(7): CWidget->render('membergroup', Array)
+#12 D:\web\wwwdocs\smart-ims\protected\components\Portlet.php(17): MemberGroup->renderContent()
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(174): Portlet->run()
+#14 D:\web\wwwdocs\smart-ims\protected\modules\site\views\member\index.php(11): CBaseController->widget('site.widgets.Me...', Array)
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', NULL, true)
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('D:\web\wwwdocs\...', NULL, true)
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#19 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\MemberController.php(7): CController->render('index')
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(50): MemberController->actionIndex()
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#22 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#23 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), NULL)
+#24 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('index')
+#25 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/member/ind...')
+#26 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#28 {main}
+REQUEST_URI=/smart-ims/member/index
+---
+2012/03/26 03:44:55 [warning] [application] Failed to set unsafe attribute "id" of "Groups".
+in D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php (71)
+in D:\web\wwwdocs\smart-ims\index.php (14)
+2012/03/26 03:51:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "member"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('member')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/member/
+---
+2012/03/26 03:51:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "member"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('member')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/member/
+---
+2012/03/26 03:51:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php:162
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php(54): GroupsController->loadModel('index')
+#1 [internal function]: GroupsController->actionView('index')
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(GroupsController), Array)
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(GroupsController), Object(ReflectionMethod), Array)
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('view')
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/vie...')
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/smart-ims/groups/view/id/index
+HTTP_REFERER=http://localhost/smart-ims/groups/view/id/1
+---
+2012/03/26 03:53:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/cal/main"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/cal/main')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/cal/main/list?start=1332604800&end=1333209600&_=1332734031461
+HTTP_REFERER=http://localhost/smart-ims/cal
+---
+2012/03/26 03:54:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/cal/main"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/cal/main')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/cal/main/list?start=1332604800&end=1333209600&_=1332734059123
+HTTP_REFERER=http://localhost/smart-ims/cal
+---
+2012/03/26 03:54:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/cal/main"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/cal/main')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/cal/main/list?start=1332604800&end=1333209600&_=1332734070445
+HTTP_REFERER=http://localhost/smart-ims/cal
+---
+2012/03/26 03:58:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message '您未被授权执行这个动作' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(RWebUser), '???????????????...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('home')
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/hom...')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/smart-ims/groups/home/id/2
+HTTP_REFERER=http://localhost/smart-ims/member/index
+---
+2012/03/26 07:15:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/libs/OpenLayers"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/libs/OpenL...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/libs/OpenLayers/theme/default/style.css
+HTTP_REFERER=http://localhost/smart-ims/home/index
+---
+2012/03/26 07:15:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/map.css"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('css/map.css')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/css/map.css
+HTTP_REFERER=http://localhost/smart-ims/home/index
+---
+2012/03/26 07:15:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "scripts/map.js"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('scripts/map.js')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/scripts/map.js
+HTTP_REFERER=http://localhost/smart-ims/home/index
+---
+2012/03/26 07:15:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/libs/OpenLayers"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/libs/OpenL...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/libs/OpenLayers/lib/OpenLayers.js
+HTTP_REFERER=http://localhost/smart-ims/home/index
+---
+2012/03/26 07:52:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/tutorials/index"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/tutorials/...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/tutorials/index
+---
+2012/03/26 07:57:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/tutorials/index"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/tutorials/...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/tutorials/index
+---
+2012/03/26 08:00:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/blog"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/bl...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/blog/index
+---
+2012/03/26 08:00:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/tutorials/index"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/tutorials/...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/tutorials/index
+HTTP_REFERER=http://localhost/smart-ims/group_1/blog/index
+---
+2012/03/26 08:49:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/tutorials"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/tu...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/tutorials/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/tutorials/index
+---
+2012/03/26 09:09:20 [error] [exception.CException] exception 'CException' with message '属性 "GroupNav.over" 未被定义.' in D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\modules\site\widgets\GroupNav.php(13): CComponent->__get('over')
+#1 D:\web\wwwdocs\smart-ims\protected\components\Portlet.php(17): GroupNav->renderContent()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(174): Portlet->run()
+#3 D:\web\wwwdocs\smart-ims\protected\views\layouts\main.php(54): CBaseController->widget('site.widgets.Gr...')
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, true)
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('D:\web\wwwdocs\...', Array, true)
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div class="gri...')
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div class="gri...')
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(207): COutputProcessor->run()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#11 D:\web\wwwdocs\smart-ims\protected\views\layouts\column2.php(29): CBaseController->endContent()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, true)
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): CBaseController->renderFile('D:\web\wwwdocs\...', Array, true)
+#15 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\ArticleController.php(162): CController->render('index', Array)
+#16 [internal function]: ArticleController->actionIndex('tutorials', '1')
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ArticleController), Array)
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ArticleController), Object(ReflectionMethod), Array)
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#22 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#23 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#24 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#26 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('index')
+#28 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/article/in...')
+#29 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#30 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#31 {main}
+REQUEST_URI=/smart-ims/group_1/tutorials/index
+---
+2012/03/26 09:10:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/tutorials"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/tu...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/tutorials/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/tutorials/index
+---
+2012/03/26 09:10:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/tutorials"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/tu...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/tutorials/
+HTTP_REFERER=http://localhost/smart-ims/group_1/tutorials/index
+---
+2012/03/26 09:11:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/tutorials"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/tu...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/tutorials/
+HTTP_REFERER=http://localhost/smart-ims/group_1/tutorials/index
+---
+2012/03/26 09:11:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/tutorials"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/tu...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/tutorials/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/tutorials/index
+---
+2012/03/26 09:12:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/tutorials"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/tu...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/tutorials/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/tutorials/index
+---
+2012/03/26 09:25:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "article/index"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('article/index')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/tutorials
+HTTP_REFERER=http://localhost/smart-ims/article/index/group_id/1/class_code/blog
+---
+2012/03/26 09:26:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "article/index"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('article/index')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/tutorials
+HTTP_REFERER=http://localhost/smart-ims/article/index/group_id/1/class_code/blog
+---
+2012/03/26 09:26:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "article/index"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('article/index')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/tutorials
+HTTP_REFERER=http://localhost/smart-ims/article/index/group_id/1/class_code/blog
+---
+2012/03/26 09:26:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/themes"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/th...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/tutorials
+---
+2012/03/26 09:26:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/themes"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/th...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/blog
+---
+2012/03/26 09:26:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/themes"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/th...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/document
+---
+2012/03/26 09:48:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php:141
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php(164): GroupsController->loadModel('themes')
+#1 [internal function]: GroupsController->actionHome('themes')
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(GroupsController), Array)
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(GroupsController), Object(ReflectionMethod), Array)
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('home')
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/hom...')
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/smart-ims/groups/home/id/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/groups/home/id/1
+---
+2012/03/26 09:48:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/themes"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/th...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/tutorials
+---
+2012/03/26 09:48:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/themes"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/th...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/blog
+---
+2012/03/26 09:52:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/themes"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/th...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/blog
+---
+2012/03/26 09:54:48 [error] [exception.CException] exception 'CException' with message '属性 "ArticleController.working_id" 未被定义.' in D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\modules\site\views\article\index.php(8): CComponent->__get('working_id')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, true)
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('D:\web\wwwdocs\...', Array, true)
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#5 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\ArticleController.php(162): CController->render('index', Array)
+#6 [internal function]: ArticleController->actionIndex('blog', '1')
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ArticleController), Array)
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ArticleController), Object(ReflectionMethod), Array)
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('index')
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/article/in...')
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#20 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/smart-ims/group_1/blog
+HTTP_REFERER=http://localhost/smart-ims/group_1/tutorials
+---
+2012/03/26 09:54:57 [error] [php] urlencode() expects parameter 1 to be string, object given (D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CUrlManager.php:761)
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(524): CUrlManager->createUrl()
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(968): CWebApplication->createUrl()
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\helpers\CHtml.php(1095): ArticleController->createUrl()
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\helpers\CHtml.php(381): normalizeUrl()
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\zii\widgets\CMenu.php(240): link()
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\zii\widgets\CMenu.php(208): CMenu->renderMenuItem()
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\zii\widgets\CMenu.php(172): CMenu->renderMenuRecursive()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\zii\widgets\CMenu.php(159): CMenu->renderMenu()
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(174): CMenu->run()
+#9 D:\web\wwwdocs\smart-ims\protected\views\layouts\column2.php(17): ArticleController->widget()
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): ArticleController->renderInternal()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(785): ArticleController->renderFile()
+#13 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\ArticleController.php(162): ArticleController->render()
+#14 unknown(0): ArticleController->actionIndex()
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): ArticleController->runAction()
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#20 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#21 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): ArticleController->filterAccessControl()
+#22 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#23 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#24 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): ArticleController->runActionWithFilters()
+#25 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): ArticleController->run()
+#26 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#27 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 D:\web\wwwdocs\smart-ims\index.php(14): CWebApplication->run()
+REQUEST_URI=/smart-ims/group_1/blog
+in D:\web\wwwdocs\smart-ims\protected\views\layouts\column2.php (17)
+in D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\ArticleController.php (162)
+in D:\web\wwwdocs\smart-ims\index.php (14)
+2012/03/26 09:55:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/themes"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/th...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/blog
+---
+2012/03/26 09:59:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php:141
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\GroupsController.php(164): GroupsController->loadModel('themes')
+#1 [internal function]: GroupsController->actionHome('themes')
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(GroupsController), Array)
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(GroupsController), Object(ReflectionMethod), Array)
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('home')
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/groups/hom...')
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/smart-ims/groups/home/id/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/groups/home/id/1
+---
+2012/03/26 09:59:45 [error] [exception.CException] exception 'CException' with message '属性 "ArticleController.working_grouup" 未被定义.' in D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\web\wwwdocs\smart-ims\protected\modules\site\views\article\index.php(12): CComponent->__get('working_grouup')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(127): require('D:\web\wwwdocs\...')
+#2 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\web\wwwdocs\...', Array, true)
+#3 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('D:\web\wwwdocs\...', Array, true)
+#4 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#5 D:\web\wwwdocs\smart-ims\protected\modules\site\controllers\ArticleController.php(162): CController->render('index', Array)
+#6 [internal function]: ArticleController->actionIndex('tutorials', '1')
+#7 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ArticleController), Array)
+#8 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ArticleController), Object(ReflectionMethod), Array)
+#9 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#12 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#16 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(277): CController->run('index')
+#18 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/article/in...')
+#19 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#20 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/smart-ims/group_1/tutorials
+HTTP_REFERER=http://localhost/smart-ims/groups/home/id/1
+---
+2012/03/26 10:00:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/themes"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/th...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/tutorials
+---
+2012/03/26 10:04:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/cal/main"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/cal/main')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/cal/main/list?start=1332604800&end=1333209600&_=1332756258444
+HTTP_REFERER=http://localhost/smart-ims/cal
+---
+2012/03/26 10:04:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/rights/authItem"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/rights/aut...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/rights/authItem/permissions
+HTTP_REFERER=http://localhost/smart-ims/rights
+---
+2012/03/26 10:06:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/themes"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/th...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/tutorials
+---
+2012/03/26 10:08:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/themes"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/th...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/tutorials
+---
+2012/03/26 10:08:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/themes"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/th...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/tutorials
+---
+2012/03/26 10:08:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/tutorials"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/tu...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/tutorials
+HTTP_REFERER=http://localhost/smart-ims/groups/home/id/1
+---
+2012/03/26 10:09:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/group_1/themes"。' in D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php:281
+Stack trace:
+#0 D:\web\wwwdocs\yii\yii-1.1.10\framework\web\CWebApplication.php(136): CWebApplication->runController('site/group_1/th...')
+#1 D:\web\wwwdocs\yii\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\web\wwwdocs\smart-ims\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/smart-ims/group_1/themes/classic/images/group_logo_default60.jpg
+HTTP_REFERER=http://localhost/smart-ims/group_1/tutorials
+---

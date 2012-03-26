@@ -46,4 +46,9 @@ class BaseActiveRecord extends CActiveRecord{
 		
 		return $renders;
 	}
+	
+	public function behaviors(){
+		return array( 'CAdvancedArBehavior' => array(
+				'class' => 'application.extensions.CAdvancedArBehavior'));
+	}
 } 

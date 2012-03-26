@@ -62,6 +62,7 @@ class ArticleController extends Controller
 	public function actionCreate($class_code)
 	{
 		$model=new Article;
+		$model->class_code = $class_code;
 		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -127,8 +128,8 @@ class ArticleController extends Controller
 	 */
 	public function actionIndex($class_code)
 	{   //$class_code = $_GET['class_code'];
-		echo $class_code;exit;
-		$dataProvider=new CActiveDataProvider('Article');
+		//echo $class_code;exit;
+		$dataProvider=new CActiveDataProvider(Article::model()->byClass($class_code));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

@@ -69,8 +69,10 @@ class GroupsController extends Controller
 		if(isset($_POST['Groups']))
 		{
 			$model->attributes=$_POST['Groups'];
+			$model->members = User::model()->findByPk(Yii::app()->user->id);
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				echo "ok";
+				//$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(

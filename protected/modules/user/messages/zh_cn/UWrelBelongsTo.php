@@ -1,8 +1,8 @@
 <?php
 
 return array(
-	'Model Name'=>'Ονομασία Μοντέλου',
-	'Lable field name'=>'Όνομα πεδίου ετικέτας',
-	'Empty item name'=>'Όνομα κενού αντικειμένου',
-	'Profile model relation name'=>'Όνομα  σχέσης του Προφίλ Μοντέλου.',
+	'Model Name'=>'模块名称',
+	'Lable field name'=>'标签字段名称',
+	'Empty item name'=>'空项目名称',
+	'Profile model relation name'=>'框架模型关系名称',
 );

@@ -6,11 +6,11 @@
 			   {
 				  if($(this).data("status")==-1)
 				  {
-					  $(this).createWindow();
+					  funcs.createWindow($(this).attr("id"));
 				  }
 				  else if($(this).data("status")==0)
 				  {
-					  $(this).displayWindow();
+					  funcs.displayWindow($(this).attr("id"));
 				  }
 				  else
 				  {
@@ -18,18 +18,34 @@
 					  return;
 				  }
 			   },
-               createWindow  : function(){},
-			   displayWindow : function(){}
+               createWindow  : function(key){
+               	   for (var t_key in JCJ_datas["tabs"])
+                   {
+                   	   if($("#IFRAME_"+t_key))
+                       {
+                       	   if(t_key==key)
+                           {
+                           	   $("#IFRAME_"+t_key).remove();
+                           }
+                           else
+                           {
+                           	   $("#IFRAME_"+t_key).hide();
+                            }
+                       }
+                   }
+                   var t_iframe = $('<IFRAME id="IFRAME_'+key+'" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: block; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="'+JCJ_datas["tabs"][key]["src"]+'" frameBorder=0></IFRAME>');
+                   $("#tmmain").append(t_iframe);
+               },
+			   displayWindow : function(){
+			   }
         };
-		
-		$.extend({},funcs, options);
-
+        
         $(this).data("curIndex",'-1');
         for (var key in JCJ_datas["tabs"])
         {
         	$("#"+key).data("index",JCJ_datas["tabs"][key]["index"]);
 			$("#"+key).data("status",JCJ_datas["tabs"][key]["status"]);
-        	$("#"+key).click($(this).fun_tabclick);
+        	$("#"+key).click(funcs.fun_tabclick);
         }
     };
 })(jQuery);

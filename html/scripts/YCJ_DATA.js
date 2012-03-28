@@ -10,5 +10,6 @@ JCJ_datas=
        memorandum  :  {index:4,  key_word:"备忘",  src:"./memorandum.html",  css:"j_ico_memo",     status:-1},
        documents   :  {index:5,  key_word:"文档",  src:"./documents.html",   css:"j_ico_docu",     status:-1},
        log         :  {index:6,  key_word:"日志",  src:"./log.html",         css:"j_ico_log",      status:-1}
-    }
+    },
+    tabs_stack:["desktop"],
 }

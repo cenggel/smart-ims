@@ -121,7 +121,7 @@ class Groups extends BaseActiveRecord
 	
 		$menu = array(array('label'=>Yii::t('core','Create Group'),'url'=>array('/groups/create')));
 		foreach ($models as $key=>$g){
-			$menu[]= array('label'=>$g->group_name,'url'=> array( '/groups/view','id'=>$g->id));
+			$menu[]= array('label'=>$g->group_name,'url'=> array( '/groups/home','id'=>$g->id));
 		}
 		//print_r($menu);
 		return $menu;

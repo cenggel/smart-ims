@@ -19,6 +19,7 @@ return array(
 		// autoloading model and component classes
 		'import'=>array(
 				'application.models.*',
+				'application.modules.user.models.User',
 				'application.components.*',
 				'application.extensions.*',
 				'application.modules.rights.*',
@@ -46,7 +47,7 @@ return array(
 					 'appLayout'=>'application.views.layouts.main',
 				),
 				'user'=>array(
-						'returnUrl'=>array('/site'),
+						'returnUrl'=>array('/site/member/index'),
 						),
 				'site'=>array(
 						'import'=>array(
@@ -121,7 +122,10 @@ return array(
 								
 								
 								'group_<group_id:\d+>/<class_code:\w+>'=>'site/article/index',
-								'group_<group_id:\d+>/<class_code:\w+>/<action:(create|update|delete|index|admin)>'=>'site/article/<action>',
+								'group_<group_id:\d+>/<class_code:\w+>/<action:\w+>'=>'site/article/<action>',
+								
+								'group_<group_id:\d+>/cal/<controller:\w+>'=>'cal/<controller>/index',
+								'group_<group_id:\d+>/cal/<controller:\w+>/<action:\w+>'=>'cal/<controller>/<action>',
 								
 								
 								'tutorials/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'tutorials',)),
@@ -187,6 +191,7 @@ array(
 				'adminEmail'=>'webmaster@example.com',
 				'editor'=>'fckeditor',
 				'allowedImages'=>array('jpg','jpeg','gif','png'),
+				'upload_path'=>'/uploads',
 				'menus'=>$menus,
 		),
 );

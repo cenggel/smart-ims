@@ -24,13 +24,13 @@ class BaseActiveRecord extends CActiveRecord{
 	 *  
 	 * 
 	 */
-	public function getFromFieldList(){}
+	public function getFromFieldList($section="default"){}
 	
 	public function getFieldRender($section="default"){
-		$fields = $this->getFromFieldList();
+		$fields = $this->getFromFieldList($section);
 		$renders = array();
-		if(is_array( $fields[$section])){
-			foreach ($fields[$section] as $key=>$attr){
+		if(is_array( $fields)){
+			foreach ($fields as $key=>$attr){
 				$attrName = $attr;
 				if (is_array ( $attr ) && empty ( $attr ['name'] )) {
 					$attr ['name'] = $key;

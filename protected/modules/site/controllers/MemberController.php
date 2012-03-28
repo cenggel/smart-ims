@@ -7,6 +7,9 @@ class MemberController extends Controller
 		$this->render('index');
 	}
 
+	public function actionHome(){
+		$this->render('home');
+	}
 	// Uncomment the following methods and override them if needed
 	/*
 	public function filters()

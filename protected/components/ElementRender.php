@@ -1,4 +1,13 @@
 <?php
+/**
+ * @property $lable
+ * @property $htmlOptions
+ * @property $element
+ * @property $id
+ * @property $type
+ * @property $name
+ * 
+ */
 class ElementRender {
 	protected $attribes = array ();
 	protected $model = null;
@@ -90,6 +99,28 @@ class ElementRender {
 			$ret.="</div>";
 		}
 		return $ret;
+	}
+	
+	protected  function dateRender(){
+		
+		$script = '	$(function() {// alert("aaa");
+		$( "'+$this->id+'" ).datepicker(jQuery.extend($.datepicker.regional["zh-CN"], {changeMonth: true,
+			changeYear: true}));
+			 
+		if(!$( "#'+$this->id+'" ).val()){
+			$( "#'+$this->id+'" ).datepicker("setDate",new Date());
+		}else{
+			 
+			 var date = new Date();
+			 date.setTime(parseInt($( "#'+$this->id+'" ).val())*1000);
+		   $( "#'+$this->id+'" ).datepicker("setDate",date);
+		}	
+			
+	});';
+		Yii::app()->clientScript->registerScript($this->id,$script,CClientScript::POS_READY);
+		
+		return $this->textRender();
+		
 	}
 
 	protected function hiddenRender(){

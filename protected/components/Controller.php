@@ -28,7 +28,7 @@ class Controller extends RController
 	protected function beforeAction($action)
 	{ //print_r(Yii::app()->user); exit;
 		if(parent::beforeAction($action)){
-			
+			Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl . '/css/redmond/jquery-ui-1.8.18.custom.css');
 			Yii::app()->clientScript->registerCoreScript('jquery');
 			Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/scripts/jquery-ui-1.8.11.custom.js');
 			Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/scripts/main.js');
@@ -59,16 +59,16 @@ class Controller extends RController
 
 	protected function beforeRender($view){
 		//if($this->breadcrumbs && count($this->breadcrumbs)>0){
-		$this->breadcrumbs = array(
-				'links'=>$this->breadcrumbs,
-		);
+		//$this->breadcrumbs = array(
+		//		'links'=>$this->breadcrumbs,
+		//);
        
 		//print_r($this->breadcrumbs ); exit;
 		return true;
 	}
 
 	public function filters() {
-		//return array( 'rights', );
+		return array( 'rights', );
 	}
 
 	public function allowedActions() {

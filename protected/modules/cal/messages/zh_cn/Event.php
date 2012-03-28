@@ -1,9 +1,9 @@
 <?php
 return array(
-    'Title'=>'±êÌâ',
-    'Start'=>'¿ªÊ¼',
-    'End'=>'½áÊø',
-    'All Day'=>'È«Ìì',
-    'Editable'=>'¿É±à¼­'',
+    'Title'=>'æ ‡é¢˜',
+    'Start'=>'å¼€å§‹',
+    'End'=>'ç»“æŸ',
+    'All Day'=>'å…¨å¤©',
+    'Editable'=>'å¯ç¼–è¾‘'',
 );
 ?>

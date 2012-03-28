@@ -1,6 +1,6 @@
 <?php $this->beginContent(Rights::module()->appLayout); ?>
 <div class="clear"></div>
-<div id="rights" class="container clearfix">
+<div id="rights" class="grid_24">
 
 	<div id="content">
 

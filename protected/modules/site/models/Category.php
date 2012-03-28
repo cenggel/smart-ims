@@ -167,25 +167,34 @@ class Category extends CActiveRecord
 		return true;
 	}
 	
-	public function getTreeListForSelect($parentid = 0, $prefix = "&nbsp&nbsp;") {
+	public function getTreeListForSelect($parentid = 0, $prefix = "&nbsp&nbsp;",$group_id=false,$class_code=false) {
 		
-		$return = array ('0'=>Yii::t('siteModule.category','Root Category'));
+		$return = array ();
 		$criteria = new CDbCriteria ( );
-		$criteria->condition = "class_code='{$this->class_code}' and parent_Id= {$parentid}";
+		$criteria->condition = " parent_Id= {$parentid}";
+		
+		if(!$class_code) $class_code = $this->class_code;
+		if($class_code){
+			$criteria->addCondition("class_code ='{$class_code}'");
+		}
+		
+		if($group_id){
+			$criteria->addCondition("(group_id = $group_id or category_type=" .self::SYS_CATEGORY .")");
+		}
 		$criteria->order = " parent_Id asc,display_order asc";
 		$cats = Category::model ()->findAll ( $criteria );
 		foreach ( $cats as $cat ) {
 			//$cat->name='|'.str_repeat($prefix,$cat->level)."|-".$cat->name;
 			//echo "<br>".str_repeat("&nbsp;&nbsp;&nbsp;",$cat->level)."|-".$cat->name;
-			$return [$cat->id] = str_repeat ( $prefix, $cat->level + 1 ) . "|-" . $cat->name;
+			$return [$cat->id] = str_repeat ( $prefix, 1 ) . "|-" . $cat->name;
 			//print_r($this->getTreeListForSelect($moduleName,$cat->id));
-			$return = array_merge ( $return, $this->getTreeListForSelect (  $cat->id ) );
+			$return = array_merge ( $return, $this->getTreeListForSelect (  $cat->id,$prefix.$prefix ) );
 		}
 		return $return;
 	
 	}
 	
-	public function getSelectDataList($parentid = 0, $prefix = "&nbsp&nbsp;"){
-		return $this->getTreeListForSelect($parentid,$prefix);
+	public function getSelectDataList($parentid = 0, $prefix = "&nbsp&nbsp;",$group_id=false,$class_code=false){
+		return $this->getTreeListForSelect($parentid,$prefix,$group_id,$class_code);
 	}
 }

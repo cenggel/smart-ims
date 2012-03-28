@@ -4,10 +4,7 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'List Article', 'url'=>array('index')),
-	array('label'=>'Create Article', 'url'=>array('create')),
-);
+
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){

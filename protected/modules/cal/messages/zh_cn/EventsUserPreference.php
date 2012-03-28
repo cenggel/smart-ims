@@ -1,9 +1,9 @@
 <?php
 return array(
-    'Preference'=>'²Î¿¼',
-    'Mobile'=>'ÊÖ»ú',
-    'Mobile Alert'=>'ÊÖ»ú¸æ¾¯',
-    'Email'=>'µç×ÓÓÊÏä',
-    'Email Alert'=>'µç×ÓÓÊÏä¸æ¾¯',
+    'Preference'=>'å‚è€ƒ',
+    'Mobile'=>'æ‰‹æœº',
+    'Mobile Alert'=>'æ‰‹æœºå‘Šè­¦',
+    'Email'=>'ç”µå­é‚®ç®±',
+    'Email Alert'=>'ç”µå­é‚®ç®±å‘Šè­¦',
 );
 ?>

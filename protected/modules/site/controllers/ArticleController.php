@@ -10,41 +10,7 @@ class ArticleController extends Controller
 	public $working_group =null;
 	public $working_class = null;
 
-	/**
-	 * @return array action filters
-	 */
-	public function filters()
-	{
-		return array(
-				'accessControl', // perform access control for CRUD operations
-		);
-	}
-
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-	public function accessRules()
-	{
-		return array(
-				array('allow',  // allow all users to perform 'index' and 'view' actions
-						'actions'=>array('index','view'),
-						'users'=>array('*'),
-				),
-				array('allow', // allow authenticated user to perform 'create' and 'update' actions
-						'actions'=>array('create','update'),
-						'users'=>array('@'),
-				),
-				array('allow', // allow admin user to perform 'admin' and 'delete' actions
-						'actions'=>array('admin','delete'),
-						'users'=>array('admin'),
-				),
-				array('deny',  // deny all users
-						'users'=>array('*'),
-				),
-		);
-	}
+	
 
 	/**
 	 * Displays a particular model.
@@ -52,8 +18,19 @@ class ArticleController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$model = $this->loadModel($id);
+		
+		if(!$this->working_class && $model->class_code){
+			$this->working_class= $model->class_code;
+			
+		}
+		
+		if(!$this->working_group && $model->group_id){
+			$this->working_group = Groups::model()->findByPk($model->group_id);
+			
+		}
 		$this->render('view',array(
-				'model'=>$this->loadModel($id),
+				'model'=>$model,
 		));
 	}
 
@@ -61,10 +38,11 @@ class ArticleController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate($class_code)
+	public function actionCreate($class_code,$group_id=0)
 	{
 		$model=new Article;
 		$model->class_code = $class_code;
+		$model->group_id = $group_id;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -132,21 +110,7 @@ class ArticleController extends Controller
 	{   //$class_code = $_GET['class_code'];
 		//echo $class_code;
 		//echo "<br> $group_id";
-		
-		if($group_id >0){
-			//echo "<br> here ...";
-			$working_group = Groups::model()->findByPk($group_id);
-			//var_dump($working_group);
-			if( !Yii::app()->user->checkAccess('op_view_all_groups') ||!Yii::app()->user->checkAccess('groups.view',array('group'=>$working_group)))
-			{
-				throw new CHttpException(403, Yii::t('error', 'Sorry, You don\'t have the required permissions to enter this section'));
-			}
-			
-			$this->working_group = $working_group;
-			
-			
-		}
-		
+
 		$article = Article::model();
 		if($class_code!=null){
 			$this->working_class = $class_code;
@@ -155,7 +119,7 @@ class ArticleController extends Controller
 		if($group_id>0){
 			$article = $article->byGroup($group_id);
 		}
-		
+
 		$dataProvider=new CActiveDataProvider($article);
 		$this->render('index',array(
 				'dataProvider'=>$dataProvider,
@@ -171,6 +135,13 @@ class ArticleController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Article']))
 			$model->attributes=$_GET['Article'];
+		if(isset($_POST['Article']))
+			$model->attributes=$_GET['Article'];
+		
+		$group_id = Yii::app()->request->getParam("group_id");
+		$class_code = Yii::app()->request->getParam("class_code");
+		if($group_id) $model->group_id = $group_id;
+		if($class_code) $model->class_code = $class_code;
 
 		$this->render('admin',array(
 				'model'=>$model,
@@ -202,10 +173,53 @@ class ArticleController extends Controller
 			Yii::app()->end();
 		}
 	}
-	
+
 	protected function beforeAction($action){
+		$group_id = Yii::app()->request->getParam("group_id");
+		$class_code = Yii::app()->request->getParam("class_code");
+
+		if($group_id >0){
+			//echo "<br> here ...";
+			$working_group = Groups::model()->findByPk($group_id);
+			//var_dump($working_group);
+			if( !Yii::app()->user->checkAccess('op_view_all_groups') ||!Yii::app()->user->checkAccess('groups.view',array('group'=>$working_group)))
+			{
+				throw new CHttpException(403, Yii::t('error', 'Sorry, You don\'t have the required permissions to enter this section'));
+			}
+				
+			$this->working_group = $working_group;
+				
+				
+		}
+
+		if($class_code){
+			$this->working_class = $class_code;
+		}
 		
+		return parent::beforeAction($action);
+	}
+	
+	
+	public function beforeRender($view){
+		if($this->working_class)
+			$params['class_code'] = $this->working_class;
+		if($this->working_group){
+			$params['group_id'] = $this->working_group->id;
+		}
+		$this->menu=array(
+				
+				array('label'=>Yii::t('siteModule.article','Create Article'), 'url'=>array_merge(array('create'),$params)),
+				array('label'=>Yii::t('siteModule.article','List Article'), 'url'=>array_merge(array('index'),$params)),
+				array('label'=>Yii::t('siteModule.article','Manage Article'), 'url'=>array_merge(array('admin'),$params)),
+				array('label'=>Yii::t('siteModule.article','Update Article'), 'url'=>array_merge(array('update', 'id'=>Yii::app()->request->getParam("id")),$params),
+						'visible'=>('view'==$this->getAction()->getId())),
+				array('label'=>Yii::t('siteModule.article','Delete Article'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>Yii::app()->request->getParam("id")),'confirm'=>Yii::t('siteModule.article','Are you sure you want to delete this item?')),
+						'visible'=>('view'==$this->getAction()->getId())),
+				
+		);
 		
-		//print_r(Yii::app()); exit;
- 	}
+		return true;
+	}
+	
+
 }

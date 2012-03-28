@@ -1,6 +1,4 @@
 @import "scrolltab.css";
-@import "redmond/jquery-ui-1.8.18.custom.css";
-
 a,a:link,a:visited,a:hover { 
 	color:#0071c8;
 	text-decoration:none; 
@@ -24,6 +22,7 @@ body
 	font: normal 10pt Microsoft YaHei, Segoe UI, Tahoma, Arial, Verdana,
 		sans-serif;
 	background: url(../images/header.png) left top #5DA1C0  repeat-x;
+	text-align:left;
 }
 
 #page
@@ -332,17 +331,17 @@ ul.content-box-tabs li a.current {
                 background: #f3f3f3;
                 }
                 
-#main-content table td,
-#main-content table th {
+#main-content table.items td,
+#main-content table.items th {
                 padding: 10px;
                 line-height: 1.3em;
                 }        
 				
-#main-content table tfoot td .bulk-actions {
+#main-content table.items tfoot td .bulk-actions {
                 padding: 15px 0 5px 0;
                 } 
 				
-#main-content table tfoot td .bulk-actions select {
+#main-content table.items tfoot td .bulk-actions select {
                 padding: 4px;
 				border: 1px solid #ccc;
                 }      
@@ -846,7 +845,14 @@ a.button { display:inline-block;
 	 height:60px;
 	 vertical-align:middle;
  }
- 
+  .group-nav .group-info .name{
+	 font-size:200%;
+	 height:60px;
+	 line-height:60px;
+	 position:absolute;
+	 bottom:0px;
+	 left:70px;
+ }
  .group-nav .sub-nav{
 	 vertical-align:bottom;
 	 height:70px;

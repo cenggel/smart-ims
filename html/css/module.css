@@ -8,7 +8,7 @@ body, ul, li, form, p {margin:0;padding:0;}
 
 #box {width:100%; margin:0 auto;}
 #a_top { height:29px; position:relative; background:url(../images/commo/a_top_bg.gif) repeat-x; }
-#a_left {width:149px; position:absolute; left:0;padding:3px;border-right:1px solid #d4e4f2;background:#f2f9ff ;}
+#a_left {width:200px; position:absolute; left:0;padding:3px;border-right:1px solid #d4e4f2;background:#f2f9ff ;}
 #a_right { margin-left:157px;padding:3px; padding-right:20px\9; background:#FFF; overflow-y:auto;overflow-x:hidden; position:relative;}
 #a_main {width:100%; background:#FFF;position:relative;top:0; left:0;}
 #footer { height:5px; clear:left; position:relative; background: url(../images/commo/footer_bg.gif) repeat-x;}

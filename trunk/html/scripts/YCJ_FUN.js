@@ -17,6 +17,15 @@
 					  return;
 				  }
 			   },
+			   fun_tabactive:function (key)
+			   {
+			   	   var idx = $.inArray(key,JCJ_datas["tabs_stack"]);
+			   	   if(idx!=-1)
+			       {
+			       	   JCJ_datas["tabs_stack"] = JCJ_datas["tabs_stack"].splice(idx,1);
+			       }
+			   	   JCJ_datas["tabs_stack"].push(key);
+			   },
                createWindow  : function(key){
                	   for (var t_key in JCJ_datas["tabs"])
                    {
@@ -38,16 +47,18 @@
                    var t_html  = '<DIV id="menu_' + key + '" style="WIDTH: 99px; WHITE-SPACE: nowrap; OVERFLOW: hidden" class=menuli>';
 					   t_html  +='   <DIV id="menu1_' + key + '" class=t_tab_curl>';
 					   t_html  +='    <DIV id="menu2_' + key + '" class=t_tab_curm>';
-					   t_html  +='       <DIV id="menu3_' + key + '" class=t_tab_curr><A title=' + JCJ_datas["tabs"][key]["key_word"] + ' href="javascript:void(0);">' + JCJ_datas["tabs"][key]["key_word"] + '</A></DIV>';
+					   t_html  +='       <DIV id="menu3_' + key + '" class=t_tab_curr><A id="CLOSE_' + key + '" class=close title=关闭 href="javascript:void(0);"></A><A title=' + JCJ_datas["tabs"][key]["key_word"] + ' href="javascript:void(0);">' + JCJ_datas["tabs"][key]["key_word"] + '</A></DIV>';
 					   t_html  +='    </DIV>';
 					   t_html  +='  </DIV>';
 					   t_html  +='</DIV>';
 				   $(t_html).appendTo($("#menu"))
 				   $("#menu_"+key).click(function() {funcs.displayWindow(key)});
+				   $("#CLOSE_"+key).click(function() {funcs.closeWindow(key)});
 				   JCJ_datas["tabs"][key]["status"] = 1;
 				   
                    var t_iframe = $('<IFRAME id="IFRAME_'+key+'" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: block; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="'+JCJ_datas["tabs"][key]["src"]+'" frameBorder=0></IFRAME>');
                    $("#tmmain").append(t_iframe);
+                   funcs.fun_tabactive(key);
                },
 			   displayWindow : function(key){
 			   	   for (var t_key in JCJ_datas["tabs"])
@@ -87,10 +98,20 @@
                            }
                        }
                    }
+                   funcs.fun_tabactive(key);
+			   },
+			   closeWindow:function (key)
+			   {
+			   	   $("#menu_"+key).remove();
+			   	   $("#IFRAME_"+key).remove();
+			   	   JCJ_datas["tabs"][key]["status"]=-1;
+			   	   JCJ_datas["tabs_stack"].splice($.inArray(key,JCJ_datas["tabs_stack"]),1);
+			   	   var active_key = JCJ_datas["tabs_stack"].pop();
+			   	   funcs.displayWindow(active_key);
 			   }
         };
         
-        $(this).data("curIndex",'-1');
+        $(this).data("curIndex",'0');
         $("#menu_desktop").click(function() {funcs.displayWindow("desktop")});
         for (var key in JCJ_datas["tabs"])
         {

@@ -9,8 +9,9 @@
  * @property string $type
  * @property integer $position
  */
-class Enumeration extends ActiveRecord
+class Enumeration extends BaseActiveRecord
 {
+	static $_items= array();
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.

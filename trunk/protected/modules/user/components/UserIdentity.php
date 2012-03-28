@@ -21,6 +21,7 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
+		//print_r(get_declared_classes());exit;
 		if (strpos($this->username,"@")) {
 			$user=User::model()->notsafe()->findByAttributes(array('email'=>$this->username));
 		} else {

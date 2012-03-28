@@ -106,4 +106,10 @@ class HomeController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+	
+	public function actionWorkframe(){
+		$this->layout="//layouts/workframe";
+		
+		$this->render('workframe');
+	}
 }

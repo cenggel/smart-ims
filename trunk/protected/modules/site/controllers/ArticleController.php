@@ -201,6 +201,7 @@ class ArticleController extends Controller
 	
 	
 	public function beforeRender($view){
+		$params =array();
 		if($this->working_class)
 			$params['class_code'] = $this->working_class;
 		if($this->working_group){

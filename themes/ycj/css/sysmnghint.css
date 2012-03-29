@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+
+.tooltip {
+	display: none;
+	z-index: 100;
+}
+.tooltip_con {
+	background: none repeat scroll 0 0 #FDFCE6;
+	border: 1px solid #D7D199;
+	color: #535353;
+	padding: 5px;
+	width: 200px;
+	margin-top: 5px;
+}
+.tooltip_con .img_arrow {
+	height: 6px;
+	position: absolute;
+	top: 0;
+	width: 9px;
+	margin: 0 0 -1px 8px;
+}
+.tooltip_con .close {
+	background: url("../images/icon_tipDiv_colse.gif") no-repeat scroll 0 0 transparent;
+	height: 5px;
+	position: absolute;
+	right: 5px;
+	width: 5px;
+}
+
+/**输入密码弹出窗口样式*/
+#pop_tip {
+	position: absolute; width: 310px;
+}
+#pop_tip .pttop {
+	background: url("../images/ptips_top.png") no-repeat; width: 310px; height: 9px; overflow: hidden; 
+}
+#pop_tip .tipcont .subbot {
+	background: url("../images/ptips_subbot.png") no-repeat; width: 231px; height: 11px;
+}
+#pop_tip .tipcont {
+	border: 4px solid #056daa; border-top: 0; background: #fff;
+}
+#pop_tip .tipcont .subtip {
+	width: 231px; padding: 15px 0 0 30px;
+}
+#pop_tip .tipcont .subtcont {
+	padding: 3px 10px; border: 1px solid #c9cacc; border-bottom: 0; 
+}
+#pop_tip .tipcont .ppsw {
+	padding: 0 0 10px 30px;
+}
+#pop_tip .tipcont .ppsw .pswti {
+	font-size: 12px;
+}
+#pop_tip .tipcont .ppsw .inputwh {
+	width: 166px; height: 20px; vertical-align: middle;
+}
+#pop_tip .tipcont .ppsw .error {
+	margin: 3px 0 0 60px; color: #f00;
+}
+#pop_tip .tipcont .pptoper {
+	margin: 0 25px 10px 0; text-align: right;
+}
+#pop_tip .tipcont .pptoper input {
+	margin-right: 8px; padding: 2px 5px; 
+}

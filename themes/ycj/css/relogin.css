@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+
+#mgtLoginDialog {
+	width: 350px;
+	background: #D5E7F3;
+	color: black;
+	padding: 4px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #7194C6;
+}
+
+#mgtLoginDialog .title {
+	height: 24px;
+	line-height: 24px;
+	border: 0;
+	background: none;
+}
+
+#mgtLoginDialog .title .relogin_show_ico {
+	background-position:-69px 0;
+	height: 16px;
+	margin: 5px 6px 0 2px;
+	width: 16px;
+	display: block;
+	float: left;
+}
+
+.relogin_show_ico {
+background-color:transparent;
+background-image:url("../../images/v3/common/pop_f1.gif");
+background-repeat:no-repeat;
+}
+
+
+
+#mgtLoginDialog .relogin_close {
+	background-position:-42px -57px;
+	width: 16px;
+	height: 16px;
+	display: block;
+	cursor: pointer;
+	top: 5px;
+	right: 5px;
+	position: absolute;
+}
+
+.relogin_close{
+	background-color:transparent;
+	background-image:url("../../images/v3/common/pop_f1.gif");
+	background-repeat:no-repeat;
+}
+#mgtLoginDialog .close:hover {
+	background-position:-42px -57px;
+	background: url('../../images/icon_close_link.gif') no-repeat;
+}
+
+#mgtLoginDialog .onav {
+	background-color: #DFECF5;
+	border-bottom: 1px solid #B4D4ED;
+	height: 25px;
+}
+
+#mgtLoginDialog .popContent {
+	background-color: #fff;
+	height: 150px;
+}
+
+#mgtLoginDialog iframe {
+	height: 150px;
+	width: 100%;
+	border: 0 none;
+}

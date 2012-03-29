@@ -1,0 +1,12 @@
+<div id="group-list" >
+dddddddddddddddddddddddddddd
+<ul class="operations-new side-group-list">
+  {foreach $groups as $g}
+   <li><a href="{$g->getUrl()}" >{$g->group_name}</a></li>
+  {/foreach}
+</ul>
+<br>
+<div class="floatright">
+   <a href="{Groups::getCreateUrl()}">创建工作组</a>
+</div>
+</div>

@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+
+.loginTips .tip-title {
+	background:#16387C; font-size:12px; font-weight:bold; border:1px solid #16387C; padding:5px; color:#fff;
+}
+		     
+.loginTips .tip-text  {
+	background:#fff2ca; font-size:12px; border-left:1px solid #16387C; border-right:1px solid #16387C; border-bottom:1px solid #16387C; padding:5px; width:290px;
+}
+.loginTips .tip-text  ul { 
+	margin: 5px 3px 0 18px; list-style: square; line-height: 1.6 ; padding: 0
+}

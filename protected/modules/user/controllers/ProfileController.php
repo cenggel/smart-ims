@@ -114,7 +114,7 @@ class ProfileController extends Controller
 				);
 				
 		
-		 $this->submenu=array(genMenuSection('profile',$this->submenu));
+		 //$this->submenu=array(genMenuSection('profile',$this->submenu));
 		 //debug_print($this->submenu,true);
 	}
 	

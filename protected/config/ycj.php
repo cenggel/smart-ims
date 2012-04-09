@@ -7,7 +7,7 @@ return array(
 		'preload'=>array('log'),
 		'language'=>'zh_cn',
 		'theme' => 'ycj',
-		'defaultController'=>'site/home/workframe',
+		'defaultController'=>'user/auth/login',
 
 		// autoloading model and component classes
 		'import'=>array(

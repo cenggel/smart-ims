@@ -13,8 +13,8 @@ return array(
 		// preloading 'log' component
 		'preload'=>array('log'),
 		//'language'=>'zh_cn',
-		//'theme' => 'classic',
-		//'defaultController'=>'user',
+		'theme' => 'classic',
+		'defaultController'=>'/user/auth/login',
 
 		// autoloading model and component classes
 		//active Record类型的model都放在protected/下的model目录下。访问方便。

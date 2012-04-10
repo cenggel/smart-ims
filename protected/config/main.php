@@ -38,12 +38,12 @@ return array(
 						'password'=>'123',
 						// If removed, Gii defaults to localhost only. Edit carefully to taste.
 						'ipFilters'=>array('127.0.0.1','::1'),
-				)
+				),
 				'user'=>array(
-						'returnUrl'=>array('/site/member/index'),
-						),		
+						'returnUrl'=>array('/member/home'),
+						),	
 				'cal' => array(
-						'debug' =>  // For first run only!
+						'debug' =>  true,// For first run only!
 				),
 
 		),
@@ -71,12 +71,17 @@ return array(
 						// use 'site/error' action to display errors
 						'errorAction'=>'/site/home/error',
 				),
-				'urlManager'=>array(
-		            'urlFormat'=>'path',
-		            'showScriptName' => false,
-	            ),
+				'urlManager'=>array(  
+					    'urlFormat'=>'path',  
+					    'showScriptName'=>true, 
+					    'urlSuffix'=>'.html',
+					    'rules'=>array(  
+					        'posts'=>'post/list',  
+					        'post/<id:\d+>'=>array('post/show','urlSuffix'=>'.html'),  
+					        'post/<id:\d+>/<mid:\w+>'=>array('post/view','urlSuffix'=>'.xml'),  
+					    ),  
+					), 
 
-		        ),
 
 				'log'=>array(
 						'class'=>'CLogRouter',

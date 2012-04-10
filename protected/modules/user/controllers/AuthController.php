@@ -43,5 +43,7 @@ class AuthController extends Controller
 		Yii::app()->clientScript->registerScriptFile(Yii::app()->getTheme()->getBaseUrl() . "/scripts/login.js");
 		
 		$this->render('login',array());
+		//echo !(Yii::app()->urlManager->showScriptName);
+		//return;
 	}
 }

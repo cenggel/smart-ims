@@ -66,83 +66,23 @@ return array(
 				'user'=>array(
 						// enable cookie-based authentication
 						'allowAutoLogin'=>true,
-						'class'=>'RWebUser',
-						'loginUrl' => array('/user/login'),
+						'class'=>'CWebUser',
+						'loginUrl' => array('user/auth/login'),
 						
 				),
-				
-				'settings' => array(
-						'class' => 'XSettings',
-				),
-				'authManager'=>array(
-						'class'=>'RDbAuthManager', // Provides support authorization item sorting
-						/*// Path to SDbAuthManager in srbac module if you want to use case insensitive
 
-						//access checking (or CDbAuthManager for case sensitive access checking)
-						'class'=>'application.modules.srbac.components.SDbAuthManager',
-						// The database component used
-						'connectionID'=>'db',
-						// The itemTable name (default:authitem)
-						'itemTable'=>'items',
-						// The assignmentTable name (default:authassignment)
-						'assignmentTable'=>'assignments',
-						// The itemChildTable name (default:authitemchild)
-						'itemChildTable'=>'itemchildren',
-						*/
-			 ),
-					
-				'viewRenderer'=>array(
-						'class'=>'application.extensions.renderers.smarty.ESmartyViewRenderer',
-						'fileExtension' => '.html',
-						//'pluginsDir' => 'application.smartyPlugins',
-						//'configDir' => 'application.smartyConfig',
-				),
 				// uncomment the following to enable URLs in path-format
 
-				'urlManager'=>array(
-						'urlFormat'=>'path',
-						'showScriptName'=>false,
-						'rules'=>array(
-								//gii rewrite
-								'gii'=>'gii',
-								'gii/<controller:\w+>'=>'gii/<controller>',
-								'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
-								
-								
-								'cal'=>'cal',
-								'user/<controller:\w+>'=>'user/<controller>',
-								'user/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'user/<controller>/<_a>/',
-								'rights/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'rights/<controller>/<_a>/',
-								'cal/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'cal/<controller>/<_a>/',
-								
-								
-								'group_<group_id:\d+>/<class_code:\w+>'=>'site/article/index',
-								'group_<group_id:\d+>/<class_code:\w+>/<action:\w+>'=>'site/article/<action>',
-								
-								'group_<group_id:\d+>/cal/<controller:\w+>'=>'cal/<controller>/index',
-								'group_<group_id:\d+>/cal/<controller:\w+>/<action:\w+>'=>'cal/<controller>/<action>',
-								
-								'notice'=>array('site/article/index/','defaultParams'=>array('class_code'=>'notice',)),
-								'notice/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'notice',)),
-								'memo'=>array('site/article/index','defaultParams'=>array('class_code'=>'memo',)),
-								'memo/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'memo',)),
-								'blog'=>array('site/article/index','defaultParams'=>array('class_code'=>'blog')),
-								'blog/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'blog')),
-								'document'=>array('site/article/index','defaultParams'=>array('class_code'=>'document')),
-								'document/<action:\w+>'=>array('site/article/<action>','defaultParams'=>array('class_code'=>'document')),
-								
-								
-								'<controller:\w+>'=>'site/<controller>/index',
-								'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-								'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-								'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-								
-								'<controller:\w+>/<id:\d+>'=>'site/<controller>/view',
-								'<controller:\w+>/<action:\w+>/<id:\d+>'=>'site/<controller>/<action>',
-								'<controller:\w+>/<action:\w+>'=>'site/<controller>/<action>',
-								"<_c:([a-zA-z0-9-]+)>/<_a:([a-zA-z0-9-]+)>//*" => 'site/<_c>/<_a>/',
-						),
-				),
+				'urlManager'=>array(  
+					    'urlFormat'=>'path',  
+					    'showScriptName'=>false, 
+					    'urlSuffix'=>'.html',
+					    'rules'=>array(  
+					        'posts'=>'post/list',  
+					        'post/<id:\d+>'=>array('post/show','urlSuffix'=>'.html'),  
+					        'post/<id:\d+>/<mid:\w+>'=>array('post/view','urlSuffix'=>'.xml'),  
+					    ),  
+					), 
 
 				/*'db'=>array(
 						'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
@@ -170,12 +110,6 @@ return array(
 										'class'=>'CFileLogRoute',
 										'levels'=>'error, warning',
 								),
-								// uncomment the following to show log messages on web pages
-								
-								/*array(
-										'class'=>'CWebLogRoute',
-								),*/
-
 						),
 				),
 		),

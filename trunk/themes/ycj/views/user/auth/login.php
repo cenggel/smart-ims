@@ -21,7 +21,7 @@
     <div class="cb"></div>
   </div>
   <div id="container">
-    <form name="jingoalLoginForm" id="jingoalLoginForm" method="post" action="#">
+    <form name="jingoalLoginForm" id="jingoalLoginForm" method="post" action="<?php echo $this->createUrl("auth/login",array("aa"=>"bb"));?>">
       <center>
         <div  class="login_bg">
           <div class="login_cont">

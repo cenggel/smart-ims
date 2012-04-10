@@ -1328,3 +1328,313 @@ Stack trace:
 REQUEST_URI=/ycj/index.php/user/auth/images/toplogo110720.jpg
 HTTP_REFERER=http://localhost/ycj/index.php/user/auth/login
 ---
+2012/04/10 12:50:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/index/index"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index/inde...')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/index
+---
+2012/04/10 12:51:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/index/index"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index/inde...')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/index
+---
+2012/04/10 12:53:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/index/aa"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index/aa')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/index/aa
+---
+2012/04/10 13:32:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/login.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:32:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/mergedjs.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:32:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/user/auth"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/user/auth')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/user/auth/favicon.ico
+---
+2012/04/10 13:33:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/mergedjs.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:33:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/login.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:33:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/user/auth"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/user/auth')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/user/auth/favicon.ico
+---
+2012/04/10 13:34:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/login.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:34:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/mergedjs.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:34:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/mergedjs.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:34:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/login.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:34:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/mergedjs.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:34:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/login.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:34:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/mergedjs.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:34:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/login.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:39:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/mergedjs.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:39:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/login.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:39:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/login.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:39:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/mergedjs.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:39:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/mergedjs.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:39:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/login.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:39:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/mergedjs.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:39:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/login.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:40:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/login.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:40:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/mergedjs.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:40:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/login.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:40:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/mergedjs.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:40:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/mergedjs.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:40:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/login.js
+HTTP_REFERER=http://localhost/ycj/user/auth/login
+---
+2012/04/10 13:44:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/login.js
+HTTP_REFERER=http://localhost/ycj/
+---
+2012/04/10 13:44:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/mergedjs.js
+HTTP_REFERER=http://localhost/ycj/
+---
+2012/04/10 13:50:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/login.js
+HTTP_REFERER=http://localhost/ycj/
+---
+2012/04/10 13:50:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "site/themes/ycj"。' in E:\yiiframework\framework\web\CWebApplication.php:280
+Stack trace:
+#0 E:\yiiframework\framework\web\CWebApplication.php(135): CWebApplication->runController('site/themes/ycj')
+#1 E:\yiiframework\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\MyProject\ycj\index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/ycj/themes/ycj/scripts/mergedjs.js
+HTTP_REFERER=http://localhost/ycj/
+---

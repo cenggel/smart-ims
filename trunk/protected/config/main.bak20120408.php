@@ -116,7 +116,7 @@ return array(
 
 				'urlManager'=>array(
 						'urlFormat'=>'path',
-						'showScriptName'=>false,
+						'showScriptName'=>true,
 						'rules'=>array(
 //delete by lfa 16:47 2012/4/8 为了提高开发进度，前期尽量功能单一化
 //								//gii rewrite

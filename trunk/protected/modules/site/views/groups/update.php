@@ -1,8 +1,8 @@
 <?php
 $this->breadcrumbs=array(
-	'Groups'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
+	Yii::t('siteModule.groups','Groups')=>array('index'),
+	$model->group_name=>array('view','id'=>$model->id),
+	'变更',
 );
 
 $this->menu=array(
@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Groups <?php echo $model->id; ?></h1>
+<h1><?php echo Yii::t('siteModule.groups','Update Groups ') .$model->group_name; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

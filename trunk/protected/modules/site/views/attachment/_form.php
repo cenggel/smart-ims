@@ -1,84 +1,40 @@
-<div class="form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php $form=$this->beginWidget('bootstrap.widgets.BootActiveForm',array(
 	'id'=>'attachment-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'item_id'); ?>
-		<?php echo $form->textField($model,'item_id'); ?>
-		<?php echo $form->error($model,'item_id'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'item_id',array('class'=>'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'title'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'title',array('class'=>'span5','maxlength'=>200)); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'description'); ?>
-	</div>
+	<?php echo $form->textAreaRow($model,'description',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'item_type'); ?>
-		<?php echo $form->textField($model,'item_type',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'item_type'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'class_code',array('class'=>'span5','maxlength'=>45)); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'file_path'); ?>
-		<?php echo $form->textField($model,'file_path',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'file_path'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'file_path',array('class'=>'span5','maxlength'=>255)); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'file_type'); ?>
-		<?php echo $form->textField($model,'file_type',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'file_type'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'file_type',array('class'=>'span5','maxlength'=>45)); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'isImage'); ?>
-		<?php echo $form->textField($model,'isImage'); ?>
-		<?php echo $form->error($model,'isImage'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'isImage',array('class'=>'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'create_date'); ?>
-		<?php echo $form->textField($model,'create_date'); ?>
-		<?php echo $form->error($model,'create_date'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'create_date',array('class'=>'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'update_date'); ?>
-		<?php echo $form->textField($model,'update_date'); ?>
-		<?php echo $form->error($model,'update_date'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'update_date',array('class'=>'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'create_user'); ?>
-		<?php echo $form->textField($model,'create_user'); ?>
-		<?php echo $form->error($model,'create_user'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'create_user',array('class'=>'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'update_user'); ?>
-		<?php echo $form->textField($model,'update_user'); ?>
-		<?php echo $form->error($model,'update_user'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'update_user',array('class'=>'span5')); ?>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	<div class="form-actions">
+		<?php $this->widget('bootstrap.widgets.BootButton', array(
+			'buttonType'=>'submit',
+			'type'=>'primary',
+			'label'=>$model->isNewRecord ? 'Create' : 'Save',
+		)); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
-
-</div><!-- form -->

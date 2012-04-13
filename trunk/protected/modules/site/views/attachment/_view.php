@@ -1,7 +1,7 @@
 <div class="view">
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	<?php echo CHtml::link(CHtml::encode($data->id),array('view','id'=>$data->id)); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('item_id')); ?>:</b>
@@ -16,8 +16,8 @@
 	<?php echo CHtml::encode($data->description); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('item_type')); ?>:</b>
-	<?php echo CHtml::encode($data->item_type); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('class_code')); ?>:</b>
+	<?php echo CHtml::encode($data->class_code); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('file_path')); ?>:</b>

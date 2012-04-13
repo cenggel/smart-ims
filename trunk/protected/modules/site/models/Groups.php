@@ -10,6 +10,10 @@
  * @property integer $create_user
  * @property integer $create_date
  * @property integer $views
+ * @property string  $image
+ * @property integer $status
+ * @property string  $alias
+ * 
  */
 class Groups extends BaseActiveRecord
 {
@@ -40,12 +44,13 @@ class Groups extends BaseActiveRecord
 		// will receive user inputs.
 		return array(
 			array('group_name', 'required'),
-			array('create_user, create_date, views', 'numerical', 'integerOnly'=>true),
-			array('group_name', 'length', 'max'=>45),
-			array('description', 'length', 'max'=>255),
+			array('create_user, create_date, views, status', 'numerical', 'integerOnly'=>true),
+			array('group_name,alias', 'length', 'max'=>45),
+			array('description,image', 'length', 'max'=>255),
+			array('alias, group_name','unique','on'=>'create,update'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, group_name, description, create_user, create_date, views', 'safe', 'on'=>'search'),
+			array('id, group_name, description, create_user, create_date, views,image,alias,status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,11 +62,11 @@ class Groups extends BaseActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'group_name' => 'Group Name',
-			'description' => 'Description',
-			'create_user' => 'Create User',
-			'create_date' => 'Create Date',
-			'views' => 'Views',
+			'group_name' => Yii::t('siteModule.groups','Group Name'),
+			'description' => Yii::t('siteModule.groups','Description'),
+			'create_user' => Yii::t('siteModule.groups','Create User'),
+			'create_date' => Yii::t('siteModule.groups','Create Date'),
+			'views' => Yii::t('siteModule.groups','Views'),
 		);
 	}
 
@@ -82,6 +87,8 @@ class Groups extends BaseActiveRecord
 		$criteria->compare('create_user',$this->create_user);
 		$criteria->compare('create_date',$this->create_date);
 		$criteria->compare('views',$this->views);
+		$criteria->compare('alias',$this->alias);
+		$criteria->compare('status', $this->status);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -145,5 +152,30 @@ class Groups extends BaseActiveRecord
 		return true;
 	}
 	
+	public  function getArticleStatInfo(){
+		$class = Enumeration::items('ARTICLE_CLASS');
+		$result = array();
+		//echo "<pre>";
+		foreach ($class as $k=>$c){
+			//print_r($c);
+			$result[$k] = Article::model()->count()->byClass($k)->byGroup($this->id)->published();
+		}
+		
+		//print_r($result);exit;
+		return $result;
+	}
+	
+	public function getLatestAritcleList(){
+		$class = Enumeration::items('ARTICLE_CLASS');
+		$result = array();
+		//echo "<pre>";
+		foreach ($class as $k=>$c){
+			//print_r($c);
+			$result[$k] = Article::model()->recently(5)->byClass($k)->byGroup($this->id)->published()->findAll();
+		}
+		
+		//print_r($result);exit;
+		return $result;
+	}
 	
 }

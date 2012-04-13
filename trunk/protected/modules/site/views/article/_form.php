@@ -7,4 +7,6 @@
 				'dropdown'=>array('class'=>'medium-input'),
 				'textarea'=>array('class'=>'medium-input'),),
 		'displayAttribes'=>$model->getFromFieldList()));
+
+
 ?>

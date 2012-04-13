@@ -73,7 +73,7 @@ caption {background:#eee;}
 .top {margin-top:0;padding-top:0;}
 .bottom {margin-bottom:0;padding-bottom:0;}
 
-/*
+
  grid.css 
  .container {width:950px;margin:0 auto;}
 .showgrid {background:url(src/grid.png);}
@@ -234,4 +234,3 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .clearfix:after, .container:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
 .clearfix, .container {display:block;}
 .clear {clear:both;}
-*/

@@ -2,6 +2,11 @@
 		'model'=>$model,
 		'enableAjaxValidation'=>true,
 		'displayAttribes'=>array(
-				'id'=>array('type'=>'hidden'),'group_name','description'=>array('type'=>'editor')
+				'id'=>array('type'=>'hidden'),'group_name',
+				'members'=>array(
+						'type'=>'dropdown',
+						'data'=>CHtml::listData(User::model()->findAll(),'id','username'),
+						'htmlOptions'=>array('multiple'=>"multiple",'options'=>array($model->create_user=>array('disabled'=>'disabled')))),
+				'description'=>array('type'=>'editor')
 		)));
 ?>

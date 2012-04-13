@@ -1,8 +1,8 @@
 <?php
-$this->breadcrumbs=array(
+/*$this->breadcrumbs=array(
 	'Categories'=>array('index'),
 	'Create',
-);
+);*/
 
 $this->menu=array(
 	array('label'=>'List Category', 'url'=>array('index')),
@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Category</h1>
+<h1><?php echo Yii::t('siteModule.category', 'Create Category')?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

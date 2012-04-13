@@ -10,11 +10,11 @@
 		<?php echo $form->textField($model,'id'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'Category_id'); ?>
-		<?php echo $form->textField($model,'Category_id'); ?>
+<!-- 	<div class="row">
+		<?php echo $form->label($model,'category_id'); ?>
+		<?php echo $form->textField($model,'category_id'); ?>
 	</div>
-
+ -->
 	<div class="row">
 		<?php echo $form->label($model,'title'); ?>
 		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>255)); ?>
@@ -32,9 +32,9 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'status'); ?>
-		<?php echo $form->textField($model,'status'); ?>
-	</div>
-
+		<?php echo $form->dropDownList($model,'status',Enumeration::items("ARTICLE_STATUS")); ?>
+	</div> 
+<!--  
 	<div class="row">
 		<?php echo $form->label($model,'essential'); ?>
 		<?php echo $form->textField($model,'essential'); ?>
@@ -63,7 +63,7 @@
 	<div class="row">
 		<?php echo $form->label($model,'update_user'); ?>
 		<?php echo $form->textField($model,'update_user'); ?>
-	</div>
+	</div> -->
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>

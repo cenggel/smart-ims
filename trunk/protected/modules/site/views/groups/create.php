@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Groups</h1>
+<h1><?php echo Yii::t('siteModule.groups', 'Create Groups')?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

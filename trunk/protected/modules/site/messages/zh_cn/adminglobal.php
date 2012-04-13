@@ -19,12 +19,12 @@
  * @version $Id: $
  */
 return array (
-  '-- Choose Value --' => '',
-  'Add setting to this group' => '',
-  'Adding Setting' => '',
-  'Adding setting group' => '',
-  'Delete this group!' => '',
-  'Delete this setting!' => '',
+  '-- Choose Value --' => '-- 请选择 --',
+  'Add setting to this group' => '添加设置到此组',
+  'Adding Setting' => '添加设置',
+  'Adding setting group' => '新建设置组',
+  'Delete this group!' => '删除此组！',
+  'Delete this setting!' => '删除此设置',
   'Edit this group' => '',
   'Edit this setting' => '',
   'Editing Setting' => '',

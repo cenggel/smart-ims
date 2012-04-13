@@ -9,19 +9,14 @@ class GroupsController extends Controller
 	public $layout='//layouts/column2';
 
 	public $working_group = null;
-	
+
 	public $working_class = null;
 	/**
 	 * @return array action filters
 	 */
-	public function filters()
-	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-		);
-	}
 
-	
+
+
 
 	/**
 	 * Displays a particular model.
@@ -29,8 +24,9 @@ class GroupsController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$this->working_group  =$this->loadModel($id);
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+				'model'=>$this->working_group,
 		));
 	}
 
@@ -45,17 +41,27 @@ class GroupsController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
+		//$model->create_user = Yii::app()->user->id;
 		if(isset($_POST['Groups']))
 		{
-			$model->attributes=$_POST['Groups'];
-			$model->members = User::model()->findByPk(Yii::app()->user->id);
-			if($model->save())
-				echo "ok";
-				//$this->redirect(array('view','id'=>$model->id));
+			$trans = $model->getDbConnection()->beginTransaction();
+			try{
+				$model->attributes=$_POST['Groups'];
+				//$model->members = User::model()->findByPk(Yii::app()->user->id);
+				$model->members = array_merge(array(Yii::app()->user->id), $_POST['Groups']['members']);
+				if($model->save()){
+					$trans->commit();
+					$this->redirect(array('view','id'=>$model->id));
+				}
+				$trans->rollBack();
+			}catch(Exception $e){
+				$trans->rollBack();
+				throw $e;
+			}
 		}
 
 		$this->render('create',array(
-			'model'=>$model,
+				'model'=>$model,
 		));
 	}
 
@@ -67,19 +73,32 @@ class GroupsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$this->working_group  =$model;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Groups']))
 		{
-			$model->attributes=$_POST['Groups'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			
+			$trans = $model->dbConnection->beginTransaction();
+			try{
+				$model->attributes=$_POST['Groups'];
+				$model->members = array_merge(array($model->create_user), $_POST['Groups']['members']);
+				if($model->save()){
+					echo "commited";
+					$trans->commit();
+					$this->redirect(array('view','id'=>$model->id));
+				}
+				$trans->rollBack();
+			}catch (Exception $e){
+				Yii::trace("update group info error ! {$id}");
+				$trans->rollBack();
+				Yii::app()->user->setFlash($e->getMessage());
+			}
 		}
 
 		$this->render('update',array(
-			'model'=>$model,
+				'model'=>$model,
 		));
 	}
 
@@ -93,14 +112,23 @@ class GroupsController extends Controller
 		if(Yii::app()->request->isPostRequest)
 		{
 			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
-
-			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$model =$this->loadModel($id);
+			$trans = $model->dbConnection->beginTransaction();
+			try{
+				if($model->delete()){
+					$trans->commit();
+					// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+					if(!isset($_GET['ajax']))
+						$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+				}
+				$trans->rollBack();
+			}catch (Exception $e){
+				$trans->rollBack();
+				throw $e;
+			}
 		}
 		else
-			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+			throw new CHttpException(400,Yii::t('siteModule.error','Invalid request. Please do not repeat this request again.'));
 	}
 
 	/**
@@ -108,9 +136,13 @@ class GroupsController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$model = new Groups;
+		if(!$this->hasRight('op_view_all_groups')){
+			$model->create_user = (int)Yii::app()->user->id;
+		}
 		$dataProvider=new CActiveDataProvider('Groups');
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+				'dataProvider'=>$dataProvider,
 		));
 	}
 
@@ -125,7 +157,7 @@ class GroupsController extends Controller
 			$model->attributes=$_GET['Groups'];
 
 		$this->render('admin',array(
-			'model'=>$model,
+				'model'=>$model,
 		));
 	}
 
@@ -139,6 +171,13 @@ class GroupsController extends Controller
 		$model=Groups::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
+
+		//echo $this->hasRight('groups.view',array('group'=>$working_group));exit;
+		/*if( !$this->hasRight('op_view_all_groups') || !$this->hasRight('Site.Groups.View',array('group'=>$working_group)))
+		{
+				
+			$this->accessDenied();
+		}*/
 		return $model;
 	}
 
@@ -154,7 +193,7 @@ class GroupsController extends Controller
 			Yii::app()->end();
 		}
 	}
-	
+
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -162,14 +201,42 @@ class GroupsController extends Controller
 	public function actionHome($id)
 	{
 		$working_group = $this->loadModel($id);
-		if( !Yii::app()->user->checkAccess('op_view_all_groups') ||!Yii::app()->user->checkAccess('groups.view',array('group'=>$working_group)))
-		{
-			throw new CHttpException(403, Yii::t('error', 'Sorry, You don\'t have the required permissions to enter this section'));
-		}
-		
+
 		$this->working_group = $working_group;
-		$this->render('view',array(
+		$this->render('home',array(
 				'model'=>$working_group,
 		));
+	}
+
+	public function actionAddMember($group_id){
+
+		$this->working_group = $this->loadModel($group_id);
+
+		if(!$this->hasRight('op_manage_group_member',array('group'=> $this->working_group))){
+			$this->accessDenied();
+		}
+
+		if(Yii::app()->request->isPostRequest)
+		{
+			// we only allow deletion via POST request
+			//echo "<pre>";print_r($_POST); exit;
+			//$model = new GroupMember();
+			//$model->attributes =$_POST['GroupMember'];
+
+			$this->working_group->members= array_merge(array( $this->working_group->create_user),$_POST['GroupMember']['users']);
+			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+			//if(!isset($_GET['ajax']))
+			//	$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		}
+
+		$model = new GroupMember();
+		$model->groups_id = (int)$group_id;
+
+		$model->users = $this->working_group->members;
+		$users = User::model()->findAll();
+
+
+		$this->render('addmember',array('model'=>$model,'users'=>$users,'group'=>$this->working_group));
+
 	}
 }

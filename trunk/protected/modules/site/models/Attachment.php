@@ -16,6 +16,7 @@
  * @property integer $update_date
  * @property integer $create_user
  * @property integer $update_user
+ * @property integer $file_size
  */
 class Attachment extends CActiveRecord
 {
@@ -46,14 +47,14 @@ class Attachment extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('file_path', 'required'),
-			array('item_id, isImage, create_date, update_date, create_user, update_user', 'numerical', 'integerOnly'=>true),
+			array('item_id, isImage, create_date, update_date, create_user, update_user, file_size', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>200),
 			array('class_code, file_type', 'length', 'max'=>45),
 			array('file_path', 'length', 'max'=>255),
 			array('description', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, item_id, title, description, class_code, file_path, file_type, isImage, create_date, update_date, create_user, update_user', 'safe', 'on'=>'search'),
+			array('id, item_id, title, description, class_code, file_path, file_type, isImage, create_date, update_date, create_user, update_user, file_size', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -86,6 +87,7 @@ class Attachment extends CActiveRecord
 			'update_date' => 'Update Date',
 			'create_user' => 'Create User',
 			'update_user' => 'Update User',
+			'file_size' => 'File Size',
 		);
 	}
 
@@ -112,6 +114,7 @@ class Attachment extends CActiveRecord
 		$criteria->compare('update_date',$this->update_date);
 		$criteria->compare('create_user',$this->create_user);
 		$criteria->compare('update_user',$this->update_user);
+		$criteria->compare('file_size',$this->file_size);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

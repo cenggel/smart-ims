@@ -13,7 +13,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Groups #<?php echo $model->id; ?></h1>
+<h1><?php echo  Yii::t('siteModule.groups','Group {group} info',array('{group}'=>$model->group_name)); ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

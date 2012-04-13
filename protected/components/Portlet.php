@@ -7,6 +7,7 @@ class Portlet extends CWidget
 	
 	public function init(){
 		if($this->visible){
+			$this->childInit();
 			parent::init();
 		}
 	}
@@ -19,5 +20,7 @@ class Portlet extends CWidget
 	}
 	
 	public function renderContent(){}
-	
+	public function childInit(){
+		
+	}
 }

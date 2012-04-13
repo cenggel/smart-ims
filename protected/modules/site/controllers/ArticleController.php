@@ -6,9 +6,12 @@ class ArticleController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='article/column2';
 	public $working_group =null;
 	public $working_class = null;
+	public $category = null;
+	
+	public $article_menu =array();
 
 	
 
@@ -19,7 +22,9 @@ class ArticleController extends Controller
 	public function actionView($id)
 	{
 		$model = $this->loadModel($id);
-		
+		if(!$this->hasRight('Site.Aritcle.View',array('article'=>$model))){
+			$this->accessDenied();
+		}
 		if(!$this->working_class && $model->class_code){
 			$this->working_class= $model->class_code;
 			
@@ -29,6 +34,11 @@ class ArticleController extends Controller
 			$this->working_group = Groups::model()->findByPk($model->group_id);
 			
 		}
+		
+		$this->category= $model->category;
+		$this->setMenu($model);
+		//echo "11";
+		$model->updateViews();
 		$this->render('view',array(
 				'model'=>$model,
 		));
@@ -38,11 +48,12 @@ class ArticleController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate($class_code,$group_id=0)
+	public function actionCreate($class_code,$group_id=0,$category_id=0)
 	{
 		$model=new Article;
 		$model->class_code = $class_code;
 		$model->group_id = $group_id;
+		$model->category_id =$category_id;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -50,8 +61,12 @@ class ArticleController extends Controller
 		if(isset($_POST['Article']))
 		{
 			$model->attributes=$_POST['Article'];
+			
+			//echo "<pre>";print_r($value);
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
+			
+			
 		}
 
 		$this->render('create',array(
@@ -106,10 +121,8 @@ class ArticleController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex($class_code=null,$group_id=0)
-	{   //$class_code = $_GET['class_code'];
-		//echo $class_code;
-		//echo "<br> $group_id";
+	public function actionIndex($class_code=null,$group_id=0,$category_id=0)
+	{   
 
 		$article = Article::model();
 		if($class_code!=null){
@@ -119,8 +132,15 @@ class ArticleController extends Controller
 		if($group_id>0){
 			$article = $article->byGroup($group_id);
 		}
-
-		$dataProvider=new CActiveDataProvider($article);
+        
+		
+		if($category){
+			$article->category_id = (int)$category;
+			$this->category = Category::model()->findByPk((int)$category);
+			$article = $article->byCategory($category);
+		}
+		
+		$dataProvider=new CActiveDataProvider($article->published());
 		$this->render('index',array(
 				'dataProvider'=>$dataProvider,
 		));
@@ -136,15 +156,23 @@ class ArticleController extends Controller
 		if(isset($_GET['Article']))
 			$model->attributes=$_GET['Article'];
 		if(isset($_POST['Article']))
-			$model->attributes=$_GET['Article'];
+			$model->attributes=$_GET['Article'];		
 		
 		$group_id = Yii::app()->request->getParam("group_id");
 		$class_code = Yii::app()->request->getParam("class_code");
 		if($group_id) $model->group_id = $group_id;
 		if($class_code) $model->class_code = $class_code;
 
+		
+		if(!$this->hasRight('op_manage_all_article')){
+			$model->user_id = Yii::app()->user->id;
+			$userFilter= false;			
+		}else{
+			$userFilter = CHtml::listData(User::model()->active()->findAll(), 'id', 'username');
+		}
 		$this->render('admin',array(
 				'model'=>$model,
+				'userFilter'=>$userFilter,
 		));
 	}
 
@@ -177,12 +205,13 @@ class ArticleController extends Controller
 	protected function beforeAction($action){
 		$group_id = Yii::app()->request->getParam("group_id");
 		$class_code = Yii::app()->request->getParam("class_code");
+		$category_id = Yii::app()->request->getParam("category_id");
 
 		if($group_id >0){
 			//echo "<br> here ...";
 			$working_group = Groups::model()->findByPk($group_id);
 			//var_dump($working_group);
-			if( !Yii::app()->user->checkAccess('op_view_all_groups') ||!Yii::app()->user->checkAccess('groups.view',array('group'=>$working_group)))
+			if( !$this->hasRight(array('op_view_all_groups','Site.Groups.View'),array('group'=>$working_group)))
 			{
 				throw new CHttpException(403, Yii::t('error', 'Sorry, You don\'t have the required permissions to enter this section'));
 			}
@@ -196,31 +225,78 @@ class ArticleController extends Controller
 			$this->working_class = $class_code;
 		}
 		
+		if($category_id){
+			$this->category = Category::model()->findByPk($category_id);
+		}
 		return parent::beforeAction($action);
 	}
 	
 	
 	public function beforeRender($view){
-		$params =array();
-		if($this->working_class)
-			$params['class_code'] = $this->working_class;
-		if($this->working_group){
-			$params['group_id'] = $this->working_group->id;
-		}
-		$this->menu=array(
-				
-				array('label'=>Yii::t('siteModule.article','Create Article'), 'url'=>array_merge(array('create'),$params)),
-				array('label'=>Yii::t('siteModule.article','List Article'), 'url'=>array_merge(array('index'),$params)),
-				array('label'=>Yii::t('siteModule.article','Manage Article'), 'url'=>array_merge(array('admin'),$params)),
-				array('label'=>Yii::t('siteModule.article','Update Article'), 'url'=>array_merge(array('update', 'id'=>Yii::app()->request->getParam("id")),$params),
-						'visible'=>('view'==$this->getAction()->getId())),
-				array('label'=>Yii::t('siteModule.article','Delete Article'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>Yii::app()->request->getParam("id")),'confirm'=>Yii::t('siteModule.article','Are you sure you want to delete this item?')),
-						'visible'=>('view'==$this->getAction()->getId())),
-				
-		);
+		if(count($this->article_menu)==0)
+			$this->setMenu();
 		
 		return true;
 	}
 	
-
+    protected function setMenu($model = false){
+    	//echo "22 ".$this->working_group->id . $this->working_class;
+    	//echo $model->user_id ." <br> -------------------<br>";
+    	//var_dump(($this->hasRight('Site.Article.Update',array('article'=>$model))));
+    	//exit;
+    	$params =array();
+    	$class = 'article';
+    	
+    	if($this->working_group){
+    		$params['group_id'] = $this->working_group->id;
+    	
+    		$this->addBreadcrumbs(array($this->working_group->group_name=>array('/groups/home','id'=>$this->working_group->id)));
+    	}
+    	
+    	if($this->working_class){
+    		$params['class_code'] = $this->working_class;
+    		$class= $this->working_class;
+    	
+    		$this->addBreadcrumbs(array(Enumeration::item('ARTICLE_CLASS',$this->working_class)=>Yii::app()->urlManager->createUrl('site/article/index',$params)));
+    	
+    	}
+    	
+    	//var_dump($this->category);
+    	if($this->category){
+    		$this->addBreadcrumbs(array($this->category->name => $this->category->getViewUrl($params['group_id'],$params['class_code'])));
+    		$params['category_id'] = $this->category->id;
+    	}
+    	$this->blocks['left'][]=array('widget'=>array('name'=>'site.widgets.CategoryList',
+    			'param'=>$params));
+    	
+    	
+    	$class = Yii::t("siteModule.article", ucfirst($class));
+    	$this->article_menu=array(
+    	
+    			array('label'=>Yii::t('siteModule.article','Create {Article}',array('{Article}'=>$class)), 'url'=>array_merge(array('create'),$params),
+    					'visible'=>($this->hasRight('Site.Article.Create')),
+    					'linkOptions'=>array('class'=>'create',
+    							'rel'=>'tooltip',
+    							'title'=>Yii::t('siteModule.article','Create {Article}',array('{Article}'=>$class)))),
+    			/*array('label'=>Yii::t('siteModule.article','List {Article}',array('{Article}'=>$class)), 'url'=>array_merge(array('index'),$params),
+    					'visible'=>($this->hasRight('Site.Article.Index')),
+    					'itemOptions'=>array('class'=>'list')),*/
+    			array('label'=>Yii::t('siteModule.article','Manage {Article}',array('{Article}'=>$class)), 'url'=>array_merge(array('admin'),$params),
+    				'visible'=>($this->hasRight('Site.Article.Admin')),
+    					'linkOptions'=>array('class'=>'admin',
+    							'rel'=>'tooltip',
+    							'title'=>Yii::t('siteModule.article','Manage {Article}',array('{Article}'=>$class)))),
+    			array('label'=>Yii::t('siteModule.article','Update {Article}',array('{Article}'=>$class)), 'url'=>array_merge(array('update', 'id'=>Yii::app()->request->getParam("id")),$params),
+    					'visible'=>('view'==$this->getAction()->getId()&&$this->hasRight('Site.Article.Update',array('article'=>$model))),
+    					'linkOptions'=>array('class'=>'update',
+    							'rel'=>'tooltip',
+    							'title'=>Yii::t('siteModule.article','Update {Article}',array('{Article}'=>$class)))),
+    			array('label'=>Yii::t('siteModule.article','Delete {Article}',array('{Article}'=>$class)), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>Yii::app()->request->getParam("id"),'returnUrl'=>Yii::app()->request->getRequestUri()),'confirm'=>Yii::t('siteModule.article','Are you sure you want to delete this item?')),
+    					'visible'=>('view'==$this->getAction()->getId()&&$this->hasRight('Site.Article.Delete',array('article'=>$model))),
+    					'linkOptions'=>array('class'=>'delete',
+    							'rel'=>'tooltip',
+    							'title'=>Yii::t('siteModule.article','Delete {Article}',array('{Article}'=>$class)))),
+    	
+    	);
+    }
 }

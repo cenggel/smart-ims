@@ -1,18 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "tags".
+ * This is the model class for table "group_members".
  *
- * The followings are the available columns in table 'tags':
- * @property string $name
- * @property integer $frequency
+ * The followings are the available columns in table 'group_members':
+ * @property integer $users_id
+ * @property integer $groups_id
+ * @property integer $administrator
  */
-class Tags extends ActiveRecord
+class GroupMembers extends BaseActiveRecord
 {
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Tags the static model class
+	 * @return GroupMembers the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -24,7 +26,7 @@ class Tags extends ActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tags';
+		return 'group_members';
 	}
 
 	/**
@@ -35,12 +37,11 @@ class Tags extends ActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name', 'required'),
-			array('frequency', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>30),
+			array('users_id, groups_id', 'required'),
+			array('users_id, groups_id, administrator', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('name, frequency', 'safe', 'on'=>'search'),
+			array('users_id, groups_id, administrator', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -51,8 +52,7 @@ class Tags extends ActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
-		);
+		
 	}
 
 	/**
@@ -61,8 +61,9 @@ class Tags extends ActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'name' => 'Name',
-			'frequency' => 'Frequency',
+			'users_id' => 'Users',
+			'groups_id' => 'Groups',
+			'administrator' => 'Administrator',
 		);
 	}
 
@@ -77,11 +78,21 @@ class Tags extends ActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('frequency',$this->frequency);
+		$criteria->compare('users_id',$this->users_id);
+		$criteria->compare('groups_id',$this->groups_id);
+		$criteria->compare('administrator',$this->administrator);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public  function getFromFieldList(){
+		return array(
+				'groups_id'=>array('type'=>'hidden'),
+				'users'=>array('type'=>'dropdown',
+						'htmlOptions'),
+				);
+	}
+	
 }

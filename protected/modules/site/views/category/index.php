@@ -1,12 +1,11 @@
 <?php
-$this->breadcrumbs=array(
-	'Categories',
-);
 
-$this->menu=array(
+$this->addBreadcrumbs($model?$model->name:Yii::t('siteModule.category', 'Categories'));
+
+/*$this->menu=array(
 	array('label'=>'Create Category', 'url'=>array('create')),
 	array('label'=>'Manage Category', 'url'=>array('admin')),
-);
+);*/
 ?>
 
 <h1>Categories</h1>

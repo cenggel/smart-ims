@@ -6,7 +6,7 @@
  * The followings are the available columns in table 'category':
  * @property integer $id
  * @property string $name
- * @property string $Alias
+ * @property string $alias
  * @property string $class_code
  * @property string $description
  * @property integer $parent_id
@@ -53,11 +53,11 @@ class Category extends CActiveRecord
 			array('name', 'required'),
 			array('parent_id, display_order, create_user, views, group_id, create_date, update_date, update_user, category_type', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>200),
-			array('Alias, class_code', 'length', 'max'=>45),
+			array('alias, class_code', 'length', 'max'=>45),
 			array('description', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, Alias, class_code, description, parent_id, display_order, create_user, views, group_id, create_date, update_date, update_user, category_type', 'safe', 'on'=>'search'),
+			array('id, name, alias, class_code, description, parent_id, display_order, create_user, views, group_id, create_date, update_date, update_user, category_type', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,7 +70,8 @@ class Category extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 				'parent'=>array(self::BELONGS_TO, 'Category', 'parent_id'),
-				'children'=>array(self::HAS_MANY, 'Category', 'parent_id'),
+				'childs'=>array(self::HAS_MANY, 'Category', 'parent_id'),
+				'group'=>array(self::BELONGS_TO, 'Groups', 'group_id'),
 				
 				
 		);
@@ -84,7 +85,7 @@ class Category extends CActiveRecord
 		$labels = array(
 			'id' => 'ID',
 			'name' => 'Name',
-			'Alias' => 'Alias',
+			'alias' => 'Alias',
 			'class_code' => 'Class Code',
 			'description' => 'Description',
 			'parent_id' => 'Parent',
@@ -116,7 +117,7 @@ class Category extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('Alias',$this->Alias,true);
+		$criteria->compare('alias',$this->alias,true);
 		$criteria->compare('class_code',$this->class_code,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('parent_id',$this->parent_id);
@@ -167,9 +168,9 @@ class Category extends CActiveRecord
 		return true;
 	}
 	
-	public function getTreeListForSelect($parentid = 0, $prefix = "&nbsp&nbsp;",$group_id=false,$class_code=false) {
+	public function getTreeListCat($parentid = 0, $depth = "--",$group_id=false,$class_code=false) {
 		
-		$return = array ();
+		$data = array ();
 		$criteria = new CDbCriteria ( );
 		$criteria->condition = " parent_Id= {$parentid}";
 		
@@ -184,17 +185,125 @@ class Category extends CActiveRecord
 		$criteria->order = " parent_Id asc,display_order asc";
 		$cats = Category::model ()->findAll ( $criteria );
 		foreach ( $cats as $cat ) {
-			//$cat->name='|'.str_repeat($prefix,$cat->level)."|-".$cat->name;
-			//echo "<br>".str_repeat("&nbsp;&nbsp;&nbsp;",$cat->level)."|-".$cat->name;
-			$return [$cat->id] = str_repeat ( $prefix, 1 ) . "|-" . $cat->name;
-			//print_r($this->getTreeListForSelect($moduleName,$cat->id));
-			$return = array_merge ( $return, $this->getTreeListForSelect (  $cat->id,$prefix.$prefix ) );
+			$data [] = $cat;
+			$data = array_merge( $data,$this->getRecursiveCats($cat));
 		}
-		return $return;
+		
+		//echo "<br>";print_r($return);
+		return $data;
 	
 	}
 	
-	public function getSelectDataList($parentid = 0, $prefix = "&nbsp&nbsp;",$group_id=false,$class_code=false){
-		return $this->getTreeListForSelect($parentid,$prefix,$group_id,$class_code);
+	public function getListData($parentid = 0, $depth = "--",$group_id=false,$class_code=false){
+		$models =$this->getTreeListCat($parentid,$depth,$group_id,$class_code);
+		//print_r($models);exit;
+		return CHtml::listData($models,'id','name');
+	}
+	
+	
+	/**
+	 * Get root categories
+	 */
+	public function getRootCats()
+	{
+		$data = array();
+		
+		$criteria=new CDbCriteria;
+		$criteria->addCondition('parent_id = 0 ');
+		if($this->group_id) $criteria->addCondition('group_id = '.$this->group_id);
+		if($this->class_code) $criteria->addCondition("class_code = '{$this->class_code}'");
+		
+		$models = self::model()->byPosition()->findAll($criteria);
+		if( count( $models ) )
+		{
+			foreach($models as $model)
+			{
+				$data[] = $model;
+				$data = array_merge($data, $this->getRecursiveCats($model));
+			}
+		}
+		return $data;
+	}
+	
+	/**
+	 * Recursive function to get child categories
+	 */
+	public function getRecursiveCats($cat, $depth='--')
+	{
+		$data = array();
+		foreach($cat->childs as $model)
+		{
+			$model->name = '|' .$depth . ' ' . $model->name;
+			$data[] = $model;
+			$data = array_merge($data, $this->getRecursiveCats($model, $depth . $depth));
+		}
+	
+		return $data;
+	}
+	
+	/**
+	 * Get root categories
+	 */
+	public function getRootCategories()
+	{
+		Yii::trace('test---------');
+		$data = array();
+		$criteria=new CDbCriteria;
+		$criteria->addCondition('parent_id = 0 ');
+		if($this->group_id) $criteria->addCondition('group_id = '.$this->group_id);
+		if($this->class_code) $criteria->addCondition("class_code = '{$this->class_code}'");
+		$models = self::model()->byPosition()->findAll($criteria);
+		if( count( $models ) )
+		{
+			foreach($models as $model)
+			{
+				$data[ $model->id ] = array_merge(
+						$model->getAttributes(),
+						array('children' => self::getChilds($model->id))
+				);
+			}
+		}
+		return $data;
+	}
+	
+	/**
+	 * Get child categories
+	 */
+	public function getChilds($id, $depth = '--')
+	{
+		$data = array();
+		$childs = self::model()->findAll('parent_id=:parent', array(':parent'=>$id));
+		if( count($childs) )
+		{
+			foreach($childs as $model)
+			{
+				$model->name = $depth . $model->name;
+				$data[ $model->id ] = array_merge(
+						$model->getAttributes(),
+						array('children' => self::getChilds($model->id, $depth . $depth))
+				);
+			}
+		}
+		return $data;
+	}
+	
+	public function getViewUrl($group_id=false,$class_code=false){
+		$params= array('id'=>$this->id);
+		if($this->group_id || $group_id) $params['group_id'] = $group_id?$group_id:$this->group_id;
+		if($this->class_code || $class_code) $params['class_code']=$class_code ? $class_code:$this->class_code;
+		return  Yii::app()->urlManager->createUrl('site/category/index',$params);
+	}
+	
+	
+	/**
+	 * Scopes
+	 */
+	public function scopes()
+	{
+		return array(
+				'byPosition'=>array(
+						'order'=>'display_order ASC',
+				),
+		);
 	}
 }

@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'article':
  * @property integer $id
- * @property integer $Category_id
+ * @property integer $category_id
  * @property string $title
  * @property string $description
  * @property string $content
@@ -23,10 +23,13 @@
  * @property string $file_path
  * @property string $hash
  * @property integer $group_id
- * @property string Alias
+ * @property string alias
  */
 class Article extends BaseActiveRecord
 {
+	const STATUS_DRAFT   = 1;
+	const STATUS_PUBLISH = 2;
+	const STATUS_PRIVATE = 3;
 	private $_oldTags;
 	
 	
@@ -56,14 +59,14 @@ class Article extends BaseActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('Category_id, title, content', 'required'),
-			array('Category_id, status, essential, article_date, user_id, create_date, update_date, update_user, views, group_id', 'numerical', 'integerOnly'=>true),
+			array('category_id, title, content', 'required'),
+			array('category_id, status, essential, article_date, user_id, create_date, update_date, update_user, views, group_id', 'numerical', 'integerOnly'=>true),
 			array('title, description, tags, image_path, file_path', 'length', 'max'=>255),
-			array('Alias,class_code', 'length', 'max'=>45),
+			array('alias,class_code', 'length', 'max'=>45),
 			array('hash', 'length', 'max'=>64),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, Category_id, title, description, content, tags, status, essential, article_date, user_id, create_date, update_date, update_user, views, class_code, image_path, file_path, hash, group_id', 'safe', 'on'=>'search'),
+			array('id, category_id, title, description, content, tags, status, essential, article_date, user_id, create_date, update_date, update_user, views, class_code, image_path, file_path, hash, group_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -76,25 +79,25 @@ class Article extends BaseActiveRecord
 	{
 		return array(
 			'id' => Yii::t('siteModule.article','ID'),
-			'Category_id' => Yii::t('siteModule.category','Category'),
-			'title' => Yii::t('siteModule.category','Title'),
-			'description' => Yii::t('siteModule.category','Description'),
-			'content' => Yii::t('siteModule.category','Content'),
-			'tags' => Yii::t('siteModule.category','Tags'),
-			'status' => Yii::t('siteModule.category','Status'),
-			'essential' => Yii::t('siteModule.category','Essential'),
-			'article_date' => Yii::t('siteModule.category','Article Date'),
-			'user_id' => Yii::t('siteModule.category','Author'),
-			'create_date' => Yii::t('siteModule.category','Create Date'),
-			'update_date' => Yii::t('siteModule.category','Update Date'),
-			'update_user' => Yii::t('siteModule.category','Update User'),
-			'views' => Yii::t('siteModule.category','Views'),
-			'class_code' => Yii::t('siteModule.category','Class Code'),
-			'image_path' => Yii::t('siteModule.category','Image Path'),
-			'file_path' => Yii::t('siteModule.category','File Path'),
-			'hash' => Yii::t('siteModule.category','Hash'),
-			'group_id' => Yii::t('siteModule.category','Group'),
-			'Alias' => Yii::t('siteModule.category','Alias'),
+			'category_id' => Yii::t('siteModule.article','Category'),
+			'title' => Yii::t('siteModule.article','Title'),
+			'description' => Yii::t('siteModule.article','Description'),
+			'content' => Yii::t('siteModule.article','Content'),
+			'tags' => Yii::t('siteModule.article','Tags'),
+			'status' => Yii::t('siteModule.article','Status'),
+			'essential' => Yii::t('siteModule.article','Essential'),
+			'article_date' => Yii::t('siteModule.article','Article Date'),
+			'user_id' => Yii::t('siteModule.article','Author'),
+			'create_date' => Yii::t('siteModule.article','Create Date'),
+			'update_date' => Yii::t('siteModule.article','Update Date'),
+			'update_user' => Yii::t('siteModule.article','Update User'),
+			'views' => Yii::t('siteModule.article','Views'),
+			'class_code' => Yii::t('siteModule.article','Class Code'),
+			'image_path' => Yii::t('siteModule.article','Image Path'),
+			'file_path' => Yii::t('siteModule.article','File Path'),
+			'hash' => Yii::t('siteModule.article','Hash'),
+			'group_id' => Yii::t('siteModule.article','Group'),
+			'alias' => Yii::t('siteModule.article','Alias'),
 		);
 		
 		
@@ -112,7 +115,7 @@ class Article extends BaseActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('Category_id',$this->Category_id);
+		$criteria->compare('category_id',$this->category_id);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('content',$this->content,true);
@@ -150,11 +153,17 @@ class Article extends BaseActiveRecord
 		);
 	}
 	
+	/**
+	 * scopes
+	 * @see CActiveRecord::scopes()
+	 */
 	public function scopes()
 	{
 		return array(
 				'published'=>array(
-						'condition'=>'status= ' . self::STATUS_PUBLISH,
+						'condition'=>'status= ' . self::STATUS_PUBLISH .
+						' or ( user_id =' . Yii::app()->user->id .
+								' and  status= ' . self::STATUS_PRIVATE .') ',
 				),
 				'private'=>array('condition'=>'status= ' . self::STATUS_PRIVATE,),
 				'draft'=>array('condition'=>'status= ' . self::STATUS_DRAFT,),
@@ -162,9 +171,10 @@ class Article extends BaseActiveRecord
 						'order'=>'create_date DESC',
 						'limit'=>5,
 				),
-				'own'=>array('condition'=>' create_user =' . Yii::app()->user->id),
+				'own'=>array('condition'=>' user_id =' . Yii::app()->user->id),
 				'byClass'=>array(),
 				'byGroup'=>array(),
+				'byCategory'=>array(),
 		);
 	}
 	
@@ -186,12 +196,19 @@ class Article extends BaseActiveRecord
 		return $this;
 	}
 	
+	public function byCategory($category_id){
+		$this->getDbCriteria()->mergeWith(array('condition'=>'category_id =:category_id' ,'params'=>array(':category_id'=>$category_id)));
+		return $this;
+	}
+	
+	//~~~ scope section end 
+	
 	public function getFromFieldList($section=false){
-				
+			
 		$editorOptions = array('type'=>(Yii::app()->params['article'][$this->class_code."_editor"]?Yii::app()->params['article'][$this->class_code."_editor"]:Yii::app()->params['editor']));
 	    $default =array(
-	    		'Category_id'=>array('type'=>'dropdown',
-	    				'data'=>Category::model()->getTreeListForSelect(0,'&nbsp;&nbsp;',$this->group_id,$this->class_code),
+	    		'category_id'=>array('type'=>'dropdown',
+	    				'data'=>Category::model()->getListData(0,'--',$this->group_id,$this->class_code),
 	    				'htmlOptions'=>array('encode'=>false,
 	    						'empty'=>array(''=>Yii::t('siteModule.category','Root Category')))),
 	    		'title',
@@ -251,6 +268,20 @@ class Article extends BaseActiveRecord
 	{
 		parent::afterSave();
 		Tag::model()->updateFrequency($this->_oldTags, $this->tags);
+		
 	}
 	
+	public function getUrl(){
+		$params= array('id'=>$this->id);
+		if($this->class_code) $params['class_code'] = $this->class_code;
+		if($this->group_id) $params['group_id'] = $this->group_id;
+		
+		return Yii::app()->urlManager->createUrl('site/article/view',$params);
+	}
+	
+	public function updateViews(){
+		$criteria=new CDbCriteria;
+		$criteria->addCondition('id = '.$this->id);
+		$this->updateCounters(array('views'=>1),$criteria);
+	}
 }

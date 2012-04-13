@@ -94,6 +94,13 @@ class CAdvancedArbehavior extends CActiveRecordBehavior
 		parent::afterSave($event);
 		return true;
 	}
+	
+	public  function afterDelete($event){
+		foreach($this->getRelations() as $relation)
+		{
+			$this->cleanRelation($relation);
+		}
+	}
 
 	protected function writeManyManyTables() 
 	{
@@ -106,6 +113,8 @@ class CAdvancedArbehavior extends CActiveRecordBehavior
 			$this->cleanRelation($relation);
 			$this->writeRelation($relation);
 		}
+		
+		
 	}
 
 	/* A relation will have the following format:
@@ -183,7 +192,11 @@ class CAdvancedArbehavior extends CActiveRecordBehavior
 
 	// A wrapper function for execution of SQL queries
 	public function execute($query) {
-		return Yii::app()->db->createCommand($query)->execute();
+		$db = Yii::app()->db;
+		if(method_exists($this->owner, 'getDbConnection')){
+			$db = $this->owner->getDbConnection();
+		}
+		return $db->createCommand($query)->execute();
 	}
 
 	public function makeManyManyInsertCommand($relation, $value) {

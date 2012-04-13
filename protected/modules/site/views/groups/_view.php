@@ -1,28 +1,23 @@
-<div class="view">
+<?php $class = ($index%3==0)?"alpha":(($index%3==2)?"omega":"")?>
+<div class="group-info-box grid_6 <?php echo $class;?>">
+	<div class=" round group-block">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
+		<div class="block-head">
+			<div class="name">
+				<a href="<?php echo $data->url?>"><img align="left"
+					src="<?php echo ($data->image? Yii::app()->baseUrl.'/' .$data->image:Yii::app()->theme->baseUrl .'/images/group_logo_default60.jpg')?>"
+					alt="" /> <?php echo CHtml::encode($data->group_name); ?> </a>
+				
+					<?php echo $data->description; ?>
+			</div>			
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('group_name')); ?>:</b>
-	<?php echo CHtml::encode($data->group_name); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
-	<?php echo CHtml::encode($data->description); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('create_user')); ?>:</b>
-	<?php echo CHtml::encode($data->create_user); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('create_date')); ?>:</b>
-	<?php echo CHtml::encode($data->create_date); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('views')); ?>:</b>
-	<?php echo CHtml::encode($data->views); ?>
-	<br />
-
-
+			<div class="clear"></div>
+		</div>
+		<div class="block-content">
+		
+		<div class="clear"></div>
+		</div>
+		
+	</div>
+	<div class="clear"></div>
 </div>

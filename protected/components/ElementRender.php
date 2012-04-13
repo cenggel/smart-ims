@@ -6,7 +6,7 @@
  * @property $id
  * @property $type
  * @property $name
- * 
+ *
  */
 class ElementRender {
 	protected $attribes = array ();
@@ -15,7 +15,7 @@ class ElementRender {
 	protected $form =null;
 	protected $type;
 	protected $name;
-	
+
 	protected $owner;
 	public function __construct(& $owner){
 		$this->owner = $owner;
@@ -54,7 +54,7 @@ class ElementRender {
 	}
 
 	public function getError(){
-		
+
 	}
 	public function renderField($output = true) {
 		// 	echo "$this->type    $this->name <br>";
@@ -89,7 +89,20 @@ class ElementRender {
 
 	}
 	protected function fileRender(){
+		if($this->multi){
+			Yii::app()->clientScript->registerCoreScript('multifile');
+			$this->htmlOptions['class'] =$this->htmlOptions['class']? $this->htmlOptions['class']."multi":$this->htmlOptions['class']='multi';
+			CHtml::resolveNameID($this->model,$this->name,$this->htmlOptions);
+			$htmlOptions = $this->htmlOptions;
+			$hiddenOptions=isset($htmlOptions['id']) ? array('id'=>CHtml::ID_PREFIX.$htmlOptions['id']) : array('id'=>false);
+			$ret = CHtml::hiddenField($htmlOptions['name'],'',$hiddenOptions);			
+			
+			//$this->htmlOptions['name'] = $this->htmlOptions['name'].'[]';
+			$ret = $ret . CHtml::fileField($this->htmlOptions['name'].'[]','',$htmlOptions);
+		}else {
 		$ret=CHtml::activeFileField($this->model,$this->name,$this->htmlOptions);
+		}
+		
 		if($this->showThumb&&!empty($this->model->$this->name)){
 
 			$ret.="<div class=\"file-thumb\">";
@@ -100,27 +113,27 @@ class ElementRender {
 		}
 		return $ret;
 	}
-	
+
 	protected  function dateRender(){
-		
+
 		$script = '	$(function() {// alert("aaa");
 		$( "'+$this->id+'" ).datepicker(jQuery.extend($.datepicker.regional["zh-CN"], {changeMonth: true,
-			changeYear: true}));
-			 
+		changeYear: true}));
+
 		if(!$( "#'+$this->id+'" ).val()){
-			$( "#'+$this->id+'" ).datepicker("setDate",new Date());
-		}else{
-			 
-			 var date = new Date();
-			 date.setTime(parseInt($( "#'+$this->id+'" ).val())*1000);
-		   $( "#'+$this->id+'" ).datepicker("setDate",date);
-		}	
-			
+		$( "#'+$this->id+'" ).datepicker("setDate",new Date());
+	}else{
+
+	var date = new Date();
+	date.setTime(parseInt($( "#'+$this->id+'" ).val())*1000);
+	$( "#'+$this->id+'" ).datepicker("setDate",date);
+	}
+
 	});';
 		Yii::app()->clientScript->registerScript($this->id,$script,CClientScript::POS_READY);
-		
+
 		return $this->textRender();
-		
+
 	}
 
 	protected function hiddenRender(){
@@ -150,6 +163,9 @@ class ElementRender {
 		}
 	}
 
+	protected function attachRender(){
+		
+	}
 	protected function editorRender(){
 
 		$ret=CHtml::activeTextArea($this->model,$this->name,array('rows'=>6, 'cols'=>60));
@@ -206,6 +222,7 @@ class ElementRender {
 		$this->htmlOptions=array();
 		$this->model = & $model;
 		$this->form = & $form;
+
 		if (is_string ( $field )) {
 			$this->name = $field;
 			//trace($model->getMetaData()->columns,true);
@@ -215,39 +232,46 @@ class ElementRender {
 			$this->name = $field ['name'];
 			$this->type = $this->parseType ( $field ['type'] );
 			foreach ( $field as $key => $v ) {
+				//echo "<br> $key";
 				if ($key != 'type') {
 					$this->$key = $v;
 				}
 			}
 		}
 
-		
-		//关系处理
-		foreach ( $model->metaData->relations as $rel ) {
-			if ($rel instanceof CActiveRelation &&  get_class ($rel) == 'CBelongsToRelation' && $rel->foreignKey == $this->name) {
-				if (/*strtolower($this->type) == 'dropdown' && */ empty ( $this->data ) && class_exists ( $rel->className, false )) {
-					$class=null;
-					if (get_class($rel) == get_class($model))
-						$class = & $model;
-					else
-						$class = new $rel->className ( );
-					if($class){
-					if (method_exists ( $class, 'getSelectDataList' ))
-						$this->data = $class->getSelectdataList ();
-					else
-						$this->data = CHtml::listData ( $class->findAll (), 'id', 'name' );
-					$this->type='dropdown';
-					}
-				}
 
+		//关系处理
+
+
+		//var_dump(($this->data));
+			foreach (  $model->metaData->relations as $rel ) {
+					
+				if ($rel instanceof CActiveRelation &&  get_class ($rel) == 'CBelongsToRelation' && $rel->foreignKey == $this->name) {
+					if ((strtolower($this->type) == 'dropdown' ||strtolower($this->type) =='text')&&  !is_array($this->data)&& class_exists ( $rel->className, false )) {
+						$class=null;
+						if (get_class($rel) == get_class($model))
+							$class = & $model;
+						else
+							$class = new $rel->className ( );
+							
+						if($class){
+							if (method_exists ( $class, 'getListData' ))
+								$this->data = $class->getListData ();
+							else
+								$this->data = CHtml::listData ( $class->findAll (), 'id', 'name' );
+							$this->type='dropdown';
+						}
+					}
+
+				}
 			}
-		}
 		
+
 		if(isset($this->owner) && isset($this->owner->defaultHtmlOptions)
 				&& is_array($this->owner->defaultHtmlOptions) && isset($this->owner->defaultHtmlOptions[$this->type])){
 			$this->htmlOptions = array_merge_recursive($this->htmlOptions,$this->owner->defaultHtmlOptions[$this->type]);
 		}
-		
+
 		//echo $this->type ." ".$this->name;
 		//print_r($this->owner->defaultHtmlOptions[$this->type]);
 		//	 echo "<pre>";

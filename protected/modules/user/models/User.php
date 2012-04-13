@@ -73,7 +73,7 @@ class User extends CActiveRecord
 	{
 		$relations = array(
 			'profile'=>array(self::HAS_ONE, 'Profile', 'user_id'),
-			'groups'=>array(self::MANY_MANY,'Groups','group_members(users_id,groups_id)'),
+			
 		);
 		if (isset(Yii::app()->getModule('user')->relations)) $relations = array_merge($relations,Yii::app()->getModule('user')->relations);
 		return $relations;
@@ -143,5 +143,11 @@ class User extends CActiveRecord
 			return isset($_items[$type][$code]) ? $_items[$type][$code] : false;
 		else
 			return isset($_items[$type]) ? $_items[$type] : false;
+	}
+	
+	public function behaviors(){
+		$behaviors = array();
+		if (isset(Yii::app()->getModule('user')->behaviors)) $behaviors = array_merge($behaviors,Yii::app()->getModule('user')->behaviors);
+		return $behaviors;
 	}
 }

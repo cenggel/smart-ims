@@ -69,7 +69,7 @@ return array(
 	'Active' => '激活',
 	'Banned' => '禁止',
 	'Please fill out the following form with your login credentials:' => '请填写下面的表格您的登录凭证：',
-	'Fields with <span class="required">*</span> are required.' => '用这样的形势<span class="required">*</span>填写',
+	'Fields with <span class="required">*</span> are required.' => '带有<span class="required">*</span>的信息必须填写',
 	'List User' => '用户列表',
         'List Users' => '用户列表',
 	'Edit' => '编辑',

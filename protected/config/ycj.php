@@ -63,6 +63,7 @@ return array(
 
 		// application components
 		'components'=>array(
+				
 				'user'=>array(
 						// enable cookie-based authentication
 						'allowAutoLogin'=>true,
@@ -189,5 +190,8 @@ return array(
 				'allowedImages'=>array('jpg','jpeg','gif','png'),
 				'upload_path'=>'/uploads',
 				'menus'=>$menus,
+				'allowedActions'=>array(
+						'recovery'=>'recovery',
+						'registration'=>'registration,index'),
 		),
 );

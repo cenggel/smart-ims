@@ -9,7 +9,7 @@ class Controller extends RController
 	 * @var string the default layout for the controller view. Defaults to 'column1',
 	 * meaning using a single column layout. See 'protected/views/layouts/column1.php'.
 	 */
-	public $layout='column1';
+	public $layout='//layouts/column1';
 	/**
 	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
 	 */
@@ -60,12 +60,7 @@ class Controller extends RController
 	}
 
 	protected function beforeRender($view){
-		//if($this->breadcrumbs && count($this->breadcrumbs)>0){
-		//$this->breadcrumbs = array(
-		//		'links'=>$this->breadcrumbs,
-		//);
-			
-		//print_r($this->breadcrumbs ); exit;
+	
 		return true;
 	}
 
@@ -74,6 +69,9 @@ class Controller extends RController
 	}
 
 	public function allowedActions() {
+		if(isset(Yii::app()->params['allowedActions'][Yii::app()->controller->getId()])){
+			return Yii::app()->params['allowedActions'][Yii::app()->controller->getId()];
+		}
 		return 'index, login,logout,error';
 	}
 

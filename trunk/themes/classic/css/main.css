@@ -1190,8 +1190,10 @@ ul.clean-list li {
 }
 
 .article-detail .tags{
-	background:#eee;
 	padding:5px;
+	background:url(../images/category20.gif) #eee 5px 50% no-repeat;
+	padding-left:30px;
+	margin-bottom:20px;
 	
 }
 .article-detail .tags ul{
@@ -1235,6 +1237,7 @@ ul.clean-list li {
 .article-list-row .tags{
 	background:url(../images/category20.gif) left 50% no-repeat;
 	padding-left:30px;
+	margin-bottom:20px;
 }
 input.tiny-input{
 	width:20px;!important;

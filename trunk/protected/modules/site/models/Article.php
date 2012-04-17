@@ -98,6 +98,7 @@ class Article extends BaseActiveRecord
 			'hash' => Yii::t('siteModule.article','Hash'),
 			'group_id' => Yii::t('siteModule.article','Group'),
 			'alias' => Yii::t('siteModule.article','Alias'),
+			'attachment' => Yii::t('siteModule.article','Attachment'),
 		);
 		
 		
@@ -150,6 +151,7 @@ class Article extends BaseActiveRecord
 		return array(
 				'category'=>array(self::BELONGS_TO,'Category','category_id'),
 				'author'=>array(self::BELONGS_TO,'User','user_id'),
+				//'AttachCount' => array(self::STAT, 'Attachment', 'item_id','condition'=>'AttachCount.class_code= :class_code','params'=>array(':class_code'=>$this->class_code)),
 		);
 	}
 	
@@ -161,12 +163,12 @@ class Article extends BaseActiveRecord
 	{
 		return array(
 				'published'=>array(
-						'condition'=>'status= ' . self::STATUS_PUBLISH .
+						'condition'=>$this->getTableAlias() .'.status= ' . self::STATUS_PUBLISH .
 						' or ( user_id =' . Yii::app()->user->id .
-								' and  status= ' . self::STATUS_PRIVATE .') ',
+								' and  '.$this->getTableAlias() .'.status= ' . self::STATUS_PRIVATE .') ',
 				),
-				'private'=>array('condition'=>'status= ' . self::STATUS_PRIVATE,),
-				'draft'=>array('condition'=>'status= ' . self::STATUS_DRAFT,),
+				'private'=>array('condition'=>$this->getTableAlias() .'.status= ' . self::STATUS_PRIVATE,),
+				'draft'=>array('condition'=>$this->getTableAlias() .'.status= ' . self::STATUS_DRAFT,),
 				'recently'=>array(
 						'order'=>'create_date DESC',
 						'limit'=>5,
@@ -187,7 +189,7 @@ class Article extends BaseActiveRecord
 		return $this;
 	}
 	public  function byClass($class_code){
-		$this->getDbCriteria()->mergeWith(array('condition'=>'class_code =:class_code' ,'params'=>array(':class_code'=>$class_code)));
+		$this->getDbCriteria()->mergeWith(array('condition'=>$this->getTableAlias() .'.class_code =:class_code' ,'params'=>array(':class_code'=>$class_code)));
 		return $this;
 	}
 	
@@ -201,6 +203,10 @@ class Article extends BaseActiveRecord
 		return $this;
 	}
 	
+	public function withTag($tag){
+		$this->getDbCriteria()->compare('tags', $tag,true);
+		return $this;
+	}
 	//~~~ scope section end 
 	
 	public function getFromFieldList($section=false){
@@ -220,6 +226,7 @@ class Article extends BaseActiveRecord
 	    		'group_id'=>array('type'=>'hidden'),
 	    		//'id'=>array('type'=>'hidden'),
 	    		'class_code'=>array('type'=>'hidden'),
+	    		'attachment'=>array('type'=>'attach'),
 	    		);
 	        if(!$section) $section = $this->class_code;
 		    switch ($section){

@@ -11,7 +11,7 @@ return array(
 		'name'=>'信息共享系统',
 
 		// preloading 'log' component
-		'preload'=>array('log','bootstrap',),
+		'preload'=>array('log'),
 		'language'=>'zh_cn',
 		'theme' => 'classic',
 		'timeZone'=>'Asia/Shanghai',
@@ -23,7 +23,8 @@ return array(
 				'application.models.*',
 				'application.modules.user.models.User',
 				'application.components.*',
-				'application.extensions.*',
+				'application.extensions.attachment.models.*',
+				'application.extensions.form.components.*',
 				'application.modules.rights.*',
 				'application.modules.rights.components.*',
 				'application.modules.user.models.*',
@@ -74,6 +75,7 @@ return array(
 				'helpers' => 'application.widgets',
 				'widgets' => 'application.widgets',
 				'site.widgets'=>'application.modules.site.widgets',
+				'bootstrap'=>'application.extensions.bootstrap',
 		),
 
 		// application components
@@ -154,6 +156,7 @@ return array(
 
 
 
+								'tag/<tag:\w+>'=>'site/article/tag',
 								'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 								'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 								'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',

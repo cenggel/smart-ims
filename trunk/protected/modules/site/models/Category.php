@@ -289,6 +289,8 @@ class Category extends CActiveRecord
 	
 	public function getViewUrl($group_id=false,$class_code=false){
 		$params= array('id'=>$this->id);
+		if(Yii::app()->request->getParam('group_id') && !$group_id) $group_id =  Yii::app()->request->getParam('group_id');
+		
 		if($this->group_id || $group_id) $params['group_id'] = $group_id?$group_id:$this->group_id;
 		if($this->class_code || $class_code) $params['class_code']=$class_code ? $class_code:$this->class_code;
 		return  Yii::app()->urlManager->createUrl('site/category/index',$params);

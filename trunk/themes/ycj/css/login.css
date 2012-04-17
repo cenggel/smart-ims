@@ -137,6 +137,9 @@ h1 {
 }
 .login_win .label {
 	margin: 15px 0 0 0; padding-left: 15px; text-align: left;
+	background:transparent;
+	color:#000;
+	font-size:1em;
 }
 .login_win .label a {
 	margin: 10px 0 0 4px;text-decoration: none;	
@@ -157,7 +160,11 @@ h1 {
 	font-size: 12px; height: 20px; width: 180px;
 }
 .login_win .btn {
-	margin-top: 12px; padding-left: 79px
+	margin-top: 12px; padding-left: 79px;
+	border:none;
+	background:transparent;
+	text-align:left;	
+	display:block;
 }
 .login_win .no_acco,
 .slogin_win .no_acco {

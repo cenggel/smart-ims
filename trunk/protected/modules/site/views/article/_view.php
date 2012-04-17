@@ -2,6 +2,7 @@
 
 	<div class="title">
 		<span><?php echo CHtml::link($data->title,$data->url) ?></span>
+		<?php if($data->metaData->hasRelation('attachCount')&& $data->attachCount >0) { echo CHtml::image(Yii::app()->theme->baseUrl.'/images/attach.png','attachment',array('width'=>16)); echo "({$data->attachCount})";}?>
 		<div class="date-user floatright">
 			<?php echo Yii::app()->dateFormatter->format('yyyy-MM-dd hh:m:ss',$data->update_date);?>
 			| <a

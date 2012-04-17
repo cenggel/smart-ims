@@ -257,7 +257,7 @@ class CategoryController extends Controller
 	 */
 	protected function redirectToArticle($model){
 		$params =array();
-		if($model || $this->working_group) $params['group_id']= ($model?$model->group_id:$this->working_group->id);
+		if($model || $this->working_group) $params['group_id']= ($model && $model->group_id ?$model->group_id:$this->working_group->id);
 		
 		if($model || $this->working_class) $params['class_code']= ($this->working_class?$this->working_class:$model->class_code);
 		if($model) $params['category_id']= $model->id;

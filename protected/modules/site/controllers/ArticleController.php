@@ -121,7 +121,7 @@ class ArticleController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex($class_code=null,$group_id=0,$category_id=0)
+	public function actionIndex($class_code=null,$group_id=0,$category_id=0,$tag=false)
 	{   
 
 		$article = Article::model();
@@ -140,12 +140,29 @@ class ArticleController extends Controller
 			$article = $article->byCategory($category);
 		}
 		
-		$dataProvider=new CActiveDataProvider($article->published());
+		
+		if($tag){
+			$article->withTag($tag);
+		}
+		
+		$dataProvider=new CActiveDataProvider($article->attachRel($class_code)->with('author','attachCount')->published());
 		$this->render('index',array(
 				'dataProvider'=>$dataProvider,
 		));
 	}
 
+	public function actionTag($tag){
+		$article = new Article();
+		$article->unsetAttributes();
+		$this->layout="//layouts/column1";
+		if($tag){
+			$article->withTag($tag);
+		}
+		$dataProvider=new CActiveDataProvider($article->with('author')->published());
+		$this->render('index',array(
+				'dataProvider'=>$dataProvider,
+		));
+	}
 	/**
 	 * Manages all models.
 	 */

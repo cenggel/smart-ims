@@ -1,4 +1,4 @@
-
+<div id="category-list-sidebar">
 <div class="portlet-title">
 	<?php echo Yii::t('siteModule.category', "Caegory List")?>
 	<div class="floatright links" style="float: right">
@@ -16,3 +16,4 @@
 
 		'items'=>$items,
 ));?>
+</div>

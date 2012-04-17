@@ -2,31 +2,42 @@
 	class="attachment-wrap <?php echo $options['class']?>">
 
 
-	
+
 	<?php if(!$model->isNewRecord){ ?>
 	<div class="attach-list">
 		<?php 
 
 		$attachModel->item_id = $model->id;
-		$attachModel->class_code = $model->attachClassCode;
+		$attachModel->class_code = $model->getAttachClassCode();
 		$attachModel->isImage=1;
-		$this->widget('bootstrap.widgets.BootThumbnails', array(
-				'dataProvider'=>$attachModel->seach(),
-				'template'=>"{items}\n{pager}",
-				'itemView'=>'_thumb',
-				// Remove the existing tooltips and rebind the plugin after each ajax-call.
-				'afterAjaxUpdate'=>"js:function() {
+		$data=$attachModel->search();
+		//if($data->totalItemCount >0){
+			//$this->widget('bootstrap.widgets.BootThumbnails', array(
+			$this->widget('zii.widgets.CListView', array(
+					'dataProvider'=>$data,
+					'template'=>"{items}\n{pager}",
+					'itemView'=>'_thumb',
+					'itemsTagName'=>'ul',
+					'itemsCssClass'=>'thumbnails',
+					'emptyText'=>'',
+					// Remove the existing tooltips and rebind the plugin after each ajax-call.
+					'afterAjaxUpdate'=>"js:function() {
 					jQuery('.tooltip').remove();
 					jQuery('a[rel=tooltip]').tooltip();
-				}",
-		));
+		}",
+			));
+		//}
 
 		$attachModel->isImage=0;
-		
-		$this->widget('zii.widgets.CListView', array(
-			'dataProvider'=>$attachModel->seach(),
-			'itemView'=>'_list',
-		)); 
+		$data=$attachModel->search();
+		//if($data->totalItemCount >0){
+			$this->widget('zii.widgets.CListView', array(
+					'dataProvider'=>$data,
+					'itemView'=>'_list',
+					'emptyText'=>'',
+					'template'=>"{items}\n{pager}",
+			));
+		//}
 		?>
 	</div>
 	<?php }?>

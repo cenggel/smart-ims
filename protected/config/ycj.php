@@ -22,6 +22,9 @@ return array(
 				'application.modules.site.models.*',
 				'application.modules.site.components.*',
 				
+				'application.extensions.attachment.models.*',
+				'application.extensions.form.components.*',
+				
 		),
 
 		'modules'=>array(
@@ -59,11 +62,16 @@ return array(
 				'helpers' => 'application.widgets',
 				'widgets' => 'application.widgets',
 				'site.widgets'=>'application.modules.site.widgets',
+				
+				'bootstrap'=>'application.extensions.bootstrap',
 		),
 
 		// application components
 		'components'=>array(
-				
+				'bootstrap'=>array(
+						'class'=>'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
+						
+				),
 				'user'=>array(
 						// enable cookie-based authentication
 						'allowAutoLogin'=>true,

@@ -12,7 +12,6 @@
 <link rel="icon" type="image/x-icon" href="./images/eim_app.ico" />
 <?php Yii::app()->clientScript->registerCssFile( Yii::app()->theme->baseUrl . '/css/style.css', 'screen' ); ?>
 <?php Yii::app()->clientScript->registerCssFile( Yii::app()->theme->baseUrl . '/css/mergedstyle.css', 'all' ); ?>
-<?php Yii::app()->clientScript->registerCssFile( Yii::app()->theme->baseUrl . '/css/top.css', 'screen' ); ?>
 <?php Yii::app()->clientScript->registerCssFile( Yii::app()->theme->baseUrl . '/css/main.css', 'screen' ); ?>
 <?php Yii::app()->clientScript->registerCssFile( Yii::app()->theme->baseUrl . '/css/public.css', 'screen' ); ?>
 <?php Yii::app()->clientScript->registerCssFile( Yii::app()->theme->baseUrl . '/css/font.css', 'screen' ); ?>

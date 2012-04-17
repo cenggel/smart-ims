@@ -44,4 +44,13 @@ $this->menu=array(
 	   ?>
 	</div>
 
+	<div class="attachments">
+	
+	   <?php 
+	    $this->widget('ext.attachment.widgets.AttachWidget',array(
+	    		'model'=>$model,
+	    		'type'=>'view',
+	    		))
+	   ?>
+	</div>
 </div>

@@ -11,7 +11,7 @@ return array(
 		'name'=>'信息共享系统',
 
 		// preloading 'log' component
-		'preload'=>array('log'),
+		'preload'=>array('log','bootstrap'),
 		'language'=>'zh_cn',
 		'theme' => 'classic',
 		'timeZone'=>'Asia/Shanghai',
@@ -23,6 +23,7 @@ return array(
 				'application.models.*',
 				'application.modules.user.models.User',
 				'application.components.*',
+				'application.extensions.*',
 				'application.extensions.attachment.models.*',
 				'application.extensions.form.components.*',
 				'application.modules.rights.*',
@@ -68,13 +69,56 @@ return array(
 				'cal' => array(
 						'debug' => true // For first run only!
 				),
+				
+				'comments'=>array(
+				//you may override default config for all connecting models
+						'defaultModelConfig' => array(
+						//only registered users can post comments
+								'registeredOnly' => false,
+								'useCaptcha' => false,
+								//allow comment tree
+								'allowSubcommenting' => true,
+								//display comments after moderation
+								'premoderate' => false,
+								//action for postig comment
+								'postCommentAction' => 'comments/comment/postComment',
+								//super user condition(display comment list in admin view and automoderate comments)
+								'isSuperuser'=>'Yii::app()->user->checkAccess("moderate")',
+								//order direction for comments
+								'orderComments'=>'DESC',
+						),
+						//the models for commenting
+						'commentableModels'=>array(
+						//model with individual settings
+								'Post'=>array(
+										'registeredOnly'=>true,
+										'useCaptcha'=>false,
+										'allowSubcommenting'=>true,
+										//config for create link to view model page(page with comments)
+										/*'pageUrl'=>array(
+												'route'=>'admin/citys/view',
+												'data'=>array('id'=>'city_id'),
+										),*/
+								),
+								//model with default settings
+								//'ImpressionSet',
+
+								'Article',
+						),
+						//config for user models, which is used in application
+						'userConfig'=>array(
+								'class'=>'User',
+								'nameProperty'=>'username',
+								//'emailProperty'=>'email',
+						),
+				),
+				
 
 		),
 
 		'aliases' => array(
 				'helpers' => 'application.widgets',
 				'widgets' => 'application.widgets',
-				'site.widgets'=>'application.modules.site.widgets',
 				'bootstrap'=>'application.extensions.bootstrap',
 		),
 
@@ -134,6 +178,7 @@ return array(
 								'rights/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'rights/<controller>/<_a>/',
 								'cal/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'cal/<controller>/<_a>/',
 
+								'comments/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'comments/<controller>/<_a>/',
 
 								'group_<group_id:\d+>/<class_code:\w+>'=>'site/article/index',
 								'group_<group_id:\d+>/<class_code:\w+>/<action:\w+>'=>'site/article/<action>',
@@ -210,7 +255,7 @@ return array(
 		'params'=>array(
 				// this is used in contact page
 				'adminEmail'=>'webmaster@example.com',
-				'editor'=>'fckeditor',
+				'editor'=>'ckeditor',
 				'allowedImages'=>array('jpg','jpeg','gif','png'),
 				'upload_path'=>'/uploads',
 				'menus'=>$menus,

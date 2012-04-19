@@ -53,4 +53,9 @@ $this->menu=array(
 	    		))
 	   ?>
 	</div>
+	
+	<?php $this->widget('comments.widgets.ECommentsListWidget', array(
+    'model' => $model,
+			'theme'=>'redmond',
+));?>
 </div>

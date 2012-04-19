@@ -8,9 +8,10 @@ Add your content here.
 
 = Details =
 
-#配置文件中增加 comments 模块
+  * 配置文件中增加 comments 模块 
 
-{{{ modules=array(
+{{{ 
+modules=array(
   .....
 'comments'=>array(
 				//you may override default config for all connecting models
@@ -46,7 +47,7 @@ Add your content here.
 )
 }}}
 
-#在视图文件中增加下面代码
+  * 在视图文件中增加下面代码 
 {{{
 <?php $this->widget('comments.widgets.ECommentsListWidget', array(
     'model' => $model,

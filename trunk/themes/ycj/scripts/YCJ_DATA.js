@@ -9,7 +9,7 @@ JCJ_datas=
        notice      :  {index:3,  key_word:"公告",  src:"/smart-ims/notice",       status:-1},
        memorandum  :  {index:4,  key_word:"备忘",  src:"/smart-ims/memo",   status:-1},
        documents   :  {index:5,  key_word:"文档",  src:"/smart-ims/document",    status:-1},
-       log         :  {index:6,  key_word:"日志",  src:"/smart-ims/blog",          status:-1}
+       log         :  {index:6,  key_word:"日志",  src:"/ycj/index.php/cal/log/index",          status:-1}
     },
     tabs_stack:["desktop"],
 }

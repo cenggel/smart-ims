@@ -1,0 +1,64 @@
+/* 
+    Document   : comments.css
+    Created on : 11 §Ô§â§å§Õ 2011, 19:41:11
+    Author     : segoddnja@gmail.com
+*/
+
+root { 
+    display: block;
+}
+
+.comments-list{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.comments-list .admin-panel{
+   /* border: solid 1px grey; */
+    padding: 5px;
+    float:right;
+}
+
+.comments-list .comments-list{
+    padding-left: 20px;
+}
+
+.comments-list li{
+    margin: 10px 0;
+    background:#F8F8F8 /*#E5F1F4*/;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.comments-list li:nth-child(2n){
+    background: #F8F8F8;
+}
+
+.comments-list li .comment-header{
+    font-weight: bold;
+}
+
+.comments-list li .comment-meta{
+	color:#999;
+}
+
+.comments-list  .comments-list li{
+    margin: 5px 0;
+    background:#FcFcFc /*#E5F1F4*/;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.comments-list .comments-list li:nth-child(2n){
+    background: #F8F8F8;
+}
+
+.comments-list{
+	line-height:1.5em;
+}
+.add-comment {
+	 padding:10px 20px 10px 20px;
+	 -moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border:1px solid #ddd;
+}

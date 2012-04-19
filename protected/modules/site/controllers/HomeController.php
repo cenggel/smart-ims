@@ -18,6 +18,7 @@ class HomeController extends Controller
 			'page'=>array(
 				'class'=>'CViewAction',
 			),
+			'fileUploaderConnector' => "ext.ezzeelfinder.ElFinderConnectorAction",
 		);
 	}
 
@@ -111,5 +112,10 @@ class HomeController extends Controller
 		$this->layout="//layouts/workframe";
 		
 		$this->render('workframe');
+	}
+	
+	public function actionFileUploader(){
+		$this->layout="//layouts/simple";
+		$this->render('fileupload');
 	}
 }

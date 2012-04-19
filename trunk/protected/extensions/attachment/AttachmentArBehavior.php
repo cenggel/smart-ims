@@ -86,7 +86,7 @@ class AttachmentArBehavior extends CActiveRecordBehavior{
 	 */
 	protected function handleNewAttach(){
 		$atts = CUploadedFile::getInstances(new Attachment(),'file_path');
-		print_r($atts); exit;
+		//print_r($atts); exit;
 		$item_id = $this->owner->id;
 
 		$basePath = $this->upload_path;
@@ -135,7 +135,6 @@ class AttachmentArBehavior extends CActiveRecordBehavior{
 	protected function handleUpdateAttach(){
 		$atts = Yii::app()->request->getParam('Attachment');
 		if(is_array($atts)){
-			$this->validate($atts);
 			foreach ($atts as $key => $att){
 				$model = Attachment::model()->findByPk($key);
 
@@ -177,7 +176,7 @@ class AttachmentArBehavior extends CActiveRecordBehavior{
 
 		$this->init();
 
-		$atts = $this->getAttachements();
+		$atts = $this->getAttachments();
 
 		if($atts){
 			foreach ($atts as $att){

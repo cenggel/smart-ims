@@ -99,15 +99,6 @@ $(document).ready(function(){
       <LI id="log">
         <DIV class=imgwap><B class=j_ico_log></B></DIV>
         <A href="javascript:void(0);">日志</A></LI>
-<!--      <LI>
-        <DIV class=imgwap><B class=j_ico_plan></B></DIV>
-        <A href="javascript:void(0);">计划</A></LI>-->
-<!--      <LI>
-        <DIV class=imgwap><B class=j_ico_approve></B></DIV>
-        <A href="javascript:void(0);">审批</A></LI>-->
-<!--      <LI>
-        <DIV class=imgwap><B class=j_ico_more></B></DIV>
-        <A href="javascript:void(0);">更多</A></LI>-->
     </ul>
   </div>
   <div class="cb"></div>
@@ -138,64 +129,12 @@ $(document).ready(function(){
             </DIV>
           </DIV>
         </DIV>
-        <!--
-        <DIV id="menu_attendance" style="WIDTH: 99px; WHITE-SPACE: nowrap; OVERFLOW: hidden" class=menuli>
-          <DIV id="menu1_attendance" class=t_tab_curl>
-            <DIV id="menu2_attendance" class=t_tab_curm>
-              <DIV id="menu3_attendance" class=t_tab_curr><A class=close title=关闭 href="javascript:void(0);"></A><A title=考勤 href="javascript:void(0);">考勤</A></DIV>
-            </DIV>
-          </DIV>
-        </DIV>
-        <DIV id="menu_twitter" style="WIDTH: 99px; WHITE-SPACE: nowrap; OVERFLOW: hidden" class=menuli>
-          <DIV id="menu1_twitter" class=t_tab_curl>
-            <DIV id="menu2_twitter" class=t_tab_curm>
-              <DIV id="menu3_twitter" class=t_tab_curr><A class=close title=关闭 href="javascript:void(0);"></A><A title=微博 href="javascript:void(0);">微博</A></DIV>
-            </DIV>
-          </DIV>
-        </DIV>
-        <DIV id="menu_notice" style="WIDTH: 99px; WHITE-SPACE: nowrap; OVERFLOW: hidden" class=menuli>
-          <DIV id="menu1_notice" class=t_tab_norl>
-            <DIV id="menu2_notice" class=t_tab_norm>
-              <DIV id="menu3_notice" class=t_tab_norr><A class=close title=关闭 href="javascript:void(0);"></A><A title=公告 href="javascript:void(0);">公告</A></DIV>
-            </DIV>
-          </DIV>
-        </DIV>
-        <DIV id="menu_memorandum" style="WIDTH: 99px; WHITE-SPACE: nowrap; OVERFLOW: hidden" class=menuli>
-          <DIV id="menu1_memorandum" class=t_tab_norl>
-            <DIV id="menu2_memorandum" class=t_tab_norm>
-              <DIV id="menu3_memorandum" class=t_tab_norr><A class=close title=关闭 href="javascript:void(0);"></A><A title=公告 href="javascript:void(0);">公告</A></DIV>
-            </DIV>
-          </DIV>
-        </DIV>
-        <DIV id="menu_documents" style="WIDTH: 99px; WHITE-SPACE: nowrap; OVERFLOW: hidden" class=menuli>
-          <DIV id="menu1_documents" class=t_tab_norl>
-            <DIV id="menu2_documents" class=t_tab_norm>
-              <DIV id="menu3_documents" class=t_tab_norr><A class=close title=关闭 href="javascript:void(0);"></A><A title=公告 href="javascript:void(0);">公告</A></DIV>
-            </DIV>
-          </DIV>
-        </DIV>
-        <DIV id="menu_log" style="WIDTH: 99px; WHITE-SPACE: nowrap; OVERFLOW: hidden" class=menuli>
-          <DIV id="menu1_log" class=t_tab_norl>
-            <DIV id="menu2_log" class=t_tab_norm>
-              <DIV id="menu3_log" class=t_tab_norr><A class=close title=关闭 href="javascript:void(0);"></A><A title=公告 href="javascript:void(0);">公告</A></DIV>
-            </DIV>
-          </DIV>
-        </DIV>
-        -->
       </DIV>
     </div>
   </div>
-  <div class="jgcont" id="tmmain"  style="height: 495px; width: 1000px;position:relative;overflow:hidden;">
+  <div class="jgcont" id="tmmain"  style="height: 475px; width: 1000px;position:relative;overflow:hidden;">
     <IFRAME id="IFRAME_desktop" src="<?php echo Yii::app()->urlManager->createUrl('/member/home');?>" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: block; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no"  frameBorder=0></IFRAME>
-    <!--
-    <IFRAME id="IFRAME_attendance" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: none; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="./attendance.html" frameBorder=0></IFRAME>
-    <IFRAME id="IFRAME_twitter" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: none; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="./twitter.html" frameBorder=0></IFRAME>
-    <IFRAME id="IFRAME_notice" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: none; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="./notice.html" frameBorder=0></IFRAME>
-    <IFRAME id="IFRAME_memorandum" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: none; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="./memorandum.html" frameBorder=0></IFRAME>
-    <IFRAME id="IFRAME_documents" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: none; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="./documents.html" frameBorder=0></IFRAME>
-    
-    --><IFRAME id="IFRAME_log" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: none; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="./log.html" frameBorder=0></IFRAME>
-    <!--modify by lfa display: block;-->
+    <IFRAME id="IFRAME_log" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: none; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="./log.html" frameBorder=0></IFRAME>
   </div> 
 </div>
 </div>

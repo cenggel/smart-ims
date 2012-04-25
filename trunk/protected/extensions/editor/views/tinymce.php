@@ -1,5 +1,7 @@
 <script type="text/javaSCRIPT" src="<?php echo $this->path; ?>/tiny_mce.js"></script>
-<script type="text/javaSCRIPT"> tinyMCE.init(
+<script type="text/javaSCRIPT"> 
+$('#<?php echo $this->name; ?>').wrap("<div class='editor'></div>"); 
+tinyMCE.init(
               {mode : "exact",
               theme : "<?php echo $this->toolbar; ?>",
               height: "<?php echo $this->height; ?>",

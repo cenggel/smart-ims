@@ -146,8 +146,6 @@ class User extends CActiveRecord
 	}
 	
 	public function behaviors(){
-		$behaviors = array();
-		if (isset(Yii::app()->getModule('user')->behaviors)) $behaviors = array_merge($behaviors,Yii::app()->getModule('user')->behaviors);
-		return $behaviors;
+		return Yii::app()->getModule('user')->getBehaviorsFor(get_class($this));
 	}
 }

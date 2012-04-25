@@ -72,6 +72,7 @@ class Category extends CActiveRecord
 				'parent'=>array(self::BELONGS_TO, 'Category', 'parent_id'),
 				'childs'=>array(self::HAS_MANY, 'Category', 'parent_id'),
 				'group'=>array(self::BELONGS_TO, 'Groups', 'group_id'),
+				'articles'=>array(self::HAS_MANY,'Article','category_id'),
 				
 				
 		);
@@ -307,5 +308,25 @@ class Category extends CActiveRecord
 						'order'=>'display_order ASC',
 				),
 		);
+	}
+	
+	public function beforeDelete(){
+		if($this->category_type== self::SYS_CATEGORY){
+			Yii::app()->user->setFlash('error',Yii::t('siteModule.category','system category cannot be delete!'));
+			return false;
+		}
+		
+		return parent::beforeDelete();
+	}
+	
+	public function afterDelete(){
+		$defcat = $this->findByAttributes(array('class_code'=>$this->class_code,'category_type'=>self::SYS_CATEGORY));
+		$catId = '0';
+		if($defcat){
+			$catId= $defcat->id;
+		}
+		Article::model()->updateAll(array('category_id'=>$defcat),'category_id = :category_id',array(':category_id'=>$this->id));
+		
+		return parent::afterDelete();
 	}
 }

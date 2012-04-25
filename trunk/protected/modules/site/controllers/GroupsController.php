@@ -24,7 +24,8 @@ class GroupsController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->working_group  =$this->loadModel($id);
+		//$this->working_group  =$this->loadModel($id);
+		$this->working_group = Groups::model()->with(array('creator','members'=>array('with'=>'profile')))->findByPk($id);
 		$this->render('view',array(
 				'model'=>$this->working_group,
 		));
@@ -155,6 +156,9 @@ class GroupsController extends Controller
 		if(isset($_GET['Groups']))
 			$model->attributes=$_GET['Groups'];
 
+		if(!$this->hasRight('op_manage_all_groups')){
+			$model->create_user= Yii::app()->user->id;
+		}
 		$this->render('admin',array(
 				'model'=>$model,
 		));

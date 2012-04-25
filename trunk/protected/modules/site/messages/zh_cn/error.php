@@ -19,5 +19,6 @@
  * @version $Id: $
  */
 return array (
+  'Invalid request. Please do not repeat this request again.' => '',
   'Sorry, You don\'t have the required permissions to enter this section' => '',
 );

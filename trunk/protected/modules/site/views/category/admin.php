@@ -34,7 +34,7 @@ Yii::app()->clientScript->registerScript('search', "
 
 	<div class="content-box-header">
 		<h3>
-			<?php echo Yii::t('core', 'Categories'); ?>
+			<?php echo Yii::t('siteModule.category', 'Categories List'); ?>
 		</h3>
 	</div>
 	<!-- End .content-box-header -->
@@ -42,7 +42,7 @@ Yii::app()->clientScript->registerScript('search', "
 	<div class="content-box-content">
 
 		<?php echo CHtml::form(); ?>
-		<table>
+		<table class="items">
 			<thead>
 				<tr>
 					<th style='width: 5%;'><?php echo $model->getAttributeLabel('display_order'); ?>
@@ -53,7 +53,7 @@ Yii::app()->clientScript->registerScript('search', "
 					</th>
 					<th style='width: 25%;'><?php echo $model->getAttributeLabel('description'); ?>
 					</th>
-					<th style='width: 15%;'><?php echo Yii::t('admintuts', 'Options'); ?>
+					<th style='width: 15%;'><?php echo Yii::t('siteModule.category', 'Options'); ?>
 					</th>
 				</tr>
 			</thead>
@@ -81,7 +81,7 @@ Yii::app()->clientScript->registerScript('search', "
 					</td>
 					<td><a href="<?php echo $row->viewUrl; ?>" title="" rel="tooltip"><?php echo CHtml::encode($row->name); ?>
 					</a></td>
-					<td><?php echo CHtml::encode($row->class_code); ?></td>
+					<td><?php echo Enumeration::item('ARTICLE_CLASS', $row->class_code) ; ?></td>
 					<td><?php echo CHtml::encode($row->description); ?></td>
 					<td>
 						<!-- Icons --> 
@@ -97,21 +97,22 @@ Yii::app()->clientScript->registerScript('search', "
 						rel='tooltip'><img
 							src="<?php echo Yii::app()->theme->baseUrl; ?>/images/icons/add.png"
 							alt="Add" /> </a> <a
-						href="<?php echo $this->createUrl('tutorials/addcategory', array( 'parentid' => $row->id )); ?>"
+						href="<?php echo $this->createUrl('category/create', array_merge($urlParams, array( 'parent_id' => $row->id ))); ?>"
 						title="<?php echo Yii::t('siteModule.category', 'Add sub category to this category'); ?>"
 						rel='tooltip'><img
 							src="<?php echo Yii::app()->theme->baseUrl; ?>/images/icons/addsub.png"
 							alt="Add" /> </a> <a
-						href="<?php echo $this->createUrl('tutorials/editcategory', array( 'id' => $row->id )); ?>"
+						href="<?php echo $this->createUrl('category/update', array( 'id' => $row->id )); ?>"
 						title="<?php echo Yii::t('siteModule.category', 'Edit this category'); ?>"
 						rel='tooltip'><img
 							src="<?php echo Yii::app()->theme->baseUrl; ?>/images/icons/pencil.png"
-							alt="Edit" /> </a> <a
-						href="<?php echo $this->createUrl('tutorials/deletecategory', array( 'id' => $row->id )); ?>"
-						title="<?php echo Yii::t('siteModule.category', 'Delete this category!'); ?> "
-						rel='tooltip deletelink'><img
-							src="<?php echo Yii::app()->theme->baseUrl; ?>/images/icons/cross.png"
-							alt="Delete" /> </a>
+							alt="Edit" /> </a> 
+							
+						
+						<?php echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl."/images/icons/cross.png",'delete'),array('delete','id'=>$row->id),array(
+									'rel'=>'tooltip', 'title'=>Yii::t('siteModule.category', 'Delete this category!'),
+								'class'=>'deletelink',
+									))?>
 					</td>
 				</tr>
 				<?php endforeach ?>
@@ -129,7 +130,7 @@ Yii::app()->clientScript->registerScript('search', "
 
 
 		<?php 
-		$this->widget('bootstrap.widgets.BootGridView', array(
+		/* $this->widget('bootstrap.widgets.BootGridView', array(
 				'id'=>'category-grid',
 				'dataProvider'=>$model->search(),
 				'filter'=>$model,
@@ -154,13 +155,58 @@ Yii::app()->clientScript->registerScript('search', "
 		'create_date',
 		'update_date',
 		'update_user',
-		*/
+		* /
 		array(
 			'class'=>'bootstrap.widgets.BootButtonColumn',
             'htmlOptions'=>array('style'=>'width: 50px'),
 				
 		),
 	),
-)); ?>
+)); */
+?>
 	</div>
 </div>
+
+<script type="text/javascript">
+
+
+function submitDelete(element) {
+	//element= $this;
+	if(!confirm('<?php echo Yii::t('siteModule.category','Are you sure you want to delete this item?');?>')) return false;
+	f = document.createElement('form');
+	f.style.display = 'none';
+	element.parentNode.appendChild(f);
+	f.method = 'POST';
+
+	url = element.href;		
+	element.href='#';
+	if (typeof url == 'string' && url != '') {
+		f.action = url;
+		//alert(f.action +"  / "+f.id);
+	}
+	
+	if (element.target != null) {
+		f.target = element.target;
+	}
+
+	var inputs = [];		
+
+	$(f).data('submitObject', $(element));
+
+	$(f).trigger('submit');
+	$(f).parent.removeChild(f);
+	return false;
+	
+}
+(function($){
+	
+})(jQuery);
+
+
+jQuery(function(){
+	//alert($(".deletelink").length);
+   $(".deletelink").bind('click',function(){ submitDelete(this);return false;}
+   );
+	
+});
+</script>

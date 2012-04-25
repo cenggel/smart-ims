@@ -12,16 +12,6 @@ class CategoryController extends Controller
 	public $layout='//layouts/column2';
 
 	/**
-	 * @return array action filters
-	 */
-	public function filters()
-	{
-		return array(
-				'accessControl', // perform access control for CRUD operations
-		);
-	}
-
-	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
@@ -67,6 +57,11 @@ class CategoryController extends Controller
 		$model=new Category;
 		$model->group_id = $group_id;
 		$model->class_code = $class_code;
+		
+		$parent = Yii::app()->request->getparam('parent_id');
+		if($parent){
+			$model->parent_id = (int)$parent;
+		}
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -116,14 +111,24 @@ class CategoryController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		//echo $id; exit;
 		if(Yii::app()->request->isPostRequest)
 		{
 			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
-
+			$model =$this->loadModel($id);
+			$model->delete();
+			
+			$url =array('admin');
+			if($model->class_code){
+				$url['class_code']= $model->class_code;
+			}
+			
+			if($model->group_id >0){
+				$url['group_id']= $model->group_id;
+			}
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : $url);
 		}
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
@@ -164,6 +169,18 @@ class CategoryController extends Controller
 	public function actionAdmin($class_code,$group_id=0)
 	{
 		$model=new Category('search');
+		
+		if(Yii::app()->request->isPostRequest){
+			if($_POST['pos']){
+				foreach( $_POST['pos'] as $key =>$p){
+					//$cat = $this->loadModel($key);
+					if($this->hasRight(array('op_manage_category','Site.Category.Update'),array('category_id'=>$key))){
+						$model->updateByPk($key, array('display_order'=>$p));
+					}
+				}
+			}
+		}
+		
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Category']))
 			$model->attributes=$_GET['Category'];
@@ -180,6 +197,7 @@ class CategoryController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer the ID of the model to be loaded
+	 * @return Category
 	 */
 	public function loadModel($id)
 	{
@@ -257,10 +275,11 @@ class CategoryController extends Controller
 	 */
 	protected function redirectToArticle($model){
 		$params =array();
-		if($model || $this->working_group) $params['group_id']= ($model && $model->group_id ?$model->group_id:$this->working_group->id);
+		if(($model && $model->group_id) || $this->working_group) $params['group_id']= ($model && $model->group_id ?$model->group_id:$this->working_group->id);
 		
 		if($model || $this->working_class) $params['class_code']= ($this->working_class?$this->working_class:$model->class_code);
 		if($model) $params['category_id']= $model->id;
+	
 		$this->redirect(Yii::app()->urlManager->createUrl('site/article/index',$params));
 	} 
 }

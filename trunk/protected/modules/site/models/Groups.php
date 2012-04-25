@@ -66,6 +66,7 @@ class Groups extends BaseActiveRecord
 			'description' => Yii::t('siteModule.groups','Description'),
 			'create_user' => Yii::t('siteModule.groups','Create User'),
 			'create_date' => Yii::t('siteModule.groups','Create Date'),
+			'members' => Yii::t('siteModule.groups','Members'),
 			'views' => Yii::t('siteModule.groups','Views'),
 		);
 	}
@@ -104,7 +105,10 @@ class Groups extends BaseActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-				'members'=>array(self::MANY_MANY,'User','group_members(groups_id,users_id)')
+				'members'=>array(self::MANY_MANY,'User','group_members(groups_id,users_id)'),
+				'creator'=>array(self::BELONGS_TO,'User','create_user'),
+				'articles'=>array(self::HAS_MANY,'Article','group_id'),
+				'categories'=>array(self::HAS_MANY,'Category','group_id'),
 		);
 	}
 	
@@ -176,6 +180,12 @@ class Groups extends BaseActiveRecord
 		
 		//print_r($result);exit;
 		return $result;
+	}
+	
+	public  function afterDelete(){
+		Article::model()->updateAll(array('group_id'=>'0'),'group_id = :group_id',array(':group_id'=>$this->id));
+		Category::model()->updateAll(array('group_id'=>'0'),'group_id = :group_id',array(':group_id'=>$this->id));
+		return parent::afterDelete();
 	}
 	
 }

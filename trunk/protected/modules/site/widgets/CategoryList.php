@@ -25,7 +25,15 @@ class CategoryList extends Portlet{
 				'items'=>$this->items,
 		));*/
 		
+		$params = array();
+		if($this->class_code){
+			$params['class_code']= $this->class_code;
+		}
+		if($this->group_id){
+			$params['group_id']= $this->group_id;
+		}
 		$this->render('categorylist',array('group_id'=>$this->group_id,
-				'class_code'=>$this->class_code,'items'=>$this->items));
+				'class_code'=>$this->class_code,'items'=>$this->items,
+				'params'=>$params));
 	}
 }

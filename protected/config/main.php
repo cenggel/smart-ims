@@ -57,7 +57,11 @@ return array(
 				'user'=>array(
 						'returnUrl'=>array('/site/member/home'),
 						'relations'=>array('groups'=>array(CActiveRecord::MANY_MANY,'Groups','group_members(users_id,groups_id)')),
-						'componentBehaviors'=>array('Profile'=>array('profile'=>array('class' => 'application.extensions.UserProfileBehaviors')))
+						'componentBehaviors'=>array(
+								'Profile'=>array('profile'=>array('class' => 'application.extensions.behaviors.UserProfileBehaviors')),
+								'User'=>array('userBehavior'=>array('class'=>'application.extensions.behaviors.UserBehavior'))
+								),
+						
 				),
 				'site'=>array(
 						'import'=>array(
@@ -119,7 +123,6 @@ return array(
 		'aliases' => array(
 				'helpers' => 'application.widgets',
 				'widgets' => 'application.widgets',
-				'bootstrap'=>'application.extensions.bootstrap',
 		),
 
 		// application components
@@ -131,7 +134,7 @@ return array(
 				'user'=>array(
 						// enable cookie-based authentication
 						'allowAutoLogin'=>true,
-						'class'=>'RWebUser',
+						'class'=>'WebUser',
 						'loginUrl' => array('/user/login'),
 
 				),

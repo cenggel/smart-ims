@@ -134,10 +134,10 @@ class ArticleController extends Controller
 		}
         
 		
-		if($category){
-			$article->category_id = (int)$category;
-			$this->category = Category::model()->findByPk((int)$category);
-			$article = $article->byCategory($category);
+		if($category_id){
+			$article->category_id = (int)$category_id;
+			$this->category = Category::model()->findByPk((int)$category_id);
+			$article = $article->byCategory($category_id);
 		}
 		
 		
@@ -145,7 +145,7 @@ class ArticleController extends Controller
 			$article->withTag($tag);
 		}
 		
-		$dataProvider=new CActiveDataProvider($article->attachRel($class_code)->with('author','attachCount')->published());
+		$dataProvider=new CActiveDataProvider($article->attachRel()->with('author','attachCount')->published());
 		$this->render('index',array(
 				'dataProvider'=>$dataProvider,
 		));

@@ -365,7 +365,7 @@ form .large-input {
 }
 
 form textarea {
-	
+	width: 97.5%;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -1248,4 +1248,9 @@ input.tiny-input{
 
 .editor{
 	clear:both;
+}
+
+.dataGrid .label{
+	color:#000;
+	background:transparent;
 }

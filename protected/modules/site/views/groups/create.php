@@ -1,12 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-	'Groups'=>array('index'),
-	'Create',
+	Yii::t('siteModule.groups','Groups')=>array('index')
 );
 
 $this->menu=array(
-	array('label'=>'List Groups', 'url'=>array('index')),
-	array('label'=>'Manage Groups', 'url'=>array('admin')),
+	array('label'=>Yii::t('siteModule.groups','List Groups'), 'url'=>array('index')),
+	array('label'=>Yii::t('siteModule.groups','Manage Groups'), 'url'=>array('admin')),
 );
 ?>
 

@@ -8,7 +8,7 @@ return array(
 	'messagePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'messages',
 	'languages'=>array('zh_cn',),
 	'fileTypes'=>array('php'),
-    'overwrite'=>true,
+   // 'overwrite'=>true,
 	'exclude'=>array(
 		'.svn',
 		'yiilite.php',

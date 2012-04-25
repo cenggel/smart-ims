@@ -7,6 +7,6 @@
 						'type'=>'dropdown',
 						'data'=>CHtml::listData(User::model()->findAll(),'id','username'),
 						'htmlOptions'=>array('multiple'=>"multiple",'options'=>array($model->create_user=>array('disabled'=>'disabled')))),
-				'description'=>array('type'=>'editor')
+				'description'=>array('type'=>'textarea')
 		)));
 ?>

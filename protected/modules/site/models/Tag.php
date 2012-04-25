@@ -183,4 +183,8 @@ class Tag extends BaseActiveRecord
 		
 		return $result;
 	}
+	
+	public function getUrl(){
+		return Yii::app()->urlManager->createUrl('site/article/tag',array('tag'=>$this->name));
+	}
 }

@@ -164,7 +164,7 @@ class Article extends BaseActiveRecord
 		return array(
 				'published'=>array(
 						'condition'=>$this->getTableAlias() .'.status= ' . self::STATUS_PUBLISH .
-						' or ( user_id =' . Yii::app()->user->id .
+						' or ( user_id =' . (int)Yii::app()->user->id .
 								' and  '.$this->getTableAlias() .'.status= ' . self::STATUS_PRIVATE .') ',
 				),
 				'private'=>array('condition'=>$this->getTableAlias() .'.status= ' . self::STATUS_PRIVATE,),

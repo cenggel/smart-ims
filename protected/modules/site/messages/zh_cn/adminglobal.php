@@ -29,6 +29,7 @@ return array (
   'Edit this setting' => '',
   'Editing Setting' => '',
   'Editing setting group' => '',
+  'No Items Found.' => '',
   'Revert setting value to the default value.' => '',
   'Save' => '',
   'Settings' => '',

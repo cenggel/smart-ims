@@ -1,12 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-	'Groups'=>array('index'),
-	'Manage',
+	Yii::t('siteModule.groups','Groups')=>array('index'),
+	Yii::t('siteModule.groups','Manage'),
 );
 
 $this->menu=array(
-	array('label'=>'List Groups', 'url'=>array('index')),
-	array('label'=>'Create Groups', 'url'=>array('create')),
+	array('label'=>Yii::t('siteModule.groups','Create Groups'), 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -23,33 +22,27 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Groups</h1>
+<h1><?php Yii::t('siteModule.groups', 'Manage Groups')?></h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+
+<?php $this->widget('bootstrap.widgets.BootGridView', array(
 	'id'=>'groups-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$model->with('creator')->search(),
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
 		'group_name',
-		'description',
-		'create_user',
-		'create_date',
-		'views',
+		array('name'=>'description',
+				'type' => 'raw',),
+		array('name'=>'create_user',
+				'value'=>'$data->creator->username'),
+		array('name'=>'create_date',
+				'value'=>'date("Y-m-d",$data->create_date)'),
 		array(
-			'class'=>'CButtonColumn',
+			  'class'=>'bootstrap.widgets.BootButtonColumn',
+            'htmlOptions'=>array('style'=>'width: 50px'),
 		),
 	),
 )); ?>

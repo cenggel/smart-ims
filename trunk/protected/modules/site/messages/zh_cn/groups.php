@@ -15,9 +15,9 @@ return array(
 		'Create User'=>'创建用户',
 		'Manage'=>'管理',
 		'Members'=>'成员',
-		''=>'',
-		''=>'',
-		''=>'',
+		'Update Groups {groupname}'=>'更新{groupname}',
+		'View Groups'=>'查看工作组',
+		'Group members'=>'工作组成员',
 		''=>'',
 		''=>'',
 		);

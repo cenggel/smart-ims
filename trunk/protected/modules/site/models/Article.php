@@ -220,7 +220,7 @@ class Article extends BaseActiveRecord
 	    		'title',
 	    		'description',
 	    		'content'=>array('type'=>'editor','htmlOptions'=>array('editor'=>$editorOptions)),
-	    		'tags',
+	    		'tags'=>array('type'=>'tag'),
 	    		'status'=>array('type'=>'dropdown','data'=>'ARTICLE_STATUS'),
 	    		'hash'=>array('type'=>'hidden'),
 	    		'group_id'=>array('type'=>'hidden'),
@@ -252,7 +252,7 @@ class Article extends BaseActiveRecord
 		if($this->article_date && ((int)$this->article_date)==0)
 			$this->article_date = strtotime($this->article_date);
 		
-		
+		$this->tags = implode(',', $_POST['Tags']) ;
 		
 		//print_r($_FILES);
 		return true;

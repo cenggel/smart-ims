@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Groups'=>array('index'),
-	$model->id,
+	Yii::t('siteModule.groups','Groups')=>array('index'),
+	$model->group_name,
 );
 
 $this->menu=array(

@@ -17,6 +17,16 @@ class CategoryList extends Portlet{
 						'icon'=>'folder-open');
 			}
 		}
+		
+		$tags= Tag::model()->findall();
+		if(is_array($tags)){
+			$this->items[]=array('label'=>'Tags');
+			foreach ($tags as $tag){
+				$this->items[] = array('label'=>$tag->name,
+						'url'=>$tag->url,
+						'icon'=>'tag');
+			}
+		}
 	} 
 	public function renderContent(){
 		/*$this->widget('bootstrap.widgets.BootMenu', array(

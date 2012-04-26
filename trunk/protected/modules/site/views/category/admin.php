@@ -61,7 +61,7 @@ Yii::app()->clientScript->registerScript('search', "
 				<tr>
 					<td colspan="5">
 						<div class="bulk-actions align-left">
-							<?php echo CHtml::submitButton( Yii::t('Yii', 'Submit'), array( 'name'=> 'submit', 'class'=>'button')); ?>
+							<?php echo CHtml::submitButton( Yii::t('siteModule.category', 'Submit'), array( 'name'=> 'submit', 'class'=>'button')); ?>
 						</div>
 						<div class="clear"></div>
 					</td>
@@ -119,7 +119,7 @@ Yii::app()->clientScript->registerScript('search', "
 
 				<?php else: ?>
 				<tr>
-					<td colspan='8' style='text-align: center;'><?php echo Yii::t('adminglobal', 'No Items Found.'); ?>
+					<td colspan='8' style='text-align: center;'><?php echo Yii::t('siteModule.category', 'No Items Found.'); ?>
 					</td>
 				</tr>
 				<?php endif; ?>

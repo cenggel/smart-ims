@@ -180,6 +180,7 @@ return array(
 								'user/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'user/<controller>/<_a>/',
 								'rights/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'rights/<controller>/<_a>/',
 								'cal/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'cal/<controller>/<_a>/',
+								'tags/<tag:\w+>'=>'site/article/tag',
 
 								'comments/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'comments/<controller>/<_a>/',
 
@@ -204,7 +205,7 @@ return array(
 
 
 
-								'tag/<tag:\w+>'=>'site/article/tag',
+								
 								'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 								'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 								'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',

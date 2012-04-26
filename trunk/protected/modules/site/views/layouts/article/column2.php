@@ -23,8 +23,8 @@
 		if(isset($this->blocks['left']) && is_array($this->blocks['left'])){
 			$this->renderPartial('//layouts/_side_block',array('blocks'=>$this->blocks['left']));
 		}
-		/*$tags= Tag::model()->findall();
-		$this->widget('ext.cumulus.Tagcloud',
+		
+		/*$this->widget('ext.cumulus.Tagcloud',
 				array(
 						'tags' =>$tags,
 						'width'=>220,

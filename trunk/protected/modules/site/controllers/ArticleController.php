@@ -22,7 +22,7 @@ class ArticleController extends Controller
 	public function actionView($id)
 	{
 		$model = $this->loadModel($id);
-		if(!$this->hasRight('Site.Aritcle.View',array('article'=>$model))){
+		if(!$this->hasRight('Site.Article.View',array('article'=>$model))){
 			$this->accessDenied();
 		}
 		if(!$this->working_class && $model->class_code){

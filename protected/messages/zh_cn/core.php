@@ -17,7 +17,7 @@ return array(
 		'Create'=>'新建',
 		'Update'=>'更新',
 		'Fields with <span class="required">*</span> are required.'=>'带有 <span class="required">*</span> 的信息必须输入',
-		''=>'',
+		'You are not authorized to perform this action.'=>'您没有权限访问此页，请联系管理员',
 		''=>'',
 		''=>'',
 		''=>'',

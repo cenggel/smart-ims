@@ -195,6 +195,22 @@ class ElementRender {
 		//echo $ret;
 		return $ret;
 	}
+	
+	protected function tagRender(){
+		$name = $this->name;
+		$params = array('tags'=>$this->model->$name);
+		if(isset($this->attribes['url'])){
+			$params['url'] = $this->url;
+		}
+		ob_start();
+		ob_implicit_flush(false);
+		  
+		Yii::app()->controller->widget('ext.form.tag.TagWidget',
+				$params);
+	
+		$ret = ob_get_clean();
+		return $ret;
+	}
 	protected function textareaRender(){
 		return CHtml::activeTextArea($this->model,$this->name,array_merge($this->htmlOptions,array('rows'=>4, 'cols'=>60)));
 	}

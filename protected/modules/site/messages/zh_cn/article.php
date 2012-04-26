@@ -54,7 +54,7 @@ return array (
   'Settings'=>'配置',
   'Notice'=>'通知',
   'Manage {Articles}' => '管理{Articles}',
-  ''=>'',
+  'Attachment'=>'附件',
   ''=>'',
   ''=>'',
   ''=>'',

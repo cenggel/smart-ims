@@ -175,7 +175,11 @@ class Groups extends BaseActiveRecord
 		//echo "<pre>";
 		foreach ($class as $k=>$c){
 			//print_r($c);
-			$result[$k] = Article::model()->recently(5)->byClass($k)->byGroup($this->id)->published()->findAll();
+			$model = Article::model()->recently(5)->byClass($k)->published();
+			if($this->id >0){
+				$model=$model->byGroup($this->id);
+			}
+			$result[$k] = $model->findAll();
 		}
 		
 		//print_r($result);exit;

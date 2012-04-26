@@ -14,7 +14,7 @@
 
 		tag_input = el.children(".tagit-new").children(".tagit-input");
 
-		if(options.tags !== undefined && options.tags.length >0)
+		if(options.tags !== undefined && options.tags.length >0 && options.tags!="")
 		{
 			$.each(
 				options.tags,

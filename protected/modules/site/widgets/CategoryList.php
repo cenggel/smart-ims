@@ -9,7 +9,7 @@ class CategoryList extends Portlet{
 	public function childInit(){
 		//$this->items[]=	array('label'=>Yii::t('siteModule.category','Category List'));
 			
-		$cates = Category::model()->getTreeListCat((int)$category_id,'--',$this->group_id,$this->class_code);
+		$cates = Category::model()->getTreeListCat((int)$this->$category_id,'--',$this->group_id,$this->class_code);
 		if(is_array($cates)){
 			foreach ($cates as $cat){
 				$this->items[]=array('label'=>$cat->name,

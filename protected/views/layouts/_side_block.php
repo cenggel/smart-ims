@@ -2,7 +2,7 @@
 
 foreach ($blocks as $data){
 	if(is_array($data)){
-		if($data['portlet']){
+		if(isset($data['portlet']) &&$data['portlet']){
 			$p = array();
 			if($data['title']) $p['title']=$data['title'];
 			if($data['portletOptions'])$p['htmlOptions']= $data['portletOptions'];
@@ -20,7 +20,7 @@ foreach ($blocks as $data){
 			echo $data['content'];
 		}
 
-		if($data['portlet']){
+		if(isset($data['portlet']) &&$data['portlet']){
 			$this->endWidget();
 		}
 	}else if(is_string($data)){

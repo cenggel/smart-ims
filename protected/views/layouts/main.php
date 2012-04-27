@@ -8,11 +8,12 @@
 <?php Yii::app()->clientScript->registerCssFile( Yii::app()->theme->baseUrl . '/css/screen.css', 'screen' ); ?>
 <?php Yii::app()->clientScript->registerCssFile( Yii::app()->theme->baseUrl . '/css/print.css', 'print' ); ?>
 <?php Yii::app()->clientScript->registerCssFile( Yii::app()->theme->baseUrl . '/css/invalid.css', 'screen' ); ?>
-<?php Yii::app()->clientScript->registerCssFile(Yii::app()->themeManager->baseUrl. '/css/jquery.crossSelect.css', 'screen' ); ?>
 <!--[if lt IE 8]>
-	<?php Yii::app()->clientScript->registerCssFile( Yii::app()->theme->baseUrl . '/css/ie.css', 'screen' ); ?>
+	<?php CHtml::css( Yii::app()->theme->baseUrl . '/css/ie.css', 'screen' ); ?>
 	
 	<![endif]-->
+
+<?php Yii::app()->clientScript->registerCssFile(Yii::app()->themeManager->baseUrl. '/css/jquery.crossSelect.css', 'screen' ); ?>
 
 
 <?php Yii::app()->clientScript->registerCssFile( Yii::app()->theme->baseUrl . '/css/form.css' ); ?>

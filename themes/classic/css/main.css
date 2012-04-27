@@ -1246,11 +1246,23 @@ input.tiny-input{
 	margin-bottom:10px;
 }
 
-.editor{
+.editor,
+.markItUp,
+.comment-widget{
 	clear:both;
 }
 
 .dataGrid .label{
 	color:#000;
 	background:transparent;
+}
+
+.syntaxhighlighter .toolbar{
+	float:right;
+}
+
+.syntaxhighlighter .container:before, 
+.syntaxhighlighter .container:after {
+    content: "";
+    display: none;
 }

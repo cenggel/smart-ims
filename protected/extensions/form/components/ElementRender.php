@@ -175,7 +175,7 @@ class ElementRender {
 	}
 	protected function editorRender(){
 
-		$ret=CHtml::activeTextArea($this->model,$this->name,array('rows'=>6, 'cols'=>60));
+		$ret=CHtml::activeTextArea($this->model,$this->name,array('rows'=>6, 'cols'=>60));;
 		ob_start();
 		ob_implicit_flush(false);
 
@@ -187,6 +187,11 @@ class ElementRender {
 			$option['name']= $this->id;
 		}
 
+		if(isset($option['type'])&& $option['type']=='markitup'){
+			Yii::app()->controller->widget('ext.form.markitup.markitup', array( 'model' => $this->model, 'attribute' => $this->name ));
+			return ob_get_clean();
+		}
+		
 		$widget=Yii::app()->getWidgetFactory()->createWidget($this,'application.extensions.editor.editor',
 				$option);
 		$widget->init();

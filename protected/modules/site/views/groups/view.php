@@ -32,7 +32,8 @@ $this->menu=array(
 
 <?php 
 
-$mem = new CActiveDataProvider(User::model()->memberOfGroup($model->id)->with('profile')) ;
+$user = new User();
+$mem = new CActiveDataProvider($user->memberOfGroup($model->id)->with('profile')) ;
 $this->widget('bootstrap.widgets.bootGridView', array(
 		'dataProvider'=>$mem,
 		'columns'=>array(

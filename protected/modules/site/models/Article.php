@@ -177,6 +177,8 @@ class Article extends BaseActiveRecord
 				'byClass'=>array(),
 				'byGroup'=>array(),
 				'byCategory'=>array(),
+				'byRecently'=>array(
+						'order'=>'create_date DESC'),
 		);
 	}
 	

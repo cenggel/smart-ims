@@ -38,9 +38,10 @@ Yii::app()->clientScript->registerScriptFile( Yii::app()->themeManager->baseUrl 
 				<?php //var_dump(Yii::app()->user);
 				$this->widget('zii.widgets.CMenu',array(
 						'items'=>array(
-								array('label'=>'首页', 'url'=>Yii::app()->baseUrl, ),
+								array('label'=>'首页', 'url'=>Yii::app()->homeUrl, ),
 								array('label'=>'工作组', 'url'=>array('/groups/index'), 'visible'=>!Yii::app()->user->isGuest,
 										'items'=>Groups::model()->getOwenMenuList()),
+								array('label'=>'通知', 'url'=>array('/notice/index',),'visible'=>!Yii::app()->user->isGuest),
 								array('label'=>'日历', 'url'=>array('/cal',),'visible'=>!Yii::app()->user->isGuest),
 								array('label'=>'文档', 'url'=>array('/document/index',),'visible'=>!Yii::app()->user->isGuest),
 								array('label'=>'日志', 'url'=>array('/blog/index',), 'visible'=>!Yii::app()->user->isGuest),

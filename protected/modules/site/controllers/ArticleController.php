@@ -124,7 +124,7 @@ class ArticleController extends Controller
 	public function actionIndex($class_code=null,$group_id=0,$category_id=0,$tag=false)
 	{   
 
-		$article = Article::model();
+		$article = new Article();
 		if($class_code!=null){
 			$this->working_class = $class_code;
 			$article = $article->byClass($class_code);
@@ -145,7 +145,7 @@ class ArticleController extends Controller
 			$article->withTag($tag);
 		}
 		
-		$dataProvider=new CActiveDataProvider($article->attachRel()->with('author','attachCount')->published());
+		$dataProvider=new CActiveDataProvider($article->attachRel()->with('author','attachCount')->published()->byRecently());
 		$this->render('index',array(
 				'dataProvider'=>$dataProvider,
 		));

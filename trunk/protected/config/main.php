@@ -198,7 +198,8 @@ return array(
 								'blog/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'blog')),
 								'document/<action:\w+>'=>array('site/article/<action>','defaultParams'=>array('class_code'=>'document')),
 								'handbook/<action:\w+>'=>array('site/article/<action>','defaultParams'=>array('class_code'=>'handbook')),
-
+								'notice/<action:\w+>'=>array('site/article/<action>','defaultParams'=>array('class_code'=>'notice')),
+								
 								'group_<group_id:\d+>/tutorials/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'tutorials',)),
 								'group_<group_id:\d+>/handbook/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'Handbook',)),
 								'group_<group_id:\d+>/document/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'document',)),

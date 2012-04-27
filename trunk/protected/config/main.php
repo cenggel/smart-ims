@@ -263,6 +263,7 @@ return array(
 				'editor'=>'ckeditor',
 				'allowedImages'=>array('jpg','jpeg','gif','png'),
 				'upload_path'=>'/uploads',
+				'article'=>array('tutorials_editor'=>'markitup'),
 				'menus'=>$menus,
 		),
 );

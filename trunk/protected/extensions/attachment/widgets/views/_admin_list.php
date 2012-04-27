@@ -13,7 +13,7 @@
 		$image = $data->extImage;
 	}
 	?>
-	<div class="span-6">
+	<div class="span-6 first">
 		<div class="thumbnail">
 			<?php echo $image ?>
 		</div>

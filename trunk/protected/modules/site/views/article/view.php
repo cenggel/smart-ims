@@ -44,6 +44,8 @@ $this->menu=array(
 	   ?>
 	</div>
 
+	<?php $this->widget('ext.form.markitup.Highlighter');?>
+	
 	<div class="attachments">
 	
 	   <?php 
@@ -58,4 +60,6 @@ $this->menu=array(
     'model' => $model,
 			'theme'=>'redmond',
 ));?>
+	
+	
 </div>

@@ -32,6 +32,9 @@ class Article extends BaseActiveRecord
 	const STATUS_PRIVATE = 3;
 	private $_oldTags;
 	
+	private $_purify = true;
+	private $_org_content;
+	
 	
 	/**
 	 * Returns the static model of the specified AR class.
@@ -254,7 +257,8 @@ class Article extends BaseActiveRecord
 		if($this->article_date && ((int)$this->article_date)==0)
 			$this->article_date = strtotime($this->article_date);
 		
-		$this->tags = implode(',', $_POST['Tags']) ;
+		if(is_array($_POST['Tags']))
+			$this->tags = implode(',', $_POST['Tags']) ;
 		
 		//print_r($_FILES);
 		return true;
@@ -268,6 +272,15 @@ class Article extends BaseActiveRecord
 	{
 		parent::afterFind();
 		$this->_oldTags=$this->tags;
+		
+		$this->_org_content = $this->content;
+		if($this->_purify){
+			$m = new  CMarkdownParser();
+			$this->content= $m->transform($this->content);
+			
+			$p = new CHtmlPurifier();
+			$this->content = $p->purify($this->content);
+		}
 	}
 	
 	/**
@@ -292,5 +305,10 @@ class Article extends BaseActiveRecord
 		$criteria=new CDbCriteria;
 		$criteria->addCondition('id = '.$this->id);
 		$this->updateCounters(array('views'=>1),$criteria);
+	}
+	
+	public function unPurify(){
+		$this->content = $this->_org_content;
+		return $this;
 	}
 }

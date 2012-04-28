@@ -3,7 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="language" content="en" />
-
+<script type="text/javascript">
+var baseUrl = '<?php echo Yii::app()->homeUrl;?>';
+</script>
 <!-- blueprint CSS framework -->
 <?php Yii::app()->clientScript->registerCssFile( Yii::app()->theme->baseUrl . '/css/screen.css', 'screen' ); ?>
 <?php Yii::app()->clientScript->registerCssFile( Yii::app()->theme->baseUrl . '/css/print.css', 'print' ); ?>

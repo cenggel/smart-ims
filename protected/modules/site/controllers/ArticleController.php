@@ -321,4 +321,15 @@ class ArticleController extends Controller
     	
     	);
     }
+    
+    public function actionParser(){
+    	$this->layout='//layouts/simple';
+    	$content = $_POST['dontvalidate'];
+    	
+    	$m = new CMarkdownParser();
+    	$content = $m->transform($content);
+    	
+    	$this->render('parser',array('content'=>$content));
+    	
+    }
 }

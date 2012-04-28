@@ -11,7 +11,7 @@
 // Feel free to add more tags
 // -------------------------------------------------------------------
 mySettings = {
-	previewParserPath:	'/documentation/parser',
+	previewParserPath:	baseUrl+'/article/parser',
 	previewParserVar: 'dontvalidate',
 	onShiftEnter:		{keepDefault:false, openWith:'\n\n'},
 	onTab:    		{keepDefault:false, replaceWith:'    '},

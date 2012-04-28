@@ -31,7 +31,7 @@ class TagWidget extends CWidget {
         // this method is called by CController::beginWidget()
         if($this->tags == null || strtolower($this->tags)=='null') $this->tags='';
         if(is_string($this->tags)){
-        	$this->tags = split(',', $this->tags);
+        	$this->tags = explode(',', $this->tags);
         }
         if(empty($this->url)){
         	$this->url =  Yii::app()->urlManager->createUrl('tag/json');

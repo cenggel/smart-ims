@@ -56,7 +56,7 @@ return array (
   'Manage {Articles}' => '管理{Articles}',
   'Attachment'=>'附件',
   'Update Article'=>'更新文章',
-  ''=>'',
-  ''=>'',
+  'New Event'=>'新增',
+  'Update Event'=>'更新',
   ''=>'',
 );

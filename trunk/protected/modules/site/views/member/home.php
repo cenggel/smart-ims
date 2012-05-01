@@ -19,6 +19,7 @@ $this->params['contentClass']='container_24';
 <div class="grid_18">
 
 	<div class="main-content">
+	    <?php $this->widget('notify.widgets.NotifyList');?>
 		<div class="updates">
 
 			<div class="subTitle">

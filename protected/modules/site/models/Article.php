@@ -154,6 +154,7 @@ class Article extends BaseActiveRecord
 		return array(
 				'category'=>array(self::BELONGS_TO,'Category','category_id'),
 				'author'=>array(self::BELONGS_TO,'User','user_id'),
+				'group'=>array(self::BELONGS_TO,'Groups','group_id'),
 				//'AttachCount' => array(self::STAT, 'Attachment', 'item_id','condition'=>'AttachCount.class_code= :class_code','params'=>array(':class_code'=>$this->class_code)),
 		);
 	}
@@ -311,4 +312,22 @@ class Article extends BaseActiveRecord
 		$this->content = $this->_org_content;
 		return $this;
 	}
+	
+	public function behaviors(){
+		$b = parent::behaviors();
+		$behaviors = array(
+				'notifier'=>array(
+						'class'=>'application.modules.notify.components.NotifyArBehavior',
+						'notifyClass'=>'$data->class_code',
+						'notifyEvents'=>array('insert'=>'NEW','update'=>'UPDATE'),
+						'users'=>'group.members',
+						'title'=>'title',
+						'summary'=>'substr(strip_tags($data->content),0,300)'));
+		if(is_array($b)){
+			$behaviors = array_merge($behaviors,$b);
+		}
+		
+		return $behaviors;
+	}
+	
 }

@@ -8,10 +8,10 @@
 $menus= require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'admin_menu.php');
 return array(
 		'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-		'name'=>'信息共享系统',
+		'name'=>'知识库系统',
 
 		// preloading 'log' component
-		'preload'=>array('log','bootstrap'),
+		'preload'=>array('log','bootstrap','notify'),
 		'language'=>'zh_cn',
 		'theme' => 'classic',
 		'timeZone'=>'Asia/Shanghai',
@@ -60,8 +60,8 @@ return array(
 						'componentBehaviors'=>array(
 								'Profile'=>array('profile'=>array('class' => 'application.extensions.behaviors.UserProfileBehaviors')),
 								'User'=>array('userBehavior'=>array('class'=>'application.extensions.behaviors.UserBehavior'))
-								),
-						
+						),
+
 				),
 				'site'=>array(
 						'import'=>array(
@@ -73,11 +73,31 @@ return array(
 				'cal' => array(
 						'debug' => true // For first run only!
 				),
-				
+
+				'notify'=>array(
+						'import'=>array(
+								'notify.componets.*',
+								'notify.models.*',
+						),
+						'userConfig'=>array(
+								'class'=>'User',
+								'nameProperty'=>'username',
+								//'emailProperty'=>'email',
+						),
+						'notifyConfig'=>array(
+								//owner_class 配置 用ar behavior 增加时有效
+								'Article'=>array('classLabel'=>'Enumeration::item("ARTICLE_CLASS", $label)'
+										//'eventLabel'=>'Enumeration::item("ARTICLE_EVENT", $label)'
+										),
+								// notify_class 配置
+								//'notice'=>array('label'=>'通知'),
+								),
+				),
+
 				'comments'=>array(
-				//you may override default config for all connecting models
+						//you may override default config for all connecting models
 						'defaultModelConfig' => array(
-						//only registered users can post comments
+								//only registered users can post comments
 								'registeredOnly' => false,
 								'useCaptcha' => false,
 								//allow comment tree
@@ -93,7 +113,7 @@ return array(
 						),
 						//the models for commenting
 						'commentableModels'=>array(
-						//model with individual settings
+								//model with individual settings
 								'Post'=>array(
 										'registeredOnly'=>true,
 										'useCaptcha'=>false,
@@ -116,7 +136,7 @@ return array(
 								//'emailProperty'=>'email',
 						),
 				),
-				
+
 
 		),
 
@@ -142,6 +162,7 @@ return array(
 				'settings' => array(
 						'class' => 'XSettings',
 				),
+				'notifier'=>array('class'=>'application.modules.notify.components.Notifier'),
 				'authManager'=>array(
 						'class'=>'RDbAuthManager', // Provides support authorization item sorting
 						/*// Path to SDbAuthManager in srbac module if you want to use case insensitive
@@ -181,6 +202,7 @@ return array(
 								'rights/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'rights/<controller>/<_a>/',
 								'cal/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'cal/<controller>/<_a>/',
 								'tags/<tag:\w+>'=>'site/article/tag',
+								'notify/<id:\d+>'=>'notify',
 
 								'comments/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'comments/<controller>/<_a>/',
 
@@ -199,14 +221,14 @@ return array(
 								'document/<action:\w+>'=>array('site/article/<action>','defaultParams'=>array('class_code'=>'document')),
 								'handbook/<action:\w+>'=>array('site/article/<action>','defaultParams'=>array('class_code'=>'handbook')),
 								'notice/<action:\w+>'=>array('site/article/<action>','defaultParams'=>array('class_code'=>'notice')),
-								
+
 								'group_<group_id:\d+>/tutorials/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'tutorials',)),
 								'group_<group_id:\d+>/handbook/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'Handbook',)),
 								'group_<group_id:\d+>/document/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'document',)),
 
 
 
-								
+
 								'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 								'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 								'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',

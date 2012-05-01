@@ -126,7 +126,7 @@ class ArticleController extends Controller
 	public function actionIndex($class_code=null,$group_id=0,$category_id=0,$tag=false)
 	{   
 
-		$article = new Article();
+		$article = Article::model();
 		if($class_code!=null){
 			$this->working_class = $class_code;
 			$article = $article->byClass($class_code);

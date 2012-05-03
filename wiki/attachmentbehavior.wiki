@@ -1,4 +1,4 @@
-#labels attachment
+#labels Featured
 = Introduction =
 
 附件上传 behavior 的用法

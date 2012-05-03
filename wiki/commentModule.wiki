@@ -1,4 +1,4 @@
-#labels comment
+#labels Featured,comment
 #评论系统使用方法
 
 = Introduction =

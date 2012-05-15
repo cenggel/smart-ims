@@ -76,7 +76,7 @@ return array(
 						// enable cookie-based authentication
 						'allowAutoLogin'=>true,
 						'class'=>'RWebUser',
-						'loginUrl' => array('/user/login'),
+						'loginUrl' => array('user/login'),
 						
 				),
 				

@@ -27,9 +27,19 @@ class Controller extends RController
 
 	public $params = array();
 
+	public $sumitActions= array('create','update','delete');
+	
+	protected $_tux = false;
+	
+	protected $hasError = false;
+	
 	protected function beforeAction($action)
 	{ //print_r(Yii::app()->user); exit;
 		if(parent::beforeAction($action)){
+			if(in_array($action->getId(), $this->sumitActions)){
+			  // $this->_tux=	Yii::app()->db->beginTransaction();
+			}
+			
 			Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl . '/css/redmond/jquery-ui-1.8.18.custom.css');
 			Yii::app()->clientScript->registerCoreScript('jquery');
 			Yii::app()->clientScript->registerCoreScript('jquery.ui');
@@ -59,13 +69,15 @@ class Controller extends RController
 		return false;
 	}
 
-	protected function beforeRender($view){
 	
+	protected function beforeRender($view){
 		return true;
 	}
 
 	public function filters() {
-		return array( 'rights', );
+		//print_r("user".Yii::app()->user->id);
+		return array( 'rights', 
+				);
 	}
 
 	public function allowedActions() {
@@ -99,5 +111,21 @@ class Controller extends RController
 	
 	public function getParam($name,$defaultValue=null){
 		return Yii::app()->request->getParam($name,$defaultValue);
+	}
+	
+	public function redirect($url,$terminate=true,$statusCode=302){
+		$this->afterAction($this->getAction());
+		
+		parent::redirect($url,$terminate,$statusCode);
+	}
+	
+	public function afterAction($action){
+		/*if($this->_tux){
+			if($this->hasError){
+				$this->_tux->rollback();
+			}
+			$this->_tux->commit();
+		}*/
+		return true;
 	}
 }

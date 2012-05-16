@@ -482,7 +482,7 @@ class BootActiveForm extends CActiveForm
 	 */
 	public function inputRow($type, $model, $attribute, $data = null, $htmlOptions = array())
 	{
-		echo $this->getInputClassName();
+		//echo $this->getInputClassName();
 		ob_start();
 		Yii::app()->controller->widget($this->getInputClassName(), array(
 			'type'=>$type,

@@ -5,7 +5,7 @@ class NotifyList extends CWidget{
 	 * 
 	 * @var string unread|all
 	 */
-	public $type='all';
+	public $type='unread';
 	public $wrapHtmlOptions =array();
 	
 	public $module =null;

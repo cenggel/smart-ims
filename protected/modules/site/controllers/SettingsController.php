@@ -2,15 +2,15 @@
 /**
  * Settings controller Home page
  */
-class SettingsController extends AdminBaseController {
+class SettingsController extends Controller {
 	/**
 	 * init
 	 */
 	public function init()
 	{
 		parent::init();
-		$this->breadcrumbs[ Yii::t('adminglobal', 'Settings') ] = array('settings/index');
-		$this->pageTitle[] = Yii::t('adminglobal', 'Settings');	
+		$this->breadcrumbs[ Yii::t('SiteModule.adminglobal', 'Settings') ] = array('settings/index');
+		//$this->pageTitle[] = Yii::t('SiteModule.adminglobal', 'Settings');	
 	}
 	
 	/**
@@ -42,16 +42,16 @@ class SettingsController extends AdminBaseController {
 			$model->attributes = $_POST['SettingsCats'];
 			if( $model->save() )
 			{
-				Yii::app()->user->setFlash('success', Yii::t('adminsettings', 'Setting group added.'));
+				Yii::app()->user->setFlash('success', Yii::t('SiteModule.adminsettings', 'Setting group added.'));
 				$this->redirect(array('settings/index'));
 			}
 		}
 		
-		$this->breadcrumbs[ Yii::t('adminglobal', 'Adding setting group') ] = '';
-		$this->pageTitle[] = Yii::t('adminglobal', 'Adding setting group');
+		$this->breadcrumbs[ Yii::t('SiteModule.adminglobal', 'Adding setting group') ] = '';
+		//$this->pageTitle[] = Yii::t('SiteModule.adminglobal', 'Adding setting group');
 		
 		// Display form
-		$this->render('group_form', array( 'model' => $model, 'label' => Yii::t('adminsettings', 'Adding setting group') ));
+		$this->render('group_form', array( 'model' => $model, 'label' => Yii::t('SiteModule.adminsettings', 'Adding setting group') ));
 	}
 	
 	/**
@@ -72,16 +72,16 @@ class SettingsController extends AdminBaseController {
 				$model->attributes = $_POST['SettingsCats'];
 				if( $model->save() )
 				{
-					Yii::app()->user->setFlash('success', Yii::t('adminsettings', 'Setting group updated.'));
+					Yii::app()->user->setFlash('success', Yii::t('SiteModule.adminsettings', 'Setting group updated.'));
 					$this->redirect(array('settings/index'));
 				}
 			}
 			
-			$this->breadcrumbs[ Yii::t('adminglobal', 'Editing setting group') ] = '';
-			$this->pageTitle[] = Yii::t('adminglobal', 'Editing setting group');
+			$this->breadcrumbs[ Yii::t('SiteModule.adminglobal', 'Editing setting group') ] = '';
+			//$this->pageTitle[] = Yii::t('SiteModule.adminglobal', 'Editing setting group');
 
 			// Display form
-			$this->render('group_form', array( 'model' => $model, 'label' => Yii::t('adminsettings', 'Editing setting group') ));
+			$this->render('group_form', array( 'model' => $model, 'label' => Yii::t('SiteModule.adminsettings', 'Editing setting group') ));
 		}
 		else
 		{
@@ -112,7 +112,7 @@ class SettingsController extends AdminBaseController {
 			
 			$model->delete();
 			
-			Yii::app()->user->setFlash('success', Yii::t('adminsettings', 'Setting group deleted.'));
+			Yii::app()->user->setFlash('success', Yii::t('SiteModule.adminsettings', 'Setting group deleted.'));
 			$this->redirect(array('index'));
 		}
 		else
@@ -165,7 +165,7 @@ class SettingsController extends AdminBaseController {
 				Yii::app()->settings->clearCache();
 				
 				// Updated redirect
-				Yii::app()->user->setFlash('success', Yii::t('adminsettings', 'Settings Updated.'));
+				Yii::app()->user->setFlash('success', Yii::t('SiteModule.adminsettings', 'Settings Updated.'));
 				$this->redirect(array('settings/viewgroup', 'id'=>$_GET['id']));
 			}
 			
@@ -173,18 +173,18 @@ class SettingsController extends AdminBaseController {
 			$settings = Settings::model()->findAll('category=:category', array( ':category' => $_GET['id'] ));
 			
 			// Set title and breadcrumbs
-			$this->breadcrumbs[ Yii::t('adminglobal', $category->title) ] = '';
-			$this->pageTitle[] = Yii::t('adminglobal', $category->title );
+			$this->breadcrumbs[ Yii::t('SiteModule.adminglobal', $category->title) ] = '';
+			//$this->pageTitle[] = Yii::t('SiteModule.adminglobal', $category->title );
 			
 			// Set info
-			Yii::app()->user->setFlash('information', Yii::t('adminsettings', 'Hover over the setting title to see a description if one exists.'));
+			Yii::app()->user->setFlash('information', Yii::t('SiteModule.adminsettings', 'Hover over the setting title to see a description if one exists.'));
 			
 			// Render
 			$this->render('group_view', array( 'settings' => $settings ));
 		}
 		else
 		{
-			Yii::app()->user->setFlash('error', Yii::t('adminerror', 'Could not find that ID.'));
+			Yii::app()->user->setFlash('error', Yii::t('SiteModule.adminerror', 'Could not find that ID.'));
 			$this->redirect(array('settings/index'));
 		}
 	}
@@ -206,8 +206,8 @@ class SettingsController extends AdminBaseController {
 		{
 			$model->category = $category->id;
 			
-			$this->breadcrumbs[ Yii::t('adminglobal', $category->title) ] = array('settings/index', 'id' => $category->id);
-			$this->pageTitle[] = Yii::t('adminglobal', $category->title);
+			$this->breadcrumbs[ Yii::t('SiteModule.adminglobal', $category->title) ] = array('settings/index', 'id' => $category->id);
+			//$this->pageTitle[] = Yii::t('SiteModule.adminglobal', $category->title);
 		}
 		
 		if( isset( $_POST['Settings'] ) )
@@ -218,16 +218,16 @@ class SettingsController extends AdminBaseController {
 				// Clear cache
 				Yii::app()->settings->clearCache();
 				
-				Yii::app()->user->setFlash('success', Yii::t('adminsettings', 'Setting added.'));
+				Yii::app()->user->setFlash('success', Yii::t('SiteModule.adminsettings', 'Setting added.'));
 				$this->redirect(array('settings/viewgroup', 'id' => $model->category));
 			}
 		}
 		
-		$this->breadcrumbs[ Yii::t('adminglobal', 'Adding Setting') ] = '';
-		$this->pageTitle[] = Yii::t('adminglobal', 'Adding Setting');
+		$this->breadcrumbs[ Yii::t('SiteModule.adminglobal', 'Adding Setting') ] = '';
+		//$this->pageTitle[] = Yii::t('SiteModule.adminglobal', 'Adding Setting');
 		
 		// Display form
-		$this->render('setting_form', array( 'model' => $model, 'label' => Yii::t('adminsettings', 'Adding Setting') ));
+		$this->render('setting_form', array( 'model' => $model, 'label' => Yii::t('SiteModule.adminsettings', 'Adding Setting') ));
 	}
 	
 	/**
@@ -247,8 +247,8 @@ class SettingsController extends AdminBaseController {
 			{
 				$model->category = $category->id;
 			
-				$this->breadcrumbs[ Yii::t('adminglobal', $category->title) ] = array('settings/index', 'id' => $category->id);
-				$this->pageTitle[] = Yii::t('adminglobal', $category->title);
+				$this->breadcrumbs[ Yii::t('SiteModule.adminglobal', $category->title) ] = array('settings/index', 'id' => $category->id);
+				//$this->pageTitle[] = Yii::t('SiteModule.adminglobal', $category->title);
 			}
 		
 			if( isset( $_POST['Settings'] ) )
@@ -259,20 +259,20 @@ class SettingsController extends AdminBaseController {
 					// Clear cache
 					Yii::app()->settings->clearCache();
 					
-					Yii::app()->user->setFlash('success', Yii::t('adminsettings', 'Setting edited.'));
+					Yii::app()->user->setFlash('success', Yii::t('SiteModule.adminsettings', 'Setting edited.'));
 					$this->redirect(array('settings/viewgroup', 'id' => $model->category));
 				}
 			}
 		
-			$this->breadcrumbs[ Yii::t('adminglobal', 'Editing Setting') ] = '';
-			$this->pageTitle[] = Yii::t('adminglobal', 'Editing Setting');
+			$this->breadcrumbs[ Yii::t('SiteModule.adminglobal', 'Editing Setting') ] = '';
+			//$this->pageTitle[] = Yii::t('SiteModule.adminglobal', 'Editing Setting');
 		
 			// Display form
-			$this->render('setting_form', array( 'model' => $model, 'label' => Yii::t('adminsettings', 'Editing Setting') ));
+			$this->render('setting_form', array( 'model' => $model, 'label' => Yii::t('SiteModule.adminsettings', 'Editing Setting') ));
 		}
 		else
 		{
-			Yii::app()->user->setFlash('error', Yii::t('adminerror', 'Could not find that ID.'));
+			Yii::app()->user->setFlash('error', Yii::t('SiteModule.adminerror', 'Could not find that ID.'));
 			$this->redirect(array('settings/index'));
 		}
 	}
@@ -295,7 +295,7 @@ class SettingsController extends AdminBaseController {
 			// Clear cache
 			Yii::app()->settings->clearCache();
 			
-			Yii::app()->user->setFlash('success', Yii::t('adminsettings', 'Setting deleted.'));
+			Yii::app()->user->setFlash('success', Yii::t('SiteModule.adminsettings', 'Setting deleted.'));
 			$this->redirect(array('settings/index'));
 		}
 		else
@@ -323,7 +323,7 @@ class SettingsController extends AdminBaseController {
 			// Clear cache
 			Yii::app()->settings->clearCache();
 			
-			Yii::app()->user->setFlash('success', Yii::t('adminsettings', 'Setting Reverted.'));
+			Yii::app()->user->setFlash('success', Yii::t('SiteModule.adminsettings', 'Setting Reverted.'));
 			$this->redirect(array('settings/viewgroup', 'id'=>$model->category));
 		}
 		else

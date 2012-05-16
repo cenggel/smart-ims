@@ -46,6 +46,9 @@ class XSettings extends CApplicationComponent
 			}
 		}
 
+		// Convert application name
+		Yii::app()->name = Yii::app()->settings->applicationName != '' ? Yii::app()->settings->applicationName : Yii::app()->name;
+		
 		if(isset($cache))
 		{
 			$cache->set($key,serialize($this->settings),$this->cachingDuration);

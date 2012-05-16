@@ -9,6 +9,12 @@ class CalModule extends CWebModule
      * @var bool   Defaults to 'false'. 
      */
     public $debug = false;
+    
+    /**
+     * 
+     * @var bool excute schema sql file ;
+     */
+    public $install = false;
 
     /**
      * @var string  'column1' or 'column2'
@@ -78,6 +84,26 @@ class CalModule extends CWebModule
         }
 
         if(!empty($_GET['layout'])) $this->layout = $_GET['layout'];
+        
+        // Set the installer if necessary.
+        if( $this->install===true )
+        {
+        	$this->setComponents(array(
+        			'installer'=>array(
+        					'class'=>'Installer',
+        					'schema'=>'schema.mysql.sql',
+        					
+        			),
+        	));
+        
+        	// When installing we need to set the default controller to Install.
+        	//$this->defaultController = 'install';
+        	if($this->installer->run()==0){
+        		Yii::trace('cal module tables created .');
+        	}else{
+        		//throw new CException(Yii::t('install',"create table failed"));
+        	}
+        }
     }
 
     public function beforeControllerAction($controller, $action)

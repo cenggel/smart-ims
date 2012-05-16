@@ -67,7 +67,7 @@ var tempEvent;
                 return false;
             },
             eventClick: function(event)
-            {
+            {alert(event.editable);
                 if(!event.editable) return false;
                 tempEvent = event;
                 $("#EventCal_id").val(event.id);

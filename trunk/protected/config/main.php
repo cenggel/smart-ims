@@ -11,7 +11,7 @@ return array(
 		'name'=>'知识库系统',
 
 		// preloading 'log' component
-		'preload'=>array('log','bootstrap','notify'),
+		'preload'=>array('log','bootstrap','settings'),
 		'language'=>'zh_cn',
 		'theme' => 'classic',
 		'timeZone'=>'Asia/Shanghai',
@@ -71,7 +71,8 @@ return array(
 				),
 
 				'cal' => array(
-						'debug' => true // For first run only!
+						'debug' => false, // For first run only!
+						'install' => true,
 				),
 
 				'notify'=>array(
@@ -79,18 +80,35 @@ return array(
 								'notify.componets.*',
 								'notify.models.*',
 						),
+						//用户类配置
 						'userConfig'=>array(
 								'class'=>'User',
-								'nameProperty'=>'username',
-								//'emailProperty'=>'email',
 						),
+						// 提醒相关配置
 						'notifyConfig'=>array(
-								//owner_class 配置 用ar behavior 增加时有效
-								'Article'=>array('classLabel'=>'Enumeration::item("ARTICLE_CLASS", $label)'
-										//'eventLabel'=>'Enumeration::item("ARTICLE_EVENT", $label)'
+								//用 owner_class 配置 用ar behavior 增加时有效
+								'Article'=>array(
+										//提醒类型编码名字转换，可以动态执行代码来转换，下面的配置是用枚举表转换。转换时 $label 会用具体编码替换执行 Enumeration::item 函数
+										'classLabel'=>'Enumeration::item("ARTICLE_CLASS", $label)',
+										//事件编辑转换
+										//'eventLabel'=>'Enumeration::item("ARTICLE_EVENT", $label)',
+										//访问 url ，如果item_id 不为空会 用 urlManager->createUrl 方法生成 url item_id 作为 id 参数传递
+										//'url'=>'site/article/view'
 										),
-								// notify_class 配置
-								//'notice'=>array('label'=>'通知'),
+								/*
+								 // notify_class 提醒类型单独配置
+								'notice'=>array(
+										//也支持 'Enumeration::item("ARTICLE_CLASS", $label)' 这样动态执行语句
+										'label'=>'通知',
+										'url'=>'site/article/view'),
+										//event 事件配置
+										'NEW'=>array(
+											'label'=>'新增',
+											'url'=>'xxx/xx'
+										
+										),
+										
+										*/
 								),
 				),
 
@@ -200,6 +218,8 @@ return array(
 								'user/<controller:\w+>'=>'user/<controller>',
 								'user/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'user/<controller>/<_a>/',
 								'rights/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'rights/<controller>/<_a>/',
+								'cal/<controller:\w+>'=>'cal/<controller>/',
+								'cal/<controller:\w+>/<_a:([a-zA-z0-9-]+)>'=>'cal/<controller>/<_a>/',
 								'cal/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'cal/<controller>/<_a>/',
 								'tags/<tag:\w+>'=>'site/article/tag',
 								'notify/<id:\d+>'=>'notify',

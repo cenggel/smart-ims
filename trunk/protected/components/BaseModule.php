@@ -21,9 +21,9 @@ class BaseModule extends CWebModule {
 		{
 			Yii::app()->setLanguage( $_GET['lang'] );
 		}
-		
+		//echo Yii::app()->settings->applicationName;
 		// Convert application name
-		Yii::app()->name = Yii::app()->settings->applicationName != '' ? Yii::app()->settings->applicationName : Yii::app()->name;
+		//Yii::app()->name = Yii::app()->settings->applicationName != '' ? Yii::app()->settings->applicationName : Yii::app()->name;
 		
 		// Other settings
 		if( count( Yii::app()->params ) )

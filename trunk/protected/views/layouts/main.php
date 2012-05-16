@@ -91,7 +91,7 @@ Yii::app()->clientScript->registerScriptFile( Yii::app()->themeManager->baseUrl 
 		<div id="footer">
 			Copyright &copy;
 			<?php echo date('Y'); ?>
-			by My Company.<br /> All Rights Reserved.<br />
+			by Asiainfo-Linkage.<br /> All Rights Reserved.<br />
 			<?php echo Yii::powered(); ?>
 		</div>
 		<!-- footer -->

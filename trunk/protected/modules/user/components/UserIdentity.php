@@ -20,7 +20,7 @@ class UserIdentity extends CUserIdentity
 	 * @return boolean whether authentication succeeds.
 	 */
 	public function authenticate()
-	{echo "authing <br>";
+	{//echo "authing <br>";
 		//print_r(get_declared_classes());exit;
 		if (strpos($this->username,"@")) {
 			$user=User::model()->notsafe()->findByAttributes(array('email'=>$this->username));

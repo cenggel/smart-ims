@@ -5,7 +5,7 @@
 				'id'=>array('type'=>'hidden'),'group_name',
 				'members'=>array(
 						'type'=>'dropdown',
-						'data'=>CHtml::listData(User::model()->active()->findAll(array('order'=>'username')),'id','username'),
+						'data'=>CHtml::listData(User::model()->active()->with('profile')->findAll(array('order'=>'username')),'id','profile.firstname'),
 						'htmlOptions'=>array('multiple'=>"multiple",'options'=>array($model->create_user=>array('disabled'=>'disabled')))),
 				'description'=>array('type'=>'textarea')
 		)));

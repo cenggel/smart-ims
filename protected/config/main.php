@@ -307,5 +307,8 @@ return array(
 				'upload_path'=>'/uploads',
 				'article'=>array('tutorials_editor'=>'markitup'),
 				'menus'=>$menus,
+				'allowedActions'=>array(
+						'recovery'=>'recovery',
+						'registration'=>'registration,index,captcha'),
 		),
 );

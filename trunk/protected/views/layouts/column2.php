@@ -20,7 +20,7 @@
 			$this->endWidget();
 		}
 
-		if(isset($this->blocks['left']) && is_array($this->blocks['left'])){
+		if(isset($this->blocks) && isset($this->blocks['left']) && is_array($this->blocks['left'])){
 			$this->renderPartial('//layouts/_side_block',array('blocks'=>$this->blocks['left']));
 		}
 		?>

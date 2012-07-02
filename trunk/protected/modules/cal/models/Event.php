@@ -37,8 +37,13 @@
 class Event extends CActiveRecord
 {
 	
-	public  $startDate,$startTime,$endDate,$endTime;
+	public  $startDate ,$startTime,$endDate,$endTime;
 	
+	public function afterConstruct(){
+		 $this->startDate = $this->endDate =  date('Y-m-d',time());
+		 $this->startTime= date('H:i',time());
+		 $this->endTime = date('H:i',strtotime('+1 hour'));
+	}
 	public static $enum =array('EVENT_TYPE'=>array(
 			'task'=>'Task',
 			'meeting'=>'Meeting'),
@@ -71,7 +76,6 @@ class Event extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('calendar_id, title', 'required'),
-			array('calendar_id, user_id, allDay, editable, start_time, end_time, cal_date, completed, complete_date, actor_id, duration, create_date, update_date', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>100),
 			array('location', 'length', 'max'=>150),
 			array('event_type', 'length', 'max'=>45),
@@ -79,7 +83,9 @@ class Event extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 		    array('startDate,startTime,endDate,endTime','safe','on'=>'insert,update'),
-			array('startTime,endTime','CRegularExpression','pattern'=>'\d{2}:\d{2}'),
+			array('startTime,endTime','match','pattern'=>'#\d{2}:\d{2}#'),
+			array('calendar_id, user_id, allDay, editable, start_time, end_time, cal_date, completed, complete_date, actor_id, duration, create_date, update_date', 'numerical', 'integerOnly'=>true),
+				
 			array('id, calendar_id, title, description, user_id, allDay, editable, start_time, end_time, cal_date, location, event_type, completed, complete_date, actor_id, duration, create_date, update_date', 'safe', 'on'=>'search'),
 		);
 	}
@@ -163,8 +169,13 @@ class Event extends CActiveRecord
 	
 	public function beforeValidate(){
 		$this->cal_date = strtotime($this->startDate);
+		//echo($this->startDate.' '.$this->startTime);
 		$this->start_time = strtotime($this->startDate.' '.$this->startTime);
+		//echo "$this->start_time";
+		///exit;
 		$this->end_time = strtotime($this->endDate.' '.$this->startTime);
+		if( ! is_numeric($this->complete_date))
+			$this->complete_date = strtotime($this->complete_date);
 		
 		return parent::beforeValidate();
 	}
@@ -181,9 +192,9 @@ class Event extends CActiveRecord
 	}
 	public function afterFind(){
 		$this->startDate = date('Y-m-d',$this->start_time);
-		$this->startTime = date('H:i:s',$this->start_time);
+		$this->startTime = date('H:i:s',$this->start_time);		
 		
-		$this->endtDate = date('Y-m-d',$this->end_time);
+		$this->endDate = date('Y-m-d',$this->end_time);
 		$this->endTime = date('H:i:s',$this->end_time);
 		
 	}

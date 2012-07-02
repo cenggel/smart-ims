@@ -14,7 +14,9 @@ $this->breadcrumbs=array(
 ?>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
+		'id'=>'user-grid',
 	'dataProvider'=>$dataProvider,
+		'filter'=>$model,
 	'columns'=>array(
 		array(
 			'name' => 'id',
@@ -34,19 +36,22 @@ $this->breadcrumbs=array(
 		array(
 			'name' => 'createtime',
 			'value' => 'date("d.m.Y H:i:s",$data->createtime)',
+			'filter'=>false,
 		),
 		array(
 			'name' => 'lastvisit',
-			'value' => '(($data->lastvisit)?date("d.m.Y H:i:s",$data->lastvisit):UserModule::t("Not visited"))',
+			'value' => '(($data->lastvisit)?date("d.m.Y H:i:s",$data->lastvisit):UserModule::t("Not visited"))',				
+			'filter'=>false,
 		),
 		array(
 			'name'=>'status',
 			'value'=>'User::itemAlias("UserStatus",$data->status)',
+			'filter'=>User::itemAlias("UserStatus")
 		),
-		array(
+		/*array(
 			'name'=>'superuser',
 			'value'=>'User::itemAlias("AdminStatus",$data->superuser)',
-		),
+		),*/
 		array(
 			'class'=>'CButtonColumn',
 		),

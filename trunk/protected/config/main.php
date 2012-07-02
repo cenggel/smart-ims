@@ -74,6 +74,9 @@ return array(
 						'debug' => false, // For first run only!
 						'install' => true,
 				),
+				'flexpaper'=>array(
+						//'layouts'=>'',
+						),
 
 				'notify'=>array(
 						'import'=>array(
@@ -223,6 +226,9 @@ return array(
 								'cal/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'cal/<controller>/<_a>/',
 								'tags/<tag:\w+>'=>'site/article/tag',
 								'notify/<id:\d+>'=>'notify',
+								'flexpaper'=>'flexpaper',
+								'flexpaper/<controller:\w+>'=>'flexpaper/<controller>',
+								'flexpaper/<controller:\w+>/<action:\w+>'=>'flexpaper/<controller>/<action>',
 
 								'comments/<controller:\w+>/<_a:([a-zA-z0-9-]+)>//*'=>'comments/<controller>/<_a>/',
 

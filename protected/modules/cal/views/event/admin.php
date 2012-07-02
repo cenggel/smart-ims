@@ -63,7 +63,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'update_date',
 		*/
 		array(
-			'class'=>'BootButtonColumn',
+			'class'=>'bootstrap.widgets.BootButtonColumn',
+								'htmlOptions'=>array('style'=>'width: 50px'),
 		),
 	),
 )); ?>

@@ -62,9 +62,12 @@ class EventController extends Controller
 	public function actionCreate()
 	{
 		$model=new Event;
-
+        $type = Yii::app()->request->getParam('type');
+        if(strlen($type)){
+        	$model->event_type = $type;
+        }
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['Event']))
 		{

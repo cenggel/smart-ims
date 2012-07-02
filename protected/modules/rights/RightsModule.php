@@ -28,7 +28,7 @@ class RightsModule extends CWebModule
 	/**
 	* @property string the name of the guest role.
 	*/
-	public $authenticatedName = 'Authenticated';
+	public $authenticatedName = 'Guest'/* 'Authenticated'*/;
 	/**
 	* @property string the name of the user model class.
 	*/

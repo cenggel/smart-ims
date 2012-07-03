@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<title>今目标企业工作平台</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<link rel="Shortcut Icon" type="image/x-icon" href="./images/eim_app.ico" />
+<link rel="icon" type="image/x-icon" href="./images/eim_app.ico" />
+<link href="css/mergedstyle.css" media="all" rel="Stylesheet" type="text/css" />
+<link href="css/top.css" rel="stylesheet" type="text/css">
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/font.css" rel="stylesheet" type="text/css">
+<link href="css/sysmnghint.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#bigTitleId LI:hover
+{
+	background:url(images/navlimov.png);
+}
+
+</style>
+<script language="JavaScript" type="text/javascript" src="scripts/jquery-1.7.2.js"></script>
+<script language="JavaScript" type="text/javascript" src="scripts/YCJ_DATA.js"></script>
+<script language="JavaScript" type="text/javascript" src="scripts/YCJ_FUN.js"></script>
+<script language="JavaScript" >
+$(document).ready(function(){
+  $("#t_nav_li").tabs();
+});
+</script>
+</head>
+<body>
+<div class="wlbg">
+<div class="top">
+  <div class="t_shortcut">
+    <div class="t_menu">
+      <ul>
+        <li id="showSysMngLi"><a href="/Apps/SysMng.jsp?locale=zh_CN" target="_blank">系统管理</a></li>
+        <li><a href="http://service.jingoal.com" target="_blank">帮助</a></li>
+        <li><a href="#" onclick="javascript:showOnline();">咨询</a></li>
+        <li class="bgnone"><a href="javascript:logout();">退出</a></a></li>
+      </ul>
+    </div>
+    <!-- 容量提示 -->
+    <div id="t_space_div_click" class="t_space_box" style="cursor:hand;" title="剩余2G">
+      <div class="t_space" > <a href="javascript:void(0);" class="t_long" style="width:0%; 
+						
+						background:#108c0a;"> </a> </div>
+      <div class="t_space_text" 
+					 style="color:#108c0a;">2G </div>
+    </div>
+    <!-- 容量提示结束 -->
+    <!-- 公司容量信息 -->
+    <div class="t_space_div" style="display:none;z-index:100" id="accountInfoArea">
+      <div class="t_space_div_one">
+        <p>容量：2G</p>
+        <p>剩余：2G</p>
+        <p>单文件限制：10M</p>
+      </div>
+      <div class="t_space_div_two"> 可使用短信：0条 </div>
+      <div class="t_space_div_three"> <a href="javascript:void(0);" onclick="g.loadpop1('/login/cn/enlargeSpace.jsp');tm.closeAccountInfo();"> 扩容 </a> </div>
+    </div>
+    <!-- 公司容量信息结束 -->
+  </div>
+  <div class="cb"></div>
+  <div class="t_name">
+    <h1> 内蒙古烟草局 </h1>
+    </h1>
+  </div>
+  <div class="t_nav_li">
+    <ul id="bigTitleId">
+      <LI id="attendance">
+        <DIV class=imgwap><B class=j_ico_attend></B></DIV>
+        <A href="javascript:void(0);" >考勤</A></LI>
+      <LI id="twitter">
+        <DIV class=imgwap><B class=j_ico_twitter></B></DIV>
+        <A href="javascript:void(0);">微博</A></LI>
+      <LI id="notice">
+        <DIV class=imgwap><B class=j_ico_notice></B></DIV>
+        <A href="javascript:void(0);">公告</A></LI>
+      <LI id="memorandum">
+        <DIV class=imgwap><B class=j_ico_memo></B></DIV>
+        <A href="javascript:void(0);">备忘</A></LI>
+      <LI id="documents">
+        <DIV class=imgwap><B class=j_ico_docu></B></DIV>
+        <A href="javascript:void(0);">文档</A></LI>
+      <LI id="log">
+        <DIV class=imgwap><B class=j_ico_log></B></DIV>
+        <A href="javascript:void(0);">日志</A></LI>
+<!--      <LI>
+        <DIV class=imgwap><B class=j_ico_plan></B></DIV>
+        <A href="javascript:void(0);">计划</A></LI>-->
+<!--      <LI>
+        <DIV class=imgwap><B class=j_ico_approve></B></DIV>
+        <A href="javascript:void(0);">审批</A></LI>-->
+<!--      <LI>
+        <DIV class=imgwap><B class=j_ico_more></B></DIV>
+        <A href="javascript:void(0);">更多</A></LI>-->
+    </ul>
+  </div>
+  <div class="cb"></div>
+  <!--更多-->
+  <div class="t_pop_navli" id="t_pop_navli" style="z-index:100;display: none">
+    <div class="bgt"></div>
+    <div class="bgm">
+      <ul id="moreTitleId">
+      </ul>
+      <div class="cb"></div>
+    </div>
+    <div class="bgb"></div>
+  </div>
+  <div class="t_search" id="t_search_div">
+    <div class="t_tab_norl">
+      <div class="t_tab_norm">
+        <div class="t_tab_norr"> <b class="srh_ico_nav"></b> <a href="javascript:void(0)">搜索</a> </div>
+      </div>
+    </div>
+  </div>
+  <div class="t_nav" id="header">
+    <div>
+      <DIV id="menu">
+        <DIV id="menu_desktop" style="WIDTH: 99px; WHITE-SPACE: nowrap; OVERFLOW: hidden" class=menuli>
+          <DIV id="menu1_desktop" class=t_tab_curl>
+            <DIV id="menu2_desktop" class=t_tab_curm>
+              <DIV id="menu3_desktop" class=t_tab_curr><A title=工作台 href="javascript:void(0);">工作台</A></DIV>
+            </DIV>
+          </DIV>
+        </DIV>
+        <!--
+        <DIV id="menu_attendance" style="WIDTH: 99px; WHITE-SPACE: nowrap; OVERFLOW: hidden" class=menuli>
+          <DIV id="menu1_attendance" class=t_tab_curl>
+            <DIV id="menu2_attendance" class=t_tab_curm>
+              <DIV id="menu3_attendance" class=t_tab_curr><A class=close title=关闭 href="javascript:void(0);"></A><A title=考勤 href="javascript:void(0);">考勤</A></DIV>
+            </DIV>
+          </DIV>
+        </DIV>
+        <DIV id="menu_twitter" style="WIDTH: 99px; WHITE-SPACE: nowrap; OVERFLOW: hidden" class=menuli>
+          <DIV id="menu1_twitter" class=t_tab_curl>
+            <DIV id="menu2_twitter" class=t_tab_curm>
+              <DIV id="menu3_twitter" class=t_tab_curr><A class=close title=关闭 href="javascript:void(0);"></A><A title=微博 href="javascript:void(0);">微博</A></DIV>
+            </DIV>
+          </DIV>
+        </DIV>
+        <DIV id="menu_notice" style="WIDTH: 99px; WHITE-SPACE: nowrap; OVERFLOW: hidden" class=menuli>
+          <DIV id="menu1_notice" class=t_tab_norl>
+            <DIV id="menu2_notice" class=t_tab_norm>
+              <DIV id="menu3_notice" class=t_tab_norr><A class=close title=关闭 href="javascript:void(0);"></A><A title=公告 href="javascript:void(0);">公告</A></DIV>
+            </DIV>
+          </DIV>
+        </DIV>
+        <DIV id="menu_memorandum" style="WIDTH: 99px; WHITE-SPACE: nowrap; OVERFLOW: hidden" class=menuli>
+          <DIV id="menu1_memorandum" class=t_tab_norl>
+            <DIV id="menu2_memorandum" class=t_tab_norm>
+              <DIV id="menu3_memorandum" class=t_tab_norr><A class=close title=关闭 href="javascript:void(0);"></A><A title=公告 href="javascript:void(0);">公告</A></DIV>
+            </DIV>
+          </DIV>
+        </DIV>
+        <DIV id="menu_documents" style="WIDTH: 99px; WHITE-SPACE: nowrap; OVERFLOW: hidden" class=menuli>
+          <DIV id="menu1_documents" class=t_tab_norl>
+            <DIV id="menu2_documents" class=t_tab_norm>
+              <DIV id="menu3_documents" class=t_tab_norr><A class=close title=关闭 href="javascript:void(0);"></A><A title=公告 href="javascript:void(0);">公告</A></DIV>
+            </DIV>
+          </DIV>
+        </DIV>
+        <DIV id="menu_log" style="WIDTH: 99px; WHITE-SPACE: nowrap; OVERFLOW: hidden" class=menuli>
+          <DIV id="menu1_log" class=t_tab_norl>
+            <DIV id="menu2_log" class=t_tab_norm>
+              <DIV id="menu3_log" class=t_tab_norr><A class=close title=关闭 href="javascript:void(0);"></A><A title=公告 href="javascript:void(0);">公告</A></DIV>
+            </DIV>
+          </DIV>
+        </DIV>
+        -->
+      </DIV>
+    </div>
+  </div>
+  <div class="jgcont" id="tmmain"  style="height: 495px; width: 1000px;position:relative;overflow:hidden;">
+    <IFRAME id="IFRAME_desktop" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: block; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="./worktable.html" frameBorder=0></IFRAME>
+    <!--
+    <IFRAME id="IFRAME_attendance" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: none; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="./attendance.html" frameBorder=0></IFRAME>
+    <IFRAME id="IFRAME_twitter" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: none; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="./twitter.html" frameBorder=0></IFRAME>
+    <IFRAME id="IFRAME_notice" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: none; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="./notice.html" frameBorder=0></IFRAME>
+    <IFRAME id="IFRAME_memorandum" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: none; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="./memorandum.html" frameBorder=0></IFRAME>
+    <IFRAME id="IFRAME_documents" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: none; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="./documents.html" frameBorder=0></IFRAME>
+    
+    --><IFRAME id="IFRAME_log" style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; height:100%; DISPLAY: none; BORDER-TOP: 0px; BORDER-RIGHT: 0px; frameborder: 0; scrolling: no" src="./log.html" frameBorder=0></IFRAME>
+    <!--modify by lfa display: block;-->
+  </div> 
+</div>
+</body>

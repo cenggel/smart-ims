@@ -1,0 +1,23 @@
+<?php
+return array(
+		'Group Name'=>'工作组名字',
+		'Description'=>'描述',
+		'create_user'=>'创建用户',
+		'List Groups'=>'工作组列表',		
+		'Create Groups'=>'新建工作组',
+		'Update Groups'=>'更新工作组',
+		'Delete Groups'=>'删除工作组',
+		'Manage Groups'=>'管理工作组',
+		'Create Date'=>'创建时间',
+		'Group {group} info'=>'{group} 基本信息',
+		'Groups'=>'工作组',
+		'Groups List'=>'工作组列表',
+		'Create User'=>'创建用户',
+		'Manage'=>'管理',
+		'Members'=>'成员',
+		'Update Groups {groupname}'=>'更新{groupname}',
+		'View Groups'=>'查看工作组',
+		'Group members'=>'工作组成员',
+		''=>'',
+		''=>'',
+		);

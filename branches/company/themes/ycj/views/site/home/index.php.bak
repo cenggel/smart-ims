@@ -1,0 +1,262 @@
+<?php $this->pageTitle=Yii::app()->name; ?>
+<div>
+	<style>
+#dialog label,#dialog input {
+	display: block;
+}
+
+#dialog label {
+	margin-top: 0.5em;
+}
+
+#dialog input,#dialog textarea {
+	width: 95%;
+}
+
+
+
+#add_tab {
+	cursor: pointer;
+}
+
+/*CSS only for scrollable tabs*/
+			.stMainWrapper ul.ui-tabs-nav {
+				position:relative;
+				overflow:hidden;
+			}
+			
+			.stMainWrapper ul.ui-tabs-nav li {
+				position:absolute;
+				top:3px; /*do not set 'left' should be done in the plugin after some calculations*/
+			}
+			
+			.stMainWrapper ul.ui-tabs-nav li.stHasCloseBtn a {
+				padding-right:5px;
+			}
+			
+			.stMainWrapper ul.ui-tabs-nav li.stFirstTab {
+				margin-right:3px;
+			}
+			
+			.stMainWrapper ul.ui-tabs-nav li span.stCloseBtn {
+				float:left;
+				margin-top:6px;
+				margin-right:4px;
+				border:none;
+				cursor:pointer;
+			}
+			
+			.stNavMain {
+				list-style:none;
+				margin: 0 !important;
+				padding: 0 1px 0 1px !important;
+				position:relative;
+				border:none !important;
+				width:100%;
+			}
+			
+			.stNavMain li {
+				position:absolute;
+				width:16px;
+				border-top:none !important;
+				border-bottom:none !important;
+				cursor:pointer;
+				margin-top:-1px;
+			}
+
+			.stNavMain li .ui-icon {
+				margin-top:38%;
+			}
+			
+			.stNavMain li.stNavNextArrow,
+			.stNavMain li.stNavLastArrow {
+				border-right:none !important;
+				right:3px;
+			}
+			
+			.stNavMain li.stNavPrevArrow,
+			.stNavMain li.stNavFirstArrow {
+				border-left:none !important;
+			}
+			
+			/*End of scrollable tabs css*/
+</style>
+	<script>
+
+	$.extend($.ui.tabs.prototype,{
+          addFrameTab:function(url,label,index){
+        	  if ( index === undefined ) {
+      			index = this.anchors.length;
+      		  }
+              this.add('#'+label,label,index);
+              
+          }
+		});
+	$(function() {
+		var $tab_title_input = $( "#tab_title"),
+			$tab_content_input = $( "#tab_content" );
+		var tab_counter = 2;
+
+//example 
+	$tabs1 = $('#example_1')
+		.tabs()
+		.scrollabletabs({
+			customNavNext:'#n',
+			customNavPrev:'#p',
+			customNavFirst:'#f',
+			customNavLast:'#l'//,
+			//easing : 'easeInBounce'
+		});
+		
+		// tabs init with a custom tab template and an "add" callback filling in the content
+		var $tabs = $( "#tabs").tabs({
+			/*select:function(event,ui){
+				url = $.data( $(ui.tab)[0], "load.tabs" );alert(url);
+					var href = $(ui.tab).href;
+					var hrefBase = href.split( "#" )[ 0 ];
+					alert(href +"\n"+hrefBase);
+				},*/
+			//tabTemplate: "<li><a href='#{href}'  >#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>"
+			/*,
+			add: function( event, ui ) {
+				var tab_content = $tab_content_input.val() || "Tab " + tab_counter + " content.";
+				$( ui.panel ).append( "<p>" + tab_content + "</p>" );
+			}*/
+		}).scrollabletabs({customNavNext:'#n',
+			customNavPrev:'#p',
+			customNavFirst:'#f',
+			customNavLast:'#l'});
+
+		// modal dialog init: custom buttons and a "close" callback reseting the form inside
+		var $dialog = $( "#dialog" ).dialog({
+			autoOpen: false,
+			modal: true,
+			buttons: {
+				Add: function() {
+					addTab();
+					$( this ).dialog( "close" );
+				},
+				Cancel: function() {
+					$( this ).dialog( "close" );
+				}
+			},
+			open: function() {
+				$tab_title_input.focus();
+			},
+			close: function() {
+				$form[ 0 ].reset();
+			}
+		});
+
+		// addTab form: calls addTab function on submit and closes the dialog
+		var $form = $( "form", $dialog ).submit(function() {
+			addTab();
+			$dialog.dialog( "close" );
+			return false;
+		});
+
+		// actual addTab function: adds new tab using the title input from the form above
+		function addTab() {
+			var tab_title = $tab_title_input.val() || "Tab " + tab_counter; alert(tab_title);
+			$tabs.tabs( "add", "http://localhost:8080/web/smart-ims/index.php/rights", tab_title );
+			tab_counter++;
+		}
+
+		// addTab button: just opens the dialog
+		$( "#add_tab" )
+			.button()
+			.click(function() {
+				$dialog.dialog( "open" );
+			});
+
+		// close icon: removing the tab on click
+		// note: closable tabs gonna be an option in the future - see http://dev.jqueryui.com/ticket/3924
+		$( "#tabs span.ui-icon-close" ).live( "click", function() {
+			var index = $( "li", $tabs ).index( $( this ).parent() );
+			$tabs.tabs( "remove", index );
+		});
+		
+		$("#addUiTab").click(function(){
+			$tabs
+			.tabs('add','#test','test');
+		}
+		);
+	});
+	</script>
+
+
+
+	<div class="demo">
+
+		<div id="dialog" title="Tab data">
+			<form>
+				<fieldset class="ui-helper-reset">
+					<label for="tab_title">Title</label> <input type="text"
+						name="tab_title" id="tab_title" value=""
+						class="ui-widget-content ui-corner-all" /> <label
+						for="tab_content">Content</label>
+					<textarea name="tab_content" id="tab_content"
+						class="ui-widget-content ui-corner-all"></textarea>
+				</fieldset>
+			</form>
+		</div>
+
+		<button id="add_tab">Add Tab</button>
+
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">Nunc tincidunt</a> <span
+					class="ui-icon ui-icon-close">Remove Tab</span></li>
+			</ul>
+			<div id="tabs-1">
+				<p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a,
+					risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris.
+					Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem.
+					Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo.
+					Vivamus sed magna quis ligula eleifend adipiscing. Duis orci.
+					Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam
+					molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut
+					dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique
+					tempus lectus.</p>
+			</div>
+		</div>
+
+	</div>
+	<!-- End demo -->
+
+<div id="example_1" class="tabs">
+		<ul>
+			<li><a href="#tabs-1">Tab 1</a></li>
+			<li><a href="#tabs-2">This is tab 2</a></li>
+			<li><a href="#tabs-3">This is tab number 3</a></li>
+			<li><a href="#tabs-4">Tab no 4</a></li>
+			<li><a href="#tabs-5">And tab number 5</a></li>
+			<li><a href="#tabs-6">Tab number 6</a></li>
+			<li><a href="#tabs-7">And last tab number 7</a></li>
+            <li><a href="#tabs-8">Very very long name 8</a></li>
+            <li><a href="#tabs-9">Short name 9</a></li>
+		</ul>
+		<div id="tabs-1">Tab 1<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit vulputate porttitor. Fusce purus leo, faucibus a sagittis congue, molestie tempus felis. Donec convallis semper enim, varius sagittis eros imperdiet in. Vivamus semper sem at metus mattis a aliquam neque ornare. Proin sed semper lacus.</div>
+		<div id="tabs-2">This is tab 2<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit vulputate porttitor. Fusce purus leo, faucibus a sagittis congue, molestie tempus felis. Donec convallis semper enim, varius sagittis eros imperdiet in. Vivamus semper sem at metus mattis a aliquam neque ornare. Proin sed semper lacus.</div>
+		<div id="tabs-3">This is tab number 3<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit vulputate porttitor. Fusce purus leo, faucibus a sagittis congue, molestie tempus felis. Donec convallis semper enim, varius sagittis eros imperdiet in. Vivamus semper sem at metus mattis a aliquam neque ornare. Proin sed semper lacus.</div>
+		<div id="tabs-4">Tab no 4<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit vulputate porttitor. Fusce purus leo, faucibus a sagittis congue, molestie tempus felis. Donec convallis semper enim, varius sagittis eros imperdiet in. Vivamus semper sem at metus mattis a aliquam neque ornare. Proin sed semper lacus.</div>
+		<div id="tabs-5">And this is the tab number 5<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit vulputate porttitor. Fusce purus leo, faucibus a sagittis congue, molestie tempus felis. Donec convallis semper enim, varius sagittis eros imperdiet in. Vivamus semper sem at metus mattis a aliquam neque ornare. Proin sed semper lacus.</div>
+		<div id="tabs-6">Tab number 6<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit vulputate porttitor. Fusce purus leo, faucibus a sagittis congue, molestie tempus felis. Donec convallis semper enim, varius sagittis eros imperdiet in. Vivamus semper sem at metus mattis a aliquam neque ornare. Proin sed semper lacus.</div>
+		<div id="tabs-7">And last tab number 7<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit vulputate porttitor. Fusce purus leo, faucibus a sagittis congue, molestie tempus felis. Donec convallis semper enim, varius sagittis eros imperdiet in. Vivamus semper sem at metus mattis a aliquam neque ornare. Proin sed semper lacus.</div>
+        <div id="tabs-8">Very very long name 8<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit vulputate porttitor. Fusce purus leo, faucibus a sagittis congue, molestie tempus felis. Donec convallis semper enim, varius sagittis eros imperdiet in. Vivamus semper sem at metus mattis a aliquam neque ornare. Proin sed semper lacus.</div>
+        <div id="tabs-9">Short name 9<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit vulputate porttitor. Fusce purus leo, faucibus a sagittis congue, molestie tempus felis. Donec convallis semper enim, varius sagittis eros imperdiet in. Vivamus semper sem at metus mattis a aliquam neque ornare. Proin sed semper lacus.</div>
+</div>
+
+
+<div style="margin:20px 0 20px 8px;float:left;">
+			<a class="ui-state-default ui-corner-all" id="addUiTab" href="#" style="padding:6px 6px 6px 17px;text-decoration:none;position:relative">
+				<span class="ui-icon ui-icon-plus" style="position:absolute;top:4px;left:1px"></span>
+				Add new tab using <span class="myCode ui-state-active">$tabs.tabs('add','#'+tabid,label)</span>
+			</a>
+		</div>
+
+	<div class="demo-description">
+		<p>Simple tabs adding and removing.</p>
+	</div>
+	<!-- End demo-description -->
+</div>

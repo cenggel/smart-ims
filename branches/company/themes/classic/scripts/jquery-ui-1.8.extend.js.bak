@@ -1,0 +1,26 @@
+(function( $, prototype ) {
+$.extend( prototype.options, {
+spinner: "<em>Loading&#8230;</em>"
+});
+
+var _create = prototype._create;
+prototype._create = function() {
+_create.call( this );
+var self = this;
+
+this.element.bind( "tabsbeforeload", function( event, ui ) {
+if ( !self.options.spinner ) {
+return;
+}
+
+var span = ui.tab.find( "span" ),
+html = span.html();
+span.html( self.options.spinner );
+ui.jqXHR.complete(function() {
+span.html( html );
+});
+});
+};
+}( jQuery, jQuery.ui.tabs.prototype ) );
+
+

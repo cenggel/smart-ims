@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<link href="css/mergedstyle.css" media="all" rel="Stylesheet" type="text/css" />
+<link href="css/module.css" media="all" rel="Stylesheet" type="text/css" />
+<link href="css/relogin.css" media="all" rel="Stylesheet" type="text/css" />
+</head>
+<BODY style="overflow:hidden;">
+<DIV style="BACKGROUND: #f2f9ff ; id=box>
+  <DIV id=mainBody>
+    <DIV style="WIDTH: 200px; BACKGROUND: #ffffff; HEIGHT: 480px; OVERFLOW: hidden" id=a_left>
+      <DIV style="BORDER-BOTTOM: 0px; BACKGROUND: none transparent scroll repeat 0% 0%">
+        <DIV style="BACKGROUND-COLOR: #fff" class=tree_div_border>
+          <DIV class=ln_per_mess>
+            <DIV class="img_bg_le ln_per_bg"><IMG src="images/user.jpg" width=48 height=48> </DIV>
+            <DIV class=per_mess><SPAN>您好！<SPAN>管理员</SPAN></SPAN><BR>
+              <A href="javascript:void(0);">个人设置</A> </DIV>
+            <DIV class=cb></DIV>
+            <DIV class=sys_time>今天是2012年3月20日 星期二</DIV>
+          </DIV>
+          <DIV style="BORDER-BOTTOM: #a6bbce 0px solid; BORDER-LEFT: #a6bbce 0px solid; OVERFLOW-Y: hidden; WIDTH: 200px; BACKGROUND: #ffffff 0px 0px; BORDER-TOP: #a6bbce 1px solid; BORDER-RIGHT: #a6bbce 0px solid" id=left_fixed>
+            <DIV style="PADDING-BOTTOM: 3px; LINE-HEIGHT: 1.5; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BACKGROUND: #eff5ff 0px 0px; HEIGHT: 20px; PADDING-TOP: 5px">
+              <DIV class=fl><B class="ico_le tclk_label_ico"></B><SPAN>我的关注</SPAN></DIV>
+              <DIV class=fr title=点击查看更多 onclick="alert('功能开发中！')"><B class="ico_le hmore_ico"></B></DIV>
+              <DIV class=cb></DIV>
+            </DIV>
+            <DIV style="MARGIN: 10px 0px 10px 8px; COLOR: #808080">该栏目下没有内容</DIV>
+            <UL style="LIST-STYLE: none none outside; PADDING-BOTTOM: 0px; LINE-HEIGHT: 2; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px">
+            </UL>
+			
+          </DIV>
+        </DIV>
+      </DIV>
+    </DIV>
+    <DIV style="HEIGHT: 480px; MARGIN-LEFT: 208px" id=a_right>
+      <TABLE class=outer cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+          <TR>
+            <TD class=main_cont><DIV id=indivMain>
+              <DIV class=myDesk_cont>
+                <DIV class=hright_top_bg><SPAN class=ti>考勤</SPAN> <A class=edti onclick=sortBoard(); href="javascript:void(0)">[编辑]</A> </DIV>
+                <DIV class=modu>
+                  <DIV class=modu>
+                    <DIV class=ti>
+                      <DIV class=fl>系统提醒</DIV>
+                      <DIV class=fr title=点击查看更多 onclick="message2tm.goMC('SysNoti');"><B class="ico_le hmore_ico"></B></DIV>
+                      <DIV class=cb></DIV>
+                    </DIV>
+                    <DIV id=fillAwokeDivId><DIV class=nocont>该栏目下没有内容<br /><br /></DIV></DIV>
+                  </DIV>
+                  <DIV class=modu>
+                    <DIV class=ti>
+                      <DIV class=fl>延期的任务</DIV>
+                      <DIV class=fr title=点击查看更多 onclick="javascript:message2tm.go('MGT_TSK_T1M0:fresh');"><B class="ico_le hmore_ico"></B></DIV>
+                      <DIV class=cb></DIV>
+                    </DIV>
+                    <DIV id=fillTaskDeferDivId>
+                      <DIV class=nocont>该栏目下没有内容<br /><br /></DIV>
+                    </DIV>
+                  </DIV>
+                  <DIV class=modu>
+                    <DIV class=ti>
+                      <DIV class=fl>重要且紧急</DIV>
+                      <DIV class=fr title=点击查看更多 onclick="javascript:message2tm.go('MGT_IMP:fresh');"><B class="ico_le hmore_ico"></B></DIV>
+                      <DIV class=cb></DIV>
+                    </DIV>
+                    <DIV id=fillUrgencyImportDivId>
+                      <DIV class=nocont>该栏目下没有内容<br /><br /><br /><br /></DIV>
+                    </DIV>
+                  </DIV>
+                  <DIV class="img_bg hright_btm_bg"></DIV>
+                </DIV>
+                <DIV class=cb></DIV>
+              </DIV></TD>
+            <TD class=homeleft_side_bar><DIV id=rightPaneMain1>
+                <DIV style="HEIGHT: 100%" id=right_fixed class=tree_div_border>
+                  <DIV class=cont>
+                    <DIV class=ti>
+                      <DIV class=fl><B class="ico_le hinfor_center_ico"></B><SPAN>公告栏</SPAN></DIV>
+                      <DIV class=fr title=点击查看更多 onclick="alert('功能开发中！');"><B class="ico_le hmore_ico"></B></DIV>
+                      <DIV class=cb></DIV>
+                    </DIV>
+                    <UL>
+                      <LI><A href="javascript:void(0)">03/14 系统测试正式上线！...</A></LI>
+                      <LI><A href="javascript:void(0)">03/14 系统测试开始测试！...</A></LI>
+                      <LI><A href="javascript:void(0)">03/14 系统测试问题整理！...</A></LI>
+                      <LI><A href="javascript:void(0)">03/14 系统正式上线！......</A></LI>
+                      <LI><A href="javascript:void(0)">03/14 谢谢大家支持......</A></LI>
+                    </UL>
+                  </DIV>
+                  <DIV class=cont>
+                    <DIV class=ti>
+                      <DIV class=fl><B class=hdocu_ico></B><SPAN>系统文档</SPAN></DIV>
+                      <DIV class=fr title=点击查看更多 onclick="message2tm.go('MGT_DOC');"><B class="ico_le hmore_ico"></B></DIV>
+                      <DIV class=cb ></DIV>
+                    </DIV>
+                    <DIV id=docContentDivId >
+                      <DIV class=nocont>该栏目下没有内容</DIV>
+                    </DIV>
+                  </DIV>
+				  <DIV class=cont>
+                    <DIV class=ti>
+                      <DIV class=fl><B class=hdocu_ico></B><SPAN>其他</SPAN></DIV>
+                      <DIV class=fr title=点击查看更多 onclick="message2tm.go('MGT_DOC');"><B class="ico_le hmore_ico"></B></DIV>
+                      <DIV class=cb ></DIV>
+                    </DIV>
+                    <DIV id=docContentDivId >
+                      <DIV class=nocont>该栏目下没有内容</DIV>
+                    </DIV>
+                  </DIV>
+                </DIV>
+              </DIV></TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+    </DIV>
+  </DIV>
+</DIV>
+</BODY>
+</html>

@@ -6,7 +6,7 @@ if (empty ( $displayAttribes )) {
 }
 
 $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'groups-form',
+	'id'=>$this->id,
 	'enableAjaxValidation'=>false,
 	'htmlOptions'=> $this->htmlOptions,
 )); ?>

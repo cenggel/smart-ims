@@ -12,9 +12,9 @@ class Highlighter extends CWidget{
 		
 		$cs = Yii::app()->getClientScript();
 		
-		$cs->registerScriptFile($assets.'/highlighter/scripts/shCore.js', CClientScript::POS_END );
 		$cs->registerScriptFile($assets.'/highlighter/scripts/shAutoloader.js', CClientScript::POS_END);
-		$cs->registerCssFile($assets.'/highlighter/styles/shCoreDefault.css');
+		$cs->registerScriptFile($assets.'/highlighter/scripts/shCore.js', CClientScript::POS_END );
+		//$cs->registerCssFile($assets.'/highlighter/styles/shCoreDefault.css');
 		
 		$baseUrl = $assets.'/highlighter/scripts/';
 		$js = <<<T
@@ -22,6 +22,6 @@ class Highlighter extends CWidget{
 T;
 		$js .="SyntaxHighlighter.defaults['toolbar']=false; SyntaxHighlighter.all();";
 		
-		$cs->registerScript("syntaxhighlighter",$js);
+		//$cs->registerScript("syntaxhighlighter",$js);
 	}
 }

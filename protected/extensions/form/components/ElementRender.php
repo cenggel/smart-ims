@@ -115,21 +115,27 @@ class ElementRender {
 	}
 
 	protected  function dateRender(){
+		//echo $this->id;
 
-		$script = '	$(function() {// alert("aaa");
-		$( "'+$this->id+'" ).datepicker(jQuery.extend($.datepicker.regional["zh-CN"], {changeMonth: true,
+		$script = ' $(function() {// alert("aaa");
+				$( "#'.$this->id.'" ).datepicker(jQuery.extend($.datepicker.regional["zh-CN"], {
+				changeMonth: true,
+				dateFormat:"yy-mm-dd",
+				 showButtonPanel: true,
 		changeYear: true}));
 
-		if(!$( "#'+$this->id+'" ).val()){
-		$( "#'+$this->id+'" ).datepicker("setDate",new Date());
+		if(!$( "#'.$this->id.'" ).val()){
+		$( "#'.$this->id.'" ).datepicker("setDate",new Date());
 	}else{
 
 	var date = new Date();
-	date.setTime(parseInt($( "#'+$this->id+'" ).val())*1000);
-	$( "#'+$this->id+'" ).datepicker("setDate",date);
+	date.setTime(parseInt($( "#'.$this->id.'" ).val())*1000);
+	$( "#'.$this->id.'" ).datepicker("setDate",date);
 	}
 
 	});';
+		
+		//var_dump($script1); exit;
 		Yii::app()->clientScript->registerScript($this->id,$script,CClientScript::POS_READY);
 
 		return $this->textRender();

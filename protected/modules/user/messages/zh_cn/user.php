@@ -15,7 +15,7 @@ return array(
 	'This user\'s email address already exists.' => '该电子邮箱地址已经存在',
 	'You registered from {site_name}' => '从网站注册',
 	'Please activate you account go to {activation_url}' => '请点击一下链接来激活您的账户',
-	'You account is not activated.' => '您的账户已经激活',
+	'You account is not activated.' => '您的账户未激活，请联系管理员！',
 	'You account is blocked.' =>'您的账户已经被屏蔽',
 	'Password is incorrect.' => '密码错误',
 	'E-mail' => 'E-mail',

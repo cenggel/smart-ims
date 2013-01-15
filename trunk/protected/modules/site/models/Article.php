@@ -238,8 +238,8 @@ class Article extends BaseActiveRecord
 		    switch ($section){
 				case 'blog': 
 					return array_merge(array('article_date'=>array('type'=>'date')),$default);
-				/*case 'document':
-				 	return array_merge($default,array('file_path'=>array('type'=>'file'),));*/
+				case 'document':
+				 	return array_merge($default,array('file_path'=>array('type'=>'file'),));
 				default: return $default;
 		    }
 	}

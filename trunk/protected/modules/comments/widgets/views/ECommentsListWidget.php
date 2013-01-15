@@ -9,6 +9,7 @@
             echo "<div id=\"addCommentDialog-$this->id\">";
                 $this->widget('comments.widgets.ECommentsFormWidget', array(
                     'model' => $this->model,
+                    'cssFile'=>'',
                 ));
             echo "</div>";
         }

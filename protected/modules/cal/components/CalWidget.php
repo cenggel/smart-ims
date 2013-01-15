@@ -8,7 +8,7 @@ class CalWidget extends CWidget
 
         $cs = Yii::app()->getClientScript();
         $scriptUrl = Yii::app()->getAssetManager()->publish(Yii::getPathOfAlias('application.modules.cal.components.fullCal'));
-        $cs->registerCssFile($cs->getCoreScriptUrl().'/jui/css/base/jquery-ui.css');
+       // $cs->registerCssFile($cs->getCoreScriptUrl().'/jui/css/base/jquery-ui.css');
         if($calendarOptions['theme'])
             $cs->registerCssFile($scriptUrl . '/' . $calendarOptions['themeName'] . '/theme.css');
         $cs->registerCssFile($scriptUrl . '/fullcalendar.css');

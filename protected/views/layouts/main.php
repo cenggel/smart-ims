@@ -45,13 +45,14 @@ Yii::app()->clientScript->registerScriptFile( Yii::app()->themeManager->baseUrl 
 								array('label'=>'工作组', 'url'=>array('/groups/index'), 'visible'=>!Yii::app()->user->isGuest,
 										'items'=>Groups::model()->getOwenMenuList()),
 								array('label'=>'通知', 'url'=>array('/notice/index',),'visible'=>!Yii::app()->user->isGuest),
-								array('label'=>'日历', 'url'=>array('/cal',),'visible'=>!Yii::app()->user->isGuest),
+								//array('label'=>'日历', 'url'=>array('/cal',),'visible'=>!Yii::app()->user->isGuest),
 								array('label'=>'文档', 'url'=>array('/document/index',),'visible'=>!Yii::app()->user->isGuest),
 								array('label'=>'日志', 'url'=>array('/blog/index',), 'visible'=>!Yii::app()->user->isGuest),
 								array('label'=>'教程', 'url'=>array('/tutorials/index',), 'visible'=>!Yii::app()->user->isGuest),
 								array('label'=>'权限管理', 'url'=>array('/rights'),'visible'=>Yii::app()->user->isSuperUser==true),
 								array('label'=>'用户管理', 'url'=>array('/user/admin'),'visible'=>Yii::app()->user->isSuperUser==true),
 								array('label'=>'个人资料', 'url'=>array('/user/profile'), 'visible'=>!Yii::app()->user->isGuest),
+								array('label'=>'订餐', 'url'=>array('/dingcan'), 'visible'=>!Yii::app()->user->isGuest),
 								array('label'=>'登录', 'url'=>array(Yii::app()->user->loginUrl[0]), 'visible'=>Yii::app()->user->isGuest),
 								array('label'=>'退出 ('.Yii::app()->user->name.')', 'url'=>array('/home/logout'), 'visible'=>!Yii::app()->user->isGuest)
 						),
@@ -61,7 +62,7 @@ Yii::app()->clientScript->registerScriptFile( Yii::app()->themeManager->baseUrl 
 		</div>
 
 		<div id="contenttop"></div>
-		<div class="content"
+		<div class="content  container_24	"
 			id="<?php echo Yii::app()->getController()->getId()?>">
 			<?php $this->widget('site.widgets.GroupNav'); ?>
 			<?php if(isset($this->breadcrumbs) && count($this->breadcrumbs)>0):?>

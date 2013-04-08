@@ -1,0 +1,100 @@
+@CHARSET "UTF-8";
+
+.search-index .query, .search-empty .query {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 5px;
+    margin-top: 1em;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 6px;
+    width: 518px;
+}
+.ie .search-index .submit-button, .ie .search-empty .submit-button {
+    margin-top: -41px;
+}
+.search-index .counts {
+    color: #555555;
+    margin-bottom: 1em;
+    margin-left: 10px;
+}
+.search-index .spelling, .search-empty .spelling {
+    color: #CC0000;
+    font-size: 1.2em;
+    margin-bottom: 0.75em;
+    margin-left: 10px;
+}
+.search-index .spelling a, .search-empty .spelling a {
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: underline;
+    -moz-text-decoration-style: solid;
+    color: #ABC5E4;
+}
+.search-index .spelling a em, .search-empty .spelling a em {
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+    color: #0099CC;
+    font-style: italic;
+    font-weight: bold;
+}
+.search-empty .empty-results {
+    font-size: 14px;
+    margin-left: 10px;
+}
+.search-index h2 {
+    font-size: 1.2em;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+.search-index .doc h2 {
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: underline;
+    -moz-text-decoration-style: solid;
+    color: #ABC5E4;
+}
+.search-index h2 a {
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+}
+.ie .search-index h2 a {
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: underline;
+    -moz-text-decoration-style: solid;
+}
+.search-index em {
+    font-style: normal;
+    font-weight: bold;
+    color:#ff0000;
+}
+.search-index .lang-zh_cn .abstract em, .search-index .lang-ja .abstract em {
+    background-color: #FFFFCC;
+}
+.search-index .pos {
+    display: none;
+}
+.search-index .doc {
+    font-size: 14px;
+    margin-bottom: 1em;
+    margin-left: 10px;
+}
+.search-index .doc a:visited {
+    color: #661A8B;
+}
+.search-index .doc a:hover {
+    color: #99CC00;
+}
+.search-index .doc .links .url {
+    color: #558800;
+}

@@ -124,7 +124,7 @@ class ElementRender {
 				 showButtonPanel: true,
 		changeYear: true}));
 
-		if(!$( "#'.$this->id.'" ).val()){
+		if(!$( "#'.$this->id.'" ).val()||$( "#'.$this->id.'" ).val()=="0"){
 		$( "#'.$this->id.'" ).datepicker("setDate",new Date());
 	}else{
 

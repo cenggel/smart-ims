@@ -1,6 +1,6 @@
 <?php
 
-Yii::import('bootstrap.widgets.BootGridView');
+Yii::import('bootstrap.widgets.TbGridView');
 
 /**
 * A Grid View that groups rows by any column(s)
@@ -8,9 +8,9 @@ Yii::import('bootstrap.widgets.BootGridView');
 * @category       User Interface
 * @package        extensions
 * @author         Vitaliy Potapov <noginsk@rambler.ru>
-* @version        1.1
+* @version        1.2
 */
-class BootGroupGridView extends BootGridView {
+class BootGroupGridView extends TbGridView {
 
     const MERGE_SIMPLE = 'simple';
     const MERGE_NESTED = 'nested';

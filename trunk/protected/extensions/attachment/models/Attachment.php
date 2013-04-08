@@ -54,7 +54,7 @@ class Attachment extends CActiveRecord
 			array('file_path', 'required'),
 			array('item_id, isImage, create_date, update_date, create_user, update_user, file_size,deleteFlag', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>200),
-			array('class_code, file_type', 'length', 'max'=>45),
+			array('class_code, file_type', 'length', 'max'=>200),
 			array('file_path', 'length', 'max'=>255),
 			array('description', 'safe'),
 			// The following rule is used by search().
@@ -71,6 +71,7 @@ class Attachment extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+		   'user'=>array(self::BELONGS_TO,'User','create_user'),
 		);
 	}
 
@@ -142,7 +143,11 @@ class Attachment extends CActiveRecord
 	}
 	
 	public function getUrl(){
-		return Yii::app()->baseUrl .'/' . $this->file_path;
+		//return Yii::app()->baseUrl .'/' . $this->file_path;
+		if($this->isImage==1){
+			return $this->getDownloadUrl();
+		}
+		return Yii::app()->urlManager->createUrl('site/attachment/view',array('id'=>$this->id));
 	}
 	
 	public function getDownloadUrl(){
@@ -190,5 +195,42 @@ class Attachment extends CActiveRecord
 	public function setDeleteFlag($flag){
 		$this->deleteFlag = (int)$flag;
 		
+	}
+	
+	public function getOwenr(){
+		$model = new $this->class_code();
+		return $model->findByPk($this->item_id);
+		
+		
+	}
+	
+	
+    public function behaviors(){
+		$b = parent::behaviors();
+		$behaviors = array(				
+		        'solr'=>array(
+		             'class'=>'ext.solr.SolrBehavior',		             
+		             'solr'=>Yii::app()->solr,	
+		             'id'=>'"{$data->class_code}_{$data->item_id}_attachment_{$data->id}"',
+		             'data'=>array('url'=>'$data->url',
+		             'title'=>'$data->title',
+		             'description'=>'$data->description',
+		             'mimetype'=>'$data->file_type',
+		             'user'=>'$data->user->username',
+		             'update_date'=>'date("Y-m-d\TH:i:s\Z",$data->update_date)',
+					 'downloadurl'=>'$data->downloadUrl',
+		             ),
+		             'file'=>'$data->file_path?realpath($data->file_path):""',	
+		         ),
+		        'pdfConvert'=>array(
+		         	'class'=>'ext.flexpaper.PdfConvertBehavior',
+		         	
+		         ),
+		);
+		if(is_array($b)){
+			$behaviors = array_merge($b,$behaviors);
+		}
+		//print_r($behaviors);
+		return $behaviors;
 	}
 }

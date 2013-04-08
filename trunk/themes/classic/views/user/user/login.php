@@ -1,7 +1,8 @@
 <?php $this->params['contentClass'] = '';?>
+<div class="row">
+<div class="sys-info span6 clearfix">&nbsp;</div>
 
-<div class="sys-info grid_12 clearfix">&nbsp;</div>
-<div class="sign-in grid_12">
+<div class="sign-in span6">
 <div class="signin-box form">
 	<h1>
 		登录
@@ -46,7 +47,7 @@
 <?php echo CHtml::endForm(); ?>
 </div>
 </div>
-
+</div>
 
 <?php
 $form = new CForm(array(

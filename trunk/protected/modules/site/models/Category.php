@@ -195,7 +195,7 @@ class Category extends CActiveRecord
 	
 	}
 	
-	public function getListData($parentid = 0, $depth = "--",$group_id=false,$class_code=false){
+	public function getListData($parentid = 0, $depth = "─",$group_id=false,$class_code=false){
 		$models =$this->getTreeListCat($parentid,$depth,$group_id,$class_code);
 		//print_r($models);exit;
 		return CHtml::listData($models,'id','name');
@@ -229,14 +229,14 @@ class Category extends CActiveRecord
 	/**
 	 * Recursive function to get child categories
 	 */
-	public function getRecursiveCats($cat, $depth='--')
+	public function getRecursiveCats($cat,$depth="", $depthSymbol='┄')
 	{
 		$data = array();
 		foreach($cat->childs as $model)
 		{
-			$model->name = '|' .$depth . ' ' . $model->name;
+			$model->name = $depth.'┆' . $depthSymbol . '' . $model->name;
 			$data[] = $model;
-			$data = array_merge($data, $this->getRecursiveCats($model, $depth . $depth));
+			$data = array_merge($data, $this->getRecursiveCats($model, $depth.'┆    ' ));
 		}
 	
 		return $data;

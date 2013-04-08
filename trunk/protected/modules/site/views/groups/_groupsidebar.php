@@ -12,7 +12,7 @@
 		<?php }?>
 	</div>
 	</div>
-	<div class="portlet-content">
+	<div class="portlet-content group-member-list">
 	<ul class="clean-list">
 		<?php foreach($group->members as $m):?>
 		<li><?php echo CHtml::image($m->profile->userImage,"",array('class'=>'icon','width'=>30,'height'=>'30')); echo CHtml::link( $m->profile->firstname,

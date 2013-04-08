@@ -1,0 +1,119 @@
+<?php
+$this->breadcrumbs=array(
+	'订餐'
+);
+
+$this->menu=array(
+	array('label'=>'每日菜单', 'url'=>array('cai/index')),
+	array('label'=>'添加菜单', 'url'=>array('cai/create')),
+);
+?>
+
+<style>
+<!--
+
+H1{ width:300px;}
+  .caidan{
+  	width:200px;
+    height:100px;
+    background-color:#1BA1E2;
+color:#fff;
+padding:10px;
+
+float:left;
+margin:5px;
+
+
+}
+
+.caidan h2{ color:#ffffff;}
+
+.book{
+	width:100px;
+    height:100px;
+    background-color:#F09609;
+    float:left;
+    margin:5px;
+padding:10px;
+    color:#ffffff;
+    owerflow:hidden;
+}
+
+.book input.count{
+	width:30px;
+
+	
+}
+.book label{
+	color:#ffffff;
+   width:80px;
+   
+}
+.book input.submit{
+	color:#ffffff;
+    width:100px;
+background:transparent;
+}
+
+.book-list{
+	width:480px;
+    float:left;
+    margin:5px;
+    
+	
+}
+.sum{
+	font-size:20px;
+    font-weight:bold;
+}
+.strong{
+	font-size:42px;
+}
+-->
+</style>
+<h1>今日菜单</h1>
+<div class="caidan">
+<h2>
+<?php
+
+echo $cai->description?>
+</h2>
+</div>
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'dingcan-form',
+	'enableAjaxValidation'=>false,
+)); ?>
+<div class="book">
+  <?php echo $form->labelEx($model,'count'); ?>
+		<?php echo $form->textField($model,'count',array('size'=>2,'maxlength'=>2,'class'=>'count')); ?>
+		<?php echo $form->error($model,'count'); ?>
+<br>
+<?php echo $form->hiddenField($model,'book_date'); ?>
+<?php echo CHtml::submitButton('预定',array('class'=>'submit')); ?>
+</div>
+
+<?php $this->endWidget(); ?>
+<div class="book sum">
+ 今日订餐<br>
+ <span class="strong"><?php echo $count['count'];?></span> 份
+</div>
+<div class="clear"></div>
+<div class="book-list">
+
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'dingcan-grid',
+	'dataProvider'=>$book,
+	'columns'=>array(
+		array('name'=>'user_id',
+								'value'=>'$data->user->profile->firstname',
+								'filter'=>false),
+		'count',
+		
+		array(
+			'class'=>'CButtonColumn',
+		    'template'=>'{delete}',
+		    //'deleteButtonUrl'='Yii::app()->controller->createUrl("dingcan/delete",array("id"=>$data->id))',
+		),
+	),
+)); ?>
+</div>

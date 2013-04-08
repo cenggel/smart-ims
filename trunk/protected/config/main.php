@@ -6,6 +6,7 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 $menus= require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'admin_menu.php');
+Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
 return array(
 		'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 		'name'=>'知识库系统',
@@ -37,15 +38,16 @@ return array(
 
 		'modules'=>array(
 				// uncomment the following to enable the Gii tool
-
+				'dingcan',
+   
 				'gii'=>array(
 						'class'=>'system.gii.GiiModule',
 						'password'=>'123',
 						// If removed, Gii defaults to localhost only. Edit carefully to taste.
 						'ipFilters'=>array('127.0.0.1','::1'),
 						'generatorPaths'=>array(
-								'bootstrap.gii', // since 0.9.1
-						),
+                			'bootstrap.gii',
+            			),
 
 				),
 				'rights'=>array(
@@ -56,7 +58,9 @@ return array(
 				),
 				'user'=>array(
 						'returnUrl'=>array('/site/member/home'),
-						'relations'=>array('groups'=>array(CActiveRecord::MANY_MANY,'Groups','group_members(users_id,groups_id)')),
+						'relations'=>array('groups'=>array(CActiveRecord::MANY_MANY,'Groups','group_members(users_id,groups_id)'),
+				                           'booksum'=>array(CActiveRecord::STAT,'Dingcan','user_id','select'=>'sum(total_price)')
+				                          ),
 						'componentBehaviors'=>array(
 								'Profile'=>array('profile'=>array('class' => 'application.extensions.behaviors.UserProfileBehaviors')),
 								'User'=>array('userBehavior'=>array('class'=>'application.extensions.behaviors.UserBehavior'))
@@ -169,10 +173,20 @@ return array(
 		// application components
 		'components'=>array(
 				'bootstrap'=>array(
-						'class'=>'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
+						'class'=>'bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
 				),
-
-				'user'=>array(
+			    'solr'=>array(
+			            'class'=>'ext.solr.CSolrComponent',
+			            'host'=>'134.0.133.248',
+			            'port'=>'8088',
+			            'indexPath'=>'/solr'
+			        ),
+			    'flexpaper'=>array(
+			        	'class'=>'ext.flexpaper.CFlexpaperComponent',
+			        	'viewSingle'=>"http://localhost/smart-ims/FlexPaper_2.1.0/php/simple_document.php",
+			            'pdfPath'=>'d:\docs\pdf',
+			        ),				
+			   'user'=>array(
 						// enable cookie-based authentication
 						'allowAutoLogin'=>true,
 						'class'=>'WebUser',
@@ -213,6 +227,10 @@ return array(
 						'urlFormat'=>'path',
 						'showScriptName'=>false,
 						'rules'=>array(
+								'dingcan'=>'dingcan',
+								'dingcan/<controller:\w+>'=>'dingcan/<controller>',
+								'dingcan/<controller:\w+>/<action:\w+>'=>'dingcan/<controller>/<action>',
+				
 								//gii rewrite
 								'gii'=>'gii',
 								'gii/<controller:\w+>'=>'gii/<controller>',
@@ -279,6 +297,7 @@ return array(
 						'password' => 'root',
 						'charset' => 'utf8',
 						'tablePrefix'=>'',
+						'schemaCachingDuration'=>'36000',
 				),
 
 				'errorHandler'=>array(
@@ -290,7 +309,7 @@ return array(
 						'routes'=>array(
 								array(
 										'class'=>'CFileLogRoute',
-										'levels'=>'error, warning,trace',
+										'levels'=>'error, warning',
 								),
 								// uncomment the following to show log messages on web pages
 

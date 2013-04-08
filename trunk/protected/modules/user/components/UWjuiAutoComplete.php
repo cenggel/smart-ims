@@ -100,7 +100,7 @@ class UWjuiAutoComplete {
 		$basePath=Yii::getPathOfAlias('application.modules.user.views.asset');
 		$baseUrl=Yii::app()->getAssetManager()->publish($basePath);
 		$cs = Yii::app()->getClientScript();
-		$cs->registerCssFile($baseUrl.'/css/'.$this->params['ui-theme'].'/jquery-ui.css');
+		//$cs->registerCssFile($baseUrl.'/css/'.$this->params['ui-theme'].'/jquery-ui.css');
 		$cs->registerScriptFile($baseUrl.'/js/jquery-ui.min.js');
 		$js = "jQuery('#{$id}').autocomplete({$options});";
 		$cs->registerScript('Autocomplete'.'#'.$id, $js);

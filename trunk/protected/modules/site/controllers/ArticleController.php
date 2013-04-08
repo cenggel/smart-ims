@@ -147,7 +147,10 @@ class ArticleController extends Controller
 			$article->withTag($tag);
 		}
 		
-		$dataProvider=new CActiveDataProvider($article->attachRel()->with('author','attachCount')->published()->byRecently());
+		$dataProvider=new CActiveDataProvider($article->attachRel()->with('author','attachCount')->published()->byRecently(),array(     
+		 'pagination'=>array(
+          'pageSize'=>30,
+      )));
 		$this->render('index',array(
 				'dataProvider'=>$dataProvider,
 		));
@@ -313,10 +316,11 @@ class ArticleController extends Controller
     					'linkOptions'=>array('class'=>'update',
     							'rel'=>'tooltip',
     							'title'=>Yii::t('siteModule.article','Update {Article}',array('{Article}'=>$class)))),
-    			array('label'=>Yii::t('siteModule.article','Delete {Article}',array('{Article}'=>$class)), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>Yii::app()->request->getParam("id"),'returnUrl'=>Yii::app()->request->getRequestUri()),'confirm'=>Yii::t('siteModule.article','Are you sure you want to delete this item?')),
+    			array('label'=>Yii::t('siteModule.article','Delete {Article}',array('{Article}'=>$class)), 'url'=>'#', 
     					'visible'=>('view'==$this->getAction()->getId()&&$this->hasRight('Site.Article.Delete',array('article'=>$model))),
     					'linkOptions'=>array('class'=>'delete',
     							'rel'=>'tooltip',
+    							'submit'=>array('delete','id'=>Yii::app()->request->getParam("id"),'returnUrl'=>Yii::app()->request->getRequestUri()),'confirm'=>Yii::t('siteModule.article','Are you sure you want to delete this item?'),
     							'title'=>Yii::t('siteModule.article','Delete {Article}',array('{Article}'=>$class)))),
     	
     	);

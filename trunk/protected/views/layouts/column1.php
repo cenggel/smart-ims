@@ -1,5 +1,5 @@
 <?php $this->beginContent('//layouts/main'); 
- $class="grid_24";
+ $class="span12";
  if(isset($this->params['contentClass'])){
  	$class= $this->params['contentClass'];
  }

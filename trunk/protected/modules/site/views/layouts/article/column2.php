@@ -1,5 +1,5 @@
 <?php $this->beginContent('//layouts/main'); ?>
-<div class="grid_6 left-sidebar">
+<div class="span3 left-sidebar">
 	<div id="sidebar">
 		<?php
 
@@ -37,10 +37,11 @@
 	</div>
 	<!-- sidebar -->
 </div>
-<div class="grid_18 ">
+<div class="span9 ">
 	<div id="main-content">
 		<div class="article-operation floatright">
 			<?php 
+			//print_r($this->article_menu);
 			$this->widget('zii.widgets.CMenu',array(
 					'items'=>$this->article_menu));
 			?>

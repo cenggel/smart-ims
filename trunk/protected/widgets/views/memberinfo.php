@@ -8,20 +8,25 @@ else{
 $name = $user->profile->lastname ."&nbsp;" . $user->profile->firstname;
 
 $url = Yii::app()->urlManager->createUrl('user/profile');
+$logoutUrl = Yii::app()->urlManager->createUrl('/home/logout');
 print <<<T
-<div class="loginMember clearfix">
-	<div class="photo grid_2 alpha omega ">
+
+<div class="loginMember clearfix row-fluid">
+	<div class="photo span3 first">
 		<a class="defaultLogo" href="{$url}">
 		<img width="50" height="50" alt="" src="$img"/>
 		</a>
 	</div>
-	<div class="information grid_4 omega alpha">
+	
+	<div class="information span9 first last">
 		<p class="name">
-		<a href="{$url}">$name</a>
+		<a href="{$url}">$name</a> &nbsp;&nbsp;<a href="$logoutUrl">退出</a>
+		
 		</p>
-	 
+	    
 	
 	</div>
+
 </div>
 
 T;

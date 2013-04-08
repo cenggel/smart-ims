@@ -1,5 +1,6 @@
 <?php $this->beginContent('//layouts/main'); ?>
-<div class="grid_6 left-sidebar">
+
+<div class="span3 left-sidebar">
 	<div id="sidebar">
 		<?php
 
@@ -27,7 +28,7 @@
 	</div>
 	<!-- sidebar -->
 </div>
-<div class="grid_18 ">
+<div class="span9 ">
 	<div id="main-content">
 		<?php echo $content; ?>
 	</div>

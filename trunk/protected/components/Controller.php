@@ -119,13 +119,5 @@ class Controller extends RController
 		parent::redirect($url,$terminate,$statusCode);
 	}
 	
-	public function afterAction($action){
-		/*if($this->_tux){
-			if($this->hasError){
-				$this->_tux->rollback();
-			}
-			$this->_tux->commit();
-		}*/
-		return true;
-	}
+	
 }

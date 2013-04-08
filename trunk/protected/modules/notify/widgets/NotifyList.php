@@ -35,7 +35,7 @@ class NotifyList extends CWidget{
 	
 	public function getBadges($var,$type="info"){
 		ob_start();
-		$this->widget('bootstrap.widgets.BootBadge', array(
+		$this->widget('bootstrap.widgets.TbBadge', array(
 				'type'=>$type, // '', 'success', 'warning', 'error', 'info' or 'inverse'
 				'label'=>$var,
 		));

@@ -5,10 +5,11 @@ $this->breadcrumbs=array(
 $this->params['contentClass']='container_24';
 ?>
 
-<div class="grid_6 left-sidebar">
+<div class="span3 left-sidebar">
 	<div id="sidebar">
 		<?php $this->widget('widgets.MemberInfo' );?>
 		<?php
+		
 		$this->beginWidget('zii.widgets.CPortlet',array('title'=>'工作组'));
 		$this->widget('site.widgets.MemberGroup' ,array('visible'=>!Yii::app()->user->isGuest));
 		$this->endWidget();
@@ -16,11 +17,12 @@ $this->params['contentClass']='container_24';
 	</div>
 </div>
 
-<div class="grid_18">
+<div class="span9">
 
 	<div class="main-content">
-	    <?php $this->widget('notify.widgets.NotifyList');?>
-		<div class="updates">
+	    
+	    <div class="row">
+		<div class="updates span6">
 
 			<div class="subTitle">
 				<p>最新更新内容</p>
@@ -73,7 +75,10 @@ $this->params['contentClass']='container_24';
 			</div>
 			<?php }?>
 		</div>
-
+		
+		<!-- 提示列表 -->
+		<div class="span3"><?php $this->widget('notify.widgets.NotifyList');?></div>
+        </div>
 
 	</div>
 </div>

@@ -6,11 +6,15 @@ if(is_array($notifies)){
 		//echo "$n->status <br>";
 		echo CHtml::openTag('li');
 		echo CHtml::link('['.$this->module->getEventLabel($n).']'.$n->title,$n->viewUrl,array('class'=>$n->isRead ?'read':'unread'));
+		$name =$n->user->username;
+		echo "<br><span> $name </span>";
 		echo Chtml::openTag('span',array('class'=>'date'));
+		
 		echo Yii::app()->dateFormatter->format('yyyy-MM-dd hh:m:ss',$n->create_date);
 		echo CHtml::closeTag('span');
-		if($n->summary) 
-			echo "<p>{$n->summary}</p>";
+		
+		/* if($n->summary) 
+			echo "<p>{$n->summary}</p>"; */
 		echo CHtml::closeTag('li');
 	}
 }

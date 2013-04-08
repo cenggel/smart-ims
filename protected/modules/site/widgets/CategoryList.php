@@ -27,6 +27,18 @@ class CategoryList extends Portlet{
 						'icon'=>'tag');
 			}
 		}
+		
+		$this->items[]=array(
+		   'label'=>'TEST',
+		   'url'=>'/test',
+		   'items'=>array(
+		     array('label'=>'aaaa','url'=>'#'),
+		     array('label'=>'aaaa1','url'=>'#'),
+		     array('label'=>'aaaa2','url'=>'#'),
+		     array('label'=>'aaaa3','url'=>'#'),
+		     array('label'=>'aaaa4','url'=>'#'),
+		)
+		);
 	} 
 	public function renderContent(){
 		/*$this->widget('bootstrap.widgets.BootMenu', array(

@@ -15,9 +15,14 @@ $this->blocks['left'][]= $this->renderPartial('_groupsidebar',array('group'=>$mo
         最新更新内容
     </p>
 </div>
-
-    <?php foreach ($model->getLatestAritcleList() as $key=> $cat){?>
-	<div id="<?php echo $key;?> ">
+    <div class="row-fluid">
+    <?php $index =0; foreach ($model->getLatestAritcleList() as $key=> $cat){
+    if($index%2==0 && $index >0) echo '</div><div class="row-fluid">';
+    $index++;
+    	?>
+    
+	<div id="<?php echo $key;?> " class="span6" style="overflow:hidden;">
+	
 		<div class="category">
 			<div class="appTitle">
 				<a class="iconLink" title="" href="<?php echo Yii::app()->urlManager->createUrl('site/article/index',array('group_id'=>$model->id,'class_code'=>$key));?>"><img width=30 
@@ -40,11 +45,13 @@ $this->blocks['left'][]= $this->renderPartial('_groupsidebar',array('group'=>$mo
 		   <?php }else{
 		     foreach ($cat as $a){		     	
 		   	?>
-		     <tr><td class="check"></td><td class="notificationTitle"><div><a href="<?php echo $a->url;?> " ><?php echo $a->title?></a></td><td class="member"><?php echo $a->author->username?></td><td class="date"><?php echo date('Y年m月d日 H:i:s', $a->create_date);?></td></tr>
+		     <tr><td class="check"></td><td class="notificationTitle"><div><a href="<?php echo $a->url;?> " ><?php echo   mb_substr($a->title,0,20);?></a></td><td class="member"><?php echo $a->author->username?></td><td class="date"><?php echo date('y-m-d', $a->create_date);?></td></tr>
 		   <?php } 
 		     }?>
 		</table>
 	</div>
+	
    <?php }?>
+   </div>
 </div>
 

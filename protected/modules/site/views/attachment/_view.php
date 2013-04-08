@@ -1,7 +1,12 @@
+<?php
+/* @var $this AttachmentController */
+/* @var $data Attachment */
+?>
+
 <div class="view">
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id),array('view','id'=>$data->id)); ?>
+	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('item_id')); ?>:</b>
@@ -47,6 +52,10 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('update_user')); ?>:</b>
 	<?php echo CHtml::encode($data->update_user); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('file_size')); ?>:</b>
+	<?php echo CHtml::encode($data->file_size); ?>
 	<br />
 
 	*/ ?>

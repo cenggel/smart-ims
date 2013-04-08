@@ -16,7 +16,7 @@
 		<?php }?>
 	</div>
 </div>
-<?php $this->widget('bootstrap.widgets.BootMenu', array(
+<?php $this->widget('bootstrap.widgets.TbMenu', array(
 		'type'=>'list',// '', 'tabs', 'pills' (or 'list')
 
 		'items'=>$items,

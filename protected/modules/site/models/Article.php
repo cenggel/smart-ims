@@ -140,6 +140,8 @@ class Article extends BaseActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+		'pagination' => array(
+               'pagesize' => 40),
 		));
 	}
 	
@@ -260,7 +262,7 @@ class Article extends BaseActiveRecord
 		
 		if(is_array($_POST['Tags']))
 			$this->tags = implode(',', $_POST['Tags']) ;
-		
+		//print_r($this->tags); exit;
 		//print_r($_FILES);
 		return true;
 	}
@@ -290,6 +292,7 @@ class Article extends BaseActiveRecord
 	protected function afterSave()
 	{
 		parent::afterSave();
+		//print_r($this->_oldTags, $this->tags);exit;
 		Tag::model()->updateFrequency($this->_oldTags, $this->tags);
 		
 	}
@@ -322,12 +325,41 @@ class Article extends BaseActiveRecord
 						'notifyEvents'=>array('insert'=>'NEW','update'=>'UPDATE'),
 						'users'=>'group.members',
 						'title'=>'title',
-						'summary'=>'substr(strip_tags($data->content),0,300)'));
+						'summary'=>'substr(strip_tags($data->content),0,300)'),
+		        'solr'=>array(
+		             'class'=>'ext.solr.SolrBehavior',		             
+		             'solr'=>Yii::app()->solr,	
+		             'id'=>'"article_{$data->id}"',
+		             'data'=>array('url'=>'$data->url',
+		             'content'=>'$data->content',
+		             'description'=>'$data->description',
+		             'tags'=>'$data->tags',
+					 'group'=>'$data->groupName',		
+					 'cat'=>'$data->categoryName',
+					 'update_date'=>'date("Y-m-d\TH:i:s\Z",$data->update_date)',
+		             'title'=>'"$data->className  $data->categoryName   $data->title"',	
+		             'user'=>'$data->author->username',),
+		             'file'=>'$data->file_path?realpath($data->file_path):""',
+		         ),
+		);
 		if(is_array($b)){
 			$behaviors = array_merge($behaviors,$b);
 		}
 		
 		return $behaviors;
+	}
+	
+	
+	public function getCategoryName(){
+		return $this->category->name;
+	}
+	
+	public function getGroupName(){
+		return $this->group->group_name;
+	}
+	
+	public function getClassName(){
+		Enumeration::item($this->class_code, "ARTICLE_CLASS");
 	}
 	
 }

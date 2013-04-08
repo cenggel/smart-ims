@@ -47,7 +47,7 @@ if(count($notifies)==0){
 
 //print_r($tabs);
 
-$this->widget('bootstrap.widgets.BootTabbable', array(
+$this->widget('bootstrap.widgets.TbTabs', array(
 		'type'=>'tabs', // 'tabs' or 'pills'
 		'encodeLabel'=>false,
 		'tabs'=>$tabs,

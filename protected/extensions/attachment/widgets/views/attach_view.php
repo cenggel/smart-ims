@@ -27,7 +27,6 @@
 		}",
 			));
 		//}
-
 		$attachModel->isImage=0;
 		$data=$attachModel->search();
 		//if($data->totalItemCount >0){
@@ -36,6 +35,7 @@
 					'itemView'=>'_list',
 					'emptyText'=>'',
 					'template'=>"{items}\n{pager}",
+			        'htmlOptions'=>array('class'=>"attach-docs row-fluid"),
 			));
 		//}
 		?>

@@ -18,7 +18,7 @@
 }
 
 .attach-row .ext-image{
-	float:left;
+	/*float:left;*/
 	
 }
 
@@ -82,4 +82,9 @@ a.thumbnail:hover {
 
 .thumbnails .span3{
   width: 220px;
+}
+
+
+.att-thumb{
+	
 }

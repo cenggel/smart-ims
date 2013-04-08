@@ -1,5 +1,5 @@
 
-<div id="attach-<?php echo $data->id ?>" class="attach-row">
+<div id="attach-<?php echo $data->id ?>" class="attach-row row-fluid row">
 	<div class="check-row">
 		
 		<?php echo CHtml::activeLabel($data, "[$data->id]deleteFlag") ?>
@@ -8,17 +8,17 @@
 	</div>
 	<?php 
 	if($data->isImage){
-		$image = CHtml::image($data->url);
+		$image = CHtml::image(Yii::app()->baseUrl .'/' . $data->file_path);
 	}else{
 		$image = $data->extImage;
 	}
 	?>
-	<div class="span-6 first">
+	<div class="span4 first-child">
 		<div class="thumbnail">
 			<?php echo $image ?>
 		</div>
 	</div>
-	<div class="span-12 last">
+	<div class="span6 first">
 		<div>
 			<?php  echo CHtml::activeLabel($data, "[$data->id]title")?>
 			<?php  echo CHtml::activeTextField($data, "[$data->id]title",array(

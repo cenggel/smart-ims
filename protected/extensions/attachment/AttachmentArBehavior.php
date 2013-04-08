@@ -77,6 +77,7 @@ class AttachmentArBehavior extends CActiveRecordBehavior{
 		$this->init();
 		$this->handleNewAttach();
 		$this->handleUpdateAttach();
+		
 		return true;
 	}
 
@@ -99,26 +100,52 @@ class AttachmentArBehavior extends CActiveRecordBehavior{
 			mkdir($basePath,0777,true);
 		}
 		if(count($atts)>0){
+			$paths =array();
 			foreach ($atts as $att){
 				if(! $att->hasError){
+					
 					$model = new Attachment;
 					$model->item_id = $item_id;
-					if($this->class_code)
-						$model->class_code = $this->class_code;
-					$path = $basePath . '/' . $att->name;
+					
+					$path = $basePath . "/attach_{$item_id}_" . date('YmdHis').rand(1, 1000).'.'.$att->extensionName ;
+					
+					
 
 					if (file_exists($path)) {
 						$path = str_replace('.'.$att->extensionName,'-'.time().'.'.$att->extensionName,$path);
 					}
 
 					$att->saveAs($path);
+					$paths[]=$path;
+					if($this->class_code)
+						$model->class_code = $this->class_code;
+					
 					$model->file_path = $path;
 					$model->title = $att->name;
 					$model->file_size = $att->size;
 					$model->file_type = $att->type;
 					$model->isImage = strpos($att->type, 'image')===false?0:1;
-
-					$model->save();
+					try{
+						//echo "<br>save attach $path";
+					   if(!$model->save()){
+					   	  unlinkFiles($paths);
+					   	  $errstr="";
+					   	  foreach ($model->getErrors() as $err){
+					   	  	$errstr = implode("<br>", $err);
+					   	  }					   	  
+					   	  throw new CException($errstr, "500");
+					   }
+					   //echo "<br> save ok! <pre>";
+					   //print_r($model);
+					   //exit();
+					}
+					catch (Exception $e){
+					
+						unlinkFiles($paths);
+						throw $e;
+					}
+					
+					
 
 				}else{
 					Yii::app()->user->setFlash('error',Yii::t('core','<b>File upload error!</b> ERROR:{error} File Name:{name} ',array('{error}'=>$att->error,'{name}'=>$att->name)));
@@ -128,6 +155,12 @@ class AttachmentArBehavior extends CActiveRecordBehavior{
 		}
 	}
 
+	protected function unlinkFiles($paths) {
+		foreach ( $paths as $path )
+			if (file_exists ( $path )) {
+				unlink ( $path );
+			}
+	}
 	/**
 	 * update attachment title and descriptiong or delete attachment when select deleteflag.
 	 * 

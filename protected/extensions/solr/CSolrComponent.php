@@ -164,9 +164,14 @@ class CSolrComponent extends CApplicationComponent {
 			$params ["literal.{$k}"] = $v;
 		}
 		try {
-			$this->_solr->extract ( $file, $params, $document, $mimetype );
+			$resp = $this->_solr->extract ( $file, $params, $document, $mimetype );
+			
+			
+			
 			$this->_solr->commit ();
 			$this->_solr->optimize ();
+			//print_r($resp);
+			//exit;
 			return true;
 		
 		} catch ( Exception $e ) {

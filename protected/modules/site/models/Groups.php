@@ -13,6 +13,7 @@
  * @property string  $image
  * @property integer $status
  * @property string  $alias
+ * @property string  $group_type
  * 
  */
 class Groups extends BaseActiveRecord
@@ -50,7 +51,7 @@ class Groups extends BaseActiveRecord
 			array('alias, group_name','unique','on'=>'create,update'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, group_name, description, create_user, create_date, views,image,alias,status', 'safe', 'on'=>'search'),
+			array('id, group_name, description, create_user, create_date, views,image,alias,status,group_type', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -90,6 +91,7 @@ class Groups extends BaseActiveRecord
 		$criteria->compare('views',$this->views);
 		$criteria->compare('alias',$this->alias);
 		$criteria->compare('status', $this->status);
+		$criteria->compare('group_type', $this->group_type);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -109,6 +111,7 @@ class Groups extends BaseActiveRecord
 				'creator'=>array(self::BELONGS_TO,'User','create_user'),
 				'articles'=>array(self::HAS_MANY,'Article','group_id'),
 				'categories'=>array(self::HAS_MANY,'Category','group_id'),
+				'request'=>array(self::HAS_ONE,'Request','groups_id'),
 		);
 	}
 	
@@ -140,6 +143,10 @@ class Groups extends BaseActiveRecord
 	
 	public  function getUrl(){
 		return Yii::app()->urlManager->createUrl('/groups/home',array('id'=>$this->id));
+	}
+	
+	public  function getRequestHomeUrl(){
+		return Yii::app()->urlManager->createUrl('/request/home',array('id'=>$this->id));
 	}
 	
 	public static function getCreateUrl(){
@@ -184,6 +191,14 @@ class Groups extends BaseActiveRecord
 		
 		//print_r($result);exit;
 		return $result;
+	}
+	
+public function getDocumentsList(){
+		$result = array();
+		$model = new Documents;;
+		$model=$model->byGroup($this->id);
+		
+		return $model->findAll();
 	}
 	
 	public  function afterDelete(){

@@ -1,11 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-	Yii::t('siteModule.groups','Groups')=>array('index'),
-	Yii::t('siteModule.groups','Manage'),
+	Yii::t('siteModule.request','Request')=>array('index'),
+	Yii::t('siteModule.request','Manage'),
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('siteModule.groups','Create Groups'), 'url'=>array('create')),
+	array('label'=>Yii::t('siteModule.request','Create Request'), 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -22,7 +22,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1><?php Yii::t('siteModule.groups', 'Manage Groups')?></h1>
+<h1><?php Yii::t('siteModule.request', 'Manage Request')?></h1>
 
 
 
@@ -41,7 +41,7 @@ $('.search-form form').submit(function(){
 		array('name'=>'create_date',
 				'value'=>'date("Y-m-d",$data->create_date)'),
 		array(
-			  'class'=>'bootstrap.widgets.BootButtonColumn',
+			  'class'=>'bootstrap.widgets.TbButtonColumn',
             'htmlOptions'=>array('style'=>'width: 50px'),
 		),
 	),

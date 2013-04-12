@@ -8,7 +8,7 @@
 $menus= require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'admin_menu.php');
 Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
 return array(
-		'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
+        'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 		'name'=>'知识库系统',
 
 		// preloading 'log' component
@@ -33,6 +33,7 @@ return array(
 				'application.modules.user.components.*',
 				'application.modules.site.models.*',
 				'application.modules.site.components.*',
+				'application.modules.site.*'
 
 		),
 
@@ -259,6 +260,11 @@ return array(
 								'group_<group_id:\d+>/cal/<controller:\w+>/<action:\w+>'=>'cal/<controller>/<action>',
 
 								'group_<group_id:\d+>/<class_code:\w+>/category/<action:\w+>'=>'site/category/<action>',
+								
+								'request_<group_id:\d+>/<class_code:\w+>'=>'site/documents/index',
+								'request_<group_id:\d+>/<class_code:\w+>/<action:\w+>'=>'site/documents/<action>',
+								
+								'request_<group_id:\d+>/<class_code:\w+>/<id:\d+>'=>'site/documents/view',
 
 								'tutorials/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'tutorials',)),
 								'blog/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'blog')),
@@ -269,6 +275,8 @@ return array(
 								'group_<group_id:\d+>/tutorials/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'tutorials',)),
 								'group_<group_id:\d+>/handbook/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'Handbook',)),
 								'group_<group_id:\d+>/document/<action:\w+>'=>array('site/article/<action>/','defaultParams'=>array('class_code'=>'document',)),
+				
+								'request_<group_id:\d+>/documents/<action:\w+>'=>array('site/documents/<action>/','defaultParams'=>array('class_code'=>'documents',)),
 
 
 
@@ -294,7 +302,7 @@ return array(
 						'connectionString' => 'mysql:host=localhost;dbname=smart_ims',
 						'emulatePrepare' => true,
 						'username' => 'root',
-						'password' => 'root',
+						'password' => '',
 						'charset' => 'utf8',
 						'tablePrefix'=>'',
 						'schemaCachingDuration'=>'36000',

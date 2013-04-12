@@ -339,7 +339,7 @@ class Article extends BaseActiveRecord
 					 'update_date'=>'date("Y-m-d\TH:i:s\Z",$data->update_date)',
 		             'title'=>'"$data->className  $data->categoryName   $data->title"',	
 		             'user'=>'$data->author->username',),
-		             'file'=>'$data->file_path?realpath($data->file_path):""',
+		             'file'=>'$data->file_path?$data->file_path:""',
 		         ),
 		);
 		if(is_array($b)){

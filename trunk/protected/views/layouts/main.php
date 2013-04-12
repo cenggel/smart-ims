@@ -46,6 +46,8 @@ Yii::app()->clientScript->registerScriptFile( Yii::app()->themeManager->baseUrl 
 								//array('label'=>'首页', 'url'=>Yii::app()->homeUrl, ),
 								array('label'=>'工作组', 'url'=>array('/groups/index'), 'visible'=>!Yii::app()->user->isGuest,
 										'items'=>Groups::model()->getOwenMenuList()),
+								array('label'=>'需求管理', 'url'=>array('/request/index'), 'visible'=>!Yii::app()->user->isGuest,
+										'items'=>Request::model()->getOwenMenuList()),
 								array('label'=>'通知', 'url'=>array('/notice/index',),'visible'=>!Yii::app()->user->isGuest),
 								//array('label'=>'日历', 'url'=>array('/cal',),'visible'=>!Yii::app()->user->isGuest),
 								array('label'=>'文档', 'url'=>array('/document/index',),'visible'=>!Yii::app()->user->isGuest),
@@ -75,6 +77,7 @@ Yii::app()->clientScript->registerScriptFile( Yii::app()->themeManager->baseUrl 
 		<div class="content"
 			id="<?php echo Yii::app()->getController()->getId()?>">
 			<?php $this->widget('site.widgets.GroupNav'); ?>
+			<?php $this->widget('site.widgets.GroupNavRequest'); ?>
 			<?php if(isset($this->breadcrumbs) && count($this->breadcrumbs)>0):?>
 			<div id="breadcrumbs" class="span12">
 				<?php 

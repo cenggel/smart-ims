@@ -5,11 +5,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('siteModule.groups','List Groups'), 'url'=>array('index')),
-	array('label'=>Yii::t('siteModule.groups','Create Groups'), 'url'=>array('create')),
-	array('label'=>Yii::t('siteModule.groups','Update Groups'), 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>Yii::t('siteModule.groups','Delete Groups'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>Yii::t('siteModule.groups','Manage Groups'), 'url'=>array('admin')),
+	array('label'=>Yii::t('siteModule.request','Create Request'), 'url'=>array('create')),
+	array('label'=>Yii::t('siteModule.request','Manage Request'), 'url'=>array('admin')),
 );
 ?>
 

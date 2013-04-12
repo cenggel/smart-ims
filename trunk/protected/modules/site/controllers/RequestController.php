@@ -1,6 +1,6 @@
 <?php
 
-class GroupsController extends Controller
+class RequestController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -8,7 +8,7 @@ class GroupsController extends Controller
 	 */
 	public $layout='//layouts/column2';
 
-	public $working_group = null;
+	public $working_group_request = null;
 
 	public $working_class = null;
 	/**
@@ -24,10 +24,10 @@ class GroupsController extends Controller
 	 */
 	public function actionView($id)
 	{
-		//$this->working_group  =$this->loadModel($id);
-		$this->working_group = Groups::model()->with(array('creator','members'=>array('with'=>'profile')))->findByPk($id);
+		//$this->working_group_request  =$this->loadModel($id);
+		$this->working_group_request = Groups::model()->with(array('creator','members'=>array('with'=>'profile')))->findByPk($id);
 		$this->render('view',array(
-				'model'=>$this->working_group,
+				'model'=>$this->working_group_request,
 		));
 	}
 
@@ -37,22 +37,39 @@ class GroupsController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Groups;
-
+		$requestModel=new Request();
+        $groupsModel = new Groups();
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		//$model->create_user = Yii::app()->user->id;
-		if(isset($_POST['Groups']))
+		if(isset($_POST['Request']) && isset($_POST['Groups']))
 		{
-			$trans = $model->getDbConnection()->beginTransaction();
+			$connection = $groupsModel->getDbConnection();
+			$trans = $connection->beginTransaction();
 			try{
-				$model->attributes=$_POST['Groups'];
+				$groupsModel->attributes=$_POST['Groups'];
+				$groupsModel->group_type='request';
+				$requestModel->attributes=$_POST['Request'];
+				
 				//$model->members = User::model()->findByPk(Yii::app()->user->id);
-				$model->members = array_merge(array(Yii::app()->user->id), $_POST['Groups']['members']);
-				if($model->save()){
-					$trans->commit();
-					$this->redirect(array('view','id'=>$model->id));
+				$groupsModel->members = array_merge(array(Yii::app()->user->id), $_POST['Groups']['members']);
+				if($groupsModel->save() ){
+					$requestModel->groups_id = $groupsModel->id;
+					if($requestModel->save()){
+						$trans->commit();
+					    $this->redirect(array('view','id'=>$groupsModel->id));
+					}
+//					$sql = "INSERT INTO request (groups_id, request_code , state ,create_date ,booking_release_date)
+//						VALUES (:groups_id, :request_code, :state,:create_date,:booking_release_date)";
+//					$command = $connection->createCommand($sql) ;
+//					$command->bindValue(':groups_id', $groupsModel->id );
+//					$command->bindValue(':request_code', $_POST['Request']['request_code']);
+//					$command->bindValue(':state', '0');
+//					$command->bindValue(':create_date', time());
+//					$command->bindValue(':booking_release_date', $_POST['Request']['booking_release_date']);
+//					$command->execute();
+					
 				}
 				$trans->rollBack();
 			}catch(Exception $e){
@@ -62,7 +79,8 @@ class GroupsController extends Controller
 		}
 
 		$this->render('create',array(
-				'model'=>$model,
+				'requestModel'=>$requestModel,
+		        'groupsModel'=>$groupsModel,
 		));
 	}
 
@@ -73,22 +91,44 @@ class GroupsController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
-		$this->working_group  =$model;
+		$groupsModel=$this->loadModel($id);
+		$sql = "SELECT * FROM request where groups_id=:id ";
+		$params = array();
+		$params['id'] = $id;
+		
+		$requestModel = Request::model()->findBySql($sql,$params);
+		$tmp = $requestModel;
+		$this->working_group_request  =$groupsModel;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Groups']))
+		if(isset($_POST['Request']) && isset($_POST['Groups']))
 		{
-			
-			$trans = $model->dbConnection->beginTransaction();
+		    $connection = $groupsModel->getDbConnection();	
+			$trans = $connection->beginTransaction();
 			try{
-				$model->attributes=$_POST['Groups'];
-				$model->members = array_merge(array($model->create_user), $_POST['Groups']['members']);
-				if($model->save()){
-					echo "commited";
+				$groupsModel->attributes=$_POST['Groups'];
+				$requestModel->attributes=$_POST['Request'];
+				$requestModel->id=$tmp->id;
+				$requestModel->groups_id = $tmp->groups_id;
+				$requestModel->create_date = $requestModel->create_date;
+				
+				$groupsModel->members = array_merge(array($groupsModel->create_user), $_POST['Groups']['members']);
+				if($groupsModel->save() && $requestModel->save()){
+//					print_r($requestModel->id ."    ".$requestModel->groups_id."  ".$requestModel->request_code."   ".$requestModel->state."  ".$requestModel->create_date);
+//					exit();
 					$trans->commit();
-					$this->redirect(array('view','id'=>$model->id));
+//					echo "commited";
+//					print_r("groupsModel save");
+//					exit();
+//					$sql = "update request set request_code=:request_code,booking_release_date=:booking_release_date where groups_id=:groups_id";
+//					$command = $connection->createCommand($sql) ;
+//					$command->bindValue(':groups_id', $groupsModel->id );
+//					$command->bindValue(':request_code', $_POST['Request']['request_code']);
+//					$command->bindValue(':booking_release_date', $_POST['Request']['booking_release_date']);
+//					$command->execute();
+					
+					$this->redirect(array('view','id'=>$groupsModel->id));
 				}
 				$trans->rollBack();
 			}catch (Exception $e){
@@ -99,7 +139,8 @@ class GroupsController extends Controller
 		}
 
 		$this->render('update',array(
-				'model'=>$model,
+				'requestModel'=>$requestModel,
+		        'groupsModel'=>$groupsModel,
 		));
 	}
 
@@ -141,11 +182,12 @@ class GroupsController extends Controller
 			$model->create_user = (int)Yii::app()->user->id;
 		}
 		$dataProvider=new CActiveDataProvider('Groups',array(
-	        'criteria'=>array(
-	          'condition'=>"group_type='group'",
-	       ))
-		);
-		$this->render('index',array(
+        'criteria'=>array(
+          'condition'=>"group_type='request'",
+		  'with'=>'request',
+       ))
+       );
+       $this->render('index',array(
 				'dataProvider'=>$dataProvider,
 		));
 	}
@@ -157,9 +199,11 @@ class GroupsController extends Controller
 	{
 		$model=new Groups('search');
 		$model->unsetAttributes();  // clear any default values
+		
 		if(isset($_GET['Groups']))
 			$model->attributes=$_GET['Groups'];
-		$model->group_type='group';
+
+		$model->group_type='request';
 		if(!$this->hasRight('op_manage_all_groups')){
 			$model->create_user= Yii::app()->user->id;
 		}
@@ -179,8 +223,8 @@ class GroupsController extends Controller
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 
-		//echo $this->hasRight('groups.view',array('group'=>$working_group));exit;
-		/*if( !$this->hasRight('op_view_all_groups') || !$this->hasRight('Site.Groups.View',array('group'=>$working_group)))
+		//echo $this->hasRight('groups.view',array('group'=>$working_group_request));exit;
+		/*if( !$this->hasRight('op_view_all_groups') || !$this->hasRight('Site.Groups.View',array('group'=>$working_group_request)))
 		{
 				
 			$this->accessDenied();
@@ -207,19 +251,20 @@ class GroupsController extends Controller
 	 */
 	public function actionHome($id)
 	{
-		$working_group = $this->loadModel($id);
+		$working_group_request = $this->loadModel($id);
 
-		$this->working_group = $working_group;
+		$this->working_group_request = $working_group_request;
 		$this->render('home',array(
-				'model'=>$working_group,
+				'model'=>$working_group_request,
 		));
+		
 	}
 
 	public function actionAddMember($group_id){
 
-		$this->working_group = $this->loadModel($group_id);
+		$this->working_group_request = $this->loadModel($group_id);
 
-		if(!$this->hasRight('op_manage_group_member',array('group'=> $this->working_group))){
+		if(!$this->hasRight('op_manage_group_member',array('group'=> $this->working_group_request))){
 			$this->accessDenied();
 		}
 
@@ -230,7 +275,7 @@ class GroupsController extends Controller
 			//$model = new GroupMember();
 			//$model->attributes =$_POST['GroupMember'];
 
-			$this->working_group->members= array_merge(array( $this->working_group->create_user),$_POST['GroupMember']['users']);
+			$this->working_group_request->members= array_merge(array( $this->working_group_request->create_user),$_POST['GroupMember']['users']);
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			//if(!isset($_GET['ajax']))
 			//	$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -239,11 +284,12 @@ class GroupsController extends Controller
 		$model = new GroupMember();
 		$model->groups_id = (int)$group_id;
 
-		$model->users = $this->working_group->members;
+		$model->users = $this->working_group_request->members;
 		$users = User::model()->findAll();
 
 
-		$this->render('addmember',array('model'=>$model,'users'=>$users,'group'=>$this->working_group));
+		$this->render('addmember',array('model'=>$model,'users'=>$users,'group'=>$this->working_group_request));
 
 	}
+	
 }
